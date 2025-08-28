@@ -1,0 +1,280 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC138 室内摄像头
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc138",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC138",                 // 产品型号，显示在页面上
+    category: "indoor",              // 产品分类，对应categories中的分类
+    slug: "svc138",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC138 Indoor Camera",           // 英语产品名称
+      fr: "SVC138 Caméra Intérieure"       // 法语产品名称 (从翻译词汇表获取)
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced indoor security camera with crystal clear 1080p video quality and smart motion detection. Perfect for home monitoring with easy setup and reliable performance.",
+      fr: "Caméra de sécurité intérieure avancée avec qualité vidéo 1080p cristalline et détection de mouvement intelligente. Parfait pour la surveillance domestique avec configuration facile et performances fiables."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/svc138-main.jpg",      // 主要展示图片，显示在产品卡片和详情页
+      gallery: [                            // 详情页图片画廊数组，建议3-5张
+        "/images/svc138-main.jpg",            // 第1张：主视图
+        "/images/svc138-side.jpg",            // 第2张：侧视图  
+        "/images/svc138-back.jpg",            // 第3张：背面视图
+        "/images/svc138-package.jpg"          // 第4张：包装视图 (可选)
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    // 建议3-5个最重要的特性，简洁明了
+    highlights: {
+      en: [
+        "1080p HD Video Quality",              // 特性1：视频质量
+        "Night Vision up to 30ft",             // 特性2：夜视功能
+        "Motion Detection Alerts",             // 特性3：运动检测
+        "Two-Way Audio Communication",         // 特性4：双向音频
+        "Cloud & Local Storage"                // 特性5：存储方式
+      ],
+      fr: [
+        "Qualité Vidéo HD 1080p",
+        "Vision Nocturne jusqu'à 30 pieds", 
+        "Alertes de Détection de Mouvement",
+        "Communication Audio Bidirectionnelle",
+        "Stockage Cloud et Local"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    // 每个规格组包含相关的技术参数
+    // 组名和参数名都需要英法双语
+    specifications: {
+      
+      // 规格组1：视频和图像相关参数
+      "Video & Image": {
+        group_name: {
+          en: "Video & Image",
+          fr: "Vidéo et Image"
+        },
+        specs: {
+          en: {
+            "Resolution": "1920 x 1080 (Full HD)",    // 分辨率
+            "Frame Rate": "30 fps",                    // 帧率
+            "Field of View": "110° diagonal",          // 视野角度
+            "Night Vision": "Up to 30 feet (infrared LEDs)",  // 夜视距离
+            "Digital Zoom": "8x digital zoom"          // 数字变焦
+          },
+          fr: {
+            "Résolution": "1920 x 1080 (Full HD)",
+            "Fréquence d'images": "30 fps",
+            "Champ de vision": "110° diagonal", 
+            "Vision nocturne": "Jusqu'à 30 pieds (LEDs infrarouges)",
+            "Zoom numérique": "Zoom numérique 8x"
+          }
+        }
+      },
+      
+      // 规格组2：连接性和存储
+      "Connectivity & Storage": {
+        group_name: {
+          en: "Connectivity & Storage",
+          fr: "Connectivité et Stockage"
+        },
+        specs: {
+          en: {
+            "Wi-Fi": "802.11 b/g/n (2.4GHz)",         // WiFi规格
+            "Bluetooth": "Bluetooth 4.2",             // 蓝牙版本
+            "Local Storage": "MicroSD card (up to 128GB)",  // 本地存储
+            "Cloud Storage": "7-day free, plans available",  // 云存储
+            "Mobile App": "iOS 12+ & Android 8+"       // 应用兼容性
+          },
+          fr: {
+            "Wi-Fi": "802.11 b/g/n (2.4GHz)",
+            "Bluetooth": "Bluetooth 4.2",
+            "Stockage local": "Carte MicroSD (jusqu'à 128GB)",
+            "Stockage cloud": "7 jours gratuits, plans disponibles", 
+            "Application mobile": "iOS 12+ et Android 8+"
+          }
+        }
+      },
+      
+      // 规格组3：物理参数和电源
+      "Physical & Power": {
+        group_name: {
+          en: "Physical & Power",
+          fr: "Physique et Alimentation"
+        },
+        specs: {
+          en: {
+            "Dimensions": "4.5\" x 2.8\" x 2.8\" (115×71×71mm)",  // 尺寸
+            "Weight": "8.2 oz (232g)",                // 重量
+            "Power Input": "5V/2A USB adapter",       // 电源输入
+            "Operating Temperature": "32°F to 104°F (0°C to 40°C)",  // 工作温度
+            "Humidity": "20% to 85% RH (non-condensing)"  // 湿度要求
+          },
+          fr: {
+            "Dimensions": "4.5\" x 2.8\" x 2.8\" (115×71×71mm)",
+            "Poids": "8.2 oz (232g)", 
+            "Alimentation": "Adaptateur USB 5V/2A",
+            "Température de fonctionnement": "32°F à 104°F (0°C à 40°C)",
+            "Humidité": "20% à 85% RH (sans condensation)"
+          }
+        }
+      }
+      
+      // 如需添加更多规格组，请按相同格式添加:
+      // "New Group Name": {
+      //   group_name: { en: "...", fr: "..." },
+      //   specs: { en: {...}, fr: {...} }
+      // }
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    // 所有下载文件存储在GitHub Releases中
+    // URL格式: https://github.com/用户名/仓库名/releases/download/标签/文件名
+    downloads: {
+      en: [
+        {
+          name: "SVC138 Product Brochure",           // 下载文件显示名称
+          type: "PDF",                               // 文件类型标识
+          size: "2.4 MB",                           // 文件大小
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-brochure.pdf",
+          description: "Complete product overview and specifications"  // 文件描述
+        },
+        {
+          name: "User Manual & Setup Guide", 
+          type: "PDF",
+          size: "5.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-manual.pdf",
+          description: "Step-by-step installation and configuration guide"
+        },
+        {
+          name: "Technical Specifications",
+          type: "Excel", 
+          size: "145 KB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-specs.xlsx",
+          description: "Detailed technical specifications spreadsheet"
+        },
+        {
+          name: "Firmware Updates",
+          type: "ZIP",
+          size: "12.3 MB", 
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-firmware-2.1.4.zip",
+          description: "Latest firmware version 2.1.4"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC138",
+          type: "PDF",
+          size: "2.4 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel Utilisateur et Guide d'Installation",
+          type: "PDF", 
+          size: "5.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc138-manual-fr.pdf",
+          description: "Guide d'installation et de configuration étape par étape"
+        }
+        // 注意：技术文档通常只需英语版本，除非特别需要
+      ]
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",                    // 可选值: in_stock, out_of_stock, pre_order
+      message: {
+        en: "In Stock - Ready to Ship",
+        fr: "En Stock - Prêt à Expédier"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC138 Indoor Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes 24/7 technical support and 30-day money-back guarantee.",
+      fr: "La SVC138 Caméra Intérieure est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique 24/7 et une garantie de remboursement de 30 jours."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-08-28",             // 创建日期
+      last_updated: "2025-08-28",             // 最后更新日期
+      version: "1.0",                         // 数据版本
+      tags: ["indoor", "1080p", "wifi", "motion-detection"]  // 标签，便于搜索和分类
+    }
+  }
+  
+  // ==========================================
+  // JSON5文件修改指南
+  // ==========================================
+  /*
+  修改此文件时请注意：
+  
+  1. JSON5格式优势：
+     - 支持单行注释 // 和多行注释 /* */
+     - 属性名可以不用引号（如 name: 而不是 "name":）
+     - 支持尾随逗号
+     - 更易读和维护
+  
+  2. 基础信息修改：
+     - 更改 name、description 时保持英法语对应
+     - model 要与文件名保持一致
+  
+  3. 添加规格组：
+     - 在 specifications 中按现有格式添加新组
+     - 每个组必须包含 group_name 和 specs
+     - 保持英法语参数名称对应
+  
+  4. 更新下载文件：
+     - 先上传文件到GitHub Releases
+     - 复制下载链接更新 url 字段
+     - 更新文件大小和描述
+  
+  5. 图片路径：
+     - 使用绝对路径 "/images/..."
+     - 确保图片文件已上传到 images 目录
+  
+  6. 翻译参考：
+     - 查看 /fr/TRANSLATION-GLOSSARY.md 获取标准翻译
+     - 新术语可先用占位符 "[FR_需要翻译的内容]"
+  
+  7. JavaScript解析：
+     - 需要使用JSON5.parse()而不是JSON.parse()
+     - 或者使用自定义解析函数处理注释
+  
+  8. 验证工具：
+     - 使用JSON5 validator检查语法
+     - 确保所有必填字段都有值
+  */
+}

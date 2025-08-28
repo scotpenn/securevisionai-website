@@ -1,0 +1,112 @@
+{
+  "baseline_metrics": {
+    "timestamp": "2025-08-27T00:00:00Z",
+    "build_time": {
+      "description": "静态网站无构建时间",
+      "value": "N/A",
+      "unit": "seconds"
+    },
+    "bundle_size": {
+      "html_files": {
+        "total_size": "pending_measurement",
+        "unit": "KB"
+      },
+      "css_files": {
+        "brand_style": "pending_measurement",
+        "webflow_css": "pending_measurement",
+        "total_size": "pending_measurement",
+        "unit": "KB"
+      },
+      "js_files": {
+        "jquery": "~30KB (CDN)",
+        "webflow": "pending_measurement", 
+        "total_size": "pending_measurement",
+        "unit": "KB"
+      },
+      "images": {
+        "total_size": "pending_measurement",
+        "optimized_variants": "responsive naming implemented",
+        "unit": "MB"
+      }
+    },
+    "page_load_times": {
+      "homepage_en": {
+        "first_contentful_paint": "pending_measurement",
+        "largest_contentful_paint": "pending_measurement",
+        "time_to_interactive": "pending_measurement",
+        "unit": "ms"
+      },
+      "homepage_fr": {
+        "first_contentful_paint": "pending_measurement", 
+        "largest_contentful_paint": "pending_measurement",
+        "time_to_interactive": "pending_measurement",
+        "unit": "ms"
+      },
+      "products_page": {
+        "first_contentful_paint": "pending_measurement",
+        "largest_contentful_paint": "pending_measurement", 
+        "time_to_interactive": "pending_measurement",
+        "unit": "ms"
+      }
+    },
+    "api_response_time": {
+      "description": "静态网站无API调用",
+      "value": "N/A"
+    },
+    "memory_usage": {
+      "browser_heap": "pending_measurement",
+      "dom_nodes": "pending_measurement",
+      "unit": "MB"
+    }
+  },
+  "performance_targets": {
+    "page_load_time": {
+      "target": "< 2000ms",
+      "warning_threshold": "1600ms",
+      "critical_threshold": "2400ms"
+    },
+    "bundle_size": {
+      "css_total": "< 100KB",
+      "js_total": "< 200KB",
+      "images_optimized": "responsive variants required"
+    },
+    "core_web_vitals": {
+      "fcp": "< 1800ms",
+      "lcp": "< 2500ms", 
+      "cls": "< 0.1",
+      "fid": "< 100ms"
+    }
+  },
+  "measurement_tools": {
+    "lighthouse": "recommended for web vitals",
+    "browser_devtools": "network tab for asset sizes",
+    "webpagetest": "external validation"
+  },
+  "optimization_checklist": {
+    "images": [
+      "✅ Responsive variants implemented",
+      "⏳ Lazy loading to be implemented",
+      "⏳ WebP format consideration"
+    ],
+    "css": [
+      "✅ Brand style system in place",
+      "⏳ Webflow CSS migration needed",
+      "⏳ Critical CSS extraction"
+    ],
+    "javascript": [
+      "✅ jQuery CDN usage",
+      "⏳ Module bundling consideration",
+      "⏳ Script loading optimization"
+    ],
+    "caching": [
+      "⏳ Browser caching headers",
+      "⏳ Service worker implementation",
+      "⏳ Static asset versioning"
+    ]
+  },
+  "alert_settings": {
+    "degradation_threshold": "20%",
+    "notification_method": "console_log",
+    "auto_benchmark": "after_major_changes"
+  }
+}

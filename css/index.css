@@ -1,0 +1,319 @@
+/* ================================================
+   SecureVision AI - Index/Homepage Styles
+   首页专用样式：Hero/产品展示/特色功能/技术展示
+   ================================================ */
+
+/* ============ Hero Section ============ */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-secure-blue) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 var(--spacing-8);
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--color-white);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============ Product Grid ============ */
+.products-section {
+  padding: var(--spacing-20) var(--spacing-8);
+  background: var(--color-white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-4);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-6);
+  text-align: center;
+  transition: var(--transition-base);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.product-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.product-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-3);
+}
+
+.product-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ Features Section ============ */
+.features-section {
+  padding: var(--spacing-20) var(--spacing-8);
+  background: var(--color-neutral-50);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--spacing-6);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-secure-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-4);
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.feature-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-2);
+}
+
+.feature-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ Technology Gallery ============ */
+.tech-gallery {
+  padding: var(--spacing-20) var(--spacing-8);
+  background: var(--color-deep-blue);
+  color: var(--color-white);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition-base);
+}
+
+.tech-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.tech-card h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-white);
+}
+
+.tech-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ============ Loading Animation ============ */
+.loading-page-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 4px;
+  background: var(--color-neutral-200);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar::after {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-secure-blue);
+  border-radius: 2px;
+  animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============ CTA Section ============ */
+.cta-section {
+  padding: var(--spacing-20) var(--spacing-8);
+  background: linear-gradient(135deg, var(--color-secure-blue) 0%, var(--color-deep-blue) 100%);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.cta-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-4);
+}
+
+.cta-description {
+  font-size: var(--text-lg);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============ Responsive Design ============ */
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .hero-section {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .products-section,
+  .features-section,
+  .tech-gallery,
+  .cta-section {
+    padding: var(--spacing-12) var(--spacing-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .product-card,
+  .feature-item,
+  .tech-card {
+    padding: var(--spacing-4);
+  }
+}

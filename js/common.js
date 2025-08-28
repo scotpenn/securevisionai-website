@@ -1,0 +1,405 @@
+/* ================================================
+   SecureVision AI - Common JavaScript
+   全站公用脚本：导航滚动、加载层、下拉菜单、锚点平滑
+   ================================================ */
+
+(function() {
+  'use strict';
+
+  // ============ Navigation State Management ============
+  const navbar = document.getElementById('navbar');
+  let isScrolled = false;
+
+  function updateNavbarState() {
+    const scrollY = window.scrollY;
+    const shouldBeScrolled = scrollY > 100;
+    
+    if (shouldBeScrolled !== isScrolled) {
+      isScrolled = shouldBeScrolled;
+      
+      if (navbar) {
+        navbar.classList.toggle('transparent', !isScrolled);
+        navbar.classList.toggle('scrolled', isScrolled);
+      }
+    }
+  }
+
+  // ============ Logo Dynamic Switching ============
+  function initLogoSwitching() {
+    const logoContainer = document.querySelector('.nav-logo');
+    if (!logoContainer) return;
+
+    // 检查是否是产品详情页等固定白色背景页面
+    const isFixedWhitePage = document.body.classList.contains('fixed-white-nav') || 
+                            window.location.pathname.includes('/products/detail/');
+
+    // 如果没有双Logo结构，创建它
+    const existingImg = logoContainer.querySelector('img');
+    if (existingImg && !logoContainer.querySelector('.logo-white')) {
+      const whiteLogoSrc = '/images/01-logo.png';
+      const blueLogoSrc = '/images/SVA Logo Main.svg';
+      
+      // 创建白色Logo
+      const whiteLogo = existingImg.cloneNode();
+      whiteLogo.src = whiteLogoSrc;
+      whiteLogo.className = 'logo-white';
+      whiteLogo.alt = 'SecureVision AI Logo';
+      
+      // 创建蓝色Logo
+      const blueLogo = existingImg.cloneNode();
+      blueLogo.src = blueLogoSrc;
+      blueLogo.className = 'logo-blue';
+      blueLogo.alt = 'SecureVision AI Logo';
+      
+      // 替换原有img
+      existingImg.remove();
+      logoContainer.appendChild(whiteLogo);
+      logoContainer.appendChild(blueLogo);
+    }
+
+    // 如果是固定白色背景页面，添加相应类
+    if (isFixedWhitePage && navbar) {
+      navbar.classList.add('fixed-white');
+    }
+  }
+
+  // ============ Loading Animation Management ============
+  function hideLoadingAnimation() {
+    const loading = document.querySelector('.loading-page-animation');
+    if (loading) {
+      loading.style.opacity = '0';
+      setTimeout(() => {
+        if (loading.parentNode) {
+          loading.remove();
+        }
+      }, 300);
+    }
+  }
+
+  // ============ Smooth Scrolling for Anchor Links ============
+  function initSmoothScrolling() {
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      
+      const href = link.getAttribute('href');
+      if (href === '#') return;
+      
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        // 计算导航栏高度偏移
+        const navHeight = navbar ? navbar.offsetHeight : 60;
+        const targetPosition = targetElement.offsetTop - navHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // 更新URL hash（可选）
+        if (history.pushState) {
+          history.pushState(null, null, href);
+        }
+      }
+    });
+  }
+
+  // ============ Dropdown Menu Enhancements ============
+  function initDropdownMenus() {
+    const dropdownItems = document.querySelectorAll('.nav-item');
+    
+    dropdownItems.forEach(item => {
+      const dropdown = item.querySelector('.nav-dropdown');
+      if (!dropdown) return;
+      
+      let hideTimeout;
+      
+      // 鼠标进入
+      item.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+      });
+      
+      // 鼠标离开
+      item.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+          dropdown.style.transform = 'translateY(-8px)';
+        }, 150);
+      });
+      
+      // 键盘导航支持
+      const navLink = item.querySelector('.nav-link');
+      if (navLink) {
+        navLink.addEventListener('focus', () => {
+          clearTimeout(hideTimeout);
+          dropdown.style.opacity = '1';
+          dropdown.style.visibility = 'visible';
+          dropdown.style.transform = 'translateY(0)';
+        });
+        
+        navLink.addEventListener('blur', (e) => {
+          // 检查焦点是否移动到下拉菜单内
+          setTimeout(() => {
+            if (!item.contains(document.activeElement)) {
+              dropdown.style.opacity = '0';
+              dropdown.style.visibility = 'hidden';
+              dropdown.style.transform = 'translateY(-8px)';
+            }
+          }, 0);
+        });
+      }
+    });
+  }
+
+  // ============ Hash URL Management ============
+  function handleHashNavigation() {
+    // 页面加载时处理hash
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const navHeight = navbar ? navbar.offsetHeight : 60;
+          const targetPosition = targetElement.offsetTop - navHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+    
+    // 监听hash变化
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const navHeight = navbar ? navbar.offsetHeight : 60;
+          const targetPosition = targetElement.offsetTop - navHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  }
+
+  // ============ Performance Optimized Scroll Listener ============
+  let ticking = false;
+  
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbarState);
+      ticking = true;
+    }
+  }
+
+  function handleScroll() {
+    requestTick();
+    ticking = false;
+  }
+
+  // ============ Initialization ============
+  function init() {
+    // 初始化导航栏状态
+    updateNavbarState();
+    
+    // 初始化Logo切换
+    initLogoSwitching();
+    
+    // 初始化下拉菜单
+    initDropdownMenus();
+    
+    // 初始化平滑滚动
+    initSmoothScrolling();
+    
+    // 处理URL hash导航
+    handleHashNavigation();
+    
+    // 添加滚动监听器（性能优化版本）
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // 页面加载完成后隐藏加载动画
+    hideLoadingAnimation();
+  }
+
+  // ============ DOM Ready ============
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // ============ Window Load Event ============
+  window.addEventListener('load', () => {
+    // 确保加载动画被隐藏
+    hideLoadingAnimation();
+    
+    // 初始化导航栏状态（以防DOM变化）
+    setTimeout(updateNavbarState, 100);
+  });
+
+  // ============ Export for Other Scripts ============
+  window.SecureVisionCommon = {
+    updateNavbarState: updateNavbarState,
+    hideLoadingAnimation: hideLoadingAnimation,
+    initLogoSwitching: initLogoSwitching
+  };
+
+})();
+
+// ============ Utility Functions (Global) ============
+
+/**
+ * 显示通知消息
+ * @param {string} message - 消息内容
+ * @param {string} type - 消息类型 ('success', 'error', 'warning', 'info')
+ * @param {number} duration - 显示时长（毫秒），0为不自动隐藏
+ */
+function showNotification(message, type = 'info', duration = 5000) {
+  // 创建通知容器（如果不存在）
+  let container = document.getElementById('notification-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'notification-container';
+    container.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      pointer-events: none;
+    `;
+    document.body.appendChild(container);
+  }
+  
+  // 创建通知元素
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    background: ${type === 'success' ? '#10B981' : 
+                type === 'error' ? '#EF4444' : 
+                type === 'warning' ? '#F59E0B' : '#4B70F5'};
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    max-width: 300px;
+    word-wrap: break-word;
+  `;
+  notification.textContent = message;
+  
+  // 添加到容器
+  container.appendChild(notification);
+  
+  // 触发进入动画
+  setTimeout(() => {
+    notification.style.transform = 'translateX(0)';
+  }, 10);
+  
+  // 点击关闭
+  notification.addEventListener('click', () => {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 300);
+  });
+  
+  // 自动隐藏
+  if (duration > 0) {
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+        }, 300);
+      }
+    }, duration);
+  }
+}
+
+/**
+ * 格式化日期
+ * @param {Date|string} date - 日期对象或日期字符串
+ * @param {string} format - 格式 ('YYYY-MM-DD', 'MM/DD/YYYY', 'relative')
+ */
+function formatDate(date, format = 'YYYY-MM-DD') {
+  const d = new Date(date);
+  if (isNaN(d.getTime())) return 'Invalid Date';
+  
+  if (format === 'relative') {
+    const now = new Date();
+    const diffMs = now - d;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  }
+  
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  
+  if (format === 'MM/DD/YYYY') {
+    return `${month}/${day}/${year}`;
+  }
+  
+  return `${year}-${month}-${day}`; // 默认 YYYY-MM-DD
+}
+
+/**
+ * 防抖函数
+ * @param {Function} func - 要执行的函数
+ * @param {number} wait - 延迟时间（毫秒）
+ * @param {boolean} immediate - 是否立即执行
+ */
+function debounce(func, wait, immediate = false) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      if (!immediate) func(...args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func(...args);
+  };
+}
+
+/**
+ * 节流函数
+ * @param {Function} func - 要执行的函数
+ * @param {number} limit - 时间间隔（毫秒）
+ */
+function throttle(func, limit) {
+  let inThrottle;
+  return function executedFunction(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
