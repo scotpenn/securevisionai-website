@@ -54,7 +54,7 @@ Logo系统: 动态切换(透明/滚动状态)
 │   ├── index.css                # 首页专用样式
 │   ├── about.css                # 关于页专用样式
 │   ├── contact.css              # 联系页专用样式
-│   ├── custumer-care.css        # 客服页专用样式
+│   ├── customer-care.css        # 客户服务页专用样式
 │   ├── products.css             # 产品页专用样式
 │   └── product-detail.css       # 产品详情页专用样式
 ├── js/
@@ -89,7 +89,7 @@ Logo系统: 动态切换(透明/滚动状态)
 - [x] **首页** (index.html) - ✅ 已迁移到新CSS架构 (common.css + index.css)
 - [x] **关于页面** (about.html) - ✅ 已迁移到新CSS架构 (common.css + about.css)
 - [x] **联系页面** (contact.html) - ✅ 已迁移到新CSS架构 (common.css + contact.css)
-- [x] **客户服务** (custumer-care.html) - ✅ 已迁移到新CSS架构 (common.css + custumer-care.css)
+- [x] **客户服务** (customer-care.html) - ✅ 已迁移到新CSS架构 (common.css + customer-care.css)
 - [ ] **法文页面** (fr/*) - ❌ 需要同步更新
 
 ### ✅ 产品类别系统
@@ -305,6 +305,18 @@ https://github.com/username/securevision-ai-downloads/releases/download/v1.0/svc
 - [ ] **优化CSS文件大小** - 压缩和合并策略
 - [ ] **全站功能测试** - 导航/表单/交互功能验证
 - [ ] **移动端响应式完善** - 确保所有页面移动端正常显示
+
+### 第四阶段 - SEO优化系统 (优先级: 中)
+- [x] **文件名规范化** - 修复拼写错误(customer-care vs custumer-care) ✅ 已完成
+- [ ] **URL结构优化** - 统一URL命名规范，移除拼写错误
+- [ ] **Meta标签完善** - 所有页面添加完整的SEO meta标签
+- [ ] **结构化数据** - 添加Schema.org标记提升搜索可见性
+- [ ] **站点地图生成** - 创建sitemap.xml和robots.txt
+- [ ] **内部链接优化** - 改善页面间的内部链接结构
+- [ ] **图片SEO优化** - 添加alt标签，优化文件名和格式
+- [ ] **页面性能SEO** - 优化Core Web Vitals指标
+- [ ] **多语言SEO** - hreflang标签和国际化SEO最佳实践
+- [ ] **本地SEO优化** - Google My Business集成和本地搜索优化
 
 ### CSS优先级与覆盖规则
 ```
