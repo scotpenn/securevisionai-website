@@ -34,7 +34,7 @@
     <div class="nav-inner">
       <div class="nav-logo">
         <a href="index.html">
-          <img src="images/01-logo.png" alt="SecureVision AI Logo">
+          <img src="images/SVA-Logo-Main2x-p-800 - WEB.png" alt="SecureVision AI Logo">
         </a>
       </div>
       
@@ -336,26 +336,23 @@
     </footer>
   </div>
 
+  <!-- Load common.js for navigation functionality -->
+  <script src="/js/common.js"></script>
   <script>
-// Navigation (window scroll) + safe class toggling
-(function () {
-  const navbar = document.getElementById('navbar');
 
-  function updateNavbarState() {
-    const atTop = window.scrollY <= 100;
-    navbar.classList.toggle('transparent', atTop);
-    navbar.classList.toggle('scrolled', !atTop);
-  }
-
-  window.addEventListener('scroll', updateNavbarState, { passive: true });
-  updateNavbarState();
-
-  // Optional: loading overlay fade out
-  window.addEventListener('load', () => {
-    const loading = document.querySelector('.loading-page-animation');
-    if (loading) { loading.style.opacity = '0'; setTimeout(() => loading.remove(), 300); }
+  // About page specific functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize loading animation
+    setTimeout(() => {
+      const loadingAnimation = document.querySelector('.loading-page-animation');
+      if (loadingAnimation) {
+        loadingAnimation.style.opacity = '0';
+        setTimeout(() => {
+          loadingAnimation.style.display = 'none';
+        }, 300);
+      }
+    }, 500);
   });
-})();
 
 // Product Categories Tabs functionality
 document.addEventListener('DOMContentLoaded', function() {

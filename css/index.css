@@ -1,67 +1,131 @@
 /* ================================================
    SecureVision AI - Index/Homepage Styles
-   首页专用样式：Hero/产品展示/特色功能/技术展示
+   现代化主页样式：与about页面一致 + 完整解决方案 + 增强功能区
    ================================================ */
 
-/* ============ Hero Section ============ */
-.hero-section {
-  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-secure-blue) 100%);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+/* ============ Hero Section (Same as About.html) ============ */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.fullscreen-section {
+  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-fullscreen {
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-secure-blue) 100%);
+  color: var(--color-white);
+  text-align: center;
   overflow: hidden;
 }
 
 .hero-content {
-  max-width: 1200px;
-  width: 100%;
+  max-width: 800px;
   padding: 0 var(--spacing-8);
+  position: relative;
+  z-index: 3;
+}
+
+.hero-text {
   text-align: center;
-  z-index: 2;
 }
 
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: var(--font-bold);
-  color: var(--color-white);
   margin-bottom: var(--spacing-6);
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  color: var(--color-white);
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   opacity: 0.9;
   margin-bottom: var(--spacing-8);
+  line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero-cta {
-  display: flex;
-  gap: var(--spacing-4);
-  justify-content: center;
-  flex-wrap: wrap;
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
 }
 
-/* ============ Product Grid ============ */
-.products-section {
-  padding: var(--spacing-20) var(--spacing-8);
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+/* ============ Complete Solution Section ============ */
+.complete-solution-section {
+  padding: var(--spacing-20) 0 0 0;
   background: var(--color-white);
 }
 
+.solution-text-content {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.section-description {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-4);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-image-fullwidth {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.fullwidth-image {
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+  display: block;
+}
+
+/* ============ Container for Sections ============ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+}
+
+/* ============ Section Headers ============ */
 .section-header {
   text-align: center;
   margin-bottom: var(--spacing-16);
 }
 
 .section-title {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-bold);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
   color: var(--color-deep-blue);
   margin-bottom: var(--spacing-4);
 }
@@ -71,130 +135,194 @@
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-8);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.product-card {
+/* ============ Solutions Section ============ */
+.solutions-section {
+  padding: var(--spacing-20) 0;
   background: var(--color-white);
-  border-radius: var(--radius-xl);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.solution-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  padding: var(--spacing-6);
-  text-align: center;
+  overflow: hidden;
   transition: var(--transition-base);
   border: 1px solid var(--color-neutral-200);
+  cursor: pointer;
 }
 
-.product-card:hover {
+.solution-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+  border-color: var(--color-secure-blue);
 }
 
-.product-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-4);
+.solution-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
 }
 
-.product-title {
+.solution-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-base);
+}
+
+.solution-card:hover .solution-image img {
+  transform: scale(1.05);
+}
+
+.solution-content {
+  padding: var(--spacing-6);
+}
+
+.solution-title {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   color: var(--color-deep-blue);
   margin-bottom: var(--spacing-3);
 }
 
-.product-description {
+.solution-description {
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
-/* ============ Features Section ============ */
+/* ============ Features Section (Two Large Cards) ============ */
 .features-section {
-  padding: var(--spacing-20) var(--spacing-8);
+  padding: var(--spacing-20) 0;
   background: var(--color-neutral-50);
 }
 
-.features-grid {
+.feature-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-6);
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.feature-item {
-  text-align: center;
-  padding: var(--spacing-6);
-}
-
-.feature-icon {
-  width: 64px;
-  height: 64px;
-  background: var(--color-secure-blue);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-4);
-  font-size: 1.5rem;
-  color: var(--color-white);
-}
-
-.feature-title {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-  color: var(--color-deep-blue);
-  margin-bottom: var(--spacing-2);
-}
-
-.feature-description {
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* ============ Technology Gallery ============ */
-.tech-gallery {
-  padding: var(--spacing-20) var(--spacing-8);
-  background: var(--color-deep-blue);
-  color: var(--color-white);
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--spacing-8);
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-top: var(--spacing-12);
 }
 
-.tech-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.feature-card-large {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-neutral-200);
+  position: relative;
+  overflow: hidden;
   transition: var(--transition-base);
 }
 
-.tech-card:hover {
-  background: rgba(255, 255, 255, 0.15);
+.feature-card-large:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-secure-blue);
 }
 
-.tech-card h3 {
+.feature-watermark {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-6);
+  transform: translateY(-50%);
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.watermark-img {
+  width: 120px;
+  height: 120px;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card-title {
   font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
-  margin-bottom: var(--spacing-3);
-  color: var(--color-white);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-6);
 }
 
-.tech-card p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-6);
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: var(--spacing-2);
+  color: var(--color-secure-blue);
+  font-weight: var(--font-bold);
+}
+
+/* ============ Advanced Technology Section ============ */
+.tech-section {
+  padding: var(--spacing-20) 0;
+  background: var(--color-white);
+}
+
+.tech-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.tech-text {
+  text-align: center;
+  max-width: 800px;
+}
+
+.tech-images {
+  display: flex;
+  gap: var(--spacing-6);
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.tech-image-item {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.tech-image-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tech-image-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
 
 /* ============ Loading Animation ============ */
@@ -209,6 +337,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.3s ease;
 }
 
 .loading-bar {
@@ -227,7 +356,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-secure-blue);
+  background: linear-gradient(90deg, var(--color-secure-blue), var(--color-orange));
   border-radius: 2px;
   animation: loading 2s ease-in-out infinite;
 }
@@ -241,60 +370,50 @@
   }
 }
 
-/* ============ CTA Section ============ */
-.cta-section {
-  padding: var(--spacing-20) var(--spacing-8);
-  background: linear-gradient(135deg, var(--color-secure-blue) 0%, var(--color-deep-blue) 100%);
-  text-align: center;
-  color: var(--color-white);
-}
-
-.cta-title {
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
-  margin-bottom: var(--spacing-4);
-}
-
-.cta-description {
-  font-size: var(--text-lg);
-  opacity: 0.9;
-  margin-bottom: var(--spacing-8);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ============ Responsive Design ============ */
+@media (max-width: 1024px) {
+  .tech-content {
+    gap: var(--spacing-8);
+  }
+}
+
 @media (max-width: 768px) {
-  .hero-cta {
+  /* Mobile navigation adjustments */
+  body .nav-mantine#navbar {
+    height: 60px;
+  }
+  
+  body .nav-mantine#navbar .nav-logo {
+    height: 36px;
+  }
+  
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .feature-cards-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .tech-images {
     flex-direction: column;
-    align-items: center;
+    max-width: 400px;
   }
   
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-6);
+  .complete-solution-section {
+    padding: var(--spacing-16) 0 0 0;
   }
   
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-4);
-  }
-  
-  .tech-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-6);
-  }
-  
-  .hero-section {
-    padding: var(--spacing-8) 0;
-  }
-  
-  .products-section,
+  .solutions-section,
   .features-section,
-  .tech-gallery,
-  .cta-section {
-    padding: var(--spacing-12) var(--spacing-4);
+  .tech-section {
+    padding: var(--spacing-16) 0;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-4);
   }
 }
 
@@ -311,9 +430,122 @@
     font-size: var(--text-2xl);
   }
   
-  .product-card,
-  .feature-item,
-  .tech-card {
-    padding: var(--spacing-4);
+  .feature-card-large {
+    padding: var(--spacing-6);
   }
+  
+  .watermark-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .feature-cards-container,
+  .solutions-grid {
+    gap: var(--spacing-4);
+  }
+}
+
+/* ============ Animation Classes ============ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ Homepage Navigation Overrides ============ */
+/* Use higher specificity selectors instead of !important */
+
+/* Homepage navigation container - larger for better Logo visibility */
+body .nav-mantine#navbar {
+  height: 72px;
+}
+
+/* Homepage Logo container sizing */
+body .nav-mantine#navbar .nav-logo {
+  height: 48px;
+  position: relative;
+}
+
+body .nav-mantine#navbar .nav-logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Single Logo system with CSS filter approach */
+/* Transparent state: white Logo effect */
+body .nav-mantine#navbar.transparent .nav-logo img {
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+}
+
+/* Scrolled state: original blue Logo */
+body .nav-mantine#navbar.scrolled .nav-logo img {
+  filter: none;
+  -webkit-filter: none;
+}
+
+/* Hide dual Logo elements if they exist */
+body .nav-mantine#navbar .logo-white,
+body .nav-mantine#navbar .logo-blue {
+  display: none;
+}
+
+/* Scrolled state background and border */
+body .nav-mantine#navbar.scrolled {
+  background: rgba(249, 249, 249, .95);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+}
+
+/* Navigation hover states - now using CSS variables */
+html body .nav-mantine#navbar.transparent .nav-link:hover {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+}
+
+html body .nav-mantine#navbar.scrolled .nav-link:hover {
+  background: rgba(75, 112, 245, .1);
+  color: var(--color-secure-blue);
+}
+
+/* ============ CSS Variable + Bulletproof Navigation Colors ============ */
+
+/* Default navigation foreground color */
+.nav-mantine#navbar { 
+  --nav-fg: #fff; 
+}
+
+/* Apply variable to all navigation links and buttons */
+.nav-mantine#navbar .nav-link,
+.nav-mantine#navbar .nav-lang-btn { 
+  color: var(--nav-fg); 
+}
+
+/* Transparent state: white text + white logo (filter preserved) */
+.nav-mantine#navbar.transparent { 
+  --nav-fg: #fff; 
+}
+
+/* Scrolled state: dark text + remove filter + background */
+.nav-mantine#navbar.scrolled { 
+  --nav-fg: var(--color-deep-blue);
+  background: rgba(249, 249, 249, .95);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+}
+
+/* Bulletproof fallback - overrides any old styles or !important pollution */
+html body .nav-mantine#navbar.scrolled .nav-link { 
+  color: var(--color-deep-blue) !important;
+}
+
+html body .nav-mantine#navbar.scrolled .nav-lang-btn {
+  background: var(--color-secure-blue) !important;
+  color: #fff !important;
+  border: none !important;
 }

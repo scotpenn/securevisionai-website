@@ -7,21 +7,48 @@
   'use strict';
 
   // ============ Navigation State Management ============
-  const navbar = document.getElementById('navbar');
-  let isScrolled = false;
+  (function initNavigationState() {
+    const nav = document.getElementById('navbar');
+    if (!nav) return;
 
-  function updateNavbarState() {
-    const scrollY = window.scrollY;
-    const shouldBeScrolled = scrollY > 100;
-    
-    if (shouldBeScrolled !== isScrolled) {
-      isScrolled = shouldBeScrolled;
-      
-      if (navbar) {
-        navbar.classList.toggle('transparent', !isScrolled);
-        navbar.classList.toggle('scrolled', isScrolled);
+    const scroller = document.getElementById('scroll-container') || window;
+    const hero = document.getElementById('hero-section') || document.querySelector('.hero-fullscreen');
+
+    // Navigation state setter
+    const setNavState = (isTop) => {
+      if (isTop) {
+        nav.classList.add('transparent');
+        nav.classList.remove('scrolled');
+      } else {
+        nav.classList.add('scrolled');
+        nav.classList.remove('transparent');
       }
+    };
+
+    // Method 1: IntersectionObserver (most stable)
+    if (hero && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        ([entry]) => setNavState(entry.intersectionRatio > 0.15),
+        { 
+          root: scroller === window ? null : scroller, 
+          threshold: [0, 0.15, 1] 
+        }
+      );
+      io.observe(hero);
+      // Set initial state
+      setNavState(true);
+    } else {
+      // Method 2: Scroll fallback
+      const getScrollY = () => (scroller === window ? window.scrollY : scroller.scrollTop);
+      const onScroll = () => setNavState(getScrollY() <= 24);
+      (scroller === window ? window : scroller).addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // Set initial state
     }
+  })();
+  
+  // Keep legacy function for compatibility
+  function updateNavbarState() {
+    // This function is now handled by the IntersectionObserver above
   }
 
   // ============ Logo Dynamic Switching ============
@@ -33,29 +60,8 @@
     const isFixedWhitePage = document.body.classList.contains('fixed-white-nav') || 
                             window.location.pathname.includes('/products/detail/');
 
-    // 如果没有双Logo结构，创建它
-    const existingImg = logoContainer.querySelector('img');
-    if (existingImg && !logoContainer.querySelector('.logo-white')) {
-      const whiteLogoSrc = '/images/01-logo.png';
-      const blueLogoSrc = '/images/SVA Logo Main.svg';
-      
-      // 创建白色Logo
-      const whiteLogo = existingImg.cloneNode();
-      whiteLogo.src = whiteLogoSrc;
-      whiteLogo.className = 'logo-white';
-      whiteLogo.alt = 'SecureVision AI Logo';
-      
-      // 创建蓝色Logo
-      const blueLogo = existingImg.cloneNode();
-      blueLogo.src = blueLogoSrc;
-      blueLogo.className = 'logo-blue';
-      blueLogo.alt = 'SecureVision AI Logo';
-      
-      // 替换原有img
-      existingImg.remove();
-      logoContainer.appendChild(whiteLogo);
-      logoContainer.appendChild(blueLogo);
-    }
+    // 单Logo系统 - 使用CSS filter实现颜色切换，不需要创建双Logo
+    // 双Logo系统已在CSS中通过filter实现
 
     // 如果是固定白色背景页面，添加相应类
     if (isFixedWhitePage && navbar) {
@@ -211,11 +217,11 @@
 
   // ============ Initialization ============
   function init() {
-    // 初始化导航栏状态
-    updateNavbarState();
-    
     // 初始化Logo切换
     initLogoSwitching();
+    
+    // 初始化导航栏状态（在Logo初始化后）
+    updateNavbarState();
     
     // 初始化下拉菜单
     initDropdownMenus();
@@ -226,8 +232,7 @@
     // 处理URL hash导航
     handleHashNavigation();
     
-    // 添加滚动监听器（性能优化版本）
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Navigation state is now handled by IntersectionObserver in initNavigationState()
     
     // 页面加载完成后隐藏加载动画
     hideLoadingAnimation();

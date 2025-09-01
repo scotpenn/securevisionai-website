@@ -16,7 +16,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/common.css" rel="stylesheet" type="text/css">
-  <link href="css/index.css?v=1" rel="stylesheet" type="text/css">
+  <link href="css/index.css?v=5" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -93,11 +93,11 @@
   </div>
 
   <!-- Mantine-style Navigation Bar -->
-  <nav class="nav-mantine hero-section" id="navbar">
+  <nav class="nav-mantine transparent" id="navbar">
     <div class="nav-inner">
       <div class="nav-logo">
         <a href="index.html">
-          <img src="images/01-logo.png" alt="SecureVision AI Logo">
+          <img src="images/SVA-Logo-Main2x-p-800 - WEB.png" alt="SecureVision AI Logo">
         </a>
       </div>
       
@@ -112,22 +112,10 @@
           <a href="#" class="nav-link">Products</a>
           <div class="nav-dropdown">
             <div class="nav-dropdown-item">
-              <a href="/product/svc138">Indoor Cameras</a>
+              <a href="/products/detail/svc138.html">Indoor Cameras</a>
             </div>
             <div class="nav-dropdown-item">
-              <a href="/product/svc180">Baby/Pet Monitors</a>
-            </div>
-            <div class="nav-dropdown-item">
-              <a href="/product/svc176">Outdoor Cameras</a>
-            </div>
-            <div class="nav-dropdown-item">
-              <a href="/product/svb215">Doorbell Systems</a>
-            </div>
-            <div class="nav-dropdown-item">
-              <a href="/product/sv842">Sports Cameras</a>
-            </div>
-            <div class="nav-dropdown-item">
-              <a href="/product/svp5400">Secure Power</a>
+              <a href="/products/all.html">All Products</a>
             </div>
           </div>
         </li>
@@ -146,249 +134,173 @@
   </nav>
 
   <div class="scroll-container" id="scroll-container">
-    <!-- Hero Section - Full Screen -->
+    <!-- Hero Section -->
     <section class="fullscreen-section hero-fullscreen" id="hero-section">
       <div class="hero-content">
-        <h1 class="hero-title">Home, Business and Recreational Security</h1>
-        <p class="hero-subtitle">Advanced AI-powered security solutions with 24/7 monitoring, cloud storage, and mobile access for complete protection anywhere, anytime.</p>
-        <div class="hero-product-display">
-          <img src="images/prod-display.png" loading="lazy" alt="SecureVision AI Security Camera Product Display" class="hero-product-image">
+        <div class="hero-text">
+          <h1 class="hero-title">Home, Business and Recreational Security</h1>
+          <p class="hero-subtitle">Advanced AI-powered security solutions with 24/7 monitoring, cloud storage, and mobile access for complete protection anywhere, anytime.</p>
         </div>
       </div>
-      <img src="images/banner.jpg" loading="lazy" alt="SecureVision AI Security Camera System Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-    </section>
-
-    <!-- Second Section - Text & Image -->
-    <section class="fullscreen-section text-image-section" id="second-section">
-      <div class="text-image-container">
-        <div class="text-content">
-          <h2>Complete Security Solutions</h2>
-          <p>We offer a comprehensive range of security products including Indoor, Outdoor, Doorbell, Baby & Pet Monitoring, and Wearable Sports Security Camera Devices. All devices provide 24/7 access through our SecureVision AI App with cloud-based storage.</p>
-          <p>Our "SecurePower" portable backup power system ensures reliable power anytime, anywhere. The telescopic "SecureTower" provides solar and battery powered lighting and surveillance for large areas.</p>
-        </div>
-        <div class="image-content">
-          <img src="images/Weixin-Image_20250815155551_23.jpg" alt="SecureVision AI Product Showcase">
-        </div>
+      <div class="hero-background">
+        <img src="/images/banner.jpg" decoding="async" fetchpriority="high" alt="SecureVision AI Background" class="hero-bg-image">
       </div>
     </section>
 
-    <!-- Product Categories Section -->
-    <section class="content-section product-categories-section" id="categories-section">
-      <div class="categories-container">
-        <h2 class="categories-title">Product Categories</h2>
-        <p class="categories-subtitle">Explore our comprehensive range of security solutions designed for every need</p>
+    <!-- Complete Solution Section -->
+    <section class="complete-solution-section" id="complete-solution">
+      <div class="container">
+        <div class="solution-text-content">
+          <h2 class="section-title">Complete Security Solutions</h2>
+          <p class="section-description">We offer a comprehensive range of security products including Indoor, Outdoor, Doorbell, Baby & Pet Monitoring, and Wearable Sports Security Camera Devices. All devices provide 24/7 access through our SecureVision AI App with cloud-based storage.</p>
+          <p class="section-description">Our "SecurePower" portable backup power system ensures reliable power anytime, anywhere. The telescopic "SecureTower" provides solar and battery powered lighting and surveillance for large areas.</p>
+        </div>
+      </div>
+      <div class="solution-image-fullwidth">
+        <img src="/images/house-complete-solution-mid.jpg" alt="Complete Security Solution" class="fullwidth-image">
+      </div>
+    </section>
+
+    <!-- Security Solutions Section -->
+    <section class="solutions-section" id="solutions-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Complete Security Solutions</h2>
+          <p class="section-subtitle">Comprehensive range of security products for every environment and need</p>
+        </div>
         
-        <div class="categories-grid">
-          <a href="/products/indoor" class="category-item">
-            <img src="images/prod-display.png" alt="Indoor Security Cameras" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Indoor Cameras</h3>
-              <p class="category-description">AI-powered indoor security cameras with crystal clear video and smart motion detection.</p>
-              <div class="category-count">
-                <span>3 Products</span>
-                <span>→</span>
-              </div>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/prod-display.png" alt="Indoor Security Systems">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Indoor Security</h3>
+              <p class="solution-description">AI-powered indoor security cameras with crystal clear video, night vision, and smart motion detection for complete home monitoring.</p>
+            </div>
+          </div>
           
-          <a href="/products/outdoor" class="category-item">
-            <img src="images/06.jpg" alt="Outdoor Security Cameras" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Outdoor Cameras</h3>
-              <p class="category-description">Weather-resistant outdoor cameras with night vision and advanced surveillance features.</p>
-              <div class="category-count">
-                <span>3 Products</span>
-                <span>→</span>
-              </div>
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/06.jpg" alt="Outdoor Security Systems">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Outdoor Security</h3>
+              <p class="solution-description">Weather-resistant cameras with advanced surveillance features, ensuring your property is protected 24/7.</p>
+            </div>
+          </div>
           
-          <a href="/products/doorbell" class="category-item">
-            <img src="images/07_1.png" alt="Smart Doorbell Systems" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Doorbell Systems</h3>
-              <p class="category-description">Smart doorbell cameras with two-way communication and motion alerts.</p>
-              <div class="category-count">
-                <span>1 Product</span>
-                <span>→</span>
-              </div>
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/07_1.png" alt="Smart Doorbell Systems">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Smart Doorbells</h3>
+              <p class="solution-description">Two-way communication doorbell cameras with motion alerts and cloud storage for enhanced home security.</p>
+            </div>
+          </div>
           
-          <a href="/products/baby-pet" class="category-item">
-            <img src="images/Weixin-Image_20250815155551_23.jpg" alt="Baby and Pet Monitors" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Baby/Pet Monitors</h3>
-              <p class="category-description">Specialized monitoring systems for babies and pets with real-time alerts.</p>
-              <div class="category-count">
-                <span>2 Products</span>
-                <span>→</span>
-              </div>
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/Weixin-Image_20250815155551_23.jpg" alt="Baby Pet Monitoring">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Baby & Pet Monitors</h3>
+              <p class="solution-description">Specialized monitoring systems with real-time alerts to keep your loved ones safe and secure.</p>
+            </div>
+          </div>
           
-          <a href="/products/sports" class="category-item">
-            <img src="images/16.png" alt="Sports Security Cameras" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Sports Cameras</h3>
-              <p class="category-description">Wearable and portable security cameras for sports and recreational activities.</p>
-              <div class="category-count">
-                <span>1 Product</span>
-                <span>→</span>
-              </div>
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/16.png" alt="Sports Security Cameras">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Sports Cameras</h3>
+              <p class="solution-description">Wearable and portable security cameras designed for sports and recreational activities.</p>
+            </div>
+          </div>
           
-          <a href="/products/power" class="category-item">
-            <img src="images/banner.jpg" alt="Secure Power Systems" class="category-image">
-            <div class="category-content">
-              <h3 class="category-name">Secure Power</h3>
-              <p class="category-description">Portable backup power systems and solar solutions for continuous security.</p>
-              <div class="category-count">
-                <span>1 Product</span>
-                <span>→</span>
-              </div>
+          <div class="solution-card">
+            <div class="solution-image">
+              <img src="/images/banner.jpg" alt="Secure Power Systems">
             </div>
-          </a>
+            <div class="solution-content">
+              <h3 class="solution-title">Secure Power</h3>
+              <p class="solution-description">Portable backup power systems and solar solutions ensuring continuous security coverage.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
 
     <!-- Features Section -->
-    <section class="content-section features-section" id="features-section">
-      <div class="features-container">
-        <h2 class="features-title">Why Choose SecureVision AI</h2>
-        <p class="features-subtitle">Cutting-edge technology meets reliability with our comprehensive security solutions</p>
-        
-        <div class="features-grid features-grid-6">
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="Affordable Icon" class="feature-icon">
-            <h3 class="feature-title">Most Affordable</h3>
-            <p>Premium security solutions at competitive prices without compromising on quality or features.</p>
-          </div>
-          
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="Superior Features Icon" class="feature-icon">
-            <h3 class="feature-title">Superior Features</h3>
-            <p>Advanced AI technology, night vision, motion detection, and real-time alerts for complete protection.</p>
-          </div>
-          
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="Easy Install Icon" class="feature-icon">
-            <h3 class="feature-title">Easy to Install</h3>
-            <p>Quick setup with clear instructions. Get your security system running in minutes, not hours.</p>
-          </div>
-          
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="Reliable Icon" class="feature-icon">
-            <h3 class="feature-title">Reliable & Dependable</h3>
-            <p>Built to last with robust construction and proven performance in all weather conditions.</p>
-          </div>
-          
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="24/7 Monitoring Icon" class="feature-icon">
-            <h3 class="feature-title">24/7 Mobile Monitoring</h3>
-            <p>Always stay connected with our free mobile app providing instant alerts and live viewing.</p>
-          </div>
-          
-          <div class="feature-item">
-            <img src="images/03-icon_103-icon.png" alt="Cloud Storage Icon" class="feature-icon">
-            <h3 class="feature-title">Cloud and Local Storage</h3>
-            <p>Secure cloud storage ensures your footage is safe and accessible from anywhere, anytime.</p>
-          </div>
+    <section class="features-section" id="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose SecureVision AI</h2>
+          <p class="section-subtitle">Cutting-edge technology meets reliability with our comprehensive security solutions</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Featured Products Carousel Section -->
-    <section class="content-section featured-products-section" id="featured-products-section">
-      <div class="featured-products-container">
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Discover our top-rated security solutions</p>
         
-        <div class="products-carousel">
-          <div class="carousel-container">
-            <div class="carousel-track" id="carousel-track">
-              <!-- Product 1: SVC267 Indoor Camera -->
-              <div class="product-card" style="background-image: url('images/16.png')">
-                <div class="product-overlay">
-                  <div class="product-info">
-                    <h3 class="product-model">SVC267</h3>
-                    <h4 class="product-name">Indoor Camera</h4>
-                    <ul class="product-features">
-                      <li>4K Ultra HD Video</li>
-                      <li>360° Pan/Tilt</li>
-                      <li>Smart Tracking</li>
-                    </ul>
-                    <a href="/product/svc267" class="product-cta">View Details</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Product 2: SVC209 Outdoor Camera -->
-              <div class="product-card" style="background-image: url('images/06.jpg')">
-                <div class="product-overlay">
-                  <div class="product-info">
-                    <h3 class="product-model">SVC209</h3>
-                    <h4 class="product-name">Outdoor Camera</h4>
-                    <ul class="product-features">
-                      <li>4K Ultra HD Video</li>
-                      <li>Pan/Tilt/Zoom</li>
-                      <li>AI Human Detection</li>
-                    </ul>
-                    <a href="/product/svc209" class="product-cta">View Details</a>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Product 3: SVB215 Smart Doorbell -->
-              <div class="product-card" style="background-image: url('images/07_1.png')">
-                <div class="product-overlay">
-                  <div class="product-info">
-                    <h3 class="product-model">SVB215</h3>
-                    <h4 class="product-name">Smart Doorbell</h4>
-                    <ul class="product-features">
-                      <li>1080p HD Video</li>
-                      <li>Two-Way Audio</li>
-                      <li>Smart Notifications</li>
-                    </ul>
-                    <a href="/product/svb215" class="product-cta">View Details</a>
-                  </div>
-                </div>
-              </div>
+        <div class="feature-cards-container">
+          <div class="feature-card-large">
+            <div class="feature-watermark">
+              <img src="/images/SVA-Mark-Grey.png" alt="SVA Mark" class="watermark-img">
             </div>
-            
-            <div class="carousel-controls">
-              <button class="carousel-btn prev-btn" id="prev-btn">‹</button>
-              <div class="carousel-indicators" id="carousel-indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-              </div>
-              <button class="carousel-btn next-btn" id="next-btn">›</button>
+            <div class="feature-content">
+              <h3 class="feature-card-title">Superior Technology & Features</h3>
+              <ul class="feature-list">
+                <li>4K Ultra HD Video Resolution</li>
+                <li>Advanced AI Human Detection</li>
+                <li>Crystal Clear Night Vision</li>
+                <li>Smart Motion Detection Zones</li>
+                <li>Real-time Push Notifications</li>
+                <li>Two-way Audio Communication</li>
+                <li>Weather-resistant Design (IP66)</li>
+                <li>Cloud & Local Storage Options</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="feature-card-large">
+            <div class="feature-watermark">
+              <img src="/images/SVA-Mark-Grey.png" alt="SVA Mark" class="watermark-img">
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-card-title">Complete Security Ecosystem</h3>
+              <ul class="feature-list">
+                <li>24/7 Mobile App Monitoring</li>
+                <li>Multi-device Synchronization</li>
+                <li>Easy 5-minute Setup</li>
+                <li>Most Affordable Premium Solutions</li>
+                <li>Reliable & Dependable Performance</li>
+                <li>Comprehensive Power Solutions</li>
+                <li>Professional Installation Support</li>
+                <li>Extended Warranty Coverage</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Product Showcase Section -->
-    <section class="content-section product-showcase-section" id="showcase-section">
-      <div class="showcase-container">
-        <div class="showcase-text-above">
-          <div class="text-content">
-            <h2>Advanced Technology</h2>
-            <p>Our security cameras combine cutting-edge AI technology with user-friendly design to provide the most comprehensive protection for your home and business.</p>
-            <p>From smart motion detection to crystal-clear night vision, every feature is designed with your security and convenience in mind.</p>
+
+    <!-- Advanced Technology Section -->
+    <section class="tech-section" id="tech-section">
+      <div class="container">
+        <div class="tech-content">
+          <div class="tech-text">
+            <h2 class="section-title">Advanced Technology</h2>
+            <p class="section-description">Our security cameras combine cutting-edge AI technology with user-friendly design to provide the most comprehensive protection for your home and business.</p>
+            <p class="section-description">From smart motion detection to crystal-clear night vision, every feature is designed with your security and convenience in mind.</p>
           </div>
-        </div>
-        
-        <div class="showcase-gallery showcase-gallery-twin">
-          <div class="gallery-item">
-            <img src="images/06.jpg" alt="SecureVision AI Technology Demo">
-          </div>
-          <div class="gallery-item">
-            <img src="images/07_1.png" alt="SecureVision AI Mobile App Interface">
+          <div class="tech-images">
+            <div class="tech-image-item">
+              <img src="/images/06.jpg" alt="SecureVision AI Technology Demo">
+            </div>
+            <div class="tech-image-item">
+              <img src="/images/07_1.png" alt="SecureVision AI Mobile App Interface">
+            </div>
           </div>
         </div>
       </div>
@@ -460,249 +372,73 @@
     </footer>
   </div>
 
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6860bb27cdec4b98f797be5c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- Load common.js for navigation functionality -->
+  <script src="/js/common.js"></script>
   <script>
-// Modern Navigation & Smooth Scrolling System
-(function() {
-  const navbar = document.getElementById('navbar');
-  const scrollContainer = document.getElementById('scroll-container');
-  const sections = [
-    document.getElementById('hero-section'),
-    document.getElementById('second-section'),
-    document.getElementById('categories-section'),
-    document.getElementById('features-section'),
-    document.getElementById('featured-products-section'),
-    document.getElementById('showcase-section'),
-    document.getElementById('footer-section')
-  ].filter(Boolean);
-  
-  let isScrolling = false;
-  let currentSectionIndex = 0;
-  let scrollTimer = null;
-  
-  // Navigation bar state management
-  function updateNavbarState() {
-    const scrollTop = scrollContainer.scrollTop;
-    const heroHeight = sections[0] ? sections[0].offsetHeight : 0;
-    const threshold = heroHeight * 0.3; // 30% of hero section
-    
-    if (scrollTop < threshold) {
-      navbar.className = 'nav-mantine hero-section';
-    } else {
-      navbar.className = 'nav-mantine transparent';
-    }
-  }
-  
-  // Get current section based on scroll position
-  function getCurrentSectionIndex() {
-    const scrollTop = scrollContainer.scrollTop;
-    const windowHeight = window.innerHeight;
-    
-    for (let i = 0; i < sections.length; i++) {
-      const section = sections[i];
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      
-      if (scrollTop >= sectionTop - windowHeight/3 && 
-          scrollTop < sectionTop + sectionHeight - windowHeight/3) {
-        return i;
-      }
-    }
-    return 0;
-  }
-  
-  // Smooth scroll to sections
-  function scrollToSection(sectionIndex) {
-    if (isScrolling || sectionIndex < 0 || sectionIndex >= sections.length) return;
-    
-    isScrolling = true;
-    currentSectionIndex = sectionIndex;
-    const targetSection = sections[sectionIndex];
-    const targetTop = targetSection.offsetTop;
-    
-    scrollContainer.scrollTo({
-      top: targetTop,
-      behavior: 'smooth'
-    });
-    
+
+  // Index page specific functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize loading animation
     setTimeout(() => {
-      isScrolling = false;
+      const loadingAnimation = document.querySelector('.loading-page-animation');
+      if (loadingAnimation) {
+        loadingAnimation.style.opacity = '0';
+        setTimeout(() => {
+          loadingAnimation.style.display = 'none';
+        }, 300);
+      }
     }, 1000);
-  }
-  
-  // Enhanced scroll handling
-  function handleScroll() {
-    if (isScrolling) return;
     
-    // Update navbar state
-    updateNavbarState();
-    
-    // Update current section index
-    currentSectionIndex = getCurrentSectionIndex();
-  }
-  
-  // Optional: Wheel event handling (currently disabled for normal scrolling)
-  function handleWheel(e) {
-    // Allow normal scrolling behavior
-    return;
-  }
-  
-  // Initialize event listeners
-  if (scrollContainer) {
-    scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
-    scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
-  }
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', function(e) {
-    if (isScrolling) return;
-    
-    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
-      e.preventDefault();
-      scrollToSection(Math.min(currentSectionIndex + 1, sections.length - 1));
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      e.preventDefault();
-      scrollToSection(Math.max(currentSectionIndex - 1, 0));
-    } else if (e.key === 'Home') {
-      e.preventDefault();
-      scrollToSection(0);
-    } else if (e.key === 'End') {
-      e.preventDefault();
-      scrollToSection(sections.length - 1);
-    }
-  });
-  
-  // Mobile touch handling
-  let touchStartY = 0;
-  let touchEndY = 0;
-  
-  scrollContainer.addEventListener('touchstart', function(e) {
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-  
-  scrollContainer.addEventListener('touchend', function(e) {
-    if (isScrolling) return;
-    
-    touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY - touchEndY;
-    const threshold = 50; // minimum swipe distance
-    
-    // Swipe up (scroll down)
-    if (diff > threshold) {
-      e.preventDefault();
-      scrollToSection(Math.min(currentSectionIndex + 1, sections.length - 1));
-    }
-    // Swipe down (scroll up)  
-    else if (diff < -threshold) {
-      e.preventDefault();
-      scrollToSection(Math.max(currentSectionIndex - 1, 0));
-    }
-  }, { passive: false });
-  
-  // Initialize navbar state
-  updateNavbarState();
-  
-  // Loading animation completion
-  setTimeout(() => {
-    const loadingAnimation = document.querySelector('.loading-page-animation');
-    if (loadingAnimation) {
-      loadingAnimation.style.opacity = '0';
-      setTimeout(() => {
-        loadingAnimation.style.display = 'none';
-      }, 300);
-    }
-  }, 1000);
-  
-  // Featured Products Carousel
-  const carouselTrack = document.getElementById('carousel-track');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-  const indicators = document.querySelectorAll('.indicator');
-  
-  let currentSlide = 0;
-  const totalSlides = 3;
-  let autoSlideTimer = null;
-  
-  function updateCarousel() {
-    if (carouselTrack) {
-      carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Hero section animations
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+      heroContent.style.opacity = '0';
+      heroContent.style.transform = 'translateY(30px)';
       
-      // Update indicators
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
+      setTimeout(() => {
+        heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+      }, 500);
+    }
+    
+    // Solution cards hover animations
+    const solutionCards = document.querySelectorAll('.solution-card');
+    solutionCards.forEach((card, index) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px)';
+        card.style.boxShadow = 'var(--shadow-xl)';
       });
-    }
-  }
-  
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-  }
-  
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  }
-  
-  function goToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    updateCarousel();
-  }
-  
-  function startAutoSlide() {
-    autoSlideTimer = setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
-  }
-  
-  function stopAutoSlide() {
-    if (autoSlideTimer) {
-      clearInterval(autoSlideTimer);
-      autoSlideTimer = null;
-    }
-  }
-  
-  // Event listeners for carousel controls
-  if (prevBtn) prevBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    prevSlide();
-    startAutoSlide();
-  });
-  
-  if (nextBtn) nextBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    nextSlide();
-    startAutoSlide();
-  });
-  
-  // Indicator click events
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      stopAutoSlide();
-      goToSlide(index);
-      startAutoSlide();
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'var(--shadow-md)';
+      });
+    });
+    
+    // Feature cards animations on scroll
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    const featureCards = document.querySelectorAll('.feature-card, .solution-card');
+    featureCards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+      observer.observe(card);
     });
   });
-  
-  // Pause auto-slide on hover
-  const carouselContainer = document.querySelector('.carousel-container');
-  if (carouselContainer) {
-    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
-    carouselContainer.addEventListener('mouseleave', startAutoSlide);
-  }
-  
-  // Start auto-slide
-  startAutoSlide();
-  
-  // Legacy product hover functionality (if needed)
-  if (typeof $ !== 'undefined') {
-    $(`#productDescWrap :nth-child(1)`).addClass('visible');
-    $('.product-list .product-item').on("mouseenter", function(e){
-      var idx = $(e.target).index();
-      $('.prod-desc-item.visible').removeClass('visible');
-      $(`#productDescWrap :nth-child(${idx + 1})`).addClass('visible');
-    });
-  }
-  
-})();
-</script>
+  </script>
 </body>
 </html>

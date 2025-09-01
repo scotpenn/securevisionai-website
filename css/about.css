@@ -268,3 +268,100 @@ img{display:block;max-width:100%;height:auto;}
   .nav-logo{height:32px;}
   .hero-content{padding:8vh var(--spacing-3) 0;}
 }
+
+/* ============ Navigation Overrides (Identical to index.html) ============ */
+
+/* Navigation container - larger for better Logo visibility */
+body .nav-mantine#navbar {
+  height: 72px;
+  --nav-fg: #fff; 
+}
+
+/* Logo container sizing */
+body .nav-mantine#navbar .nav-logo {
+  height: 48px;
+  position: relative;
+}
+
+body .nav-mantine#navbar .nav-logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Logo filter system */
+body .nav-mantine#navbar.transparent .nav-logo img {
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+}
+
+body .nav-mantine#navbar.scrolled .nav-logo img {
+  filter: none;
+  -webkit-filter: none;
+}
+
+/* Hide dual Logo elements if they exist */
+body .nav-mantine#navbar .logo-white,
+body .nav-mantine#navbar .logo-blue {
+  display: none;
+}
+
+/* Scrolled state background and border */
+body .nav-mantine#navbar.scrolled {
+  background: rgba(249, 249, 249, .95);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+}
+
+/* ============ CSS Variable + Bulletproof Navigation Colors ============ */
+
+/* Apply variable to all navigation links and buttons */
+.nav-mantine#navbar .nav-link,
+.nav-mantine#navbar .nav-lang-btn { 
+  color: var(--nav-fg); 
+}
+
+/* Transparent state: white text + white logo (filter preserved) */
+.nav-mantine#navbar.transparent { 
+  --nav-fg: #fff; 
+}
+
+/* Scrolled state: dark text + remove filter + background */
+.nav-mantine#navbar.scrolled { 
+  --nav-fg: var(--color-deep-blue);
+  background: rgba(249, 249, 249, .95);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+}
+
+/* Bulletproof fallback - overrides any old styles or !important pollution */
+html body .nav-mantine#navbar.scrolled .nav-link { 
+  color: var(--color-deep-blue) !important;
+}
+
+html body .nav-mantine#navbar.scrolled .nav-lang-btn {
+  background: var(--color-secure-blue) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Navigation hover states */
+html body .nav-mantine#navbar.transparent .nav-link:hover {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+}
+
+html body .nav-mantine#navbar.scrolled .nav-link:hover {
+  background: rgba(75, 112, 245, .1);
+  color: var(--color-secure-blue);
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+  body .nav-mantine#navbar {
+    height: 60px;
+  }
+  
+  body .nav-mantine#navbar .nav-logo {
+    height: 36px;
+  }
+}
