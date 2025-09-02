@@ -295,13 +295,25 @@ https://github.com/username/securevision-ai-downloads/releases/download/v1.0/svc
 
 ## 🎯 接下来的工作计划
 
+### 第零阶段 - 导航统一架构实施 (优先级: 最高 🚨)
+- [ ] **建立单一数据源导航系统** - /config/navigation.json英语版本
+- [ ] **实施动态导航渲染** - 扩展common.js添加hydrateNavigation()功能  
+- [ ] **统一所有HTML页面** - 7个英语页面导航结构占位化
+- [ ] **建立开发规范体系** - 命名约定、CSS规则、工作流程
+- [ ] **配置自动化工具** - Stylelint、JSON Schema、Git hooks
+
+**当前导航不一致问题 (urgent)**:
+- ❌ **index.html**: Products下拉菜单只有"Indoor Camera + All Products"两项  
+- ✅ **about.html等**: Products下拉菜单有完整的6类产品分类
+- 🎯 **目标**: 所有页面Products菜单显示相同的6类+All Products结构
+
 ### 第一阶段 - 产品系统完善 (优先级: 高)
 - [ ] **修复产品详情页显示问题** - 测试模板渲染功能
 - [ ] **验证JSON5数据解析** - 确保json5-parser.js正常工作
 - [ ] **测试所有产品详情页功能** - Tab切换/图片画廊/响应式
 - [ ] **建立产品管理文档系统** - 完整的产品添加/编辑流程
 
-### 第二阶段 - 多语言系统重构 (优先级: 高)  
+### 第二阶段 - 多语言系统重构 (优先级: 中，导航系统完成后处理)  
 - [ ] **重构翻译文件系统** - 统一JSON格式的翻译管理
 - [ ] **更新所有法语页面** - 同步新CSS架构到fr/目录
 - [ ] **创建翻译管理工具** - 自动同步英法语内容

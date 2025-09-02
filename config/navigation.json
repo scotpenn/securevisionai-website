@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "main": {
+      "en": [
+        {
+          "id": "home",
+          "label": "Home",
+          "href": "/index.html",
+          "type": "link"
+        },
+        {
+          "id": "products",
+          "label": "Products",
+          "href": "/products/all.html",
+          "type": "dropdown",
+          "items": [
+            {
+              "label": "Indoor Cameras",
+              "href": "/products/all.html#indoor",
+              "category": "indoor"
+            },
+            {
+              "label": "Baby/Pet Monitors", 
+              "href": "/products/all.html#baby-pet-monitor",
+              "category": "baby-pet-monitor"
+            },
+            {
+              "label": "Outdoor Cameras",
+              "href": "/products/all.html#outdoor", 
+              "category": "outdoor"
+            },
+            {
+              "label": "Doorbell Systems",
+              "href": "/products/all.html#doorbell",
+              "category": "doorbell" 
+            },
+            {
+              "label": "Sports Cameras",
+              "href": "/products/all.html#sports",
+              "category": "sports"
+            },
+            {
+              "label": "Secure Power",
+              "href": "/products/all.html#secure-power",
+              "category": "secure-power"
+            },
+            {
+              "label": "All Products",
+              "href": "/products/all.html",
+              "category": "all"
+            }
+          ]
+        },
+        {
+          "id": "about", 
+          "label": "About",
+          "href": "/about.html",
+          "type": "link"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "href": "/contact.html", 
+          "type": "link"
+        },
+        {
+          "id": "customer-care",
+          "label": "Customer Care",
+          "href": "/customer-care.html",
+          "type": "link"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "version": "1.0.0",
+    "last_updated": "2025-09-02",
+    "description": "SecureVision AI website navigation configuration - English only",
+    "supported_languages": ["en"],
+    "notes": "French version will be added later in separate implementation phase"
+  }
+}

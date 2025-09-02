@@ -557,6 +557,84 @@ common.css (公共基础层 - 权重10)
 
 ---
 
+### 问题 #011: 导航菜单内容不一致 - Products下拉选项差异
+**发现日期**: 2025-09-02  
+**严重程度**: 中等  
+**页面影响**: index.html vs 其他页面 (about.html, products/all.html等)
+
+**问题描述**:
+index页面的Products下拉菜单与其他页面内容不同，造成用户体验不一致
+
+**具体差异**:
+- **index.html**: Products下拉仅显示2项
+  - "Indoor Camera"
+  - "All Products"
+- **about.html等**: Products下拉显示完整6类+All Products
+  - "Indoor Cameras" 
+  - "Baby/Pet Monitors"
+  - "Outdoor Cameras"
+  - "Doorbell Systems"
+  - "Sports Cameras"
+  - "Secure Power"
+  - "All Products"
+
+**根本原因分析**:
+这不是CSS样式问题，而是HTML菜单结构本身不同：
+- index.html的导航HTML写死了简化版菜单
+- 其他页面使用完整版6类产品菜单
+- 没有统一的数据源管理导航内容
+
+**解决方案规划**:
+实施**导航统一架构**彻底解决此类问题：
+
+**Phase 1: 建立单一数据源**
+```
+/config/navigation.json - 统一导航配置
+├── 英语版本Products菜单 (6类+All Products)
+├── 标准化链接路径 (/products/all.html#锚点)
+└── 未来法语版本预留
+```
+
+**Phase 2: 动态渲染系统**
+```javascript
+// common.js扩展
+function hydrateNavigation() {
+  // 读取navigation.json配置
+  // 动态注入到占位DOM结构
+  // 保持现有滚动/Logo逻辑
+}
+```
+
+**Phase 3: HTML结构标准化**  
+```html
+<!-- 所有7个英语页面统一为占位结构 -->
+<li class="nav-item" data-menu="products">
+  <a href="/products/all.html" class="nav-link">Products</a>
+  <div class="nav-dropdown"></div> <!-- 动态填充 -->
+</li>
+```
+
+**Phase 4: 开发规范建立**
+- docs/styleguide.md - BEM+kebab-case命名规范
+- .stylelintrc.json - CSS规则自动检查  
+- JSON Schema - navigation.json结构验证
+- PR模板 + CODEOWNERS - 防止再次分叉
+
+**预期收益**:
+✅ 所有页面导航完全一致  
+✅ 导航变更只需修改1个配置文件  
+✅ 防止今后再出现菜单不一致  
+✅ 建立团队开发规范基础
+
+**实施计划**:
+- Phase 1-3: 2-3小时 (核心功能)
+- Phase 4: 1-2小时 (开发规范)  
+- 验收测试: 1小时
+
+**状态**: 📋 已规划，等待用户确认开始实施
+
+---
+
 **最后更新**: 2025-09-02  
 **维护人员**: Claude Code Assistant  
-**项目状态**: ✅ CSS统一架构实施完成，所有主要问题已解决
+**项目状态**: ⚠️ 发现导航不一致问题，统一架构方案已规划

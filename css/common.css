@@ -259,7 +259,8 @@ img {
   z-index: 1000;
 }
 
-.nav-item:hover .nav-dropdown {
+.nav-item:hover .nav-dropdown,
+.nav-item.open .nav-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

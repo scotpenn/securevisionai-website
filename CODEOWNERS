@@ -1,0 +1,34 @@
+# SecureVision AI - Code Ownership
+
+# Global fallback
+* @scotpan
+
+# Navigation System - Requires review for any changes
+/config/navigation.json @scotpan
+/js/common.js @scotpan
+/scripts/validate-navigation.js @scotpan
+
+# Core Architecture Files
+/css/common.css @scotpan
+/docs/styleguide.md @scotpan
+.stylelintrc.json @scotpan
+
+# Configuration & Schema Files
+/config/ @scotpan
+*.json @scotpan
+*.schema.json @scotpan
+
+# Documentation
+/docs/ @scotpan
+README.md @scotpan
+CLAUDE.md @scotpan
+DEBUG-LOG.md @scotpan
+
+# GitHub Configuration
+/.github/ @scotpan
+CODEOWNERS @scotpan
+
+# Build & Development Scripts
+/scripts/ @scotpan
+package.json @scotpan
+.stylelintrc.json @scotpan

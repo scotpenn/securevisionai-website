@@ -25,84 +25,9 @@ img{display:block;max-width:100%;height:auto;}
 /* ============ product detail specific nav overrides ============ */
 /* 产品详情页导航栏固定样式：白底+蓝色Logo+深色文字，无滚动切换效果 */
 
-/* 导航栏背景始终为白色，高度适配Logo */
-.nav-mantine {
-  background: rgba(249, 249, 249, .95) !important;
-  border-bottom: 1px solid rgba(75, 112, 245, .1) !important;
-  height: 72px !important;  /* 48px logo + padding */
-}
+/* Navigation styles are now managed by common.css only */
 
-/* Logo容器高度适配 */
-.nav-mantine .nav-logo {
-  height: 48px !important;
-  max-height: none !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.nav-mantine .nav-logo a {
-  height: 100% !important;
-  display: block !important;
-}
-
-/* Logo始终显示蓝色版本 */
-.nav-mantine .nav-logo .logo-white,
-.nav-mantine.scrolled .nav-logo .logo-white,
-.nav-mantine.transparent .nav-logo .logo-white,
-.nav-mantine.fixed-white .nav-logo .logo-white {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-.nav-mantine .nav-logo .logo-blue,
-.nav-mantine.scrolled .nav-logo .logo-blue,
-.nav-mantine.transparent .nav-logo .logo-blue,
-.nav-mantine.fixed-white .nav-logo .logo-blue {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
-  position: relative !important;
-}
-
-/* 导航链接文字颜色始终为深色 */
-.nav-mantine .nav-link {
-  color: var(--color-deep-blue) !important;
-}
-
-.nav-mantine .nav-link:hover {
-  background: rgba(75, 112, 245, .1) !important;
-  color: var(--color-secure-blue) !important;
-}
-
-/* 语言按钮样式 */
-.nav-mantine .nav-lang-btn {
-  color: var(--color-deep-blue) !important;
-  border-color: var(--color-deep-blue) !important;
-}
-
-.nav-mantine .nav-lang-btn:hover {
-  background: var(--color-secure-blue) !important;
-  color: #fff !important;
-}
-
-/* 强制logo尺寸，解除所有限制 - 最高优先级 */
-#navbar .nav-logo img.logo-blue {
-  height: 48px !important;      /* 固定高度48px */
-  max-height: none !important;  /* 解除max-height限制 */
-  min-height: 48px !important;  /* 确保最小高度 */
-  width: auto !important;       /* 宽度自适应保持比例 */
-  max-width: none !important;   /* 解除宽度限制 */
-  display: block !important;
-  position: relative !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  object-fit: contain !important;  /* 保持图片比例 */
-}
-
-/* 完全移除白色logo，不占位 */
-#navbar .nav-logo img.logo-white {
-  display: none !important;     /* 比visibility:hidden更彻底 */
-}
+/* Product detail pages use the same navigation as all other pages */
 
 /* ============ breadcrumb ============ */
 .breadcrumb-section{padding:calc(72px + var(--spacing-6)) var(--spacing-6) var(--spacing-4);}
@@ -275,8 +200,7 @@ img{display:block;max-width:100%;height:auto;}
 }
 
 @media (max-width:480px){
-  .nav-mantine{height:50px;}
-  .nav-logo{height:32px;}
+  /* Navigation responsive handled by common.css */
   .breadcrumb-section{padding:calc(50px + var(--spacing-3)) var(--spacing-3) var(--spacing-2);}
   .breadcrumb{font-size:.75rem;gap:var(--spacing-2);}
   .product-hero{padding:var(--spacing-4) 0 var(--spacing-8);}

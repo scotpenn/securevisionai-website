@@ -215,24 +215,126 @@
     ticking = false;
   }
 
+  // ============ Navigation Content Management ============
+  
+  // 1) fetch 容错：根路径失败时回退相对路径
+  async function loadNavConfig() {
+    const candidates = ['/config/navigation.json', 'config/navigation.json', './config/navigation.json'];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: 'no-cache' });
+        if (res.ok) return await res.json();
+      } catch (_) {}
+    }
+    throw new Error('navigation.json not found');
+  }
+
+  // 2) Hydrate（仅负责注入 DOM，不做事件绑定）
+  async function hydrateNavigation() {
+    let config;
+    try { 
+      config = await loadNavConfig(); 
+    } catch (e) { 
+      console.warn('Use static nav fallback:', e); 
+      return; 
+    }
+
+    const navItems = config.navigation.main.en;
+    const productsCfg = navItems.find(i => i.id === 'products');
+    if (!productsCfg || !productsCfg.items) return;
+
+    document.querySelectorAll('.nav-item[data-menu="products"]').forEach(productsItem => {
+      let dropdown = productsItem.querySelector('.nav-dropdown');
+      if (!dropdown) {
+        dropdown = document.createElement('div');
+        dropdown.className = 'nav-dropdown';
+        productsItem.appendChild(dropdown);
+      }
+      dropdown.innerHTML = productsCfg.items
+        .map(i => `<div class="nav-dropdown-item"><a href="${i.href}">${i.label}</a></div>`)
+        .join('');
+
+      // 可访问性属性
+      const trigger = productsItem.querySelector('a.nav-link');
+      if (trigger) {
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    console.log(`Hydrated Products dropdown with ${productsCfg.items.length} items`);
+  }
+
+  // 3) 触屏/键盘行为（与 :hover 并存）
+  function enhanceNavInteractions() {
+    document.querySelectorAll('.nav-item[data-menu="products"]').forEach(item => {
+      const trigger = item.querySelector('a.nav-link');
+      const dropdown = item.querySelector('.nav-dropdown');
+      if (!trigger || !dropdown) return;
+
+      // 点击/触摸切换
+      trigger.addEventListener('click', (e) => {
+        // 在桌面端也允许点击打开，防止 hover 丢失
+        e.preventDefault();
+        const open = item.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(open));
+      });
+
+      // 焦点进入打开、离开关闭（键盘）
+      item.addEventListener('focusin', () => {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      });
+      item.addEventListener('focusout', (e) => {
+        // 延迟以便焦点落到下拉里
+        setTimeout(() => {
+          if (!item.contains(document.activeElement)) {
+            item.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        }, 0);
+      });
+
+      // Esc 关闭
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          item.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+    });
+  }
+
   // ============ Initialization ============
-  function init() {
+  
+  // 4) 初始化：顺序非常关键（先 hydrate -> 绑定交互 -> Logo/滚动）
+  async function init() {
+    // 先完成导航内容注入
+    await hydrateNavigation();
+    
+    // 然后绑定增强交互
+    enhanceNavInteractions();
+
     // 初始化Logo切换
     initLogoSwitching();
-    
-    // 初始化导航栏状态（在Logo初始化后）
+
+    // 绑定正确的滚动容器再做首帧状态
+    const scroller = document.getElementById('scroll-container') || window;
+    if (scroller !== window) {
+      scroller.addEventListener('scroll', handleScroll, { passive: true });
+    } else {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // 首帧立即设置 transparent/scrolled
     updateNavbarState();
-    
-    // 初始化下拉菜单
-    initDropdownMenus();
     
     // 初始化平滑滚动
     initSmoothScrolling();
     
     // 处理URL hash导航
     handleHashNavigation();
-    
-    // Navigation state is now handled by IntersectionObserver in initNavigationState()
     
     // 页面加载完成后隐藏加载动画
     hideLoadingAnimation();
