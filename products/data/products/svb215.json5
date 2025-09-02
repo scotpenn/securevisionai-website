@@ -1,0 +1,377 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVB215 双镜头门铃
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svb215",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVB215",                 // 产品型号，显示在页面上
+    category: "doorbell",            // 产品分类：门铃
+    slug: "svb215",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVB215 Dual Lens Outdoor WiFi Battery Doorbell",
+      fr: "SVB215 Sonnette Extérieure WiFi à Double Objectif avec Batterie"
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced dual-lens outdoor doorbell with Full HD 1080p dual cameras, 4400mAh rechargeable battery, and smart PIR motion detection. Perfect for complete home entrance monitoring with easy WiFi setup and two-way audio communication.",
+      fr: "Sonnette extérieure avancée à double objectif avec double caméras Full HD 1080p, batterie rechargeable 4400mAh, et détection de mouvement PIR intelligente. Parfait pour la surveillance complète de l'entrée de la maison avec configuration WiFi facile et communication audio bidirectionnelle."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/svb215-main.jpg",      // 主要展示图片
+      gallery: [                            // 详情页图片画廊数组
+        "/images/svb215-main.jpg",          // 第1张：主视图
+        "/images/svb215-side.jpg",          // 第2张：侧视图  
+        "/images/svb215-installed.jpg",     // 第3张：安装效果图
+        "/images/svb215-app.jpg",           // 第4张：APP界面
+        "/images/svb215-package.jpg"        // 第5张：包装视图
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Dual Full HD 1080p Cameras",                 // 特性1：双1080p摄像头
+        "4400mAh Rechargeable Battery (4 months)",    // 特性2：大容量电池
+        "PIR Motion Detection with 120° Coverage",    // 特性3：PIR运动检测
+        "Two-Way Audio Communication",                // 特性4：双向音频
+        "Night Vision up to 5m",                      // 特性5：夜视功能
+        "IPX4 Weatherproof Design"                    // 特性6：防水设计
+      ],
+      fr: [
+        "Double Caméras Full HD 1080p",
+        "Batterie Rechargeable 4400mAh (4 mois)",
+        "Détection de Mouvement PIR avec Couverture 120°",
+        "Communication Audio Bidirectionnelle",
+        "Vision Nocturne jusqu'à 5m",
+        "Conception Étanche IPX4"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：摄像头和视频
+      "Camera & Video": {
+        group_name: {
+          en: "Camera & Video",
+          fr: "Caméra et Vidéo"
+        },
+        specs: {
+          en: {
+            "Sensor": "1/3.2\" 2MP CMOS Sensor (Dual)",
+            "Video Resolution": "1920×1080@15fps / 640×360@15fps",
+            "Lens": "4.0mm EFL, F2.0",
+            "Field of View": "D: 100°, H: 90°, V: 45°",
+            "Night Vision": "3-5m with 850nm IR LEDs",
+            "Video Compression": "H.264"
+          },
+          fr: {
+            "Capteur": "Capteur CMOS 1/3.2\" 2MP (Double)",
+            "Résolution Vidéo": "1920×1080@15fps / 640×360@15fps",
+            "Objectif": "4.0mm EFL, F2.0",
+            "Champ de Vision": "D: 100°, H: 90°, V: 45°",
+            "Vision Nocturne": "3-5m avec LEDs IR 850nm",
+            "Compression Vidéo": "H.264"
+          }
+        }
+      },
+      
+      // 规格组2：运动检测和音频
+      "Motion Detection & Audio": {
+        group_name: {
+          en: "Motion Detection & Audio",
+          fr: "Détection de Mouvement et Audio"
+        },
+        specs: {
+          en: {
+            "PIR Sensor": "120° detection angle",
+            "Detection Distance": "Up to 6 meters",
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -38dB",
+            "Audio": "Two-way audio communication"
+          },
+          fr: {
+            "Capteur PIR": "Angle de détection 120°",
+            "Distance de Détection": "Jusqu'à 6 mètres",
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -38dB",
+            "Audio": "Communication audio bidirectionnelle"
+          }
+        }
+      },
+      
+      // 规格组3：连接和网络
+      "Connectivity & Network": {
+        group_name: {
+          en: "Connectivity & Network",
+          fr: "Connectivité et Réseau"
+        },
+        specs: {
+          en: {
+            "WiFi Standard": "IEEE 802.11b/g/n (2.4GHz)",
+            "Bluetooth": "BLE support",
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "CPU": "900MHz - 1.5GHz processor"
+          },
+          fr: {
+            "Standard WiFi": "IEEE 802.11b/g/n (2.4GHz)",
+            "Bluetooth": "Support BLE",
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Processeur": "Processeur 900MHz - 1.5GHz"
+          }
+        }
+      },
+      
+      // 规格组4：存储和回放
+      "Storage & Playback": {
+        group_name: {
+          en: "Storage & Playback",
+          fr: "Stockage et Lecture"
+        },
+        specs: {
+          en: {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage available",
+            "Playback": "Events playback from SD card and cloud",
+            "Recording": "Motion-triggered recording"
+          },
+          fr: {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Stockage cloud optionnel disponible",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Enregistrement": "Enregistrement déclenché par mouvement"
+          }
+        }
+      },
+      
+      // 规格组5：电池和电源
+      "Battery & Power": {
+        group_name: {
+          en: "Battery & Power",
+          fr: "Batterie et Alimentation"
+        },
+        specs: {
+          en: {
+            "Battery Type": "2×18650 rechargeable lithium battery",
+            "Battery Capacity": "3.7V / 4400mAh",
+            "Battery Life": "4 months (10s/time, 10 times per day)",
+            "Charging Port": "Micro USB charging",
+            "Charging Time": "4-6 hours (estimated)"
+          },
+          fr: {
+            "Type de Batterie": "2×18650 batterie lithium rechargeable",
+            "Capacité de Batterie": "3.7V / 4400mAh",
+            "Autonomie": "4 mois (10s/fois, 10 fois par jour)",
+            "Port de Charge": "Charge Micro USB",
+            "Temps de Charge": "4-6 heures (estimé)"
+          }
+        }
+      },
+      
+      // 规格组6：物理参数和环境
+      "Physical & Environmental": {
+        group_name: {
+          en: "Physical & Environmental",
+          fr: "Physique et Environnement"
+        },
+        specs: {
+          en: {
+            "Material": "PC + ABS plastic",
+            "Weatherproof Rating": "IPX4 with waterproof board",
+            "Operating Temperature": "0°C to 45°C",
+            "Buttons": "Reset button, Ring button",
+            "Interfaces": "Micro SD slot, Micro USB port"
+          },
+          fr: {
+            "Matériau": "Plastique PC + ABS",
+            "Indice d'Étanchéité": "IPX4 avec carte étanche",
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Boutons": "Bouton de réinitialisation, Bouton de sonnette",
+            "Interfaces": "Fente Micro SD, Port Micro USB"
+          }
+        }
+      },
+      
+      // 规格组7：AI功能
+      "AI Features": {
+        group_name: {
+          en: "AI Features",
+          fr: "Fonctionnalités IA"
+        },
+        specs: {
+          en: {
+            "Human Detection": "AI-powered human detection",
+            "Smart Alerts": "Intelligent motion alerts",
+            "Activity Zones": "Customizable detection zones"
+          },
+          fr: {
+            "Détection Humaine": "Détection humaine alimentée par IA",
+            "Alertes Intelligentes": "Alertes de mouvement intelligentes",
+            "Zones d'Activité": "Zones de détection personnalisables"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "Smart Video Doorbell",
+        "Rechargeable Battery Pack",
+        "USB Charging Cable",
+        "Mounting Screw Set",
+        "Installation Template",
+        "User Manual"
+      ],
+      fr: [
+        "Sonnette Vidéo Intelligente",
+        "Batterie Rechargeable",
+        "Câble de Charge USB",
+        "Kit de Vis de Montage",
+        "Gabarit d'Installation",
+        "Manuel d'Utilisation"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVB215 Product Brochure",
+          type: "PDF",
+          size: "3.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-brochure.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "Installation & User Manual",
+          type: "PDF",
+          size: "6.5 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-manual.pdf",
+          description: "Step-by-step installation and setup guide"
+        },
+        {
+          name: "Quick Start Guide",
+          type: "PDF",
+          size: "1.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-quickstart.pdf",
+          description: "Quick installation reference guide"
+        },
+        {
+          name: "Mobile App Guide",
+          type: "PDF",
+          size: "2.4 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-app-guide.pdf",
+          description: "SecureVision app configuration guide"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVB215",
+          type: "PDF",
+          size: "3.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel d'Installation et d'Utilisation",
+          type: "PDF",
+          size: "6.5 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svb215-manual-fr.pdf",
+          description: "Guide d'installation et de configuration étape par étape"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: ["FCC"],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",
+      message: {
+        en: "In Stock - Ready to Ship",
+        fr: "En Stock - Prêt à Expédier"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVB215 Dual Lens Doorbell comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Battery warranty is 1 year. Includes technical support and 30-day money-back guarantee.",
+      fr: "La Sonnette SVB215 à Double Objectif est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Garantie de batterie de 1 an. Inclut le support technique et une garantie de remboursement de 30 jours."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",
+      last_updated: "2025-01-27",
+      version: "1.0",
+      tags: ["doorbell", "dual-lens", "battery", "wifi", "pir", "ai-detection", "outdoor"]
+    }
+  }
+  
+  // ==========================================
+  // 文件使用说明
+  // ==========================================
+  /*
+  SVB215 双镜头门铃产品规格文件
+  
+  主要特点：
+  - 双1080p高清摄像头
+  - 4400mAh大容量可充电电池
+  - PIR运动检测传感器
+  - 双向音频通信
+  - IPX4防水等级
+  - AI人体检测功能
+  
+  更新注意事项：
+  1. 图片文件需要上传到 /images/ 目录
+  2. 下载文件需要先上传到GitHub Releases
+  3. 法语翻译可能需要专业校对
+  4. APP名称 "SecureVision" 需要确认是否正确
+  
+  数据来源：
+  - 原始Excel规格书：SVB215 Dual lens doorbell spec.xlsx
+  - 转换日期：2025-01-27
+  */
+}

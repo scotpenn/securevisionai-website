@@ -86,7 +86,7 @@ img {
 }
 
 /* ============ Layout Containers ============ */
-.main-container {
+.main-container, .container {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
@@ -97,35 +97,38 @@ img {
   padding: var(--spacing-16) 0;
 }
 
-.scroll-container {
-  width: 100%;
-  min-height: 100vh;
+/* 统一滚动容器与全屏分区：所有使用 scroll-container 的页面生效 */
+.scroll-container { 
+  height: 100vh; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  scroll-behavior: smooth; 
 }
 
-.fullscreen-section {
-  width: 100%;
-  min-height: 100vh;
+.fullscreen-section { 
+  height: 100vh; 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 /* ============ Loading Animation ============ */
 .loading-page-animation {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-deep-blue);
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.3s ease;
+  transition: opacity .3s ease;
 }
 
 .loading-bar {
   width: 200px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-neutral-200);
   border-radius: 2px;
   overflow: hidden;
   position: relative;
@@ -134,12 +137,13 @@ img {
 .loading-bar::after {
   content: '';
   position: absolute;
-  top: 0;
   left: -100%;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-secure-blue);
-  animation: loading 1s ease-in-out infinite;
+  background: linear-gradient(90deg, var(--color-secure-blue), var(--color-orange));
+  border-radius: 2px;
+  animation: loading 2s ease-in-out infinite;
 }
 
 @keyframes loading {
@@ -147,36 +151,37 @@ img {
   100% { left: 100%; }
 }
 
-/* ============ Navigation ============ */
+/* ============ Navigation (统一) ============ */
 .nav-mantine {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
   z-index: 1030;
-  background: transparent;
-  border-bottom: 1px solid transparent;
+  height: 72px; /* 统一高度 */
   backdrop-filter: blur(10px);
-  transition: all var(--transition-base);
+  transition: background .25s ease, border-color .25s ease;
+  --nav-fg: #fff; /* 导航前景色变量 */
 }
 
+/* 透明态：白字 + 白Logo滤镜 */
 .nav-mantine.transparent {
   background: transparent;
-  border-bottom-color: transparent;
+  border-bottom: 1px solid transparent;
+  --nav-fg: #fff;
+}
+.nav-mantine.transparent .nav-logo img { 
+  filter: brightness(0) invert(1); 
 }
 
-.nav-mantine.transparent .nav-link {
-  color: #fff;
-}
-
+/* 滚动态：浅底 + 深字 + 去滤镜 */
 .nav-mantine.scrolled {
   background: rgba(249, 249, 249, .95);
-  border-bottom-color: rgba(75, 112, 245, .1);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+  --nav-fg: var(--color-deep-blue);
 }
-
-.nav-mantine.scrolled .nav-link {
-  color: var(--color-deep-blue);
+.nav-mantine.scrolled .nav-logo img { 
+  filter: none; 
 }
 
 .nav-inner {
@@ -190,36 +195,14 @@ img {
 }
 
 .nav-logo {
-  height: 40px;
-  position: relative;
+  height: 48px;
 }
 
 .nav-logo img {
   height: 100%;
   width: auto;
-  transition: all var(--transition-base);
-}
-
-/* 单个Logo支持 - 当没有双Logo时使用 */
-.nav-mantine.transparent .nav-logo img {
-  filter: brightness(0) invert(1); /* 透明状态下显示白色Logo */
-}
-
-.nav-mantine.scrolled .nav-logo img {
-  filter: none; /* 滚动状态下显示原色蓝色Logo */
-}
-
-/* Single Logo filter system - applies to all pages */
-/* Product detail pages: always show blue Logo (no filter) */
-body[class*="product-detail"] .nav-mantine .nav-logo img,
-.nav-mantine:not(.transparent):not(.scrolled) .nav-logo img {
-  filter: none;
-}
-
-/* Hide legacy dual Logo elements if they exist */
-.nav-logo .logo-white,
-.nav-logo .logo-blue {
-  display: none;
+  object-fit: contain;
+  transition: filter .2s ease;
 }
 
 .nav-menu {
@@ -232,19 +215,21 @@ body[class*="product-detail"] .nav-mantine .nav-logo img,
   position: relative;
 }
 
+.nav-link, .nav-lang-btn {
+  color: var(--nav-fg); 
+  transition: background .2s ease, color .2s ease;
+}
+
 .nav-link {
   display: flex;
   align-items: center;
   padding: var(--spacing-2) var(--spacing-4);
-  text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
-  transition: all var(--transition-base);
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  background: rgba(75, 112, 245, .1);
-  color: var(--color-secure-blue);
   transform: translateY(-1px);
 }
 
@@ -307,18 +292,17 @@ body[class*="product-detail"] .nav-mantine .nav-logo img,
 
 .nav-lang-btn {
   padding: .375rem .625rem;
-  background: var(--color-secure-blue);
-  color: #fff;
-  text-decoration: none;
   border-radius: 6px;
+  border: 1px solid transparent;
   font-size: .875rem;
   font-weight: 500;
-  transition: all var(--transition-base);
+  text-decoration: none;
 }
 
-.nav-lang-btn:hover {
-  transform: translateY(-1px);
-  background: #404492;
+.nav-mantine.scrolled .nav-lang-btn {
+  background: var(--color-secure-blue);
+  color: #fff;
+  border: none;
 }
 
 .nav-link-active {
@@ -334,6 +318,8 @@ body[class*="product-detail"] .nav-mantine .nav-logo img,
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-secure-blue) 100%);
+  color: var(--color-white);
 }
 
 .hero-content {
@@ -367,11 +353,19 @@ body[class*="product-detail"] .nav-mantine .nav-logo img,
   z-index: 0;
 }
 
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
 .hero-bg-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(1.02);
+  opacity: 0.3;
 }
 
 /* ============ Footer ============ */
