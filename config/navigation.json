@@ -69,14 +69,83 @@
           "href": "/customer-care.html",
           "type": "link"
         }
+      ],
+      "fr": [
+        {
+          "id": "home",
+          "label": "Accueil",
+          "href": "/fr/home.html",
+          "type": "link"
+        },
+        {
+          "id": "products",
+          "label": "Produits",
+          "href": "/fr/products/all-fr.html",
+          "type": "dropdown",
+          "items": [
+            {
+              "label": "Caméras Intérieures",
+              "href": "/fr/products/all-fr.html#indoor",
+              "category": "indoor"
+            },
+            {
+              "label": "Moniteurs Bébé/Animal", 
+              "href": "/fr/products/all-fr.html#baby-pet-monitor",
+              "category": "baby-pet-monitor"
+            },
+            {
+              "label": "Caméras Extérieures",
+              "href": "/fr/products/all-fr.html#outdoor", 
+              "category": "outdoor"
+            },
+            {
+              "label": "Systèmes de Sonnette",
+              "href": "/fr/products/all-fr.html#doorbell",
+              "category": "doorbell" 
+            },
+            {
+              "label": "Caméras de Sport",
+              "href": "/fr/products/all-fr.html#sports",
+              "category": "sports"
+            },
+            {
+              "label": "Alimentation Sécurisée",
+              "href": "/fr/products/all-fr.html#secure-power",
+              "category": "secure-power"
+            },
+            {
+              "label": "Tous les Produits",
+              "href": "/fr/products/all-fr.html",
+              "category": "all"
+            }
+          ]
+        },
+        {
+          "id": "about", 
+          "label": "À Propos",
+          "href": "/fr/about.html",
+          "type": "link"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "href": "/fr/contact.html", 
+          "type": "link"
+        },
+        {
+          "id": "customer-care",
+          "label": "Service Client",
+          "href": "/fr/customer-care.html",
+          "type": "link"
+        }
       ]
     }
   },
   "meta": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "last_updated": "2025-09-02",
-    "description": "SecureVision AI website navigation configuration - English only",
-    "supported_languages": ["en"],
-    "notes": "French version will be added later in separate implementation phase"
+    "description": "SecureVision AI website navigation configuration - Bilingual EN/FR",
+    "supported_languages": ["en", "fr"],
+    "notes": "Integrated French navigation structure for i18n system"
   }
 }

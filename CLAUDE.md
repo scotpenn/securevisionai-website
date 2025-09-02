@@ -49,6 +49,7 @@ The site uses a layered, modular CSS architecture with complete migration from b
 - `products.js` - Product filtering and grid management
 - `contact.js` - Form validation and submission
 - `about.js` - About page interactions
+- `product-detail.js` - Bilingual product detail pages with smart image loading
 
 **No jQuery dependency** - Pure vanilla JavaScript
 
@@ -60,18 +61,22 @@ All main pages have been successfully migrated to the new architecture (common.c
 - ✅ **contact.html** - Contact page
 - ✅ **customer-care.html** - Customer support
 - ✅ **products/all.html** - Product catalog
-- ✅ **products/detail/svc138.html** - Product detail template
-- ⏳ **fr/** directory - French translations (needs sync with new architecture)
+- ✅ **products/detail/template.html** - Product detail template (EN)
+- ✅ **products/detail/svc138.html** - SVC138 product page (EN)
+- ✅ **fr/products/detail/template-fr.html** - Product detail template (FR)
+- ✅ **fr/products/detail/svc138.html** - SVC138 product page (FR)
+- ⏳ **fr/** directory - Other French translations (needs sync with new architecture)
 
 ### Bilingual Architecture
 - **English (Primary)**: Root directory (`/index.html`, `/about.html`, etc.)
 - **French**: `/fr/` directory with mirrored structure
 - **Translation data**: 
-  - `/data/products.json` - Product catalog with EN/FR content
+  - `/i18n/site.en.json` - English site translations
+  - `/i18n/site.fr.json` - French site translations  
+  - `/products/data/products/[id].json5` - Individual product data with EN/FR content
+  - `/data/products.json` - Legacy product catalog (being phased out)
   - `/data/site-config.json` - Site-wide translations
   - `/fr/TRANSLATION-GLOSSARY.md` - Translation reference (173 lines)
-  - `/fr/glossary_2.md` - Additional translations
-  - `/fr/glossary.json` - JSON format translations
 
 ### Product Data Management
 - **Primary product database**: `products/data/products-master.json`
@@ -115,11 +120,15 @@ Images follow responsive naming convention:
 ## Common Development Tasks
 
 ### Adding a New Product
-1. Add product data to `products/data/products-master.json`
-   - Add to appropriate category's products array
-2. Create product detail page: `/products/detail/[product-id].html`
-   - Copy from `svc138.html` template
-3. Add product images to `/images/` with responsive variants
+1. Create product data file: `/products/data/products/[product-id].json5`
+   - Include bilingual content (EN/FR) for all fields
+   - Use existing SVC138.json5 as template
+2. Create bilingual product detail pages:
+   - English: `/products/detail/[product-id].html` (copy from template.html)
+   - French: `/fr/products/detail/[product-id].html` (copy from template-fr.html)
+3. Add product images to `/images/` with naming pattern: `[product-id]-[suffix].[ext]`
+   - Smart image system automatically finds matching files
+   - Supports: jpg, jpeg, png, webp formats
 
 ### Creating New Pages
 1. Copy structure from existing pages
@@ -167,7 +176,11 @@ Images follow responsive naming convention:
 │   ├── about.html
 │   ├── contact.html
 │   ├── customer-care.html
-│   └── products/all-fr.html
+│   └── products/
+│       ├── all-fr.html
+│       └── detail/
+│           ├── template-fr.html         # French product template
+│           └── svc138.html              # French SVC138 page
 ├── css/
 │   ├── common.css               # Base styles
 │   ├── index.css                # Homepage styles
@@ -181,7 +194,8 @@ Images follow responsive naming convention:
 │   └── pages/
 │       ├── products.js          # Product page logic
 │       ├── contact.js           # Contact form logic
-│       └── about.js             # About page logic
+│       ├── about.js             # About page logic
+│       └── product-detail.js    # Bilingual product detail with smart images
 ├── images/                       # All image assets
 ├── data/
 │   ├── products.json            # Legacy product data
@@ -196,10 +210,30 @@ Images follow responsive naming convention:
 - CSS total: < 100KB
 - JavaScript total: < 50KB
 
+## Recent Major Updates (2025-01-09)
+
+### ✅ Bilingual Product Detail System
+- **Complete bilingual architecture** for product detail pages
+- **Smart image loading system** with automatic path detection
+- **SEO optimization** with hreflang links and structured data
+- **Dynamic content rendering** from JSON5 product data files
+
+#### Key Features:
+- **Auto image detection**: Supports multiple formats (jpg, png, webp) and naming patterns
+- **Intelligent fallbacks**: Missing images automatically handled with alternatives
+- **Bilingual routing**: EN/FR language switching with proper URL structure
+- **Error resilience**: Graceful handling of missing images or data
+
+#### File Structure Changes:
+- Added `/i18n/site.en.json` and `/i18n/site.fr.json` for translations
+- Created `/js/json5-parser.js` for product data loading
+- Updated `/js/pages/product-detail.js` with bilingual support
+- Bilingual templates: `template.html` (EN) and `template-fr.html` (FR)
+
 ## Current Technical Debt
-- French pages (`/fr/*`) need architecture sync with English pages
-- Legacy `data/products.json` should be fully migrated to `products-master.json`
-- Some product detail pages may need creation based on products-master.json
+- French pages (`/fr/*`) need architecture sync with English pages (except product details - ✅ completed)
+- Legacy `data/products.json` should be fully migrated to individual JSON5 files
+- Some product detail pages may need creation based on new template system
 
 ## Debug and Recovery
 - Check `/DEBUG/DEBUG-LOG.md` for problem history and solutions

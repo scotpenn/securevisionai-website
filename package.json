@@ -1,0 +1,17 @@
+{
+  "name": "securevision-ai-website",
+  "version": "1.0.0",
+  "description": "SecureVision AI static website with i18n support",
+  "scripts": {
+    "validate-i18n": "node scripts/validate-i18n.js",
+    "serve": "python -m http.server 8000",
+    "lint": "stylelint 'css/**/*.css'",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": ["security", "cameras", "i18n", "static-site"],
+  "author": "SecureVision AI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "stylelint": "^16.0.0"
+  }
+}

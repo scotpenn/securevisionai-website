@@ -1,13 +1,21 @@
-# Claude Code 开发配置文件
-# 适用于 VS Code 环境
+# SecureVision AI 项目开发配置文件
+# 更新日期: 2025-09-02
+# 当前项目状态: i18n国际化系统完成
 
 # ===========================================
-# 基本设置
+# 项目基本设置
 # ===========================================
+project:
+  name: "SecureVision AI Website"
+  type: "static_multilingual_website"
+  version: "2.0.0"  # i18n系统完成版本
+  languages_supported: ["en", "fr"]
+
 language:
   communication: "zh-CN"  # 交互语言：中文
   code_comments: "en"     # 代码注释：英文（除非特殊说明）
   documentation: "zh-CN"  # 文档说明：中文
+  website_content: ["en", "fr"]  # 网站内容：英法双语
 
 role:
   primary: "mentor"       # 主要角色：导师
@@ -148,6 +156,41 @@ template_library:
     update_schedule: "weekly"    # 更频繁的更新
 
 # ===========================================
+# 国际化 (i18n) 系统配置
+# ===========================================
+internationalization:
+  enabled: true
+  system_type: "lightweight_static"
+  
+  languages:
+    primary: "en"
+    secondary: ["fr"]
+    detection_method: "url_path"  # /fr/ -> 'fr'
+  
+  file_structure:
+    translation_dir: "i18n/"
+    config_dir: "config/"
+    validation_script: "scripts/validate-i18n.js"
+  
+  translation_files:
+    dictionary_format: "site.{lang}.json"
+    navigation_config: "navigation.json"
+    keys_count: 114  # 每语言键值对数量
+  
+  html_integration:
+    attribute_name: "data-i18n"
+    seo_hreflang: true
+    fallback_strategy: "en -> fallback -> key"
+  
+  validation:
+    auto_validation: true
+    validation_command: "npm run validate-i18n"
+    check_completeness: true
+    check_consistency: true
+    check_navigation_sync: true
+    check_hreflang_links: true
+
+# ===========================================
 # 开发流程规范
 # ===========================================
 development_workflow:
@@ -233,7 +276,7 @@ vscode_integration:
   tasks_config: ".vscode/tasks.json"
 
 # ===========================================
-# 自定义命令 (更新)
+# 自定义命令 (2025-09-02更新)
 # ===========================================
 custom_commands:
   "开始新功能": "创建功能分支，更新上下文，准备开发环境"
@@ -242,7 +285,9 @@ custom_commands:
   "代码审查": "运行质量检查，生成报告，提出改进建议"
   "性能分析": "运行基准测试，对比历史数据，生成优化建议"
   "更新模板": "同步GitHub参考，更新本地模板库"
-  "智能推荐": "基于当前项目上下文推荐相关代码片段"        # 新增
+  "智能推荐": "基于当前项目上下文推荐相关代码片段"
+  "验证i18n": "运行npm run validate-i18n检查翻译完整性"      # 新增
+  "更新上下文": "基于最新开发成果更新.claude/project_context.md"  # 新增
 
 # ===========================================
 # 用户反馈系统 (新增)

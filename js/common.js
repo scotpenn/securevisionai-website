@@ -215,6 +215,103 @@
     ticking = false;
   }
 
+  // ============ I18n Support ============
+  
+  // Language detection and management
+  const I18n = {
+    currentLang: 'en',
+    translations: {},
+    
+    // Detect language from URL path
+    detectLanguage() {
+      const path = window.location.pathname;
+      if (path.startsWith('/fr/') || path.includes('/fr/')) {
+        return 'fr';
+      }
+      return 'en';
+    },
+    
+    // Load translations for current language
+    async loadTranslations(lang = null) {
+      const targetLang = lang || this.currentLang;
+      
+      const candidates = [
+        `/i18n/site.${targetLang}.json`,
+        `i18n/site.${targetLang}.json`, 
+        `./i18n/site.${targetLang}.json`
+      ];
+      
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-cache' });
+          if (res.ok) {
+            this.translations[targetLang] = await res.json();
+            return this.translations[targetLang];
+          }
+        } catch (e) {
+          console.warn(`Failed to load ${url}:`, e);
+        }
+      }
+      
+      // Fallback to English if target language fails
+      if (targetLang !== 'en') {
+        console.warn(`Failed to load ${targetLang}, falling back to English`);
+        return this.loadTranslations('en');
+      }
+      
+      throw new Error(`Translations not found for ${targetLang}`);
+    },
+    
+    // Get translation with fallback
+    t(key, fallback = '') {
+      const keys = key.split('.');
+      let value = this.translations[this.currentLang];
+      
+      for (const k of keys) {
+        if (value && typeof value === 'object') {
+          value = value[k];
+        } else {
+          value = undefined;
+          break;
+        }
+      }
+      
+      // Fallback to English if current lang doesn't have the key
+      if (!value && this.currentLang !== 'en') {
+        let enValue = this.translations['en'];
+        for (const k of keys) {
+          if (enValue && typeof enValue === 'object') {
+            enValue = enValue[k];
+          } else {
+            enValue = undefined;
+            break;
+          }
+        }
+        value = enValue;
+      }
+      
+      return value || fallback || key;
+    },
+    
+    // Apply translations to elements with data-i18n
+    applyTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = this.t(key);
+        
+        if (translation && translation !== key) {
+          // Handle different content types
+          if (el.hasAttribute('data-i18n-attr')) {
+            const attr = el.getAttribute('data-i18n-attr');
+            el.setAttribute(attr, translation);
+          } else {
+            el.textContent = translation;
+          }
+        }
+      });
+    }
+  };
+
   // ============ Navigation Content Management ============
   
   // 1) fetch 容错：根路径失败时回退相对路径
@@ -239,7 +336,9 @@
       return; 
     }
 
-    const navItems = config.navigation.main.en;
+    // Use current language for navigation
+    const langCode = I18n.currentLang;
+    const navItems = config.navigation.main[langCode] || config.navigation.main.en;
     const productsCfg = navItems.find(i => i.id === 'products');
     if (!productsCfg || !productsCfg.items) return;
 
@@ -262,7 +361,7 @@
       }
     });
 
-    console.log(`Hydrated Products dropdown with ${productsCfg.items.length} items`);
+    console.log(`Hydrated Products dropdown with ${productsCfg.items.length} items for ${langCode}`);
   }
 
   // 3) 触屏/键盘行为（与 :hover 并存）
@@ -308,36 +407,54 @@
 
   // ============ Initialization ============
   
-  // 4) 初始化：顺序非常关键（先 hydrate -> 绑定交互 -> Logo/滚动）
+  // 4) 初始化：顺序非常关键（I18n -> hydrate -> 绑定交互 -> Logo/滚动）
   async function init() {
-    // 先完成导航内容注入
-    await hydrateNavigation();
-    
-    // 然后绑定增强交互
-    enhanceNavInteractions();
+    try {
+      // Step 1: Initialize i18n
+      I18n.currentLang = I18n.detectLanguage();
+      await I18n.loadTranslations();
+      console.log(`Initialized i18n for language: ${I18n.currentLang}`);
+      
+      // Step 2: Apply translations to static content
+      I18n.applyTranslations();
+      
+      // Step 3: Load navigation with correct language
+      await hydrateNavigation();
+      
+      // Step 4: Bind enhanced interactions
+      enhanceNavInteractions();
 
-    // 初始化Logo切换
-    initLogoSwitching();
+      // Step 5: Initialize Logo switching
+      initLogoSwitching();
 
-    // 绑定正确的滚动容器再做首帧状态
-    const scroller = document.getElementById('scroll-container') || window;
-    if (scroller !== window) {
-      scroller.addEventListener('scroll', handleScroll, { passive: true });
-    } else {
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      // Step 6: Bind scroll events
+      const scroller = document.getElementById('scroll-container') || window;
+      if (scroller !== window) {
+        scroller.addEventListener('scroll', handleScroll, { passive: true });
+      } else {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      }
+
+      // Step 7: Set initial nav state
+      updateNavbarState();
+      
+      // Step 8: Initialize smooth scrolling
+      initSmoothScrolling();
+      
+      // Step 9: Handle URL hash navigation
+      handleHashNavigation();
+      
+      // Step 10: Hide loading animation
+      hideLoadingAnimation();
+      
+    } catch (error) {
+      console.error('Initialization error:', error);
+      // Continue with basic functionality even if i18n fails
+      await hydrateNavigation();
+      enhanceNavInteractions();
+      initLogoSwitching();
+      hideLoadingAnimation();
     }
-
-    // 首帧立即设置 transparent/scrolled
-    updateNavbarState();
-    
-    // 初始化平滑滚动
-    initSmoothScrolling();
-    
-    // 处理URL hash导航
-    handleHashNavigation();
-    
-    // 页面加载完成后隐藏加载动画
-    hideLoadingAnimation();
   }
 
   // ============ DOM Ready ============
@@ -360,7 +477,8 @@
   window.SecureVisionCommon = {
     updateNavbarState: updateNavbarState,
     hideLoadingAnimation: hideLoadingAnimation,
-    initLogoSwitching: initLogoSwitching
+    initLogoSwitching: initLogoSwitching,
+    I18n: I18n
   };
 
 })();

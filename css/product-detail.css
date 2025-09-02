@@ -25,9 +25,29 @@ img{display:block;max-width:100%;height:auto;}
 /* ============ product detail specific nav overrides ============ */
 /* 产品详情页导航栏固定样式：白底+蓝色Logo+深色文字，无滚动切换效果 */
 
-/* Navigation styles are now managed by common.css only */
+/* ============ Product Detail Navigation Override ============ */
+/* 产品详情页专用：未滚动时导航栏蓝色背景，滚动后恢复默认样式 */
 
-/* Product detail pages use the same navigation as all other pages */
+.nav-mantine.transparent {
+  background: var(--color-secure-blue) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  --nav-fg: #fff;
+}
+
+.nav-mantine.transparent .nav-logo img { 
+  filter: brightness(0) invert(1); 
+}
+
+/* 滚动后恢复正常样式（白底深字） */
+.nav-mantine.scrolled {
+  background: rgba(249, 249, 249, .95);
+  border-bottom: 1px solid rgba(75, 112, 245, .1);
+  --nav-fg: var(--color-deep-blue);
+}
+
+.nav-mantine.scrolled .nav-logo img { 
+  filter: none; 
+}
 
 /* ============ breadcrumb ============ */
 .breadcrumb-section{padding:calc(72px + var(--spacing-6)) var(--spacing-6) var(--spacing-4);}

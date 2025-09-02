@@ -20,13 +20,12 @@
       showLoadingState();
       console.log('Loading products data...');
       
-      const response = await fetch('/products/data/products-master.json');
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      
-      productsData = await response.json();
+      // 使用JSON5Parser加载主配置文件
+      productsData = await JSON5Parser.loadProductsMaster();
       console.log('Products data loaded:', productsData);
+      
+      // 加载所有产品的详细信息
+      await loadIndividualProducts();
       
       renderAllProducts();
       setupCategoryTabs();
@@ -38,13 +37,57 @@
     }
   }
 
+  // 加载各个产品的详细数据
+  async function loadIndividualProducts() {
+    try {
+      const productPromises = [];
+      
+      // 收集所有产品ID
+      Object.values(productsData.categories).forEach(category => {
+        if (category.products && category.visible) {
+          category.products.forEach(productRef => {
+            productPromises.push(
+              JSON5Parser.loadProduct(productRef.id).then(productData => ({
+                ...productData.product,
+                // 合并分类中的显示属性
+                featured: productRef.featured,
+                new: productRef.new,
+                bestseller: productRef.bestseller,
+                display_order: productRef.display_order
+              }))
+            );
+          });
+        }
+      });
+      
+      const loadedProducts = await Promise.all(productPromises);
+      
+      // 创建产品数据映射
+      productsData.productsMap = {};
+      loadedProducts.forEach(product => {
+        productsData.productsMap[product.id] = product;
+      });
+      
+      console.log(`Loaded ${loadedProducts.length} individual products`);
+      
+    } catch (error) {
+      console.error('Error loading individual products:', error);
+      throw error;
+    }
+  }
+
   // ============ Rendering Functions ============
   function renderAllProducts() {
     if (!productsData || !contentContainer) return;
 
     let html = '';
     
-    Object.values(productsData.categories).forEach(category => {
+    // 根据显示顺序排序分类
+    const sortedCategories = Object.values(productsData.categories)
+      .filter(category => category.visible)
+      .sort((a, b) => a.display_order - b.display_order);
+    
+    sortedCategories.forEach(category => {
       html += renderCategorySection(category);
     });
 
@@ -53,18 +96,22 @@
   }
 
   function renderCategorySection(category) {
+    // 获取该分类下的产品，并按显示顺序排序
     const products = category.products
-      .map(id => productsData.products[id])
-      .filter(Boolean);
+      .map(productRef => productsData.productsMap[productRef.id])
+      .filter(Boolean)
+      .sort((a, b) => a.display_order - b.display_order);
+    
+    if (products.length === 0) return '';
     
     return `
       <div class="category-section" id="${category.id}" data-category="${category.id}">
         <div class="category-header">
           <img src="${category.hero_image || '/images/placeholder-category.jpg'}" 
-               alt="${category.name}" class="category-image" loading="lazy">
+               alt="${category.name.en}" class="category-image" loading="lazy">
           <div class="category-info">
-            <h3 class="category-title">${category.name}</h3>
-            <p class="category-description">${category.description}</p>
+            <h3 class="category-title">${category.name.en}</h3>
+            <p class="category-description">${category.description.en}</p>
           </div>
         </div>
         <div class="products-grid">
@@ -75,23 +122,29 @@
   }
 
   function renderProductCard(product) {
+    // 生成产品标签
+    const badges = [];
+    if (product.featured) badges.push('<span class="product-badge badge-featured">Featured</span>');
+    if (product.new) badges.push('<span class="product-badge badge-new">New</span>');
+    if (product.bestseller) badges.push('<span class="product-badge badge-bestseller">Bestseller</span>');
+    
     return `
       <div class="product-card" data-category="${product.category}">
         <div class="product-image-wrapper">
-          <img src="${product.thumbnail || '/images/placeholder-product.jpg'}" 
-               alt="${product.name}" class="product-image" loading="lazy">
-          ${product.isNew ? '<span class="product-badge">New</span>' : ''}
+          <img src="${product.images?.main || '/images/placeholder-product.jpg'}" 
+               alt="${product.name.en}" class="product-image" loading="lazy">
+          ${badges.join('')}
         </div>
         <div class="product-info">
-          <h4 class="product-name">${product.name}</h4>
+          <h4 class="product-name">${product.name.en}</h4>
           <div class="product-model">Model: ${product.model}</div>
           <ul class="product-highlights">
-            ${product.highlights.map(highlight => `
+            ${(product.highlights?.en || []).slice(0, 3).map(highlight => `
               <li class="product-highlight">${highlight}</li>
             `).join('')}
           </ul>
           <div class="product-actions">
-            <a href="/products/detail/${product.slug}.html" class="product-btn">View Details</a>
+            <a href="/products/detail/${product.slug || product.id}.html" class="product-btn">View Details</a>
           </div>
         </div>
       </div>
@@ -332,6 +385,13 @@
   // ============ Initialization ============
   function init() {
     console.log('Initializing products page...');
+    
+    // Check if JSON5Parser is available
+    if (typeof JSON5Parser === 'undefined') {
+      console.error('JSON5Parser not found! Make sure json5-parser.js is loaded before products.js');
+      showErrorState();
+      return;
+    }
     
     // Load and render products
     loadProductsData();
