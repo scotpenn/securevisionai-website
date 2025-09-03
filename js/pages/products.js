@@ -20,12 +20,17 @@
       showLoadingState();
       console.log('Loading products data...');
       
-      // 使用JSON5Parser加载主配置文件
-      productsData = await JSON5Parser.loadProductsMaster();
-      console.log('Products data loaded:', productsData);
+      // 使用JSON5Parser加载编译后的产品索引
+      const productsIndex = await JSON5Parser.loadProductsIndex();
+      console.log('Products index loaded:', productsIndex);
       
-      // 加载所有产品的详细信息
-      await loadIndividualProducts();
+      // 转换为内部数据结构
+      productsData = convertIndexToInternalFormat(productsIndex);
+      console.log('Converted products data:', productsData);
+      console.log('Categories with products:', Object.keys(productsData.categories).map(key => ({
+        category: key,
+        productCount: productsData.categories[key].products.length
+      })));
       
       renderAllProducts();
       setupCategoryTabs();
@@ -37,48 +42,114 @@
     }
   }
 
-  // 加载各个产品的详细数据
-  async function loadIndividualProducts() {
-    try {
-      const productPromises = [];
+  // 转换产品索引数据为内部格式
+  function convertIndexToInternalFormat(productsIndex) {
+    // 按分类分组产品
+    const categories = {
+      'indoor': { 
+        id: 'indoor', 
+        name: { en: 'Indoor Cameras' }, 
+        description: { en: 'Advanced indoor security cameras for home monitoring' },
+        visible: true, 
+        display_order: 1, 
+        hero_image: '/images/category-indoor.jpg',
+        products: [] 
+      },
+      'baby-pet-monitor': { 
+        id: 'baby-pet-monitor', 
+        name: { en: 'Baby/Pet Monitor' }, 
+        description: { en: 'Specialized monitoring cameras for babies and pets' },
+        visible: true, 
+        display_order: 2, 
+        hero_image: '/images/category-baby-pet.jpg',
+        products: [] 
+      },
+      'outdoor': { 
+        id: 'outdoor', 
+        name: { en: 'Outdoor Cameras' }, 
+        description: { en: 'Weather-resistant outdoor security cameras' },
+        visible: true, 
+        display_order: 3, 
+        hero_image: '/images/category-outdoor.jpg',
+        products: [] 
+      },
+      'doorbell': { 
+        id: 'doorbell', 
+        name: { en: 'Doorbell Cameras' }, 
+        description: { en: 'Smart doorbell cameras with two-way communication' },
+        visible: true, 
+        display_order: 4, 
+        hero_image: '/images/category-doorbell.jpg',
+        products: [] 
+      },
+      'sports': { 
+        id: 'sports', 
+        name: { en: 'Sports Cameras' }, 
+        description: { en: 'Action cameras for sports and outdoor activities' },
+        visible: true, 
+        display_order: 5, 
+        hero_image: '/images/category-sports.jpg',
+        products: [] 
+      },
+      'secure-power': { 
+        id: 'secure-power', 
+        name: { en: 'Secure Power' }, 
+        description: { en: 'Portable power solutions for security systems' },
+        visible: true, 
+        display_order: 6, 
+        hero_image: '/images/category-power.jpg',
+        products: [] 
+      }
+    };
+    
+    // 创建产品映射，包含链接信息
+    const productsMap = {};
+    
+    productsIndex.products.forEach(product => {
+      const enhancedProduct = {
+        id: product.id,
+        model: product.model,
+        name: { en: product.name, fr: product.name_fr },
+        category: product.category,
+        images: { main: product.main_image },
+        href: product.href_en, // 使用预生成的链接
+        highlights: { en: [] }, // 可以为空，因为详情页已是静态的
+        display_order: 1,
+        featured: false,
+        new: false,
+        bestseller: false
+      };
       
-      // 收集所有产品ID
-      Object.values(productsData.categories).forEach(category => {
-        if (category.products && category.visible) {
-          category.products.forEach(productRef => {
-            productPromises.push(
-              JSON5Parser.loadProduct(productRef.id).then(productData => ({
-                ...productData.product,
-                // 合并分类中的显示属性
-                featured: productRef.featured,
-                new: productRef.new,
-                bestseller: productRef.bestseller,
-                display_order: productRef.display_order
-              }))
-            );
-          });
-        }
-      });
+      productsMap[product.id] = enhancedProduct;
       
-      const loadedProducts = await Promise.all(productPromises);
-      
-      // 创建产品数据映射
-      productsData.productsMap = {};
-      loadedProducts.forEach(product => {
-        productsData.productsMap[product.id] = product;
-      });
-      
-      console.log(`Loaded ${loadedProducts.length} individual products`);
-      
-    } catch (error) {
-      console.error('Error loading individual products:', error);
-      throw error;
-    }
+      // 添加到相应分类
+      if (categories[product.category]) {
+        categories[product.category].products.push({
+          id: product.id,
+          display_order: 1,
+          featured: false,
+          new: false,
+          bestseller: false
+        });
+      }
+    });
+    
+    return {
+      categories: categories,
+      productsMap: productsMap
+    };
   }
 
   // ============ Rendering Functions ============
   function renderAllProducts() {
-    if (!productsData || !contentContainer) return;
+    console.log('renderAllProducts called');
+    console.log('productsData:', productsData);
+    console.log('contentContainer:', contentContainer);
+    
+    if (!productsData || !contentContainer) {
+      console.error('Missing productsData or contentContainer');
+      return;
+    }
 
     let html = '';
     
@@ -87,10 +158,15 @@
       .filter(category => category.visible)
       .sort((a, b) => a.display_order - b.display_order);
     
+    console.log('Sorted categories:', sortedCategories.map(c => ({ id: c.id, productCount: c.products.length })));
+    
     sortedCategories.forEach(category => {
-      html += renderCategorySection(category);
+      const categoryHtml = renderCategorySection(category);
+      console.log(`Category ${category.id} HTML length:`, categoryHtml.length);
+      html += categoryHtml;
     });
 
+    console.log('Final HTML length:', html.length);
     contentContainer.innerHTML = html;
     hideLoadingState();
   }
@@ -144,7 +220,7 @@
             `).join('')}
           </ul>
           <div class="product-actions">
-            <a href="/products/detail/${product.slug || product.id}.html" class="product-btn">View Details</a>
+            <a href="${product.href || `/products/detail/${product.id}.html`}" class="product-btn">View Details</a>
           </div>
         </div>
       </div>

@@ -43,11 +43,6 @@
               "label": "Secure Power",
               "href": "/products/all.html#secure-power",
               "category": "secure-power"
-            },
-            {
-              "label": "All Products",
-              "href": "/products/all.html",
-              "category": "all"
             }
           ]
         },
@@ -112,11 +107,6 @@
               "label": "Alimentation Sécurisée",
               "href": "/fr/products/all-fr.html#secure-power",
               "category": "secure-power"
-            },
-            {
-              "label": "Tous les Produits",
-              "href": "/fr/products/all-fr.html",
-              "category": "all"
             }
           ]
         },

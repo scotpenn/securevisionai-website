@@ -1,0 +1,334 @@
+{
+  "product": {
+    "id": "svc176",
+    "model": "SVC176",
+    "category": "outdoor",
+    "slug": "svc176",
+    "name": {
+      "en": "SVC176 2MP Outdoor WiFi Camera",
+      "fr": "SVC176 Caméra WiFi Extérieure 2MP"
+    },
+    "description": {
+      "en": "Professional 2MP outdoor WiFi camera with IP65 weatherproof rating, two-way audio, and 360° adjustable mounting bracket. Features easy installation with SecureVision app integration for reliable 24/7 outdoor monitoring.",
+      "fr": "Caméra WiFi extérieure professionnelle 2MP avec indice de résistance aux intempéries IP65, audio bidirectionnel et support de montage réglable à 360°. Installation facile avec intégration de l'application SecureVision pour une surveillance extérieure fiable 24h/24 et 7j/7."
+    },
+    "images": {
+      "main": "/images/SVC176-main.png",
+      "gallery": [
+        "/images/SVC176-main.png",
+        "/images/SVC176-side.png",
+        "/images/SVC176-side2.png",
+        "/images/SVC176-side3.png",
+        "/images/SVC176-side4.png",
+        "/images/SVC176-front.png"
+      ]
+    },
+    "highlights": {
+      "en": [
+        "2MP Full HD Video Recording",
+        "IP65 Weatherproof Design",
+        "Two-Way Audio Communication",
+        "360° Adjustable Mounting Bracket",
+        "Night Vision up to 5m",
+        "SecureVision App Integration",
+        "Cloud & Local Storage Options"
+      ],
+      "fr": [
+        "Enregistrement Vidéo Full HD 2MP",
+        "Conception Résistance aux Intempéries IP65",
+        "Communication Audio Bidirectionnelle",
+        "Support de Montage Réglable à 360°",
+        "Vision Nocturne jusqu'à 5m",
+        "Intégration Application SecureVision",
+        "Options de Stockage Cloud et Local"
+      ]
+    },
+    "specifications": {
+      "Camera & Video": {
+        "group_name": {
+          "en": "Camera & Video",
+          "fr": "Caméra et Vidéo"
+        },
+        "specs": {
+          "en": {
+            "Sensor": "2MP CMOS Sensor",
+            "Lens": "5.4mm EFL, F2.0",
+            "Focal Length": "4.9mm ± 0.2",
+            "Field of View": "100° diagonal",
+            "Video Resolution": "1920×1080@15fps / 640×360@15fps",
+            "Video Compression": "H.264",
+            "Night Vision": "3-5m with 850nm IR LEDs (6pcs)"
+          },
+          "fr": {
+            "Capteur": "Capteur CMOS 2MP",
+            "Objectif": "5.4mm EFL, F2.0",
+            "Distance Focale": "4.9mm ± 0.2",
+            "Champ de Vision": "100° diagonal",
+            "Résolution Vidéo": "1920×1080@15fps / 640×360@15fps",
+            "Compression Vidéo": "H.264",
+            "Vision Nocturne": "3-5m avec LEDs IR 850nm (6 pièces)"
+          }
+        }
+      },
+      "Processor & Performance": {
+        "group_name": {
+          "en": "Processor & Performance",
+          "fr": "Processeur et Performance"
+        },
+        "specs": {
+          "en": {
+            "Chipset": "Ankya",
+            "CPU Frequency": "800MHz - 1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Processing": "Real-time video encoding"
+          },
+          "fr": {
+            "Chipset": "Ankya",
+            "Fréquence CPU": "800MHz - 1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Traitement": "Encodage vidéo en temps réel"
+          }
+        }
+      },
+      "Audio System": {
+        "group_name": {
+          "en": "Audio System",
+          "fr": "Système Audio"
+        },
+        "specs": {
+          "en": {
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -42dB",
+            "Audio Mode": "Two-way audio, one-way talk",
+            "Audio Features": "Noise reduction technology"
+          },
+          "fr": {
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -42dB",
+            "Mode Audio": "Audio bidirectionnel, conversation unidirectionnelle",
+            "Fonctions Audio": "Technologie de réduction du bruit"
+          }
+        }
+      },
+      "Network & Connectivity": {
+        "group_name": {
+          "en": "Network & Connectivity",
+          "fr": "Réseau et Connectivité"
+        },
+        "specs": {
+          "en": {
+            "WiFi Standard": "IEEE 802.11b/g/n",
+            "WiFi Frequency": "2.4GHz",
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optional": "Dual band 2.4G+5G, BLE support (optional models)"
+          },
+          "fr": {
+            "Standard WiFi": "IEEE 802.11b/g/n",
+            "Fréquence WiFi": "2.4GHz",
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optionnel": "Double bande 2.4G+5G, support BLE (modèles optionnels)"
+          }
+        }
+      },
+      "Storage Options": {
+        "group_name": {
+          "en": "Storage Options",
+          "fr": "Options de Stockage"
+        },
+        "specs": {
+          "en": {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage service",
+            "Playback": "Events playback from local SD card and cloud",
+            "Recording Mode": "Continuous, motion-triggered, scheduled"
+          },
+          "fr": {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Service de stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Mode d'Enregistrement": "Continu, déclenché par mouvement, programmé"
+          }
+        }
+      },
+      "Power & Interface": {
+        "group_name": {
+          "en": "Power & Interface",
+          "fr": "Alimentation et Interface"
+        },
+        "specs": {
+          "en": {
+            "Power Supply": "5V/1A adapter included",
+            "Power Consumption": "Max 5W",
+            "Interfaces": "Micro SD slot, Type-C charging port",
+            "Controls": "Reset button",
+            "LED Indicators": "Power/Network status LED"
+          },
+          "fr": {
+            "Alimentation": "Adaptateur 5V/1A inclus",
+            "Consommation": "Max 5W",
+            "Interfaces": "Fente Micro SD, Port de charge Type-C",
+            "Contrôles": "Bouton de réinitialisation",
+            "Indicateurs LED": "LED d'état alimentation/réseau"
+          }
+        }
+      },
+      "Physical & Environmental": {
+        "group_name": {
+          "en": "Physical & Environmental",
+          "fr": "Physique et Environnement"
+        },
+        "specs": {
+          "en": {
+            "Dimensions": "63×84×138mm",
+            "Weight": "300g",
+            "Material": "PC + ABS plastic",
+            "Color": "White (default), other colors optional",
+            "Weatherproof Rating": "IP65 (Note: Spec shows IP20, needs confirmation)",
+            "Operating Temperature": "0°C to 45°C",
+            "Storage Temperature": "-20°C to 80°C",
+            "Operating Humidity": "10% to 95% RH (non-condensing)",
+            "Mounting": "360° adjustable bracket included"
+          },
+          "fr": {
+            "Dimensions": "63×84×138mm",
+            "Poids": "300g",
+            "Matériau": "Plastique PC + ABS",
+            "Couleur": "Blanc (par défaut), autres couleurs optionnelles",
+            "Indice d'Étanchéité": "IP65 (Note: La spécification indique IP20, à confirmer)",
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Température de Stockage": "-20°C à 80°C",
+            "Humidité de Fonctionnement": "10% à 95% RH (sans condensation)",
+            "Montage": "Support réglable à 360° inclus"
+          }
+        }
+      },
+      "AI Features & Options": {
+        "group_name": {
+          "en": "AI Features & Options",
+          "fr": "Fonctionnalités IA et Options"
+        },
+        "specs": {
+          "en": {
+            "AI Detection": "Human detection (4MP version)",
+            "Smart Alerts": "Intelligent motion alerts",
+            "Optional Resolutions": "3MP or 4MP versions available",
+            "Optional WiFi": "Dual band 2.4G+5G with BLE",
+            "Activity Zones": "Customizable detection areas"
+          },
+          "fr": {
+            "Détection IA": "Détection humaine (version 4MP)",
+            "Alertes Intelligentes": "Alertes de mouvement intelligentes",
+            "Résolutions Optionnelles": "Versions 3MP ou 4MP disponibles",
+            "WiFi Optionnel": "Double bande 2.4G+5G avec BLE",
+            "Zones d'Activité": "Zones de détection personnalisables"
+          }
+        }
+      }
+    },
+    "package_contents": {
+      "en": [
+        "WiFi Camera",
+        "5V/1A Power Adapter",
+        "Reset Pin",
+        "User Manual",
+        "Position Card",
+        "Mounting Screws",
+        "360° Adjustable Bracket"
+      ],
+      "fr": [
+        "Caméra WiFi",
+        "Adaptateur Secteur 5V/1A",
+        "Épingle de Réinitialisation",
+        "Manuel d'Utilisation",
+        "Carte de Position",
+        "Ensemble de Vis",
+        "Support Réglable à 360°"
+      ]
+    },
+    "downloads": {
+      "en": [
+        {
+          "name": "SVC176 Product Brochure",
+          "type": "PDF",
+          "size": "2.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-brochure.pdf",
+          "description": "Complete product overview and specifications"
+        },
+        {
+          "name": "Installation & User Manual",
+          "type": "PDF",
+          "size": "5.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-manual.pdf",
+          "description": "Detailed installation and configuration guide"
+        },
+        {
+          "name": "Quick Start Guide",
+          "type": "PDF",
+          "size": "1.5 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-quickstart.pdf",
+          "description": "Quick setup reference guide"
+        },
+        {
+          "name": "Technical Specifications",
+          "type": "Excel",
+          "size": "156 KB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-specs.xlsx",
+          "description": "Detailed technical specifications spreadsheet"
+        }
+      ],
+      "fr": [
+        {
+          "name": "Brochure Produit SVC176",
+          "type": "PDF",
+          "size": "2.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-brochure-fr.pdf",
+          "description": "Aperçu complet du produit et spécifications"
+        },
+        {
+          "name": "Manuel d'Installation et d'Utilisation",
+          "type": "PDF",
+          "size": "5.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc176-manual-fr.pdf",
+          "description": "Guide détaillé d'installation et de configuration"
+        }
+      ]
+    },
+    "certifications": {
+      "current": [
+        "Directive 2014/53/EU",
+        "EN IEC 62368",
+        "EN IEC 62311"
+      ],
+      "available": "Can be certified to customer requirements"
+    },
+    "availability": {
+      "status": "in_stock",
+      "message": {
+        "en": "In Stock - Ready to Ship",
+        "fr": "En Stock - Prêt à Expédier"
+      }
+    },
+    "warranty": {
+      "en": "The SVC176 Outdoor WiFi Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes technical support and 30-day money-back guarantee.",
+      "fr": "La Caméra WiFi Extérieure SVC176 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique et une garantie de remboursement de 30 jours."
+    },
+    "meta": {
+      "created_date": "2025-01-27",
+      "last_updated": "2025-01-27",
+      "version": "1.0",
+      "tags": [
+        "outdoor",
+        "wifi",
+        "2mp",
+        "ip65",
+        "two-way-audio",
+        "night-vision",
+        "cloud-storage"
+      ]
+    }
+  }
+}

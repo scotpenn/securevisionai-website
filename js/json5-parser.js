@@ -70,6 +70,23 @@ class JSON5Parser {
   }
   
   /**
+   * 加载编译后的产品索引文件 (用于产品列表页面)
+   * @returns {Promise<Object>} 编译后的产品索引数据
+   */
+  static async loadProductsIndex() {
+    try {
+      const response = await fetch('/products/data/compiled/index.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Failed to load products index:', error);
+      throw error;
+    }
+  }
+  
+  /**
    * 加载单个产品数据
    * @param {string} productId - 产品ID
    * @returns {Promise<Object>} 产品数据

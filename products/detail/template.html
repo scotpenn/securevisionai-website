@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="product-id" content="[PRODUCT_ID]">
-  <title>[PRODUCT_NAME] - SecureVision AI</title>
-  <meta content="[PRODUCT_DESCRIPTION]" name="description">
-  <meta content="[PRODUCT_NAME] - SecureVision AI" property="og:title">
-  <meta content="[PRODUCT_DESCRIPTION]" property="og:description">
-  <meta content="[PRODUCT_IMAGE]" property="og:image">
+  <meta name="product-id" content="{{PRODUCT_ID}}">
+  <title>{{META_TITLE}}</title>
+  <meta content="{{META_DESCRIPTION}}" name="description">
+  <meta content="{{META_TITLE}}" property="og:title">
+  <meta content="{{META_DESCRIPTION}}" property="og:description">
+  <meta content="{{OG_IMAGE}}" property="og:image">
   <meta property="og:type" content="product">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   
   <!-- SEO hreflang links for multilingual support -->
-  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
+  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/{{PRODUCT_ID}}.html">
+  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/{{PRODUCT_ID}}.html">
+  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/{{PRODUCT_ID}}.html">
   
   <link href="/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="/css/common.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
       </ul>
       
       <div class="nav-actions">
-        <a href="/fr/products/detail/[PRODUCT_ID].html" class="nav-lang-btn">FR</a>
+        <a href="/fr/products/detail/{{PRODUCT_ID}}.html" class="nav-lang-btn">FR</a>
       </div>
     </div>
   </nav>
@@ -75,11 +75,11 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="category">[PRODUCT_CATEGORY]</span>
+        <span>Indoor Cameras</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="model">[PRODUCT_MODEL]</span>
+        <span>{{PRODUCT_MODEL}}</span>
       </nav>
     </div>
   </section>
@@ -89,36 +89,34 @@
     <div class="main-container">
       <div class="product-hero-grid">
         <!-- Gallery Column -->
-        <div class="product-gallery" data-product="gallery">
+        <div class="product-gallery">
           <div class="gallery-main">
-            <img data-product="main-image" src="/images/placeholder-product.jpg" alt="Product Image" class="gallery-main-image">
+            <img id="main-image" src="{{MAIN_IMAGE}}" alt="{{MAIN_IMAGE_ALT}}" class="gallery-main-image">
           </div>
-          <div class="gallery-thumbs" data-product="thumbnails">
-            <!-- Thumbnail images will be populated by JavaScript -->
+          <div class="gallery-thumbs">{{GALLERY_THUMBNAILS}}
           </div>
         </div>
 
         <!-- Info Column -->
         <div class="product-info">
-          <h1 class="product-title" data-product="title">[PRODUCT_NAME]</h1>
+          <h1 class="product-title">{{PRODUCT_NAME}}</h1>
           <div class="product-model">
             <span data-i18n="products.model">Model:</span> 
-            <span data-product="model">[PRODUCT_MODEL]</span>
+            <span>{{PRODUCT_MODEL}}</span>
           </div>
           
-          <div class="product-status" data-product="status">
-            <!-- Availability status will be populated by JavaScript -->
+          <div class="product-status">{{AVAILABILITY_STATUS}}
           </div>
 
-          <div class="product-description" data-product="description">
-            [PRODUCT_DESCRIPTION]
+          <div class="product-description">
+            {{PRODUCT_DESCRIPTION}}
           </div>
 
           <!-- Key Features -->
           <div class="product-highlights">
             <h3 data-i18n="products.keyFeatures">Key Features</h3>
-            <ul data-product="highlights">
-              <!-- Features will be populated by JavaScript -->
+            <ul class="features-list">
+              {{PRODUCT_HIGHLIGHTS}}
             </ul>
           </div>
 
@@ -126,7 +124,7 @@
           <div class="product-actions">
             <div class="action-buttons">
               <a href="/contact.html#contact-form" class="btn btn-primary" data-i18n="products.getQuote">Get a Quote</a>
-              <button class="btn btn-secondary" data-product="download-main" data-i18n="products.downloadBrochure">
+              <button class="btn btn-secondary download-main-btn" data-i18n="products.downloadBrochure">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
@@ -143,9 +141,9 @@
   <section class="product-details">
     <div class="main-container">
       <div class="detail-tabs">
-        <button class="tab-button active" data-product-tab="specifications" data-i18n="products.tabSpecs">Specifications</button>
-        <button class="tab-button" data-product-tab="downloads" data-i18n="products.tabDownloads">Downloads</button>
-        <button class="tab-button" data-product-tab="warranty" data-i18n="products.tabWarranty">Warranty</button>
+        <button class="tab-button active" data-tab="specifications" data-i18n="products.tabSpecs">Specifications</button>
+        <button class="tab-button" data-tab="downloads" data-i18n="products.tabDownloads">Downloads</button>
+        <button class="tab-button" data-tab="warranty" data-i18n="products.tabWarranty">Warranty</button>
       </div>
 
       <!-- Tab Contents -->
@@ -153,33 +151,29 @@
         
         <!-- Specifications Tab -->
         <div class="tab-content active" data-tab-content="specifications">
-          <div class="specs-container" data-product="specifications">
-            <!-- Specifications will be populated by JavaScript from JSON5 data -->
+          <div class="specs-container">{{PRODUCT_SPECIFICATIONS}}
           </div>
         </div>
 
         <!-- Downloads Tab -->
         <div class="tab-content" data-tab-content="downloads">
-          <div class="downloads-container" data-product="downloads">
-            <!-- Download links will be populated by JavaScript -->
+          <div class="downloads-container">{{PRODUCT_DOWNLOADS}}
           </div>
         </div>
 
         <!-- Warranty Tab -->
         <div class="tab-content" data-tab-content="warranty">
-          <div class="warranty-container" data-product="warranty">
-            <!-- Warranty information will be populated by JavaScript -->
+          <div class="warranty-container">
+            <div class="warranty-content">
+              <h4>Warranty Information</h4>
+              <p>{{PRODUCT_WARRANTY}}</p>
+            </div>
           </div>
         </div>
         
       </div>
     </div>
   </section>
-
-  <!-- Error Display -->
-  <div data-product="error" style="display: none;">
-    <!-- Error content will be populated by JavaScript if needed -->
-  </div>
 
   <!-- Footer -->
   <footer class="footer-mantine">
@@ -230,9 +224,49 @@
   </footer>
 
   <!-- Required Scripts -->
-  <script src="/js/json5-parser.js"></script>
   <script src="/js/common.js"></script>
-  <script src="/js/pages/product-detail.js"></script>
+  <script>
+    // Simple tab switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabName = button.dataset.tab;
+          
+          // Update button states
+          tabButtons.forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Update content visibility
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.dataset.tabContent === tabName) {
+              content.classList.add('active');
+            }
+          });
+        });
+      });
+    });
+    
+    // Gallery image switching
+    function switchMainImage(imageSrc) {
+      const mainImage = document.getElementById('main-image');
+      if (mainImage) {
+        mainImage.src = imageSrc;
+      }
+      
+      // Update thumbnail active state
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      thumbs.forEach(thumb => {
+        thumb.classList.remove('active');
+        if (thumb.onclick.toString().includes(imageSrc)) {
+          thumb.classList.add('active');
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>

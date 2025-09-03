@@ -1,0 +1,138 @@
+{
+  "generated": "2025-09-03T04:26:05.055Z",
+  "total": 12,
+  "products": [
+    {
+      "id": "svb215",
+      "model": "SVB215",
+      "name": "SVB215 Dual Lens Outdoor WiFi Battery Doorbell",
+      "name_fr": "SVB215 Sonnette Extérieure WiFi à Double Objectif avec Batterie",
+      "category": "doorbell",
+      "main_image": "/images/SVB215-main.png",
+      "href_en": "/products/detail/svb215.html",
+      "href_fr": "/fr/products/detail/svb215.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc138",
+      "model": "SVC138",
+      "name": "SVC138 Fixed WiFi Indoor Camera",
+      "name_fr": "SVC138 Caméra Intérieure WiFi Fixe",
+      "category": "indoor",
+      "main_image": "/images/SVC138-main.jpg",
+      "href_en": "/products/detail/svc138.html",
+      "href_fr": "/fr/products/detail/svc138.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc176",
+      "model": "SVC176",
+      "name": "SVC176 2MP Outdoor WiFi Camera",
+      "name_fr": "SVC176 Caméra WiFi Extérieure 2MP",
+      "category": "outdoor",
+      "main_image": "/images/SVC176-main.png",
+      "href_en": "/products/detail/svc176.html",
+      "href_fr": "/fr/products/detail/svc176.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc180",
+      "model": "SVC180",
+      "name": "SVC180 Smart WiFi Clock Camera",
+      "name_fr": "SVC180 Caméra Horloge Intelligente WiFi",
+      "category": "baby-pet-monitor",
+      "main_image": "/images/svc180-main.jpg",
+      "href_en": "/products/detail/svc180.html",
+      "href_fr": "/fr/products/detail/svc180.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc201",
+      "model": "SVC201",
+      "name": "SVC201 Fixed WiFi Indoor Camera",
+      "name_fr": "SVC201 Caméra Intérieure Fixe WiFi",
+      "category": "indoor",
+      "main_image": "/images/SVC201B-main.jpg",
+      "href_en": "/products/detail/svc201.html",
+      "href_fr": "/fr/products/detail/svc201.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc207",
+      "model": "SVC207",
+      "name": "SVC207 Pan & Tilt Outdoor Monitor",
+      "name_fr": "SVC207 Moniteur Extérieur à Rotation et Inclinaison",
+      "category": "outdoor",
+      "main_image": "/images/svc207-main.jpg",
+      "href_en": "/products/detail/svc207.html",
+      "href_fr": "/fr/products/detail/svc207.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc209",
+      "model": "SVC209",
+      "name": "SVC209 Outdoor WiFi Battery Camera",
+      "name_fr": "SVC209 Caméra Extérieure WiFi à Batterie",
+      "category": "outdoor",
+      "main_image": "/images/svc209-main.jpg",
+      "href_en": "/products/detail/svc209.html",
+      "href_fr": "/fr/products/detail/svc209.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc263",
+      "model": "SVC263",
+      "name": "SVC263 Baby & Pet Monitor with Temperature Sensor",
+      "name_fr": "SVC263 Moniteur Bébé et Animaux avec Capteur de Température",
+      "category": "baby-pet-monitor",
+      "main_image": "/images/SVC263-main.jpg",
+      "href_en": "/products/detail/svc263.html",
+      "href_fr": "/fr/products/detail/svc263.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc285",
+      "model": "SVC285",
+      "name": "SVC285 Outdoor WiFi Spotlight Camera",
+      "name_fr": "SVC285 Caméra Projecteur WiFi Extérieure",
+      "category": "outdoor",
+      "main_image": "/images/SVC285-main.jpg",
+      "href_en": "/products/detail/svc285.html",
+      "href_fr": "/fr/products/detail/svc285.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc286",
+      "model": "SVC286",
+      "name": "SVC286 2MP Outdoor WiFi Spotlight Camera with Pan & Tilt",
+      "name_fr": "SVC286 Caméra Projecteur WiFi Extérieure 2MP avec Pan & Tilt",
+      "category": "doorbell",
+      "main_image": "/images/03_1.png",
+      "href_en": "/products/detail/svc286.html",
+      "href_fr": "/fr/products/detail/svc286.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svc842",
+      "model": "SVC842",
+      "name": "SVC842 4K/5K Waterproof Sports Camera",
+      "name_fr": "SVC842 Caméra Sport Étanche 4K/5K",
+      "category": "sports",
+      "main_image": "/images/svc842-main.png",
+      "href_en": "/products/detail/svc842.html",
+      "href_fr": "/fr/products/detail/svc842.html",
+      "availability": "in_stock"
+    },
+    {
+      "id": "svt100",
+      "model": "SVT100",
+      "name": "SVT100 Solar Hybrid Lighting Tower - Mine Spec",
+      "name_fr": "SVT100 Tour d'Éclairage Hybride Solaire - Spécification Minière",
+      "category": "secure-power",
+      "main_image": "/images/svt100-main.jpeg",
+      "href_en": "/products/detail/svt100.html",
+      "href_fr": "/fr/products/detail/svt100.html",
+      "availability": "in_stock"
+    }
+  ]
+}

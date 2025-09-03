@@ -2,16 +2,31 @@
   "name": "securevision-ai-website",
   "version": "1.0.0",
   "description": "SecureVision AI static website with i18n support",
+  "type": "module",
   "scripts": {
     "validate-i18n": "node scripts/validate-i18n.js",
+    "build:products": "node scripts/build-products.js",
+    "validate:products": "node scripts/validate-products.js",
+    "generate:pages": "node scripts/generate-product-pages.js",
+    "build:all": "npm run build:products && npm run generate:pages",
+    "prod:check": "npm run build:products && npm run validate:products",
     "serve": "python -m http.server 8000",
     "lint": "stylelint 'css/**/*.css'",
     "dev": "python -m http.server 8000"
   },
-  "keywords": ["security", "cameras", "i18n", "static-site"],
+  "keywords": [
+    "security",
+    "cameras",
+    "i18n",
+    "static-site"
+  ],
   "author": "SecureVision AI Team",
   "license": "MIT",
   "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "glob": "^10.3.10",
+    "json5": "^2.2.3",
     "stylelint": "^16.0.0"
   }
 }

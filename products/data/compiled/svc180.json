@@ -1,0 +1,369 @@
+{
+  "product": {
+    "id": "svc180",
+    "model": "SVC180",
+    "category": "baby-pet-monitor",
+    "slug": "svc180",
+    "name": {
+      "en": "SVC180 Smart WiFi Clock Camera",
+      "fr": "SVC180 Caméra Horloge Intelligente WiFi"
+    },
+    "description": {
+      "en": "Multi-functional smart WiFi clock camera with 2MP HD video, LCD display showing time/temperature/status, 355° horizontal rotation, built-in night light, and lullaby player. Perfect for baby monitoring and home security with two-way audio and PIR motion detection.",
+      "fr": "Caméra horloge WiFi intelligente multifonctionnelle avec vidéo HD 2MP, écran LCD affichant l'heure/température/statut, rotation horizontale à 355°, lampe de nuit intégrée, et lecteur de berceuses. Parfait pour la surveillance de bébé et la sécurité domestique avec audio bidirectionnel et détection de mouvement PIR."
+    },
+    "images": {
+      "main": "/images/svc180-main.jpg",
+      "gallery": [
+        "/images/svc180-main.jpg",
+        "/images/svc180-display.jpg",
+        "/images/svc180-rotation.jpg",
+        "/images/svc180-nightlight.jpg",
+        "/images/svc180-app.jpg",
+        "/images/svc180-nursery.jpg",
+        "/images/svc180-package.jpg"
+      ]
+    },
+    "highlights": {
+      "en": [
+        "LCD Display with Clock & Temperature",
+        "355° Horizontal Rotation",
+        "Built-in Night Light with Dimming",
+        "Lullaby Player Function",
+        "PIR Motion Detection (120°/6m)",
+        "Two-Way Audio Communication",
+        "2MP Full HD 1080p Video",
+        "Night Vision up to 5m"
+      ],
+      "fr": [
+        "Écran LCD avec Horloge et Température",
+        "Rotation Horizontale à 355°",
+        "Lampe de Nuit Intégrée avec Gradateur",
+        "Fonction Lecteur de Berceuses",
+        "Détection de Mouvement PIR (120°/6m)",
+        "Communication Audio Bidirectionnelle",
+        "Vidéo Full HD 2MP 1080p",
+        "Vision Nocturne jusqu'à 5m"
+      ]
+    },
+    "specifications": {
+      "Camera & Video": {
+        "group_name": {
+          "en": "Camera & Video",
+          "fr": "Caméra et Vidéo"
+        },
+        "specs": {
+          "en": {
+            "Sensor": "1/3.2\" 2MP CMOS Sensor",
+            "Lens": "2.8mm EFL, F2.0",
+            "Focal Length": "5.4mm FFL",
+            "Field of View": "D: 100°, H: 80°, V: 75°",
+            "Video Resolution": "1920×1080@15fps / 640×360@15fps",
+            "Video Compression": "H.264",
+            "Night Vision": "3-5m infrared night vision",
+            "Rotation": "Horizontal 355° (app controlled)"
+          },
+          "fr": {
+            "Capteur": "Capteur CMOS 1/3.2\" 2MP",
+            "Objectif": "2.8mm EFL, F2.0",
+            "Distance Focale": "5.4mm FFL",
+            "Champ de Vision": "D: 100°, H: 80°, V: 75°",
+            "Résolution Vidéo": "1920×1080@15fps / 640×360@15fps",
+            "Compression Vidéo": "H.264",
+            "Vision Nocturne": "Vision nocturne infrarouge 3-5m",
+            "Rotation": "Horizontale 355° (contrôlée par app)"
+          }
+        }
+      },
+      "Display & Special Features": {
+        "group_name": {
+          "en": "Display & Special Features",
+          "fr": "Affichage et Fonctions Spéciales"
+        },
+        "specs": {
+          "en": {
+            "Display Screen": "LCD display",
+            "Display Info": "Clock, Time, WiFi Status, Microphone Status, Temperature",
+            "Night Light": "Built-in with adjustable brightness",
+            "Lullaby Player": "Pre-loaded lullabies",
+            "Temperature Display": "Real-time temperature monitoring",
+            "Clock Function": "Digital clock display"
+          },
+          "fr": {
+            "Écran d'Affichage": "Écran LCD",
+            "Informations Affichées": "Horloge, Heure, Statut WiFi, Statut Microphone, Température",
+            "Lampe de Nuit": "Intégrée avec luminosité réglable",
+            "Lecteur de Berceuses": "Berceuses préchargées",
+            "Affichage Température": "Surveillance de température en temps réel",
+            "Fonction Horloge": "Affichage horloge numérique"
+          }
+        }
+      },
+      "Motion Detection & Audio": {
+        "group_name": {
+          "en": "Motion Detection & Audio",
+          "fr": "Détection de Mouvement et Audio"
+        },
+        "specs": {
+          "en": {
+            "PIR Sensor": "120° detection angle",
+            "Detection Distance": "Up to 6 meters",
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -38dB",
+            "Voice Pickup": "80dB at 2 meters",
+            "Audio Features": "Two-way audio communication"
+          },
+          "fr": {
+            "Capteur PIR": "Angle de détection 120°",
+            "Distance de Détection": "Jusqu'à 6 mètres",
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -38dB",
+            "Captation Vocale": "80dB à 2 mètres",
+            "Fonctions Audio": "Communication audio bidirectionnelle"
+          }
+        }
+      },
+      "Processor & Performance": {
+        "group_name": {
+          "en": "Processor & Performance",
+          "fr": "Processeur et Performance"
+        },
+        "specs": {
+          "en": {
+            "CPU Frequency": "1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Processing": "Real-time video encoding and display management"
+          },
+          "fr": {
+            "Fréquence CPU": "1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Traitement": "Encodage vidéo en temps réel et gestion d'affichage"
+          }
+        }
+      },
+      "Network & Connectivity": {
+        "group_name": {
+          "en": "Network & Connectivity",
+          "fr": "Réseau et Connectivité"
+        },
+        "specs": {
+          "en": {
+            "WiFi Standard": "IEEE 802.11b/g/n",
+            "WiFi Frequency": "2.4GHz",
+            "Transmission Distance": "30m (open distance)",
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optional": "Dual band 2.4G+5G, BLE support (optional models)"
+          },
+          "fr": {
+            "Standard WiFi": "IEEE 802.11b/g/n",
+            "Fréquence WiFi": "2.4GHz",
+            "Distance de Transmission": "30m (distance ouverte)",
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optionnel": "Double bande 2.4G+5G, support BLE (modèles optionnels)"
+          }
+        }
+      },
+      "Storage Options": {
+        "group_name": {
+          "en": "Storage Options",
+          "fr": "Options de Stockage"
+        },
+        "specs": {
+          "en": {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage service",
+            "Playback": "Events playback from local SD card and cloud",
+            "Recording Mode": "Continuous, motion-triggered, scheduled"
+          },
+          "fr": {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Service de stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Mode d'Enregistrement": "Continu, déclenché par mouvement, programmé"
+          }
+        }
+      },
+      "Power & Interface": {
+        "group_name": {
+          "en": "Power & Interface",
+          "fr": "Alimentation et Interface"
+        },
+        "specs": {
+          "en": {
+            "Power Supply": "5V/1A DC adapter with Type-C charging port",
+            "Power Consumption": "Max 5W",
+            "Interfaces": "Micro SD slot, Type-C port",
+            "Controls": "Reset button",
+            "LED Indicators": "Status indicators on display"
+          },
+          "fr": {
+            "Alimentation": "Adaptateur DC 5V/1A avec port de charge Type-C",
+            "Consommation": "Max 5W",
+            "Interfaces": "Fente Micro SD, Port Type-C",
+            "Contrôles": "Bouton de réinitialisation",
+            "Indicateurs LED": "Indicateurs d'état sur l'écran"
+          }
+        }
+      },
+      "Physical & Environmental": {
+        "group_name": {
+          "en": "Physical & Environmental",
+          "fr": "Physique et Environnement"
+        },
+        "specs": {
+          "en": {
+            "Dimensions": "83(L) × 56(W) × 91(H)mm",
+            "Weight": "340g (packaged)",
+            "Material": "PC + ABS plastic",
+            "Colors": "White (default), Black (optional)",
+            "Weatherproof Rating": "IP20 (indoor use only)",
+            "Operating Temperature": "0°C to 45°C",
+            "Storage Temperature": "-20°C to 80°C",
+            "Operating Humidity": "10% to 95% RH (non-condensing)"
+          },
+          "fr": {
+            "Dimensions": "83(L) × 56(L) × 91(H)mm",
+            "Poids": "340g (emballé)",
+            "Matériau": "Plastique PC + ABS",
+            "Couleurs": "Blanc (par défaut), Noir (optionnel)",
+            "Indice de Protection": "IP20 (usage intérieur uniquement)",
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Température de Stockage": "-20°C à 80°C",
+            "Humidité de Fonctionnement": "10% à 95% RH (sans condensation)"
+          }
+        }
+      },
+      "AI Features & Options": {
+        "group_name": {
+          "en": "AI Features & Options",
+          "fr": "Fonctionnalités IA et Options"
+        },
+        "specs": {
+          "en": {
+            "AI Detection": "AI human detection",
+            "AI Crying Detection": "Baby crying detection (optional)",
+            "Smart Alerts": "Intelligent motion and sound alerts",
+            "Optional Resolutions": "3MP or 4MP versions available",
+            "Optional WiFi": "Dual band 2.4G+5G with BLE",
+            "Activity Zones": "Customizable detection areas"
+          },
+          "fr": {
+            "Détection IA": "Détection humaine par IA",
+            "Détection des Pleurs IA": "Détection des pleurs de bébé (optionnel)",
+            "Alertes Intelligentes": "Alertes de mouvement et de son intelligentes",
+            "Résolutions Optionnelles": "Versions 3MP ou 4MP disponibles",
+            "WiFi Optionnel": "Double bande 2.4G+5G avec BLE",
+            "Zones d'Activité": "Zones de détection personnalisables"
+          }
+        }
+      }
+    },
+    "package_contents": {
+      "en": [
+        "Smart Clock Camera",
+        "5V/1A Power Adapter",
+        "Type-C Cable",
+        "User Manual",
+        "Quick Start Guide"
+      ],
+      "fr": [
+        "Caméra Horloge Intelligente",
+        "Adaptateur Secteur 5V/1A",
+        "Câble Type-C",
+        "Manuel d'Utilisation",
+        "Guide de Démarrage Rapide"
+      ]
+    },
+    "downloads": {
+      "en": [
+        {
+          "name": "SVC180 Product Brochure",
+          "type": "PDF",
+          "size": "2.6 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-brochure.pdf",
+          "description": "Complete product overview and specifications"
+        },
+        {
+          "name": "Installation & User Manual",
+          "type": "PDF",
+          "size": "4.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-manual.pdf",
+          "description": "Detailed setup and operation guide"
+        },
+        {
+          "name": "Baby Monitor Guide",
+          "type": "PDF",
+          "size": "2.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-baby-guide.pdf",
+          "description": "Special guide for baby monitoring features"
+        },
+        {
+          "name": "Technical Specifications",
+          "type": "Excel",
+          "size": "142 KB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-specs.xlsx",
+          "description": "Detailed technical specifications spreadsheet"
+        }
+      ],
+      "fr": [
+        {
+          "name": "Brochure Produit SVC180",
+          "type": "PDF",
+          "size": "2.6 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-brochure-fr.pdf",
+          "description": "Aperçu complet du produit et spécifications"
+        },
+        {
+          "name": "Manuel d'Installation et d'Utilisation",
+          "type": "PDF",
+          "size": "4.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-manual-fr.pdf",
+          "description": "Guide détaillé de configuration et d'utilisation"
+        },
+        {
+          "name": "Guide Moniteur Bébé",
+          "type": "PDF",
+          "size": "2.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-baby-guide-fr.pdf",
+          "description": "Guide spécial pour les fonctions de surveillance de bébé"
+        }
+      ]
+    },
+    "certifications": {
+      "current": [],
+      "available": "Can be certified to customer requirements"
+    },
+    "availability": {
+      "status": "in_stock",
+      "message": {
+        "en": "In Stock - Ready to Ship",
+        "fr": "En Stock - Prêt à Expédier"
+      }
+    },
+    "warranty": {
+      "en": "The SVC180 Smart WiFi Clock Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes technical support and 30-day money-back guarantee. Perfect for nursery and home monitoring applications.",
+      "fr": "La Caméra Horloge Intelligente WiFi SVC180 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique et une garantie de remboursement de 30 jours. Parfait pour les applications de surveillance de chambre d'enfant et de maison."
+    },
+    "meta": {
+      "created_date": "2025-01-27",
+      "last_updated": "2025-01-27",
+      "version": "1.0",
+      "tags": [
+        "clock-camera",
+        "baby-monitor",
+        "pet-monitor",
+        "indoor",
+        "wifi",
+        "2mp",
+        "night-light",
+        "lullaby",
+        "temperature",
+        "rotating"
+      ]
+    }
+  }
+}

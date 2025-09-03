@@ -34,14 +34,14 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svc176-main.jpg",      // 主要展示图片
+      main: "/images/SVC176-main.png",      // 主要展示图片
       gallery: [                            // 详情页图片画廊数组
-        "/images/svc176-main.jpg",          // 第1张：主视图
-        "/images/svc176-side.jpg",          // 第2张：侧视图  
-        "/images/svc176-mounted.jpg",       // 第3张：安装效果图
-        "/images/svc176-night.jpg",         // 第4张：夜视效果
-        "/images/svc176-app.jpg",           // 第5张：APP界面
-        "/images/svc176-package.jpg"        // 第6张：包装视图
+        "/images/SVC176-main.png",          // 第1张：主视图
+        "/images/SVC176-side.png",          // 第2张：侧视图  
+        "/images/SVC176-side2.png",         // 第3张：侧视图2
+        "/images/SVC176-side3.png",         // 第4张：侧视图3
+        "/images/SVC176-side4.png",         // 第5张：侧视图4
+        "/images/SVC176-front.png"          // 第6张：正面视图
       ]
     },
     

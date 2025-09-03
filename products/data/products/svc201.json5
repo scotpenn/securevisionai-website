@@ -34,14 +34,9 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svc201-main.jpg",      // 主要展示图片
+      main: "/images/SVC201B-main.jpg",     // 主要展示图片
       gallery: [                            // 详情页图片画廊数组
-        "/images/svc201-main.jpg",          // 第1张：主视图
-        "/images/svc201-side.jpg",          // 第2张：侧视图
-        "/images/svc201-back.jpg",          // 第3张：背面视图
-        "/images/svc201-mounted.jpg",       // 第4张：安装效果
-        "/images/svc201-app.jpg",           // 第5张：APP界面
-        "/images/svc201-package.jpg"        // 第6张：包装视图
+        "/images/SVC201B-main.jpg"          // 第1张：主视图
       ]
     },
     

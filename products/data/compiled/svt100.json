@@ -1,0 +1,330 @@
+{
+  "product": {
+    "id": "svt100",
+    "model": "SVT100",
+    "category": "secure-power",
+    "slug": "svt100-hybrid",
+    "name": {
+      "en": "SVT100 Solar Hybrid Lighting Tower - Mine Spec",
+      "fr": "SVT100 Tour d'Éclairage Hybride Solaire - Spécification Minière"
+    },
+    "description": {
+      "en": "Professional mine-spec solar hybrid lighting tower with 125,000 lumens output and 6.5m hydraulic mast. Features 15.4kWh lithium battery, 1.62kWp solar panels, and 6x200W LED modules covering 200m x 175m area. Designed for ease of transport, solar/diesel hybrid operation, and cost-effective lighting solutions with GPS remote monitoring.",
+      "fr": "Tour d'éclairage hybride solaire professionnelle aux spécifications minières avec sortie de 125 000 lumens et mât hydraulique de 6,5 m. Comprend une batterie lithium de 15,4 kWh, des panneaux solaires de 1,62 kWp et 6 modules LED de 200 W couvrant une zone de 200 m x 175 m. Conçu pour faciliter le transport, le fonctionnement hybride solaire/diesel et des solutions d'éclairage rentables avec surveillance GPS à distance."
+    },
+    "images": {
+      "main": "/images/svt100-main.jpeg",
+      "gallery": [
+        "/images/svt100-main.jpeg",
+        "/images/svt100-folded.jpeg",
+        "/images/svt100-luminair.jpeg"
+      ]
+    },
+    "highlights": {
+      "en": [
+        "125,000 Lumens Output (Max) / 83,000 (Eco)",
+        "6.5m Hydraulic Mast with 355° Rotation",
+        "15.4kWh Lithium Ion Battery (LFP)",
+        "1.62kWp Solar Panels (10-45° Tilt)",
+        "19-29 Hours Runtime on Battery",
+        "200m x 175m Coverage at 4 Lux",
+        "GPS Remote Monitoring & Control",
+        "100km/h Wind Rating"
+      ],
+      "fr": [
+        "Sortie de 125 000 Lumens (Max) / 83 000 (Éco)",
+        "Mât Hydraulique de 6,5m avec Rotation à 355°",
+        "Batterie Lithium-Ion 15,4kWh (LFP)",
+        "Panneaux Solaires 1,62kWp (Inclinaison 10-45°)",
+        "19-29 Heures d'Autonomie sur Batterie",
+        "Couverture de 200m x 175m à 4 Lux",
+        "Surveillance et Contrôle GPS à Distance",
+        "Résistance au Vent de 100km/h"
+      ]
+    },
+    "specifications": {
+      "General": {
+        "group_name": {
+          "en": "General Specifications",
+          "fr": "Spécifications Générales"
+        },
+        "specs": {
+          "en": {
+            "Model": "Mine Spec - SVT100 Hybrid",
+            "Lumen Output": "125,000 (Max) / 83,000 (Eco)",
+            "Mast Height": "6.5 Metres",
+            "Mast Type": "Hydraulic",
+            "Lights": "6 x 200W LED Modules",
+            "Coverage": "200m x 175m at 4 lux",
+            "Light Bar Rotation": "355°",
+            "Light Bar Tilt": "70°"
+          },
+          "fr": {
+            "Modèle": "Spec Minière - SVT100 Hybride",
+            "Sortie Lumineuse": "125 000 (Max) / 83 000 (Éco)",
+            "Hauteur du Mât": "6,5 Mètres",
+            "Type de Mât": "Hydraulique",
+            "Éclairages": "6 x Modules LED 200W",
+            "Couverture": "200m x 175m à 4 lux",
+            "Rotation de la Barre d'Éclairage": "355°",
+            "Inclinaison de la Barre d'Éclairage": "70°"
+          }
+        }
+      },
+      "Trailer": {
+        "group_name": {
+          "en": "Trailer Specifications",
+          "fr": "Spécifications de la Remorque"
+        },
+        "specs": {
+          "en": {
+            "Trailer Type": "Single Axle",
+            "Tyre and Rim Size": "15\"",
+            "Stabiliser Supports": "4 x Manual",
+            "Mudguard / Wheel Chock": "Included",
+            "Security": "Wheel lock / hitch lock",
+            "Fork Pockets": "Included",
+            "Lifting Points": "Included",
+            "Jack Pads": "Included"
+          },
+          "fr": {
+            "Type de Remorque": "Essieu Simple",
+            "Taille des Pneus et Jantes": "15\"",
+            "Supports Stabilisateurs": "4 x Manuel",
+            "Garde-boue / Cale de Roue": "Inclus",
+            "Sécurité": "Antivol de roue / verrou d'attelage",
+            "Fourches": "Incluses",
+            "Points de Levage": "Inclus",
+            "Patins de Cric": "Inclus"
+          }
+        }
+      },
+      "Operational": {
+        "group_name": {
+          "en": "Operational Data",
+          "fr": "Données Opérationnelles"
+        },
+        "specs": {
+          "en": {
+            "Wind Rating": "100km/h",
+            "Working Temperature": "0° to 50°C (-25° with optional kit)",
+            "Features": "GPS, remote monitoring and control",
+            "Light Control": "Dimmable lights",
+            "Light Plot": "Available at 6.5m height"
+          },
+          "fr": {
+            "Résistance au Vent": "100km/h",
+            "Température de Fonctionnement": "0° à 50°C (-25° avec kit optionnel)",
+            "Caractéristiques": "GPS, surveillance et contrôle à distance",
+            "Contrôle d'Éclairage": "Éclairages réglables",
+            "Plan d'Éclairage": "Disponible à 6,5m de hauteur"
+          }
+        }
+      },
+      "Battery System": {
+        "group_name": {
+          "en": "Battery System",
+          "fr": "Système de Batterie"
+        },
+        "specs": {
+          "en": {
+            "Battery Type": "15.4kWh Lithium Ion (LFP)",
+            "Runtime (Max Mode)": "19 Hours",
+            "Runtime (Eco Mode)": "29 Hours",
+            "Battery Technology": "Lithium Iron Phosphate (LFP)",
+            "Battery Management": "Integrated BMS"
+          },
+          "fr": {
+            "Type de Batterie": "15,4kWh Lithium-Ion (LFP)",
+            "Autonomie (Mode Max)": "19 Heures",
+            "Autonomie (Mode Éco)": "29 Heures",
+            "Technologie de Batterie": "Phosphate de Fer Lithium (LFP)",
+            "Gestion de Batterie": "BMS Intégré"
+          }
+        }
+      },
+      "Solar System": {
+        "group_name": {
+          "en": "Solar System",
+          "fr": "Système Solaire"
+        },
+        "specs": {
+          "en": {
+            "Solar Capacity": "1.62kWp",
+            "Solar Panel Tilt": "10 to 45°",
+            "Efficiency (Diesel)": "1 hour of generator equals 2/3.8 hours of light (Max/Eco)",
+            "Efficiency (Solar)": "1 hour of sun equals 1.8/3.2 hours of light (Max/Eco)",
+            "Solar Technology": "High-efficiency monocrystalline panels"
+          },
+          "fr": {
+            "Capacité Solaire": "1,62kWp",
+            "Inclinaison des Panneaux Solaires": "10 à 45°",
+            "Efficacité (Diesel)": "1 heure de générateur équivaut à 2/3,8 heures de lumière (Max/Éco)",
+            "Efficacité (Solaire)": "1 heure de soleil équivaut à 1,8/3,2 heures de lumière (Max/Éco)",
+            "Technologie Solaire": "Panneaux monocristallins haute efficacité"
+          }
+        }
+      },
+      "Dimensions": {
+        "group_name": {
+          "en": "Unit Dimensions",
+          "fr": "Dimensions de l'Unité"
+        },
+        "specs": {
+          "en": {
+            "Dimensions (Stowed)": "4400 x 2200 x 2600mm (L×W×H)",
+            "Dimensions (Deployed)": "4400 x 4300 x 6200mm (L×W×H)",
+            "Weight": "2000kg",
+            "Transport Height": "2.6m (compact for transport)",
+            "Footprint (Deployed)": "18.92m²"
+          },
+          "fr": {
+            "Dimensions (Rangé)": "4400 x 2200 x 2600mm (L×L×H)",
+            "Dimensions (Déployé)": "4400 x 4300 x 6200mm (L×L×H)",
+            "Poids": "2000kg",
+            "Hauteur de Transport": "2,6m (compact pour le transport)",
+            "Empreinte (Déployé)": "18,92m²"
+          }
+        }
+      },
+      "Special Features": {
+        "group_name": {
+          "en": "Special Features",
+          "fr": "Caractéristiques Spéciales"
+        },
+        "specs": {
+          "en": {
+            "Remote Monitoring": "GPS tracking and remote control",
+            "Ease of Transport": "Single axle trailer design",
+            "Hybrid Operation": "Solar/Diesel hybrid capability",
+            "Cost Effective": "Reduced fuel consumption",
+            "Durability": "Mine specification build quality",
+            "Maintenance": "Low maintenance design"
+          },
+          "fr": {
+            "Surveillance à Distance": "Suivi GPS et contrôle à distance",
+            "Facilité de Transport": "Conception de remorque à essieu simple",
+            "Fonctionnement Hybride": "Capacité hybride solaire/diesel",
+            "Rentabilité": "Consommation de carburant réduite",
+            "Durabilité": "Qualité de construction aux spécifications minières",
+            "Maintenance": "Conception à faible maintenance"
+          }
+        }
+      }
+    },
+    "applications": {
+      "en": [
+        "Mining Operations",
+        "Construction Sites",
+        "Emergency Response",
+        "Event Lighting",
+        "Infrastructure Projects",
+        "Remote Area Lighting",
+        "Industrial Sites",
+        "Road Works"
+      ],
+      "fr": [
+        "Opérations Minières",
+        "Chantiers de Construction",
+        "Intervention d'Urgence",
+        "Éclairage d'Événements",
+        "Projets d'Infrastructure",
+        "Éclairage de Zones Éloignées",
+        "Sites Industriels",
+        "Travaux Routiers"
+      ]
+    },
+    "certifications": {
+      "current": [
+        "Ease of Transport",
+        "Solar/Diesel Hybrid",
+        "Durable",
+        "Cost-Effective"
+      ],
+      "available": "Mine Specification Compliant"
+    },
+    "downloads": {
+      "en": [
+        {
+          "name": "SVT100 Product Brochure",
+          "type": "PDF",
+          "size": "3.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-brochure.pdf",
+          "description": "Complete product overview and specifications"
+        },
+        {
+          "name": "Technical Specifications",
+          "type": "PDF",
+          "size": "2.4 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-technical.pdf",
+          "description": "Detailed technical documentation"
+        },
+        {
+          "name": "Operation Manual",
+          "type": "PDF",
+          "size": "6.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-manual.pdf",
+          "description": "Complete operation and maintenance guide"
+        },
+        {
+          "name": "Light Coverage Plot",
+          "type": "PDF",
+          "size": "1.1 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-light-plot.pdf",
+          "description": "Detailed light coverage diagrams at 6.5m"
+        }
+      ],
+      "fr": [
+        {
+          "name": "Brochure Produit SVT100",
+          "type": "PDF",
+          "size": "3.8 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-brochure-fr.pdf",
+          "description": "Aperçu complet du produit et spécifications"
+        },
+        {
+          "name": "Spécifications Techniques",
+          "type": "PDF",
+          "size": "2.4 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-technical-fr.pdf",
+          "description": "Documentation technique détaillée"
+        },
+        {
+          "name": "Manuel d'Opération",
+          "type": "PDF",
+          "size": "6.2 MB",
+          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svt100-manual-fr.pdf",
+          "description": "Guide complet d'opération et de maintenance"
+        }
+      ]
+    },
+    "availability": {
+      "status": "in_stock",
+      "message": {
+        "en": "In Stock - Ready to Ship",
+        "fr": "En Stock - Prêt à Expédier"
+      }
+    },
+    "warranty": {
+      "en": "The SVT100 Solar Hybrid Lighting Tower comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Battery warranty is 2 years or 2000 cycles. Includes technical support and extended warranty options available.",
+      "fr": "La Tour d'Éclairage Hybride Solaire SVT100 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Garantie de batterie de 2 ans ou 2000 cycles. Inclut le support technique et options de garantie prolongée disponibles."
+    },
+    "meta": {
+      "created_date": "2025-01-27",
+      "last_updated": "2025-01-27",
+      "version": "1.0",
+      "tags": [
+        "lighting-tower",
+        "solar",
+        "hybrid",
+        "mining",
+        "led",
+        "portable",
+        "industrial",
+        "gps",
+        "remote-monitoring",
+        "secure-power"
+      ]
+    }
+  }
+}

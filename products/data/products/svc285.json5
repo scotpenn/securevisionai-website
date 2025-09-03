@@ -1,0 +1,512 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC285 户外WiFi聚光灯摄像头
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc285",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC285",                 // 产品型号，显示在页面上（从IPC285改为SVC285）
+    category: "outdoor",             // 产品分类：户外摄像头
+    slug: "svc285",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC285 Outdoor WiFi Spotlight Camera",
+      fr: "SVC285 Caméra Projecteur WiFi Extérieure"
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced outdoor WiFi spotlight camera with Full HD 3MP video recording and dual night vision modes. Features LED spotlight with light alarm, motion detection with push notifications, and IP65 weatherproof design. Perfect for outdoor security with both infrared and color night vision capabilities.",
+      fr: "Caméra projecteur WiFi extérieure avancée avec enregistrement vidéo Full HD 3MP et double mode de vision nocturne. Comprend un projecteur LED avec alarme lumineuse, détection de mouvement avec notifications push et conception étanche IP65. Parfait pour la sécurité extérieure avec capacités de vision nocturne infrarouge et couleur."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/SVC285-main.jpg",      // 主要展示图片
+      gallery: [                            // 详情页图片画廊数组
+        "/images/SVC285-main.jpg",          // 第1张：主视图
+        "/images/SVC285-night.jpg"          // 第2张：夜视效果
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Full HD 3MP Live View & Recording",                   // 特性1：3MP高清
+        "LED Spotlight with Light Alarm",                      // 特性2：LED聚光灯报警
+        "Dual Night Vision: IR & Color",                       // 特性3：双夜视模式
+        "Motion Detection with Push Alerts",                   // 特性4：运动检测
+        "IP65 Weatherproof Design",                           // 特性5：IP65防水
+        "Two-Way Audio Communication",                        // 特性6：双向音频
+        "100° Wide Field of View",                            // 特性7：广角视野
+        "Micro SD & Cloud Storage"                            // 特性8：存储选项
+      ],
+      fr: [
+        "Vue en Direct et Enregistrement Full HD 3MP",
+        "Projecteur LED avec Alarme Lumineuse",
+        "Double Vision Nocturne: IR et Couleur",
+        "Détection de Mouvement avec Alertes Push",
+        "Conception Étanche IP65",
+        "Communication Audio Bidirectionnelle",
+        "Champ de Vision Large 100°",
+        "Stockage Micro SD et Cloud"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：硬件规格
+      "Hardware": {
+        group_name: {
+          en: "Hardware Specifications",
+          fr: "Spécifications Matérielles"
+        },
+        specs: {
+          en: {
+            "CPU Chipset": "Ankya",
+            "Main Frequency": "400MHz",
+            "Processing Power": "High-performance processor",
+            "System Architecture": "Embedded Linux system"
+          },
+          fr: {
+            "Chipset CPU": "Ankya",
+            "Fréquence Principale": "400MHz",
+            "Puissance de Traitement": "Processeur haute performance",
+            "Architecture Système": "Système Linux embarqué"
+          }
+        }
+      },
+      
+      // 规格组2：摄像头和传感器
+      "Camera & Sensor": {
+        group_name: {
+          en: "Camera & Sensor",
+          fr: "Caméra et Capteur"
+        },
+        specs: {
+          en: {
+            "Sensor": "3MP CMOS Sensor",
+            "CMOS Size": "1/2.7 Inch",
+            "Resolution": "2304×1296 (3 Megapixels)",
+            "Image Quality": "Full HD 1296p"
+          },
+          fr: {
+            "Capteur": "Capteur CMOS 3MP",
+            "Taille CMOS": "1/2.7 Pouce",
+            "Résolution": "2304×1296 (3 Mégapixels)",
+            "Qualité d'Image": "Full HD 1296p"
+          }
+        }
+      },
+      
+      // 规格组3：镜头规格
+      "Lens": {
+        group_name: {
+          en: "Lens Specifications",
+          fr: "Spécifications de l'Objectif"
+        },
+        specs: {
+          en: {
+            "Effective Focal Length": "4.0mm",
+            "Flange Focal Length": "5.4mm",
+            "F-Number": "F2.0",
+            "Field of View": "100°",
+            "Lens Type": "Fixed focus lens"
+          },
+          fr: {
+            "Distance Focale Effective": "4.0mm",
+            "Distance Focale de Bride": "5.4mm",
+            "Nombre F": "F2.0",
+            "Champ de Vision": "100°",
+            "Type d'Objectif": "Objectif à mise au point fixe"
+          }
+        }
+      },
+      
+      // 规格组4：夜视和照明
+      "Night Vision & Lighting": {
+        group_name: {
+          en: "Night Vision & Lighting",
+          fr: "Vision Nocturne et Éclairage"
+        },
+        specs: {
+          en: {
+            "Night Vision Distance": "8m maximum",
+            "IR LEDs": "850nm, 6pcs",
+            "Night Vision Modes": "IR Night Vision & Color Night Vision",
+            "LED Spotlight": "Built-in LED spotlight",
+            "Light Alarm": "Spotlight alarm function",
+            "Illumination": "Dual-mode illumination system"
+          },
+          fr: {
+            "Distance Vision Nocturne": "8m maximum",
+            "LEDs IR": "850nm, 6 pièces",
+            "Modes Vision Nocturne": "Vision Nocturne IR et Couleur",
+            "Projecteur LED": "Projecteur LED intégré",
+            "Alarme Lumineuse": "Fonction d'alarme par projecteur",
+            "Illumination": "Système d'éclairage double mode"
+          }
+        }
+      },
+      
+      // 规格组5：网络和连接
+      "Network & Connectivity": {
+        group_name: {
+          en: "Network & Connectivity",
+          fr: "Réseau et Connectivité"
+        },
+        specs: {
+          en: {
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Wi-Fi Standard": "IEEE 802.11b/g/n",
+            "Wi-Fi Frequency": "2.4GHz",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optional WiFi": "Dual band 2.4G+5G, BLE support available"
+          },
+          fr: {
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Standard Wi-Fi": "IEEE 802.11b/g/n",
+            "Fréquence Wi-Fi": "2.4GHz",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "WiFi Optionnel": "Double bande 2.4G+5G, support BLE disponible"
+          }
+        }
+      },
+      
+      // 规格组6：音频系统
+      "Audio System": {
+        group_name: {
+          en: "Audio System",
+          fr: "Système Audio"
+        },
+        specs: {
+          en: {
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -38dB",
+            "Audio Feature": "Two-way audio communication",
+            "Audio Quality": "Clear voice transmission"
+          },
+          fr: {
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -38dB",
+            "Fonction Audio": "Communication audio bidirectionnelle",
+            "Qualité Audio": "Transmission vocale claire"
+          }
+        }
+      },
+      
+      // 规格组7：存储和回放
+      "Storage & Playback": {
+        group_name: {
+          en: "Storage & Playback",
+          fr: "Stockage et Lecture"
+        },
+        specs: {
+          en: {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage available",
+            "Playback": "Events playback from SD card and cloud",
+            "Recording Mode": "Continuous and motion-triggered",
+            "Storage Interface": "Micro SD slot"
+          },
+          fr: {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Stockage cloud optionnel disponible",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Mode d'Enregistrement": "Continu et déclenché par mouvement",
+            "Interface de Stockage": "Fente Micro SD"
+          }
+        }
+      },
+      
+      // 规格组8：视频规格
+      "Video Specifications": {
+        group_name: {
+          en: "Video Specifications",
+          fr: "Spécifications Vidéo"
+        },
+        specs: {
+          en: {
+            "Compression Format": "H.264",
+            "Main Stream": "3MP (2K, 2304×1296@15fps)",
+            "Sub Stream": "640×360@15fps",
+            "Video Quality": "Full HD 1296p",
+            "Frame Rate": "15fps"
+          },
+          fr: {
+            "Format de Compression": "H.264",
+            "Flux Principal": "3MP (2K, 2304×1296@15fps)",
+            "Flux Secondaire": "640×360@15fps",
+            "Qualité Vidéo": "Full HD 1296p",
+            "Fréquence d'Images": "15fps"
+          }
+        }
+      },
+      
+      // 规格组9：电源系统
+      "Power System": {
+        group_name: {
+          en: "Power System",
+          fr: "Système d'Alimentation"
+        },
+        specs: {
+          en: {
+            "Power Supply": "DC 12V/1A Adapter",
+            "Power Consumption": "Max 12W",
+            "Power Interface": "DC power jack",
+            "Battery Life": "Powered by adapter"
+          },
+          fr: {
+            "Alimentation": "Adaptateur DC 12V/1A",
+            "Consommation": "Max 12W",
+            "Interface d'Alimentation": "Prise d'alimentation DC",
+            "Autonomie": "Alimenté par adaptateur"
+          }
+        }
+      },
+      
+      // 规格组10：环境和物理参数
+      "Environmental & Physical": {
+        group_name: {
+          en: "Environmental & Physical",
+          fr: "Environnement et Physique"
+        },
+        specs: {
+          en: {
+            "Weatherproof Rating": "IP65",
+            "Operating Temperature": "-20°C to 45°C",
+            "Storage Temperature": "-20°C to 60°C",
+            "Operating Humidity": "10% ~ 95% RH (Non-condensing)",
+            "Material": "PC+ABS plastic",
+            "Color": "White (Default)",
+            "Dimensions": "72 × 72 × 73mm",
+            "Weight": "280g"
+          },
+          fr: {
+            "Indice d'Étanchéité": "IP65",
+            "Température de Fonctionnement": "-20°C à 45°C",
+            "Température de Stockage": "-20°C à 60°C",
+            "Humidité de Fonctionnement": "10% ~ 95% RH (Sans condensation)",
+            "Matériau": "Plastique PC+ABS",
+            "Couleur": "Blanc (Par défaut)",
+            "Dimensions": "72 × 72 × 73mm",
+            "Poids": "280g"
+          }
+        }
+      },
+      
+      // 规格组11：AI功能
+      "AI Features": {
+        group_name: {
+          en: "AI Features",
+          fr: "Fonctionnalités IA"
+        },
+        specs: {
+          en: {
+            "Motion Detection": "Advanced motion detection",
+            "Push Notifications": "Real-time alerts to mobile",
+            "Human Detection": "AI human detection (4MP version)",
+            "Smart Alerts": "Intelligent alert system",
+            "Activity Zones": "Customizable detection zones"
+          },
+          fr: {
+            "Détection de Mouvement": "Détection de mouvement avancée",
+            "Notifications Push": "Alertes en temps réel sur mobile",
+            "Détection Humaine": "Détection humaine IA (version 4MP)",
+            "Alertes Intelligentes": "Système d'alerte intelligent",
+            "Zones d'Activité": "Zones de détection personnalisables"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "Outdoor Camera",
+        "12V/1A Power Adapter",
+        "Mounting Screw Set",
+        "Reset Pin",
+        "User Manual",
+        "Installation Template",
+        "Waterproof Accessories"
+      ],
+      fr: [
+        "Caméra Extérieure",
+        "Adaptateur d'Alimentation 12V/1A",
+        "Kit de Vis de Montage",
+        "Épingle de Réinitialisation",
+        "Manuel d'Utilisation",
+        "Gabarit d'Installation",
+        "Accessoires Étanches"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 可选配置
+    // ------------------------------------------
+    optional_configurations: {
+      en: {
+        "Resolution": "4MP version available",
+        "WiFi Options": "2.4G single band / Dual band 2.4G+5G / Dual band + BLE",
+        "AI Features": "4MP version supports AI human detection",
+        "Storage": "Cloud storage plans available"
+      },
+      fr: {
+        "Résolution": "Version 4MP disponible",
+        "Options WiFi": "Bande unique 2.4G / Double bande 2.4G+5G / Double bande + BLE",
+        "Fonctionnalités IA": "La version 4MP supporte la détection humaine IA",
+        "Stockage": "Plans de stockage cloud disponibles"
+      }
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVC285 Product Brochure",
+          type: "PDF",
+          size: "3.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-brochure.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "Installation & User Manual",
+          type: "PDF",
+          size: "6.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-manual.pdf",
+          description: "Step-by-step installation and setup guide"
+        },
+        {
+          name: "Quick Start Guide",
+          type: "PDF",
+          size: "1.9 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-quickstart.pdf",
+          description: "Quick installation reference guide"
+        },
+        {
+          name: "Mobile App Guide",
+          type: "PDF",
+          size: "2.5 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-app-guide.pdf",
+          description: "SecureVision app configuration guide"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC285",
+          type: "PDF",
+          size: "3.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel d'Installation et d'Utilisation",
+          type: "PDF",
+          size: "6.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc285-manual-fr.pdf",
+          description: "Guide d'installation et de configuration étape par étape"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: [],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",
+      message: {
+        en: "In Stock - Ready to Ship",
+        fr: "En Stock - Prêt à Expédier"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC285 Outdoor WiFi Spotlight Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes technical support and 30-day money-back guarantee. Extended warranty plans available.",
+      fr: "La Caméra Projecteur WiFi Extérieure SVC285 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique et une garantie de remboursement de 30 jours. Plans de garantie prolongée disponibles."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",
+      last_updated: "2025-01-27",
+      version: "1.0",
+      tags: ["outdoor", "spotlight", "3mp", "wifi", "ip65", "night-vision", "color-night-vision", "motion-detection", "led-alarm"]
+    }
+  }
+  
+  // ==========================================
+  // 文件使用说明
+  // ==========================================
+  /*
+  SVC285 户外WiFi聚光灯摄像头产品规格文件
+  
+  主要特点：
+  - Full HD 3MP（2304×1296）视频录制
+  - LED聚光灯带灯光报警功能
+  - 双夜视模式：红外夜视和彩色夜视
+  - IP65防水等级，适合户外使用
+  - 运动检测与推送通知
+  - 双向音频通信
+  - 100°广角视野
+  - 夜视距离最大8米
+  
+  特殊功能：
+  - LED聚光灯可作为威慑和照明
+  - 灯光报警功能增强安全性
+  - 彩色夜视提供更清晰的夜间图像
+  
+  可选配置：
+  - 分辨率：3MP（标准）/ 4MP
+  - WiFi：2.4G单频 / 2.4G+5G双频 / 双频+BLE
+  - AI功能：4MP版本支持AI人体检测
+  
+  更新注意事项：
+  1. 产品型号已从IPC285改为SVC285
+  2. 图片文件需要上传到 /images/ 目录
+  3. 下载文件需要先上传到GitHub Releases
+  4. 法语翻译可能需要专业校对
+  5. APP名称 "SecureVision" 需要确认是否正确
+  
+  数据来源：
+  - 原始Excel规格书：IPC285 Outdoor Wifi Spotlight Camera.xlsx
+  - 型号更改：IPC285 → SVC285
+  - 转换日期：2025-01-27
+  */
+}

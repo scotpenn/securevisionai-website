@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SecureVision AI Pre-commit Hook
-# Validates navigation configuration and CSS before commit
+# Validates navigation configuration, product data, and CSS before commit
 
 echo "🚀 Running SecureVision AI pre-commit checks..."
 
@@ -83,7 +83,26 @@ for file in "${MAIN_FILES[@]}"; do
     fi
 done
 
-# 3. Validate CSS if Stylelint is available
+# 3. Validate product data
+echo "📦 Validating product data..."
+if command_exists node; then
+    if [ -f "scripts/build-products.js" ]; then
+        echo "Building and validating products..."
+        node scripts/build-products.js
+        if [ $? -eq 0 ]; then
+            echo -e "${GREEN}✅ Product data validation passed${NC}"
+        else
+            echo -e "${RED}❌ Product data validation failed${NC}"
+            exit 1
+        fi
+    else
+        echo -e "${YELLOW}⚠️  Warning: Product build script not found, skipping product validation${NC}"
+    fi
+else
+    echo -e "${YELLOW}⚠️  Warning: Node.js not found, skipping product validation${NC}"
+fi
+
+# 4. Validate CSS if Stylelint is available
 echo "🎨 Checking CSS..."
 if command_exists stylelint; then
     if [ -f ".stylelintrc.json" ]; then
@@ -101,7 +120,7 @@ else
     echo -e "${YELLOW}⚠️  Warning: Stylelint not found, skipping CSS validation${NC}"
 fi
 
-# 4. Check file naming conventions
+# 5. Check file naming conventions
 echo "📁 Checking file naming conventions..."
 BAD_NAMES=$(find . -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" | grep -E "[ A-Z]" | grep -v node_modules | grep -v ".git" | wc -l)
 if [ "$BAD_NAMES" -gt 0 ]; then
@@ -110,7 +129,7 @@ if [ "$BAD_NAMES" -gt 0 ]; then
     echo "Consider using kebab-case naming convention"
 fi
 
-# 5. Final validation
+# 6. Final validation
 echo "🏁 Final checks..."
 
 # Ensure navigation.json is valid JSON

@@ -34,13 +34,11 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svb215-main.jpg",      // 主要展示图片
+      main: "/images/SVB215-main.png",      // 主要展示图片
       gallery: [                            // 详情页图片画廊数组
-        "/images/svb215-main.jpg",          // 第1张：主视图
-        "/images/svb215-side.jpg",          // 第2张：侧视图  
-        "/images/svb215-installed.jpg",     // 第3张：安装效果图
-        "/images/svb215-app.jpg",           // 第4张：APP界面
-        "/images/svb215-package.jpg"        // 第5张：包装视图
+        "/images/SVB215-main.png",          // 第1张：主视图
+        "/images/SVB215-side.png",          // 第2张：侧视图  
+        "/images/SVB215-front.png"          // 第3张：正面视图
       ]
     },
     
