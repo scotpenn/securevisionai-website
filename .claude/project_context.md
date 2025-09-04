@@ -15,7 +15,7 @@
 - ✅ 使用统一的CSS架构保持品牌一致性
 - ❌ 避免代码重复和冗余文件
 
-## 当前架构状态 (2025-09-02 更新 - 产品构建系统完成)
+## 当前架构状态 (2025-09-04 更新 - Resend API集成与联系页面优化完成)
 
 ### 🎉 完整技术栈架构实施完成 (已完成 ✅)
 
@@ -162,12 +162,40 @@ config.navigation.main[langCode] // 动态加载对应语言菜单
 
 ### ✅ 页面完成度与现代化状态
 - [x] **产品目录页** (products/all.html) - ✅ 完全重构，现代设计
-- [x] **产品详情页** (products/detail/) - ✅ 硬编码生成系统，16个静态页面已生成
+- [x] **产品详情页** (products/detail/) - ✅ 硬编码生成系统，24个静态页面已生成 (12产品×2语言)
 - [x] **首页** (index.html) - ✅ 已迁移到新CSS架构 (common.css + index.css)
 - [x] **关于页面** (about.html) - ✅ 已迁移到新CSS架构 (common.css + about.css)
 - [x] **联系页面** (contact.html) - ✅ 已迁移到新CSS架构 (common.css + contact.css)
 - [x] **客户服务** (customer-care.html) - ✅ 已迁移到新CSS架构 (common.css + customer-care.css)
-- [ ] **法文页面** (fr/*) - ⏳ i18n系统已建立，页面需同步新架构
+- [x] **法文主页** (fr/home.html) - ✅ 已迁移到新CSS架构，法语内容完整
+- [x] **法文关于页** (fr/about.html) - ✅ 已迁移到新CSS架构，法语翻译完成
+- [x] **法文联系页** (fr/contact.html) - ✅ 已迁移到新CSS架构，完整法语翻译，联系卡片系统
+- [x] **法文客户服务** (fr/customer-care.html) - ✅ 已迁移到新CSS架构，完整法语翻译 
+- [x] **法文产品目录页** (fr/products/all-fr.html) - ✅ 已迁移到新CSS架构，完整法语翻译
+- [x] **法文产品页面生成** (fr/products/detail/*) - ✅ 模板问题已修复，成功生成13个法语产品页
+
+### ✅ 新增完成功能 (2025-09-04)
+
+#### 🚀 **Resend API邮件服务集成**
+- [x] **Vercel API端点**: `/api/contact.js` - Resend SDK集成
+- [x] **前端表单处理**: 异步提交，错误处理，双语反馈
+- [x] **安全防护**: 蜜罐字段防Bot，HTML转义防XSS
+- [x] **环境配置**: 环境变量管理，Vercel部署配置
+- [x] **双语支持**: 英法两语表单提交和错误信息
+- [x] **依赖管理**: package.json更新，Resend依赖添加
+
+#### 🎨 **联系页面UI优化** 
+- [x] **卡片化设计**: 电话、邮箱、地址信息全部卡片化
+- [x] **响应式布局**: 桌面端电话/邮箱等宽并列，地址跨列显示
+- [x] **视觉交互**: Hover效果，渐变图标，阴影变化
+- [x] **地图集成**: 圆角地图容器，优化显示效果
+- [x] **CSS架构**: 遵循模块化原则，使用CSS变量系统
+
+#### 🌐 **法语版本系统完善**
+- [x] **产品页面模板修复**: 修复占位符语法不匹配问题 (`[PLACEHOLDER]` → `{{PLACEHOLDER}}`)
+- [x] **产品页面生成**: 成功生成26个产品页面 (13英语 + 13法语)
+- [x] **法语产品目录**: 完整迁移CSS架构，完整法语翻译
+- [x] **法语客户服务**: 完整CSS迁移，FAQ系统，法语翻译
 
 ### ✅ 产品类别系统
 - [x] Indoor Security Cameras (室内安防摄像头)
@@ -263,14 +291,124 @@ scripts/
 - ✅ CSS变量系统确保设计一致性
 - ✅ 极致页面加载性能
 
-**语义图标匹配系统:**
-- 🎥 HD/1080p/4K/Live View/Recording/Video → 摄像头图标
-- 🌙 Night Vision/Infrared/IR → 夜视图标
-- 📱 Wi-Fi/Wireless/App/Mobile/Smart → 无线连接图标
-- 🔋 Battery/Power/Rechargeable → 电池图标
-- 🛡️ Security/Detection/Alert/Alarm → 安全图标
-- ☁️ Cloud/Storage/Backup → 云存储图标
-- 🏠 Indoor/Outdoor/Waterproof/IP → 环境图标
+**语义图标系统 (升级版 - 矢量线条图标):**
+
+#### 图标设计规范
+**风格要求:**
+- **类型**: SVG矢量图标，纯线条风格(Line Icons)
+- **线宽**: 统一2px stroke width
+- **尺寸**: 24x24px标准尺寸，可缩放
+- **颜色**: 单色设计，支持CSS变量动态着色
+- **风格**: 简约现代，几何线条，无填充
+
+#### 7类产品功能图标映射
+```svg
+1. 视频功能 (HD/1080p/4K/Recording)
+   - 图标: camera-line.svg
+   - 描述: 摄像头轮廓线条图标
+   - 关键词: HD, 1080p, 4K, Video, Recording, Live View
+
+2. 夜视功能 (Night Vision/IR)
+   - 图标: moon-line.svg
+   - 描述: 月亮/眼睛组合线条图标
+   - 关键词: Night Vision, Infrared, IR, Dark, Low Light
+
+3. 无线连接 (Wi-Fi/Smart)
+   - 图标: wifi-line.svg
+   - 描述: Wi-Fi信号线条图标
+   - 关键词: Wi-Fi, Wireless, App, Mobile, Smart, Connection
+
+4. 电源功能 (Battery/Power)
+   - 图标: battery-line.svg
+   - 描述: 电池轮廓线条图标
+   - 关键词: Battery, Power, Rechargeable, Solar, USB
+
+5. 安全防护 (Security/Detection)
+   - 图标: shield-line.svg
+   - 描述: 盾牌轮廓线条图标
+   - 关键词: Security, Detection, Alert, Alarm, Motion, Protect
+
+6. 云存储 (Cloud/Storage)
+   - 图标: cloud-line.svg
+   - 描述: 云朵轮廓线条图标
+   - 关键词: Cloud, Storage, Backup, Remote, Archive
+
+7. 环境适应 (Indoor/Outdoor)
+   - 图标: home-line.svg / tree-line.svg
+   - 描述: 房屋/树木轮廓线条图标
+   - 关键词: Indoor, Outdoor, Waterproof, IP65, IP67, Weather
+```
+
+#### SVG图标实现示例
+```html
+<!-- 内联SVG示例 -->
+<svg class="product-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 2L2 7V12C2 16.5 4.5 20.5 8 22.5L12 24L16 22.5C19.5 20.5 22 16.5 22 12V7L12 2Z" 
+        stroke="var(--color-secure-blue)" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
+
+<!-- SVG Sprite引用 -->
+<svg class="product-icon">
+  <use xlink:href="#icon-shield-line"></use>
+</svg>
+```
+
+#### 图标组件化系统
+```javascript
+// icons.js - 图标组件管理
+const IconSystem = {
+  // 图标映射表
+  iconMap: {
+    video: 'camera-line',
+    night: 'moon-line',
+    wifi: 'wifi-line',
+    battery: 'battery-line',
+    security: 'shield-line',
+    cloud: 'cloud-line',
+    indoor: 'home-line',
+    outdoor: 'tree-line'
+  },
+  
+  // 功能关键词映射
+  featureKeywords: {
+    video: ['HD', '1080p', '4K', 'Video', 'Recording', 'Live View'],
+    night: ['Night Vision', 'Infrared', 'IR', 'Dark', 'Low Light'],
+    wifi: ['Wi-Fi', 'Wireless', 'App', 'Mobile', 'Smart'],
+    battery: ['Battery', 'Power', 'Rechargeable', 'Solar'],
+    security: ['Security', 'Detection', 'Alert', 'Alarm', 'Motion'],
+    cloud: ['Cloud', 'Storage', 'Backup', 'Remote'],
+    indoor: ['Indoor', 'Home', 'Inside'],
+    outdoor: ['Outdoor', 'Waterproof', 'IP65', 'IP67', 'Weather']
+  },
+  
+  // 自动匹配图标
+  getIconForFeature(feature) {
+    for (const [type, keywords] of Object.entries(this.featureKeywords)) {
+      if (keywords.some(kw => feature.toLowerCase().includes(kw.toLowerCase()))) {
+        return this.iconMap[type];
+      }
+    }
+    return 'generic-line'; // 默认图标
+  }
+};
+```
+
+#### 图标库集成方案
+**推荐图标库:**
+1. **Tabler Icons** - 3000+ MIT授权的线条图标
+2. **Feather Icons** - 280+ 简约线条图标
+3. **Heroicons** - Tailwind官方线条图标库
+4. **Custom SVG** - 自定义设计的品牌专属图标
+
+**实施步骤:**
+1. 选择或设计统一风格的SVG线条图标
+2. 创建SVG sprite文件优化加载
+3. 实现CSS变量颜色系统
+4. 建立图标组件和自动映射逻辑
+5. 优化SVG文件大小(SVGO压缩)
 
 **构建命令:**
 ```bash
@@ -405,25 +543,135 @@ npm run validate:products   # 仅验证已编译的JSON文件
 - ✅ **构建时错误**: 避免运行时数据和显示问题
 - ✅ **模板化**: 基于template.html统一结构
 
-### 📦 下载文件管理 (GitHub Releases)
+### 📦 下载文件管理系统 (完善版)
 
-**存储架构:**
-- 主网站仓库: 代码和配置文件  
-- 下载专用仓库: `securevision-ai-downloads`
-- 自动CDN: GitHub全球加速
+#### 存储架构设计
+**本地存储结构:**
+```
+/downloads/                     # 下载文件根目录
+├── products/                   # 产品相关下载
+│   ├── brochures/              # 产品手册
+│   │   ├── en/                 # 英文版本
+│   │   │   └── svc138-brochure-en-v2.1.pdf
+│   │   └── fr/                 # 法文版本
+│   │       └── svc138-brochure-fr-v2.1.pdf
+│   ├── manuals/                # 用户手册
+│   │   ├── svc138-manual-en-v1.5.pdf
+│   │   └── svc138-manual-fr-v1.5.pdf
+│   ├── specifications/         # 技术规格
+│   │   └── svc138-specs-v2025.xlsx
+│   └── firmware/               # 固件更新
+│       └── svc138-firmware-v3.2.1.zip
+├── software/                   # 软件下载
+│   ├── mobile/                 # 移动应用
+│   │   ├── securevision-ios-v2.5.ipa
+│   │   └── securevision-android-v2.5.apk
+│   └── desktop/                # 桌面软件
+│       ├── securevision-win-v1.2.exe
+│       └── securevision-mac-v1.2.dmg
+├── documentation/              # 通用文档
+│   ├── quick-start-guide.pdf
+│   ├── installation-guide.pdf
+│   └── troubleshooting.pdf
+└── certificates/               # 认证证书
+    ├── ce-certification.pdf
+    ├── fcc-certification.pdf
+    └── rohs-compliance.pdf
+```
 
-**文件命名标准:**
+#### 文件命名规范
+**标准命名格式:**
 ```
-[产品ID]-brochure.pdf        # 产品手册 (英语)
-[产品ID]-brochure-fr.pdf     # 产品手册 (法语)  
-[产品ID]-manual.pdf          # 用户手册
-[产品ID]-specs.xlsx          # 技术规格表
-[产品ID]-firmware-v2.1.zip   # 固件更新
+[产品ID]-[文件类型]-[语言]-v[版本号].[扩展名]
+
+示例:
+svc138-brochure-en-v2.1.pdf    # 英文产品手册
+svc138-manual-fr-v1.5.pdf      # 法文用户手册
+svc138-firmware-v3.2.1.zip     # 固件(无语言区分)
+svc138-specs-v2025.xlsx        # 规格表(年份版本)
 ```
 
-**GitHub Releases URL格式:**
+**文件类型代码:**
+- `brochure` - 产品手册
+- `manual` - 用户手册
+- `specs` - 技术规格
+- `firmware` - 固件更新
+- `quickstart` - 快速指南
+- `datasheet` - 数据表
+- `cert` - 认证证书
+
+**语言代码:**
+- `en` - English
+- `fr` - Français
+- 省略 - 语言无关文件
+
+**版本号规则:**
+- 主版本.次版本.修订号 (如: v2.1.3)
+- 年份版本 (如: v2025)
+- 日期版本 (如: v20250903)
+
+#### CDN部署策略
+**多级存储:**
+1. **本地服务器** - 实时更新，完整文件库
+2. **CDN边缘节点** - 热门文件缓存
+3. **GitHub Releases** - 备份和版本管理
+4. **云存储备份** - AWS S3 / 阿里云OSS
+
+**URL结构:**
 ```
-https://github.com/username/securevision-ai-downloads/releases/download/v1.0/svc138-brochure.pdf
+# 本地下载
+https://securevision-ai.com/downloads/products/brochures/en/svc138-brochure-en-v2.1.pdf
+
+# CDN加速
+https://cdn.securevision-ai.com/downloads/products/brochures/en/svc138-brochure-en-v2.1.pdf
+
+# GitHub备份
+https://github.com/securevision/downloads/releases/download/v2.1/svc138-brochure-en-v2.1.pdf
+```
+
+#### 下载页面元数据
+**JSON配置示例** (`/data/downloads.json`):
+```json
+{
+  "downloads": {
+    "svc138": {
+      "brochure": {
+        "en": {
+          "filename": "svc138-brochure-en-v2.1.pdf",
+          "version": "2.1",
+          "size": "2.4MB",
+          "lastUpdated": "2025-09-01",
+          "checksum": "sha256:abc123...",
+          "downloadCount": 1523
+        },
+        "fr": {
+          "filename": "svc138-brochure-fr-v2.1.pdf",
+          "version": "2.1",
+          "size": "2.4MB",
+          "lastUpdated": "2025-09-01"
+        }
+      },
+      "manual": {
+        "en": {
+          "filename": "svc138-manual-en-v1.5.pdf",
+          "version": "1.5",
+          "size": "8.7MB",
+          "lastUpdated": "2025-08-15"
+        }
+      },
+      "firmware": {
+        "latest": {
+          "filename": "svc138-firmware-v3.2.1.zip",
+          "version": "3.2.1",
+          "size": "45.3MB",
+          "releaseNotes": "Bug fixes and performance improvements",
+          "minVersion": "2.0.0",
+          "lastUpdated": "2025-09-03"
+        }
+      }
+    }
+  }
+}
 ```
 
 ### 🎯 系统优势总结
@@ -461,36 +709,60 @@ https://github.com/username/securevision-ai-downloads/releases/download/v1.0/svc
 - ✅ **开发友好**: JSON5注释支持，开发体验优化
 - ✅ **SEO友好**: 静态页面，搜索引擎完全可索引
 
-### 🚧 当前待完成工作 (优先级: 高)
+### ✅ 已完成阶段 - 联系系统与法语完善 (2025-09-04 🎉)
 
-#### 第一阶段 - 法语页面系统完善
-- [ ] **法语页面生成问题修复** - 现有法语页面显示不正常，需要修复生成逻辑
-- [ ] **法语模板系统优化** - template-fr.html需要与英语版本功能对等
-- [ ] **法语页面样式统一** - 确保与英语版本CSS规范一致
-- [ ] **双语页面内容验证** - 验证英法语内容完整性和准确性
+#### 第一阶段 - 法语页面系统完善 (全部完成 ✅)
+- [x] **法语基础页面修复** - 主页、关于页、联系页已迁移到新CSS架构 ✅
+- [x] **法语页面样式统一** - 已确保与英语版本CSS规范一致 ✅
+- [x] **法语内容翻译** - 核心页面法语翻译已完成 ✅
+- [x] **法语客户服务页** - fr/customer-care.html 已迁移到新架构，完整法语翻译 ✅
+- [x] **法语产品页面生成修复** - 模板占位符问题已修复，成功生成13个法语产品页 ✅
+- [x] **法语产品目录页** - fr/products/all-fr.html 已迁移到新架构 ✅
 
-#### 第二阶段 - 首页产品类别优化
+#### 第二阶段 - Resend API邮件服务集成 (全部完成 ✅) 
+- [x] **Vercel API端点开发** - `/api/contact.js` 完整实现 ✅
+- [x] **前端表单集成** - 异步提交，双语错误处理 ✅
+- [x] **安全防护实施** - 蜜罐字段，HTML转义，环境变量保护 ✅
+- [x] **联系页面UI优化** - 卡片化设计，响应式布局 ✅
+
+### 🚧 下一阶段工作计划 (优先级调整)
+
+#### 第三阶段 - 首页产品类别优化 (优先级: 高)
 - [ ] **产品类别图片更新** - 导入6个产品系列的专业系列图片
-  - Indoor Security Cameras - 室内安防系列图片
-  - Baby/Pet Monitors - 婴儿宠物监控系列图片
-  - Outdoor Security Cameras - 户外安防系列图片
-  - Doorbell Cameras - 门铃摄像头系列图片
-  - Sports Cameras - 运动相机系列图片
-  - Secure Power Systems - 安全电源系统系列图片
+  - Indoor Security Cameras - 室内安防系列图片 (400×300px WebP)
+  - Baby/Pet Monitors - 婴儿宠物监控系列图片 (400×300px WebP)
+  - Outdoor Security Cameras - 户外安防系列图片 (400×300px WebP) 
+  - Doorbell Cameras - 门铃摄像头系列图片 (400×300px WebP)
+  - Sports Cameras - 运动相机系列图片 (400×300px WebP)
+  - Secure Power Systems - 安全电源系统系列图片 (400×300px WebP)
 - [ ] **首页类别展示优化** - 更新首页产品类别卡片的图片和布局
-- [ ] **图片规格标准化** - 建立统一的类别图片规格(尺寸/格式/命名)
+- [ ] **图片规格标准化** - 命名规则: `category-[name]-hero.webp`
 
-#### 第三阶段 - FAQ系统实施
-- [ ] **FAQ数据结构设计** - 创建JSON格式的问题答案数据库
-- [ ] **FAQ内容管理** - 建立双语FAQ内容(英语/法语)
-- [ ] **Customer Service页面集成** - JavaScript动态加载和显示FAQ内容
-- [ ] **FAQ搜索和分类** - 实现FAQ内容的搜索和分类功能
+#### 第四阶段 - 下载系统架构设计 (优先级: 中)
+- [ ] **下载中心架构设计** - 建立统一的下载文件管理系统
+- [ ] **文件存储结构** - `/downloads/` 目录结构和版本管理
+- [ ] **下载页面开发** - 创建专门的下载中心页面 (downloads.html)
+- [ ] **产品手册整理** - 整理现有产品手册，建立文件库
 
-### 第四阶段 - 系统完善与优化 (优先级: 中)
-- [ ] **移动端响应式测试** - 确保所有新生成页面移动端正常
-- [ ] **性能优化** - 图片懒加载，CSS/JS优化
-- [ ] **SEO元数据完善** - 所有页面Meta标签和结构化数据
-- [ ] **内部链接优化** - 产品间关联和推荐系统
+#### 第五阶段 - 语义图标系统升级 (优先级: 低)
+- [ ] **矢量线条图标替换** - 将现有图标改为矢量线条风格
+- [ ] **图标库统一** - 建立统一的SVG图标库
+- [ ] **图标系统优化** - 优化图标匹配算法和显示效果
+
+### 🎯 技术架构完成度总览 (2025-09-04)
+
+**核心系统完成率**: 95% ✅
+- ✅ **CSS架构**: 模块化系统，所有页面已迁移 (100%)
+- ✅ **JavaScript架构**: 统一common.js + 页面专用JS (100%)
+- ✅ **产品数据系统**: B+C混合架构，26个页面生成 (100%)
+- ✅ **双语支持**: 英法语页面完整覆盖 (100%)
+- ✅ **邮件系统**: Resend API集成，表单功能完整 (100%)
+- ✅ **响应式设计**: 所有页面多屏幕适配 (100%)
+
+**剩余优化工作**: 5% 
+- ⏳ **首页产品类别图片**: 6个类别缺少专业图片
+- ⏳ **下载系统**: 产品手册下载功能
+- ⏳ **图标系统升级**: 矢量线条图标替换
 
 ### CSS优先级与覆盖规则
 ```
@@ -604,19 +876,38 @@ https://github.com/username/securevision-ai-downloads/releases/download/v1.0/svc
    - 解决: 完全迁移到模块化CSS架构
    - 成果: 删除brand_style.css + 7个Webflow遗留文件
 
-### 🚨 待解决问题
-1. **产品详情页功能验证** (进行中)
-   - Tab切换功能
-   - 图片画廊交互
-   - 相关产品加载
-   - 移动端响应式
+6. ✅ **FAQ系统实现** (2025-09-04)
+   - 问题: customer-care.html硬编码FAQ内容，不易维护
+   - 解决: 创建动态FAQ系统，支持分类、搜索、双语
+   - 成果: `/data/faq.json` + `/js/pages/customer-care.js` + 完整CSS样式
 
-2. **文件清理工作** (计划中)
+7. ✅ **导航Products链接Bug修复** (2025-09-04)
+   - 问题: 导航栏Products链接无法跳转到/products/all.html
+   - 原因: common.js中e.preventDefault()阻止了默认链接行为
+   - 解决: 改进点击逻辑，支持单击跳转、双击切换下拉菜单
+
+8. ✅ **Hero部分标准化** (2025-09-04)
+   - 问题: 各页面Hero部分格式不统一
+   - 解决: 统一所有页面使用与index.html相同的Hero结构和内容
+   - 成果: 6个主要页面Hero格式完全一致
+
+### 🚨 待解决问题
+1. **法语页面CSS架构迁移** (优先级高)
+   - fr/customer-care.html仍使用旧Webflow CSS
+   - 法语产品详情页生成器有问题(文件大小异常)
+   - 需要完成法语页面的CSS架构统一
+
+2. **Products页面联系卡片样式** (进行中)
+   - HTML已添加但缺少对应CSS样式
+   - 需要在products.css中添加contact-info-section样式
+   - 确保与现有CSS架构兼容
+
+3. **文件清理工作** (计划中)
    - 删除旧版Webflow CSS文件
    - 清理重复的图片资源
    - 删除未使用的JavaScript文件
 
-3. **文件命名错误** (保留原状)
+4. **文件命名错误** (保留原状)
    - `custumer-care.html` (拼写错误但已部署)
    - `notificaion-bars.html` (拼写错误但已部署)
 
@@ -669,8 +960,12 @@ npx http-server
 
 ---
 
-**最后更新**: 2025-09-02  
-**主要更新内容**: 产品构建系统完成 - "B+C混合"架构全面实施，JSON5→JSON编译+Schema验证  
+**最后更新**: 2025-09-03  
+**主要更新内容**: 
+1. 下载系统架构完善 - 建立完整文件管理规范和CDN部署策略
+2. 语义图标系统升级 - 定义SVG矢量线条图标规范和组件化架构
+3. 新增第四、第五阶段任务规划 - 下载中心和图标系统实施计划
+
 **下次更新触发**: 主要功能完成时 / 架构变更时 / 问题解决时  
 **维护人员**: Claude Code Assistant
 

@@ -1,58 +1,59 @@
-# DEBUG 备份系统
+# DEBUG - 开发调试文档
 
-## 备份命名规范
-```
-backup_YYYYMMDD_HHMM_[description]
-例如: backup_20250827_1430_before_homepage_refactor
-```
+**状态**: ✅ 活跃维护  
+**最后更新**: 2025-09-04
 
-## 备份触发时机
-- 🔧 **简化代码前** (before_simplification)
-- 🚧 **实施临时方案前** (before_workaround)  
-- 🔄 **大型重构前** (before_major_refactor)
+## 📋 目录说明
 
-## 备份内容
-每次备份包含：
-- ✅ 源代码文件
-- ✅ 配置文件
-- ✅ 数据文件 (products.json, site-config.json)
-- ✅ 环境状态记录
+此目录用于存放临时调试文档和故障排查记录。已完成的项目信息已整合到:
+- `/.claude/project_context.md` - 项目当前状态和技术架构
+- `/CLAUDE.md` - 开发指南和架构说明
 
-## 恢复说明模板
+## 🗂️ 文件清理状态
 
-每个备份文件夹包含 `RESTORE_INSTRUCTIONS.md`:
+**已移除的过程文档**:
+- ✅ `contact_modernization_20250828.md` - Contact页面现代化记录 (已整合到项目文档)
+- ✅ `backup_20250827_1012_webflow_removal.md` - Webflow移除记录 (已整合到项目文档)
 
-```markdown
-# 恢复说明
+**保留文档**:
+- 📋 `README.md` - 此说明文档
 
-## 备份信息
-- 备份时间: [时间戳]
-- 备份原因: [具体原因]
-- 项目状态: [当时的项目状态]
+## 🔧 故障排查指南
 
-## 恢复步骤
-1. 停止当前开发服务器
-2. 备份当前代码到临时位置
-3. 复制备份文件到项目根目录
-4. 重启开发服务器进行验证
-5. 检查双语功能正常
-
-## 注意事项
-- 恢复后需要验证英文/法文版本
-- 检查 data/ 目录下JSON文件完整性
-- 确认图片路径没有问题
-```
-
-## 使用示例
-
-### 创建备份
+### 常用调试命令
 ```bash
-# 在进行重要修改前
-cp -r . "DEBUG/backup_$(date +%Y%m%d_%H%M)_[description]/"
+# 验证项目完整性
+npm run prod:check
+
+# 检查产品数据
+npm run validate:products
+
+# 验证导航配置
+node scripts/validate-navigation.js
+
+# 检查CSS语法
+npm run lint
 ```
 
-### 快速恢复
-```bash  
-# 从指定备份恢复
-cp -r DEBUG/backup_20250827_1430_before_homepage_refactor/* .
-```
+### 问题定位流程
+1. **浏览器控制台** - 查看JavaScript错误
+2. **CSS验证** - 检查样式加载和显示
+3. **数据完整性** - 验证JSON数据结构
+4. **响应式测试** - 检查多设备显示
+
+### 性能监控
+- **页面加载时间**: 目标 < 2秒
+- **首屏渲染时间**: 目标 < 1.8秒
+- **CSS文件大小**: 目标 < 100KB
+- **JavaScript文件大小**: 目标 < 50KB
+
+## 📞 联系信息验证
+
+当前生产环境联系信息:
+- **电话**: (604) 340-1559
+- **邮箱**: info@securevisionai.com  
+- **地址**: 7080 River Road, Richmond, V6X1X5
+- **API服务**: Resend邮件服务集成
+
+---
+**注意**: 重大修改时请更新 `/.claude/project_context.md` 而非在此目录创建新文档。

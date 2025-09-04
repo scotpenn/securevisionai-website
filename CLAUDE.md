@@ -10,39 +10,40 @@ SecureVision AI is a static product showcase website for a security camera and p
 
 ### Local Development
 ```bash
-# Primary development server
+# Start development server
 npm run dev
 # or
 python -m http.server 8000
-
-# Alternative servers
-npx http-server
-
-# Direct file access - open HTML files directly in browser
 ```
 
-### Validation & Testing
+### Build & Validation
 ```bash
-# Validate internationalization setup
-npm run validate-i18n
+# Complete production build (compile products + generate pages)
+npm run build:all
 
-# Build products (JSON5 → JSON compilation)
+# Build product data only (JSON5 → JSON compilation)
 npm run build:products
 
-# Validate compiled product data
+# Generate static HTML product pages (24 pages: 12 products × 2 languages)
+npm run generate:pages
+
+# Validate all systems before commit
+bash scripts/pre-commit-hook.sh
+```
+
+### Validation Commands
+```bash
+# Check product data integrity
 npm run validate:products
 
-# Complete production check (build + validate)
-npm run prod:check
+# Validate i18n translations
+npm run validate-i18n  
 
-# CSS linting (requires stylelint installation)
-npm run lint
-
-# Validate navigation configuration
+# Check navigation configuration
 node scripts/validate-navigation.js
 
-# Run pre-commit checks manually
-bash scripts/pre-commit-hook.sh
+# Lint CSS files
+npm run lint
 ```
 
 ## Current Architecture
@@ -161,7 +162,7 @@ Images follow responsive naming convention:
 ## Important Constraints
 
 1. **NO E-COMMERCE**: This is a showcase site only - no cart, checkout, or payment functionality
-2. **Static HTML only**: No server-side processing or APIs
+2. **Vercel Serverless Functions**: Contact form uses `/api/contact.js` for email processing via Resend API
 3. **Bilingual content**: All user-facing content must support EN/FR
 4. **Use absolute paths**: All resources should use `/css/`, `/js/`, `/images/`
 5. **NO Webflow code**: All Webflow dependencies have been removed
@@ -172,7 +173,7 @@ Images follow responsive naming convention:
 
 ## Common Development Tasks
 
-### Adding a New Product (UPDATED WORKFLOW)
+### Adding a New Product
 1. **Create product data file**: `/products/data/products/[product-id].json5`
    - Use JSON5 format with comments and trailing commas
    - Include bilingual content (EN/FR) for all required fields
@@ -196,8 +197,8 @@ Images follow responsive naming convention:
 ### Creating New Pages
 1. Copy structure from existing pages
 2. Include `common.css` first, then page-specific CSS
-3. Include `common.js` for navigation functionality
-4. Use absolute paths for all resources
+3. Include `common.js` for navigation functionality  
+4. Use absolute paths for all resources (`/css/`, `/js/`, `/images/`)
 5. Create page-specific CSS file in `/css/` directory
 
 ### Updating Translations
@@ -220,11 +221,7 @@ Images follow responsive naming convention:
 - [ ] Forms validate properly
 - [ ] No console errors
 - [ ] All links work
-- [ ] Run `npm run validate-i18n` - passes without errors
-- [ ] Run `npm run prod:check` - products build and validate successfully
-- [ ] Run `node scripts/validate-navigation.js` - passes validation
-- [ ] Run `npm run lint` - no CSS errors
-- [ ] Pre-commit hook passes: `bash scripts/pre-commit-hook.sh`
+- [ ] Run `bash scripts/pre-commit-hook.sh` - all validation passes
 
 ## File Structure
 ```
@@ -256,13 +253,15 @@ Images follow responsive naming convention:
 │       └── detail/
 │           ├── template-fr.html         # French product template
 │           └── svc138.html              # French SVC138 page
+├── api/
+│   └── contact.js               # Vercel serverless function for Resend email
 ├── css/
 │   ├── common.css               # Base styles
 │   ├── index.css                # Homepage styles
 │   ├── products.css             # Product catalog styles
 │   ├── product-detail.css       # Product detail styles
 │   ├── about.css                # About page styles
-│   ├── contact.css              # Contact page styles
+│   ├── contact.css              # Contact page + contact cards styles
 │   └── customer-care.css        # Customer care styles
 ├── js/
 │   ├── common.js                # Global JavaScript
@@ -296,18 +295,33 @@ Images follow responsive naming convention:
 - CSS total: < 100KB
 - JavaScript total: < 50KB
 
-## Recent Major Updates (2025-09-03)
+## Recent Major Updates
 
-### ✅ Complete Product System Implementation (2025-09-03)
-- **Product Portfolio Expansion**: 12 products across 6 categories now active
-- **Hardcoded Page Generation**: 24 static pages (12 products × 2 languages) successfully generated
-- **Build System Completion**: JSON5→JSON compilation with Schema validation fully operational
-- **New Product Integration**: SVC263 (Baby/Pet), SVC285 (Outdoor), SVC842 (Sports), SVT100 (Power)
-- **Category Distribution**: All 6 product categories properly populated
-- **Navigation Optimization**: Removed redundant "All Products" menu option
-- **Data Quality**: Schema validation ensures consistent product data structure
+### ✅ Resend API Integration & Contact Enhancement (2025-09-04)
+- **Production Email Service**: Integrated Resend API for professional email handling
+- **Enhanced Security**: Honeypot anti-bot protection and HTML escaping
+- **Contact Card System**: Modern card-based layout for contact information
+- **Bilingual Form Handling**: Complete EN/FR error messages and validation
 
-### ✅ Bilingual Product Detail System (2025-01-09)
+#### Key Features:
+- **Vercel API Functions**: `/api/contact.js` with proper error handling and rate limiting
+- **Security Measures**: Honeypot fields, input sanitization, environment variable protection
+- **Responsive Cards**: Equal-width contact cards with hover effects and professional styling
+- **Real Email Delivery**: Production-ready email service replacing form simulation
+
+#### Technical Implementation:
+- **API Endpoint**: Serverless function with Resend SDK integration
+- **CSS Grid System**: Responsive contact cards that adapt from 2-column to single-column
+- **Form Enhancement**: Real-time validation and professional success/error messaging
+- **Environment Security**: API keys properly configured in `.env.local`
+
+### ✅ Product System Complete (2025-09-03)
+- **12 Products × 2 Languages**: 24 static HTML pages generated
+- **Build Pipeline**: JSON5 development → JSON compilation → HTML generation
+- **6 Product Categories**: Indoor, Baby/Pet, Outdoor, Doorbell, Sports, Power
+- **Schema Validation**: Enforced data consistency at build time
+
+### ✅ Bilingual Architecture (2025-01-09)
 - **Complete bilingual architecture** for product detail pages
 - **Smart image loading system** with automatic path detection
 - **SEO optimization** with hreflang links and structured data
@@ -356,113 +370,27 @@ Before any commit, these validations must pass:
 - CSS follows the modular architecture (common.css + page-specific CSS)
 - No relative paths in navigation links (use absolute paths with `/`)
 
-## Current Technical Debt & Next Phase Tasks
+## Current Tasks & Technical Debt
 
-### ✅ Completed (2025-09-03)
-- ✅ All 12 product detail pages created with hardcoded generation system
-- ✅ New products (svc842, svc263, svc285, svt100) successfully integrated
-- ✅ JSON5→JSON build system fully operational with Schema validation
+### 🚧 Next Priority Tasks
 
-### 🚧 Priority Tasks (Next Session)
+1. **Homepage Category Images** - Add 6 professional series images
+   - Format: 400x300px WebP/PNG
+   - Naming: `category-[name]-hero.webp`
+   - Categories: Indoor, Baby/Pet, Outdoor, Doorbell, Sports, Power
 
-#### French Page System Issues
-- **French page generation problems**: Current French product pages not displaying correctly
-- **Template system**: template-fr.html needs functionality parity with English version
-- **Content validation**: Verify bilingual content completeness and accuracy
+2. **FAQ System** - Implement customer service FAQ
+   - JSON-based FAQ database
+   - Bilingual support (EN/FR)  
+   - Dynamic loading in customer-care.html
 
-#### Homepage Category Images
-- **Category image updates**: Import 6 professional product series images
-  - Indoor Security Cameras series image
-  - Baby/Pet Monitors series image  
-  - Outdoor Security Cameras series image
-  - Doorbell Cameras series image
-  - Sports Cameras series image
-  - Secure Power Systems series image
-- **Image specifications**: Establish consistent category image standards (size/format/naming)
-- **Homepage integration**: Update homepage product category cards with new images
+3. **Performance Optimization** - Optimize loading and images
+   - WebP conversion for all product images
+   - Lazy loading implementation
+   - CSS/JS minification for production
 
-#### FAQ System Implementation
-- **Data structure**: Create JSON-based FAQ database for questions and answers
-- **Bilingual content**: Implement English/French FAQ content management
-- **Customer Service integration**: Add JavaScript-driven FAQ display to customer-care.html
-- **Search functionality**: Implement FAQ search and categorization features
-
-### Legacy Items
-- French pages (`/fr/*`) need architecture sync with English pages (ongoing)
-- Legacy `data/products.json` migration to individual JSON5 files (low priority)
-
-## Technical Specifications for Next Phase
-
-### French Page System Debugging
-**Current Issue**: French product pages generated by `scripts/generate-product-pages.js` are displaying incorrectly
-- French pages are much smaller in size (10KB vs 29KB for English)
-- Template rendering appears to be incomplete or failing
-- Need to investigate template-fr.html functionality and data binding
-
-**Investigation Areas**:
-1. Check template-fr.html structure and placeholder system
-2. Verify French translations are properly loaded during generation
-3. Compare generated French HTML with English counterparts
-4. Test French language detection and content switching
-
-### Homepage Category Image System
-**Requirements**:
-- **Image Format**: WebP preferred, PNG/JPG fallback
-- **Dimensions**: 400x300px (4:3 aspect ratio)
-- **Naming Convention**: `category-[name]-hero.webp`
-- **Quality**: High-quality product photography showcasing category
-
-**Target Categories**:
-```
-indoor -> category-indoor-hero.webp
-baby-pet-monitor -> category-baby-pet-hero.webp  
-outdoor -> category-outdoor-hero.webp
-doorbell -> category-doorbell-hero.webp
-sports -> category-sports-hero.webp
-secure-power -> category-power-hero.webp
-```
-
-### FAQ System Architecture
-**Data Structure** (`data/faq.json`):
-```json
-{
-  "categories": {
-    "general": {
-      "name": {"en": "General Questions", "fr": "Questions Générales"},
-      "order": 1
-    },
-    "products": {
-      "name": {"en": "Product Information", "fr": "Informations Produit"}, 
-      "order": 2
-    }
-  },
-  "faqs": [
-    {
-      "id": "faq001",
-      "category": "general",
-      "question": {
-        "en": "What is your warranty policy?",
-        "fr": "Quelle est votre politique de garantie?"
-      },
-      "answer": {
-        "en": "We offer a comprehensive 2-year warranty...",
-        "fr": "Nous offrons une garantie complète de 2 ans..."
-      },
-      "keywords": ["warranty", "garantie", "repair", "replacement"],
-      "featured": true
-    }
-  ]
-}
-```
-
-**Integration Points**:
-- `customer-care.html`: Add FAQ section with search and filtering
-- `js/pages/customer-care.js`: New file for FAQ functionality
-- CSS updates in `css/customer-care.css` for FAQ styling
 
 ## Debug and Recovery
-- Check `/DEBUG/DEBUG-LOG.md` for problem history and solutions
+- Check `DEBUG-LOG.md` for problem history and solutions
 - Use `.claude/project_context.md` for detailed project state
-- Backup naming: `backup_YYYYMMDD_HHMM_[description]`
-- Run `npm run validate-i18n` to diagnose translation issues
-- Use validation scripts to identify structural problems before they impact production
+- Run validation scripts to identify issues before commit

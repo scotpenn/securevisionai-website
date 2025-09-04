@@ -116,17 +116,30 @@
                   <div class="contact-card-description">Send us your inquiries anytime</div>
                 </div>
               </div>
+              
+              <div class="contact-card contact-card-wide">
+                <div class="contact-card-icon location-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <div class="contact-card-label">Visit Our Location</div>
+                  <address class="contact-card-address">
+                    <strong>7080 River Road, Richmond, V6X1X5, Canada</strong>
+                  </address>
+                  <div class="contact-card-description">Come visit us or schedule an appointment</div>
+                </div>
+              </div>
             </div>
             
-            <div class="address-section">
-              <h3 class="address-title">Visit Our Location</h3>
-              <div class="address-info">7080 River Road, Richmond, V6X1X5, Canada</div>
+            <div class="map-section">
               <div class="map-container">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.946!2d-123.1207375!3d49.1662374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54860b31e4b0d4b1%3A0x3f4a4c4c4c4c4c4c!2s7080%20River%20Rd%2C%20Richmond%2C%20BC%20V6X%201X5%2C%20Canada!5e0!3m2!1sen!2sca!4v1640995200000!5m2!1sen!2sca"
                   width="100%" 
-                  height="250" 
-                  style="border:0;" 
+                  height="300" 
+                  style="border:0; border-radius: 12px;" 
                   allowfullscreen="" 
                   loading="lazy" 
                   referrerpolicy="no-referrer-when-downgrade"
@@ -142,6 +155,9 @@
         <!-- Contact Form -->
         <div class="contact-form-container">
           <form id="contact-form" class="contact-form" method="POST" action="#" onsubmit="handleFormSubmit(event)">
+            <!-- 蜜罐：正常用户不可见，Bot 会误填 -->
+            <input type="text" name="hp" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;visibility:hidden;">
+            
             <div class="form-header">
               <h3 class="form-title">Customer Contact</h3>
               <p class="form-subtitle">(<span class="required">*</span> indicates required field):</p>
@@ -345,37 +361,54 @@
   });
 })();
 
-// Form submission handler
-function handleFormSubmit(event) {
+// Form submission handler with Resend API
+async function handleFormSubmit(event) {
   event.preventDefault();
-
   const form = event.target;
+  const btn = form.querySelector('button[type="submit"]');
   const successMessage = document.getElementById('success-message');
   const errorMessage = document.getElementById('error-message');
+  const originalText = btn.textContent;
 
-  // 防重复提交
-  const submitBtn = form.querySelector('button[type="submit"]');
-  if (submitBtn) {
-    submitBtn.disabled = true;
-    submitBtn.dataset._origText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-  }
-
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
   successMessage.style.display = 'none';
   errorMessage.style.display = 'none';
 
-  // TODO: 在这里替换为真实的 fetch 提交
-  setTimeout(() => {
-    form.style.display = 'none';
-    successMessage.style.display = 'block';
+  const fd = new FormData(form);
+  // interests 可能是多选
+  const payload = Object.fromEntries(fd.entries());
+  payload.interests = fd.getAll('interests[]');
 
-    // 平滑滚到提示区（窗口或容器都能工作）
-    if ('scrollBehavior' in document.documentElement.style) {
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  try {
+    const resp = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const json = await resp.json();
+
+    if (resp.ok && json.ok) {
+      form.style.display = 'none';
+      successMessage.style.display = 'block';
+      
+      // 平滑滚到提示区
+      if ('scrollBehavior' in document.documentElement.style) {
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo(0, successMessage.getBoundingClientRect().top + window.pageYOffset);
+      }
     } else {
-      window.scrollTo(0, successMessage.getBoundingClientRect().top + window.pageYOffset);
+      errorMessage.style.display = 'block';
+      errorMessage.querySelector('p').textContent = json.error || 'Unexpected error occurred';
     }
-  }, 1000);
+  } catch (err) {
+    errorMessage.style.display = 'block';
+    errorMessage.querySelector('p').textContent = 'Network error, please try again later.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }
 
   return false;
 }
