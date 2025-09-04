@@ -2,19 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="product-id" content="[PRODUCT_ID]">
-  <title>[PRODUCT_NAME] - SecureVision AI</title>
-  <meta content="[PRODUCT_DESCRIPTION]" name="description">
-  <meta content="[PRODUCT_NAME] - SecureVision AI" property="og:title">
-  <meta content="[PRODUCT_DESCRIPTION]" property="og:description">
-  <meta content="[PRODUCT_IMAGE]" property="og:image">
+  <meta name="product-id" content="svc842">
+  <title>SVC842 Caméra Sport Étanche 4K/5K - SecureVision AI</title>
+  <meta content="Caméra sport étanche professionnelle 4K/5K avec capacité d'enregistrement jusqu'à 60 FPS. Comprend une étanchéité du corps jusqu'à 20 mètres sans boîtier, une stabilisation d'image électronique à six axes et double écran incluant un écran tactile de 2.0 pouces. Parfait pour les sports extrêmes et les aventures sous-marines avec technologie de capteur Sony." name="description">
+  <meta content="SVC842 Caméra Sport Étanche 4K/5K - SecureVision AI" property="og:title">
+  <meta content="Caméra sport étanche professionnelle 4K/5K avec capacité d'enregistrement jusqu'à 60 FPS. Comprend une étanchéité du corps jusqu'à 20 mètres sans boîtier, une stabilisation d'image électronique à six axes et double écran incluant un écran tactile de 2.0 pouces. Parfait pour les sports extrêmes et les aventures sous-marines avec technologie de capteur Sony." property="og:description">
+  <meta content="/images/svc842-main.png" property="og:image">
   <meta property="og:type" content="product">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   
   <!-- SEO hreflang links for multilingual support -->
-  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
+  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/svc842.html">
+  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/svc842.html">
+  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/svc842.html">
   
   <link href="/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="/css/common.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
       </ul>
       
       <div class="nav-actions">
-        <a href="/products/detail/[PRODUCT_ID].html" class="nav-lang-btn">EN</a>
+        <a href="/products/detail/svc842.html" class="nav-lang-btn">EN</a>
       </div>
     </div>
   </nav>
@@ -75,11 +75,11 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="category">[PRODUCT_CATEGORY]</span>
+        <span data-product="category">{{PRODUCT_CATEGORY}}</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="model">[PRODUCT_MODEL]</span>
+        <span data-product="model">SVC842</span>
       </nav>
     </div>
   </section>
@@ -91,34 +91,101 @@
         <!-- Gallery Column -->
         <div class="product-gallery" data-product="gallery">
           <div class="gallery-main">
-            <img data-product="main-image" src="/images/placeholder-product.jpg" alt="Product Image" class="gallery-main-image">
+            <img id="main-image" src="/images/svc842-main.png" alt="SVC842 Caméra Sport Étanche 4K/5K" class="gallery-main-image">
           </div>
-          <div class="gallery-thumbs" data-product="thumbnails">
-            <!-- Thumbnail images will be populated by JavaScript -->
+          <div class="gallery-thumbs">
+            <button class="gallery-thumb active" onclick="switchMainImage('/images/svc842-main.png')">
+              <img src="/images/svc842-main.png" alt="View 1" />
+            </button>
+            <button class="gallery-thumb" onclick="switchMainImage('/images/svc842-main2.png')">
+              <img src="/images/svc842-main2.png" alt="View 2" />
+            </button>
+            <button class="gallery-thumb" onclick="switchMainImage('/images/svc842-back.png')">
+              <img src="/images/svc842-back.png" alt="View 3" />
+            </button>
+            <button class="gallery-thumb" onclick="switchMainImage('/images/svc842-top.png')">
+              <img src="/images/svc842-top.png" alt="View 4" />
+            </button>
           </div>
         </div>
 
         <!-- Info Column -->
         <div class="product-info">
-          <h1 class="product-title" data-product="title">[PRODUCT_NAME]</h1>
+          <h1 class="product-title" data-product="title">SVC842 Caméra Sport Étanche 4K/5K</h1>
           <div class="product-model">
             <span data-i18n="products.model">Modèle :</span> 
-            <span data-product="model">[PRODUCT_MODEL]</span>
+            <span data-product="model">SVC842</span>
           </div>
           
-          <div class="product-status" data-product="status">
-            <!-- Availability status will be populated by JavaScript -->
+          <div class="product-status">
+      <span class="availability-status in-stock">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        En Stock - Prêt à Expédier
+      </span>
           </div>
 
           <div class="product-description" data-product="description">
-            [PRODUCT_DESCRIPTION]
+            Caméra sport étanche professionnelle 4K/5K avec capacité d'enregistrement jusqu'à 60 FPS. Comprend une étanchéité du corps jusqu'à 20 mètres sans boîtier, une stabilisation d'image électronique à six axes et double écran incluant un écran tactile de 2.0 pouces. Parfait pour les sports extrêmes et les aventures sous-marines avec technologie de capteur Sony.
           </div>
 
           <!-- Key Features -->
           <div class="product-highlights">
             <h3 data-i18n="products.keyFeatures">Caractéristiques Principales</h3>
-            <ul data-product="highlights">
-              <!-- Features will be populated by JavaScript -->
+            <ul class="product-features-list">
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M23 7l-7 5 7 5V7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+    </svg>
+                <span>Enregistrement Ultra HD 5K30 et 4K60</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Étanche à 20m (Sans Boîtier)</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Capteur Sony IMX376/576 + Objectif Grand Angle</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Stabilisation d'Image Électronique à Six Axes</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Écran Tactile 2.0" + Écran Frontal 1.5"</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+      <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+      <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+    </svg>
+                <span>Contrôle WiFi via Application Lercenker</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Résolution Photo 48 Mégapixels</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Modes d'Enregistrement Multiples et Time-lapse</span>
+              </li>
             </ul>
           </div>
 
@@ -153,22 +220,225 @@
         
         <!-- Specifications Tab -->
         <div class="tab-content active" data-tab-content="specifications">
-          <div class="specs-container" data-product="specifications">
-            <!-- Specifications will be populated by JavaScript from JSON5 data -->
+          <div class="specs-container">
+        <section class="spec-group">
+          <h4 class="spec-group-title">Processeur et Capteur</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>ISP</th>
+                <td>Processeur Sigmastar/Novatek</td>
+              </tr>
+              <tr>
+                <th>Module d'Objectif</th>
+                <td>Sony IMX376 / 576 + Objectif Grand Angle</td>
+              </tr>
+              <tr>
+                <th>Capteur d'Image</th>
+                <td>Capteur CMOS Sony</td>
+              </tr>
+              <tr>
+                <th>Type d'Objectif</th>
+                <td>Objectif professionnel grand angle</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Spécifications Vidéo</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Résolution Vidéo</th>
+                <td>5K30, 4K60/30, 2.7K30, 1080P60/30, 720P120</td>
+              </tr>
+              <tr>
+                <th>Modes Vidéo</th>
+                <td>Enregistrement Standard / Mode Pré-enregistrement / Mode Vertical / Enregistrement en Boucle / Time-lapse / Ralenti / Capture pendant l'Enregistrement</td>
+              </tr>
+              <tr>
+                <th>Format Vidéo</th>
+                <td>MP4 (H.264/H.265)</td>
+              </tr>
+              <tr>
+                <th>Fréquence d'Images</th>
+                <td>Jusqu'à 120fps en 720p</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Spécifications Photo</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Résolution Photo</th>
+                <td>48 Mégapixels</td>
+              </tr>
+              <tr>
+                <th>Modes Photo</th>
+                <td>Prise Unique / Photo Time-lapse / Prise Temporisée / Rafale</td>
+              </tr>
+              <tr>
+                <th>Format Photo</th>
+                <td>JPEG</td>
+              </tr>
+              <tr>
+                <th>Mode Rafale</th>
+                <td>Plusieurs prises par seconde</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Système d'Affichage</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Écran Frontal</th>
+                <td>Écran IPS HD 1.5 pouces</td>
+              </tr>
+              <tr>
+                <th>Écran Arrière</th>
+                <td>Écran tactile IPS 2.0 pouces</td>
+              </tr>
+              <tr>
+                <th>Type d'Écran</th>
+                <td>Technologie IPS couleur</td>
+              </tr>
+              <tr>
+                <th>Contrôle Tactile</th>
+                <td>Interface entièrement tactile</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Étanchéité et Stabilisation</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Indice d'Étanchéité</th>
+                <td>Corps étanche jusqu'à 20 mètres (sans boîtier étanche)</td>
+              </tr>
+              <tr>
+                <th>Stabilisation d'Image Électronique</th>
+                <td>Stabilisation à six axes</td>
+              </tr>
+              <tr>
+                <th>Type de Stabilisation</th>
+                <td>EIS électronique</td>
+              </tr>
+              <tr>
+                <th>Niveau de Protection</th>
+                <td>Étanchéité professionnelle</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Connectivité</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Connectivité WiFi</th>
+                <td>Application Lercenker APP / APK</td>
+              </tr>
+              <tr>
+                <th>Télécommande Sans Fil</th>
+                <td>Supporte télécommande 2.4G (non incluse, accessoire optionnel)</td>
+              </tr>
+              <tr>
+                <th>Microphone Externe</th>
+                <td>Filaire - Supporte microphone externe (non inclus, accessoire optionnel)</td>
+              </tr>
+              <tr>
+                <th>Options de Télécommande</th>
+                <td>Télécommande + microphone sans fil (non inclus, accessoire optionnel)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Alimentation et Stockage</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Port de Connexion</th>
+                <td>TYPE-C</td>
+              </tr>
+              <tr>
+                <th>Capacité de Batterie</th>
+                <td>Batterie rechargeable amovible standard: 850mAh</td>
+              </tr>
+              <tr>
+                <th>Carte Mémoire</th>
+                <td>Supporte cartes mémoire 32-256GB U3 ou supérieur</td>
+              </tr>
+              <tr>
+                <th>Type de Batterie</th>
+                <td>Batterie lithium rechargeable amovible</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
           </div>
         </div>
 
         <!-- Downloads Tab -->
         <div class="tab-content" data-tab-content="downloads">
-          <div class="downloads-container" data-product="downloads">
-            <!-- Download links will be populated by JavaScript -->
+          <div class="downloads-container">
+    <div class="download-item">
+      <div class="download-info">
+        <h4>Brochure Produit SVC842</h4>
+        <p class="download-meta">PDF • 4.2 MB</p>
+        <p class="download-desc">Aperçu complet du produit et spécifications</p>
+      </div>
+      <a href="https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc842-brochure-fr.pdf" class="btn btn-secondary download-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download
+      </a>
+    </div>
+          
+    <div class="download-item">
+      <div class="download-info">
+        <h4>Manuel d'Utilisation et Guide d'Installation</h4>
+        <p class="download-meta">PDF • 8.5 MB</p>
+        <p class="download-desc">Guide d'utilisation complet avec instructions d'installation</p>
+      </div>
+      <a href="https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc842-manual-fr.pdf" class="btn btn-secondary download-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download
+      </a>
+    </div>
+          
+    <div class="download-item">
+      <div class="download-info">
+        <h4>Guide de l'Application Lercenker</h4>
+        <p class="download-meta">PDF • 3.2 MB</p>
+        <p class="download-desc">Guide de configuration et d'utilisation de l'application mobile</p>
+      </div>
+      <a href="https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc842-app-guide-fr.pdf" class="btn btn-secondary download-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download
+      </a>
+    </div>
           </div>
         </div>
 
         <!-- Warranty Tab -->
         <div class="tab-content" data-tab-content="warranty">
-          <div class="warranty-container" data-product="warranty">
-            <!-- Warranty information will be populated by JavaScript -->.
+          <div class="warranty-container">
+            <p>La Caméra Sport SVC842 est livrée avec une garantie fabricant complète de 1 an couvrant les défauts de matériaux et de fabrication. Les caractéristiques étanches sont couvertes dans des conditions d'utilisation normales. Inclut le support technique et une garantie de remboursement de 30 jours.</p>
           </div>
         </div>
         

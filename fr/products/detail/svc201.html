@@ -2,19 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="product-id" content="[PRODUCT_ID]">
-  <title>[PRODUCT_NAME] - SecureVision AI</title>
-  <meta content="[PRODUCT_DESCRIPTION]" name="description">
-  <meta content="[PRODUCT_NAME] - SecureVision AI" property="og:title">
-  <meta content="[PRODUCT_DESCRIPTION]" property="og:description">
-  <meta content="[PRODUCT_IMAGE]" property="og:image">
+  <meta name="product-id" content="svc201">
+  <title>SVC201 Caméra Intérieure Fixe WiFi - SecureVision AI</title>
+  <meta content="Caméra intérieure fixe WiFi compacte et fiable avec vidéo Full HD 2MP, audio bidirectionnel et détection intelligente de mouvement et de son. Installation facile et surveillance via application mobile, parfait pour la sécurité de la maison et du bureau sans frais mensuels." name="description">
+  <meta content="SVC201 Caméra Intérieure Fixe WiFi - SecureVision AI" property="og:title">
+  <meta content="Caméra intérieure fixe WiFi compacte et fiable avec vidéo Full HD 2MP, audio bidirectionnel et détection intelligente de mouvement et de son. Installation facile et surveillance via application mobile, parfait pour la sécurité de la maison et du bureau sans frais mensuels." property="og:description">
+  <meta content="/images/SVC201B-main.jpg" property="og:image">
   <meta property="og:type" content="product">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   
   <!-- SEO hreflang links for multilingual support -->
-  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/[PRODUCT_ID].html">
-  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/[PRODUCT_ID].html">
+  <link rel="alternate" hreflang="en" href="https://securevision.ai/products/detail/svc201.html">
+  <link rel="alternate" hreflang="fr" href="https://securevision.ai/fr/products/detail/svc201.html">
+  <link rel="alternate" hreflang="x-default" href="https://securevision.ai/products/detail/svc201.html">
   
   <link href="/css/normalize.css" rel="stylesheet" type="text/css">
   <link href="/css/common.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,7 @@
       </ul>
       
       <div class="nav-actions">
-        <a href="/products/detail/[PRODUCT_ID].html" class="nav-lang-btn">EN</a>
+        <a href="/products/detail/svc201.html" class="nav-lang-btn">EN</a>
       </div>
     </div>
   </nav>
@@ -75,11 +75,11 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="category">[PRODUCT_CATEGORY]</span>
+        <span data-product="category">{{PRODUCT_CATEGORY}}</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span data-product="model">[PRODUCT_MODEL]</span>
+        <span data-product="model">SVC201</span>
       </nav>
     </div>
   </section>
@@ -91,34 +91,90 @@
         <!-- Gallery Column -->
         <div class="product-gallery" data-product="gallery">
           <div class="gallery-main">
-            <img data-product="main-image" src="/images/placeholder-product.jpg" alt="Product Image" class="gallery-main-image">
+            <img id="main-image" src="/images/SVC201B-main.jpg" alt="SVC201 Caméra Intérieure Fixe WiFi" class="gallery-main-image">
           </div>
-          <div class="gallery-thumbs" data-product="thumbnails">
-            <!-- Thumbnail images will be populated by JavaScript -->
+          <div class="gallery-thumbs">
+            <button class="gallery-thumb active" onclick="switchMainImage('/images/SVC201B-main.jpg')">
+              <img src="/images/SVC201B-main.jpg" alt="View 1" />
+            </button>
           </div>
         </div>
 
         <!-- Info Column -->
         <div class="product-info">
-          <h1 class="product-title" data-product="title">[PRODUCT_NAME]</h1>
+          <h1 class="product-title" data-product="title">SVC201 Caméra Intérieure Fixe WiFi</h1>
           <div class="product-model">
             <span data-i18n="products.model">Modèle :</span> 
-            <span data-product="model">[PRODUCT_MODEL]</span>
+            <span data-product="model">SVC201</span>
           </div>
           
-          <div class="product-status" data-product="status">
-            <!-- Availability status will be populated by JavaScript -->
+          <div class="product-status">
+      <span class="availability-status in-stock">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        En Stock - Prêt à Expédier
+      </span>
           </div>
 
           <div class="product-description" data-product="description">
-            [PRODUCT_DESCRIPTION]
+            Caméra intérieure fixe WiFi compacte et fiable avec vidéo Full HD 2MP, audio bidirectionnel et détection intelligente de mouvement et de son. Installation facile et surveillance via application mobile, parfait pour la sécurité de la maison et du bureau sans frais mensuels.
           </div>
 
           <!-- Key Features -->
           <div class="product-highlights">
             <h3 data-i18n="products.keyFeatures">Caractéristiques Principales</h3>
-            <ul data-product="highlights">
-              <!-- Features will be populated by JavaScript -->
+            <ul class="product-features-list">
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M23 7l-7 5 7 5V7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+    </svg>
+                <span>Vidéo Full HD 2MP 1080p</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <polygon points="11 5,6 9,2 9,2 15,6 15,11 19,11 5" stroke="currentColor" stroke-width="2"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+                <span>Communication Audio Bidirectionnelle</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Détection de Mouvement et de Son</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Vision Nocturne jusqu'à 8m</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+      <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+      <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+    </svg>
+                <span>Configuration WiFi Facile et Contrôle App</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <span>Sans Frais Mensuels</span>
+              </li>
+              <li>
+                <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+      <polyline points="14 2,14 8,20 8" stroke="currentColor" stroke-width="2"/>
+      <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+      <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+    </svg>
+                <span>Options de Stockage Local et Cloud</span>
+              </li>
             </ul>
           </div>
 
@@ -153,22 +209,308 @@
         
         <!-- Specifications Tab -->
         <div class="tab-content active" data-tab-content="specifications">
-          <div class="specs-container" data-product="specifications">
-            <!-- Specifications will be populated by JavaScript from JSON5 data -->
+          <div class="specs-container">
+        <section class="spec-group">
+          <h4 class="spec-group-title">Caméra et Image</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Capteur d'Image</th>
+                <td>CMOS 1/3" 2 Mégapixels</td>
+              </tr>
+              <tr>
+                <th>Pixels Effectifs</th>
+                <td>1920×1080</td>
+              </tr>
+              <tr>
+                <th>Vitesse d'Obturation</th>
+                <td>1/15 ~ 1/10 000s</td>
+              </tr>
+              <tr>
+                <th>Illumination Minimale</th>
+                <td>0,02 LUX @ (F2.0, AGC ON), 0 lux avec IR</td>
+              </tr>
+              <tr>
+                <th>Jour/Nuit</th>
+                <td>Auto (ICR) / N&B</td>
+              </tr>
+              <tr>
+                <th>WDR</th>
+                <td>DWDR (Plage Dynamique Étendue Numérique)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Vidéo et Audio</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Compression Vidéo</th>
+                <td>H.264</td>
+              </tr>
+              <tr>
+                <th>Flux Principal</th>
+                <td>1920×1080 @ 15fps</td>
+              </tr>
+              <tr>
+                <th>Flux Secondaire</th>
+                <td>640×360 @ 15fps</td>
+              </tr>
+              <tr>
+                <th>Débit Binaire</th>
+                <td>HD: 1Mbps, SD: 512Kbps</td>
+              </tr>
+              <tr>
+                <th>Double Flux</th>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <th>Audio</th>
+                <td>Microphone et haut-parleur intégrés</td>
+              </tr>
+              <tr>
+                <th>Fonctions Audio</th>
+                <td>Communication audio bidirectionnelle</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Vision Nocturne</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Distance IR</th>
+                <td>5-8 mètres</td>
+              </tr>
+              <tr>
+                <th>LEDs IR</th>
+                <td>LEDs infrarouges</td>
+              </tr>
+              <tr>
+                <th>Mode Nuit</th>
+                <td>Commutation automatique</td>
+              </tr>
+              <tr>
+                <th>Type de Vision Nocturne</th>
+                <td>Infrarouge (Noir et Blanc)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Réseau et Connectivité</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Standard WiFi</th>
+                <td>WiFi 2.4G (IEEE 802.11b/g/n)</td>
+              </tr>
+              <tr>
+                <th>Protocole Réseau</th>
+                <td>HTTP, TCP/IP, DHCP, DNS, HTTPS, IPv4, IPv6, UDP, RTSP, ICMP, RTP, ARP, QoS</td>
+              </tr>
+              <tr>
+                <th>Sécurité</th>
+                <td>Chiffrement AES128</td>
+              </tr>
+              <tr>
+                <th>Application Mobile</th>
+                <td>SecureVision (iOS 9+, Android 5+)</td>
+              </tr>
+              <tr>
+                <th>Méthode de Connexion</th>
+                <td>Configuration WiFi par code QR</td>
+              </tr>
+              <tr>
+                <th>Optionnel</th>
+                <td>Double bande 2.4G+5G, support BLE (modèles optionnels)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Options de Stockage</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Stockage Local</th>
+                <td>Carte Micro SD jusqu'à 128GB</td>
+              </tr>
+              <tr>
+                <th>Stockage Cloud</th>
+                <td>Service de stockage cloud optionnel</td>
+              </tr>
+              <tr>
+                <th>Mode d'Enregistrement</th>
+                <td>Continu, déclenché par mouvement, programmé</td>
+              </tr>
+              <tr>
+                <th>Lecture</th>
+                <td>Lecture à distance via l'application</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Fonctions Intelligentes</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Détection de Mouvement</th>
+                <td>Détection de mouvement intelligente avec alertes</td>
+              </tr>
+              <tr>
+                <th>Détection de Son</th>
+                <td>Détection de son avec notifications</td>
+              </tr>
+              <tr>
+                <th>Zones de Détection</th>
+                <td>Zones d'activité personnalisables</td>
+              </tr>
+              <tr>
+                <th>Types d'Alertes</th>
+                <td>Notifications push vers l'application mobile</td>
+              </tr>
+              <tr>
+                <th>Fonctions IA</th>
+                <td>Détection humaine par IA (optionnel)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Alimentation et Physique</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Alimentation</th>
+                <td>Type-C DC 5V/1A</td>
+              </tr>
+              <tr>
+                <th>Consommation</th>
+                <td>Max 2.0W</td>
+              </tr>
+              <tr>
+                <th>Dimensions</th>
+                <td>86 × 57 × 35mm</td>
+              </tr>
+              <tr>
+                <th>Poids Net</th>
+                <td>78g</td>
+              </tr>
+              <tr>
+                <th>Matériau</th>
+                <td>Plastique PC + ABS</td>
+              </tr>
+              <tr>
+                <th>Montage</th>
+                <td>Support de bureau ou montage mural</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Environnement</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Température de Fonctionnement</th>
+                <td>-20°C à 50°C</td>
+              </tr>
+              <tr>
+                <th>Température de Stockage</th>
+                <td>-30°C à 60°C</td>
+              </tr>
+              <tr>
+                <th>Humidité de Fonctionnement</th>
+                <td>10% à 90% RH (sans condensation)</td>
+              </tr>
+              <tr>
+                <th>Indice IP</th>
+                <td>Usage intérieur uniquement (pas d'indice IP)</td>
+              </tr>
+              <tr>
+                <th>Installation</th>
+                <td>Environnements intérieurs uniquement</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="spec-group">
+          <h4 class="spec-group-title">Fonctionnalités IA et Options</h4>
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <th>Détection IA</th>
+                <td>Détection humaine par IA</td>
+              </tr>
+              <tr>
+                <th>Alertes Intelligentes</th>
+                <td>Alertes de mouvement et de son intelligentes</td>
+              </tr>
+              <tr>
+                <th>Résolutions Optionnelles</th>
+                <td>Versions 3MP ou 4MP disponibles</td>
+              </tr>
+              <tr>
+                <th>WiFi Optionnel</th>
+                <td>Double bande 2.4G+5G avec BLE</td>
+              </tr>
+              <tr>
+                <th>Fonctions Avancées</th>
+                <td>Reconnaissance faciale (optionnel)</td>
+              </tr>
+              <tr>
+                <th>Analyse d'Activité</th>
+                <td>Analyse des modèles de comportement</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
           </div>
         </div>
 
         <!-- Downloads Tab -->
         <div class="tab-content" data-tab-content="downloads">
-          <div class="downloads-container" data-product="downloads">
-            <!-- Download links will be populated by JavaScript -->
+          <div class="downloads-container">
+    <div class="download-item">
+      <div class="download-info">
+        <h4>Brochure Produit SVC201</h4>
+        <p class="download-meta">PDF • 2.3 MB</p>
+        <p class="download-desc">Aperçu complet du produit et spécifications</p>
+      </div>
+      <a href="https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc201-brochure-fr.pdf" class="btn btn-secondary download-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download
+      </a>
+    </div>
+          
+    <div class="download-item">
+      <div class="download-info">
+        <h4>Manuel d'Installation et d'Utilisation</h4>
+        <p class="download-meta">PDF • 4.2 MB</p>
+        <p class="download-desc">Guide détaillé de configuration et d'utilisation</p>
+      </div>
+      <a href="https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc201-manual-fr.pdf" class="btn btn-secondary download-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download
+      </a>
+    </div>
           </div>
         </div>
 
         <!-- Warranty Tab -->
         <div class="tab-content" data-tab-content="warranty">
-          <div class="warranty-container" data-product="warranty">
-            <!-- Warranty information will be populated by JavaScript -->.
+          <div class="warranty-container">
+            <p>La Caméra Intérieure Fixe WiFi SVC201 est livrée avec une garantie fabricant complète de 1 an couvrant les défauts de matériaux et de fabrication. Inclut le support technique 24/7 et une garantie de remboursement de 30 jours. Parfait pour la surveillance de la maison et du bureau sans frais mensuels.</p>
           </div>
         </div>
         

@@ -104,6 +104,9 @@
   transition: var(--transition-base);
   border: 1px solid var(--color-neutral-200);
   cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .solution-card:hover {

@@ -52,7 +52,7 @@
         description: { en: 'Advanced indoor security cameras for home monitoring' },
         visible: true, 
         display_order: 1, 
-        hero_image: '/images/category-indoor.jpg',
+        hero_image: '/images/category-indoor.png',
         products: [] 
       },
       'baby-pet-monitor': { 
@@ -61,7 +61,7 @@
         description: { en: 'Specialized monitoring cameras for babies and pets' },
         visible: true, 
         display_order: 2, 
-        hero_image: '/images/category-baby-pet.jpg',
+        hero_image: '/images/category-baby-pet-monitor.png',
         products: [] 
       },
       'outdoor': { 
@@ -70,7 +70,7 @@
         description: { en: 'Weather-resistant outdoor security cameras' },
         visible: true, 
         display_order: 3, 
-        hero_image: '/images/category-outdoor.jpg',
+        hero_image: '/images/category-outdoor.png',
         products: [] 
       },
       'doorbell': { 
@@ -79,7 +79,7 @@
         description: { en: 'Smart doorbell cameras with two-way communication' },
         visible: true, 
         display_order: 4, 
-        hero_image: '/images/category-doorbell.jpg',
+        hero_image: '/images/category-doorbell.png',
         products: [] 
       },
       'sports': { 
@@ -88,7 +88,7 @@
         description: { en: 'Action cameras for sports and outdoor activities' },
         visible: true, 
         display_order: 5, 
-        hero_image: '/images/category-sports.jpg',
+        hero_image: '/images/category-sports.png',
         products: [] 
       },
       'secure-power': { 
@@ -97,7 +97,7 @@
         description: { en: 'Portable power solutions for security systems' },
         visible: true, 
         display_order: 6, 
-        hero_image: '/images/category-power.jpg',
+        hero_image: '/images/category-secure-power.png',
         products: [] 
       }
     };
@@ -180,14 +180,25 @@
     
     if (products.length === 0) return '';
     
+    // 生成产品型号按钮列表，包含准确的URL
+    const productModels = products.map(product => 
+      `<a href="${product.href || `/products/detail/${product.id}.html`}" class="category-model-btn" data-model="${product.model || product.id.toUpperCase()}">${product.model || product.id.toUpperCase()}</a>`
+    ).join('');
+    
     return `
       <div class="category-section" id="${category.id}" data-category="${category.id}">
-        <div class="category-header">
-          <img src="${category.hero_image || '/images/placeholder-category.jpg'}" 
-               alt="${category.name.en}" class="category-image" loading="lazy">
-          <div class="category-info">
-            <h3 class="category-title">${category.name.en}</h3>
-            <p class="category-description">${category.description.en}</p>
+        <div class="category-header-bar" data-category="${category.id}">
+          <div class="category-accent-block" data-category="${category.id}"></div>
+          <div class="category-content-area">
+            <div class="category-info">
+              <div class="category-title-row">
+                <h3 class="category-title">${category.name.en}</h3>
+                <p class="category-description">${category.description.en}</p>
+              </div>
+              <div class="category-models-row">
+                ${productModels}
+              </div>
+            </div>
           </div>
         </div>
         <div class="products-grid">

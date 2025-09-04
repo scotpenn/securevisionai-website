@@ -371,20 +371,15 @@
       const dropdown = item.querySelector('.nav-dropdown');
       if (!trigger || !dropdown) return;
 
-      // 点击/触摸切换
-      trigger.addEventListener('click', (e) => {
-        // 在桌面端也允许点击打开，防止 hover 丢失
-        e.preventDefault();
-        const open = item.classList.toggle('open');
-        trigger.setAttribute('aria-expanded', String(open));
-      });
+      // 移除点击事件监听器 - 让链接自然导航
+      // href="/products/all.html" 会直接跳转，无需JavaScript干预
 
       // 焦点进入打开、离开关闭（键盘）
       item.addEventListener('focusin', () => {
         item.classList.add('open');
         trigger.setAttribute('aria-expanded', 'true');
       });
-      item.addEventListener('focusout', (e) => {
+      item.addEventListener('focusout', () => {
         // 延迟以便焦点落到下拉里
         setTimeout(() => {
           if (!item.contains(document.activeElement)) {

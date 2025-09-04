@@ -87,9 +87,6 @@
       <div class="main-container">
         <div class="customer-care-header">
           <h2 class="section-title text-center">Customer Care</h2>
-          <div class="care-image">
-            <img src="images/03_1.png" alt="Customer Care" class="care-image-main">
-          </div>
         </div>
 
         <!-- Warranty Policy -->
@@ -120,19 +117,19 @@
           </div>
         </div>
 
-        <!-- User Manuals and FAQ Section -->
+        <!-- User Manuals Section -->
         <div class="manuals-faq-section">
           <div class="manuals-content">
             <h3 class="manuals-title">User Manuals</h3>
             <p class="manuals-description">Download the Product User Manual you would like by Selecting the Product #:</p>
             
             <ol class="manuals-list">
-              <li>Indoor Products Manuals: SV201, SV267</li>
+              <li>Indoor Products Manuals: SVC138, SV201, SV267</li>
               <li>Baby & Pet Monitoring Product Manuals: SV180, SV263</li>
               <li>Outdoor Products Product Manuals: SV176, SV207, SV209, SV216, SV285</li>
               <li>Doorbell Products Product Manuals: SV215</li>
               <li>Sportswear Products Product Manual: SV842</li>
-              <li>SecurePower Product Manual: SVP1</li>
+              <li>SecurePower Product Manual: SVP5400</li>
               <li>SecureTower Product Manual: STP1</li>
             </ol>
           </div>
@@ -142,80 +139,18 @@
           </div>
         </div>
 
-        <!-- FAQ Section -->
+        <!-- FAQ Section - Dynamic System -->
         <div class="faq-section">
-          <h3 class="faq-title">Frequently Asked Questions</h3>
-          <div class="faq-accordion">
-            <div class="faq-item">
-              <button class="faq-control" data-faq="warranty">
-                <span>What is covered under the 1-year warranty?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="warranty">
-                <p>Our 1-year warranty covers manufacturing defects in materials and workmanship. This includes camera hardware, power systems, and mounting accessories. The warranty does not cover damage from misuse, weather exposure beyond product specifications, or normal wear and tear.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-control" data-faq="installation">
-                <span>Do you provide installation services?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="installation">
-                <p>We provide detailed installation guides and video tutorials for all our products. For complex installations, we recommend consulting with a local security installer. Our customer support team is available to assist with installation questions via phone or email.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-control" data-faq="compatibility">
-                <span>Are SecureVision cameras compatible with existing systems?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="compatibility">
-                <p>Most of our cameras support standard protocols and can integrate with existing security systems. Our products work with popular NVR systems and support ONVIF standards. Contact our technical team for specific compatibility questions regarding your current setup.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-control" data-faq="power">
-                <span>What power options are available for outdoor cameras?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="power">
-                <p>Our outdoor cameras support multiple power options including PoE (Power over Ethernet), DC power adapters, and our SecurePower battery systems. The SecurePower line provides reliable backup power and is ideal for locations without nearby electrical outlets.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-control" data-faq="storage">
-                <span>How does cloud storage work with your cameras?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="storage">
-                <p>Our cameras support both local storage (SD card/NVR) and cloud storage options. Cloud storage plans include 7-day, 30-day, and unlimited retention options with end-to-end encryption. You can access recordings through our mobile app or web portal from anywhere.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-control" data-faq="support">
-                <span>What support options are available?</span>
-                <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="faq-panel" data-content="support">
-                <p>We offer comprehensive support including phone support (604) 340-1559, email support, live chat, and an extensive knowledge base. Our technical support team is available Monday-Friday 9AM-6PM PST. Premium support plans include priority response and remote configuration assistance.</p>
-              </div>
+          <!-- Optional Search Bar -->
+          <div class="faq-search-container">
+            <input type="text" id="faq-search" placeholder="Search frequently asked questions...">
+          </div>
+          
+          <!-- Dynamic FAQ Container -->
+          <div id="faq-container">
+            <!-- FAQ content will be loaded dynamically by JavaScript -->
+            <div class="faq-loading">
+              <p>Loading frequently asked questions...</p>
             </div>
           </div>
         </div>
@@ -281,72 +216,11 @@
     </footer>
   </div>
 
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6860bb27cdec4b98f797be5c" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script>
-// Modern Navigation & Smooth Scrolling System
-(function() {
-  const navbar = document.getElementById('navbar');
-  
-  // Navigation bar state management
-  function updateNavbarState() {
-    const atTop = window.scrollY < 100;
-    
-    navbar.classList.toggle('transparent', atTop);
-    navbar.classList.toggle('scrolled', !atTop);
-  }
-  
-  // Scroll event listener
-  window.addEventListener('scroll', updateNavbarState, { passive: true });
-  
-  // Initialize navbar state
-  updateNavbarState();
-
-  // Optional: loading overlay fade out
-  window.addEventListener('load', () => {
-    const loading = document.querySelector('.loading-page-animation');
-    if (loading) { loading.style.opacity = '0'; setTimeout(() => loading.remove(), 300); }
-  });
-})();
-
-// FAQ Accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const faqControls = document.querySelectorAll('.faq-control');
-  
-  faqControls.forEach(control => {
-    control.addEventListener('click', () => {
-      const faqId = control.dataset.faq;
-      const panel = document.querySelector(`[data-content="${faqId}"]`);
-      const isOpen = control.getAttribute('aria-expanded') === 'true';
-      
-      // Close all other FAQ items
-      faqControls.forEach(otherControl => {
-        if (otherControl !== control) {
-          otherControl.setAttribute('aria-expanded', 'false');
-          const otherFaqId = otherControl.dataset.faq;
-          const otherPanel = document.querySelector(`[data-content="${otherFaqId}"]`);
-          if (otherPanel) {
-            otherPanel.classList.remove('open');
-          }
-        }
-      });
-      
-      // Toggle current FAQ item
-      if (isOpen) {
-        control.setAttribute('aria-expanded', 'false');
-        panel.classList.remove('open');
-      } else {
-        control.setAttribute('aria-expanded', 'true');
-        panel.classList.add('open');
-      }
-    });
-    
-    // Initialize aria-expanded attribute
-    control.setAttribute('aria-expanded', 'false');
-  });
-});
-</script>
 
   <!-- Common Scripts -->
   <script src="/js/common.js"></script>
+  
+  <!-- Page Specific Scripts -->
+  <script src="/js/pages/customer-care.js"></script>
 </body>
 </html>
