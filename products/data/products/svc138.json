@@ -211,7 +211,7 @@
     "availability": {
       "status": "in_stock",                    // 可选值: in_stock, out_of_stock, pre_order
       "message": {
-        "en": "In Stock - Ready to Ship",
+        "en": "In Stock - Ready to Order",
         "fr": "En Stock - Prêt à Expédier"
       }
     },

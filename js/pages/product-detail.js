@@ -46,14 +46,14 @@
       font-family: var(--font-primary, -apple-system, BlinkMacSystemFont, sans-serif);
     `;
     
-    errorBox.innerHTML = \`
+    errorBox.innerHTML = `
       <h3 style="color: #d32f2f; margin: 0 0 0.75rem 0; font-size: 1.25rem;">
         ⚠️ Failed to load product information
       </h3>
       <p style="margin: 0 0 1rem 0; color: #666; line-height: 1.5;">
-        \${msg}
+        ${msg}
       </p>
-      \${detail ? \`
+      ${detail ? `
         <details style="margin: 0 0 1rem 0;">
           <summary style="cursor: pointer; color: #1976d2; font-weight: 500;">
             Show technical details
@@ -66,9 +66,9 @@
             white-space: pre-wrap; 
             font-size: 0.875rem; 
             overflow-x: auto;
-          ">\${detail}</pre>
+          ">${detail}</pre>
         </details>
-      \` : ''}
+      ` : ''}
       <div style="display: flex; gap: 1rem; margin-top: 1rem;">
         <a class="btn btn-primary" href="/products/all.html" style="
           display: inline-block;
@@ -87,7 +87,7 @@
           cursor: pointer;
         ">🔄 Retry</button>
       </div>
-    \`;
+    `;
     
     // 隐藏页面其他内容
     const heroSection = document.querySelector('.product-hero');
@@ -103,8 +103,8 @@
       throw new Error('Product ID not found in URL path');
     }
     
-    const url = \`/products/data/compiled/\${id}.json\`;
-    console.log(\`Loading product data: \${url}\`);
+    const url = `/products/data/compiled/${id}.json`;
+    console.log(`Loading product data: ${url}`);
     
     try {
       const response = await fetch(url, { 
@@ -116,9 +116,9 @@
       
       if (!response.ok) {
         if (response.status === 404) {
-          throw new Error(\`Product "\${id}" not found. The product may not exist or hasn't been built yet.\`);
+          throw new Error(`Product "${id}" not found. The product may not exist or hasn't been built yet.`);
         }
-        throw new Error(\`HTTP \${response.status} \${response.statusText}\`);
+        throw new Error(`HTTP ${response.status} ${response.statusText}`);
       }
       
       const data = await response.json();
@@ -157,15 +157,15 @@
     if (statusEl && product.availability) {
       const statusMsg = pick(product.availability.message, lang);
       const statusClass = product.availability.status === 'in_stock' ? 'in-stock' : 'out-of-stock';
-      statusEl.innerHTML = \`
-        <span class="availability-status \${statusClass}">
+      statusEl.innerHTML = `
+        <span class="availability-status ${statusClass}">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="10"/>
             <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          \${statusMsg}
+          ${statusMsg}
         </span>
-      \`;
+      `;
     }
   }
 
@@ -185,7 +185,7 @@
       product.images.gallery.forEach((imgSrc, index) => {
         const thumb = document.createElement('button');
         thumb.className = 'gallery-thumb' + (index === 0 ? ' active' : '');
-        thumb.innerHTML = \`<img src="\${imgSrc}" alt="View \${index + 1}" />\`;
+        thumb.innerHTML = `<img src="${imgSrc}" alt="View ${index + 1}" />`;
         thumb.onclick = () => {
           if (mainImageEl) mainImageEl.src = imgSrc;
           thumbsContainer.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
@@ -204,7 +204,7 @@
       const highlights = pick(product.highlights, lang);
       if (Array.isArray(highlights)) {
         highlightsEl.innerHTML = highlights
-          .map(text => \`<li>\${text}</li>\`)
+          .map(text => `<li>${text}</li>`)
           .join('');
       }
     }
@@ -226,20 +226,20 @@
           section.className = 'spec-group';
           
           const rows = Object.entries(specs)
-            .map(([key, value]) => \`
+            .map(([key, value]) => `
               <tr>
-                <th>\${key}</th>
-                <td>\${value}</td>
+                <th>${key}</th>
+                <td>${value}</td>
               </tr>
-            \`)
+            `)
             .join('');
           
-          section.innerHTML = \`
-            <h4 class="spec-group-title">\${groupName}</h4>
+          section.innerHTML = `
+            <h4 class="spec-group-title">${groupName}</h4>
             <table class="spec-table">
-              <tbody>\${rows}</tbody>
+              <tbody>${rows}</tbody>
             </table>
-          \`;
+          `;
           
           specsContainer.appendChild(section);
         }
@@ -255,22 +255,31 @@
       const downloads = pick(product.downloads, lang);
       if (Array.isArray(downloads)) {
         downloadsContainer.innerHTML = downloads
-          .map(download => \`
+          .map(download => `
             <div class="download-item">
               <div class="download-info">
-                <h4>\${download.name}</h4>
-                <p class="download-meta">\${download.type} • \${download.size}</p>
-                \${download.description ? \`<p class="download-desc">\${download.description}</p>\` : ''}
+                <h4>${download.name}</h4>
+                <p class="download-meta">${download.type} • ${download.size}</p>
+                ${download.description ? `<p class="download-desc">${download.description}</p>` : ''}
               </div>
-              <a href="\${download.url}" class="btn btn-secondary download-btn" download>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Download
-              </a>
+              ${download.url ? 
+                `<a href="${download.url}" class="btn btn-secondary download-btn" download>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" 
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Download
+                </a>` : 
+                `<button class="btn btn-secondary download-btn disabled" disabled>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M18.36 6.64a9 9 0 1 1-12.73 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 2v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Unavailable
+                </button>`
+              }
             </div>
-          \`)
+          `)
           .join('');
       }
     }
@@ -283,12 +292,12 @@
     if (warrantyContainer && product.warranty) {
       const warrantyText = pick(product.warranty, lang);
       if (warrantyText) {
-        warrantyContainer.innerHTML = \`
+        warrantyContainer.innerHTML = `
           <div class="warranty-content">
             <h4>Warranty Information</h4>
-            <p>\${warrantyText}</p>
+            <p>${warrantyText}</p>
           </div>
-        \`;
+        `;
       }
     }
   }
@@ -317,6 +326,26 @@
     });
   }
 
+  // ============ Download Brochure Button ============
+  function initializeDownloadBrochureButton() {
+    const downloadBtn = document.getElementById('view-downloads-btn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        // 切换到Downloads tab
+        const downloadsTabBtn = document.querySelector('[data-product-tab="downloads"]');
+        if (downloadsTabBtn) {
+          downloadsTabBtn.click();
+          
+          // 滚动到tabs区域
+          const tabsSection = document.querySelector('.product-details');
+          if (tabsSection) {
+            tabsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    }
+  }
+
   // ============ Main Render Function ============
   function renderProduct(product) {
     try {
@@ -329,6 +358,7 @@
       
       // 初始化交互功能
       initializeTabs();
+      initializeDownloadBrochureButton();
       
       console.log('✅ Product rendering completed');
       
@@ -349,8 +379,8 @@
       }
     } catch (error) {
       friendlyError(
-        \`Unable to load product data: \${error.message}\`,
-        \`URL: \${location.pathname}\\nError: \${error.stack || error.message}\`
+        `Unable to load product data: ${error.message}`,
+        `URL: ${location.pathname}\nError: ${error.stack || error.message}`
       );
     }
   });

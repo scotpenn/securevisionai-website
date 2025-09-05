@@ -126,7 +126,7 @@
                   "name": { "type": "string" },
                   "type": { "type": "string" },
                   "size": { "type": "string" },
-                  "url": { "type": "string", "format": "uri" },
+                  "url": { "oneOf": [{"type": "string", "format": "uri"}, {"type": "null"}] },
                   "description": { "type": "string" }
                 },
                 "additionalProperties": false
@@ -141,7 +141,7 @@
                   "name": { "type": "string" },
                   "type": { "type": "string" },
                   "size": { "type": "string" },
-                  "url": { "type": "string", "format": "uri" },
+                  "url": { "oneOf": [{"type": "string", "format": "uri"}, {"type": "null"}] },
                   "description": { "type": "string" }
                 },
                 "additionalProperties": false

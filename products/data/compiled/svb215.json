@@ -267,8 +267,8 @@
     "availability": {
       "status": "in_stock",
       "message": {
-        "en": "In Stock - Ready to Ship",
-        "fr": "En Stock - Prêt à Expédier"
+        "en": "Ready to Order",
+        "fr": "Prêt à Commander"
       }
     },
     "warranty": {

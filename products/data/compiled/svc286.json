@@ -250,28 +250,28 @@
           "name": "SVC286 Product Brochure",
           "type": "PDF",
           "size": "3.5 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-brochure.pdf",
+          "url": null,
           "description": "Complete product overview and specifications"
         },
         {
           "name": "Installation & User Manual",
           "type": "PDF",
           "size": "7.2 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-manual.pdf",
+          "url": null,
           "description": "Step-by-step installation and setup guide"
         },
         {
           "name": "Quick Start Guide",
           "type": "PDF",
           "size": "2.1 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-quickstart.pdf",
+          "url": null,
           "description": "Quick installation reference guide"
         },
         {
           "name": "Mobile App Guide",
           "type": "PDF",
           "size": "2.8 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-app-guide.pdf",
+          "url": null,
           "description": "SecureVision app configuration guide"
         }
       ],
@@ -280,14 +280,14 @@
           "name": "Brochure Produit SVC286",
           "type": "PDF",
           "size": "3.5 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-brochure-fr.pdf",
+          "url": null,
           "description": "Aperçu complet du produit et spécifications"
         },
         {
           "name": "Manuel d'Installation et d'Utilisation",
           "type": "PDF",
           "size": "7.2 MB",
-          "url": "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc286-manual-fr.pdf",
+          "url": null,
           "description": "Guide d'installation et de configuration étape par étape"
         }
       ]
@@ -313,8 +313,8 @@
     "availability": {
       "status": "in_stock",
       "message": {
-        "en": "In Stock - Ready to Ship",
-        "fr": "En Stock - Prêt à Expédier"
+        "en": "Ready to Order",
+        "fr": "Prêt à Commander"
       }
     },
     "warranty": {

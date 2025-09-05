@@ -14,6 +14,14 @@
   const contentContainer = document.getElementById('products-content');
   const categoryTabs = document.querySelectorAll('.category-tab');
 
+  // ============ Language Detection ============
+  function getCurrentLanguage() {
+    // 检测当前页面语言
+    const htmlLang = document.documentElement.lang || 'en';
+    const isInFrenchFolder = window.location.pathname.startsWith('/fr/');
+    return isInFrenchFolder || htmlLang === 'fr' ? 'fr' : 'en';
+  }
+
   // ============ Data Loading ============
   async function loadProductsData() {
     try {
@@ -44,12 +52,17 @@
 
   // 转换产品索引数据为内部格式
   function convertIndexToInternalFormat(productsIndex) {
-    // 按分类分组产品
+    const currentLang = getCurrentLanguage();
+    
+    // 按分类分组产品 - 支持双语
     const categories = {
       'indoor': { 
         id: 'indoor', 
-        name: { en: 'Indoor Cameras' }, 
-        description: { en: 'Advanced indoor security cameras for home monitoring' },
+        name: { en: 'Indoor Cameras', fr: 'Caméras Intérieures' }, 
+        description: { 
+          en: 'Advanced indoor security cameras for home monitoring',
+          fr: 'Caméras de sécurité intérieures avancées pour surveillance domestique'
+        },
         visible: true, 
         display_order: 1, 
         hero_image: '/images/category-indoor.png',
@@ -57,8 +70,11 @@
       },
       'baby-pet-monitor': { 
         id: 'baby-pet-monitor', 
-        name: { en: 'Baby/Pet Monitor' }, 
-        description: { en: 'Specialized monitoring cameras for babies and pets' },
+        name: { en: 'Baby/Pet Monitor', fr: 'Surveillance Bébé/Animaux' }, 
+        description: { 
+          en: 'Specialized monitoring cameras for babies and pets',
+          fr: 'Caméras de surveillance spécialisées pour bébés et animaux'
+        },
         visible: true, 
         display_order: 2, 
         hero_image: '/images/category-baby-pet-monitor.png',
@@ -66,8 +82,11 @@
       },
       'outdoor': { 
         id: 'outdoor', 
-        name: { en: 'Outdoor Cameras' }, 
-        description: { en: 'Weather-resistant outdoor security cameras' },
+        name: { en: 'Outdoor Cameras', fr: 'Caméras Extérieures' }, 
+        description: { 
+          en: 'Weather-resistant outdoor security cameras',
+          fr: 'Caméras de sécurité extérieures résistantes aux intempéries'
+        },
         visible: true, 
         display_order: 3, 
         hero_image: '/images/category-outdoor.png',
@@ -75,8 +94,11 @@
       },
       'doorbell': { 
         id: 'doorbell', 
-        name: { en: 'Doorbell Cameras' }, 
-        description: { en: 'Smart doorbell cameras with two-way communication' },
+        name: { en: 'Doorbell Cameras', fr: 'Caméras Sonnettes' }, 
+        description: { 
+          en: 'Smart doorbell cameras with two-way communication',
+          fr: 'Sonnettes caméras intelligentes avec communication bidirectionnelle'
+        },
         visible: true, 
         display_order: 4, 
         hero_image: '/images/category-doorbell.png',
@@ -84,8 +106,11 @@
       },
       'sports': { 
         id: 'sports', 
-        name: { en: 'Sports Cameras' }, 
-        description: { en: 'Action cameras for sports and outdoor activities' },
+        name: { en: 'Sports Cameras', fr: 'Caméras Sport' }, 
+        description: { 
+          en: 'Action cameras for sports and outdoor activities',
+          fr: 'Caméras d\'action pour sports et activités extérieures'
+        },
         visible: true, 
         display_order: 5, 
         hero_image: '/images/category-sports.png',
@@ -93,8 +118,11 @@
       },
       'secure-power': { 
         id: 'secure-power', 
-        name: { en: 'Secure Power' }, 
-        description: { en: 'Portable power solutions for security systems' },
+        name: { en: 'Secure Power', fr: 'Alimentation Sécurisée' }, 
+        description: { 
+          en: 'Portable power solutions for security systems',
+          fr: 'Solutions d\'alimentation portables pour systèmes de sécurité'
+        },
         visible: true, 
         display_order: 6, 
         hero_image: '/images/category-secure-power.png',
@@ -112,7 +140,7 @@
         name: { en: product.name, fr: product.name_fr },
         category: product.category,
         images: { main: product.main_image },
-        href: product.href_en, // 使用预生成的链接
+        href: currentLang === 'fr' ? product.href_fr : product.href_en, // 根据语言选择链接
         highlights: { en: [] }, // 可以为空，因为详情页已是静态的
         display_order: 1,
         featured: false,
@@ -172,6 +200,8 @@
   }
 
   function renderCategorySection(category) {
+    const currentLang = getCurrentLanguage();
+    
     // 获取该分类下的产品，并按显示顺序排序
     const products = category.products
       .map(productRef => productsData.productsMap[productRef.id])
@@ -192,8 +222,8 @@
           <div class="category-content-area">
             <div class="category-info">
               <div class="category-title-row">
-                <h3 class="category-title">${category.name.en}</h3>
-                <p class="category-description">${category.description.en}</p>
+                <h3 class="category-title">${category.name[currentLang]}</h3>
+                <p class="category-description">${category.description[currentLang]}</p>
               </div>
               <div class="category-models-row">
                 ${productModels}
@@ -209,29 +239,40 @@
   }
 
   function renderProductCard(product) {
-    // 生成产品标签
+    const currentLang = getCurrentLanguage();
+    
+    // 生成产品标签 - 根据语言
     const badges = [];
-    if (product.featured) badges.push('<span class="product-badge badge-featured">Featured</span>');
-    if (product.new) badges.push('<span class="product-badge badge-new">New</span>');
-    if (product.bestseller) badges.push('<span class="product-badge badge-bestseller">Bestseller</span>');
+    const badgeLabels = {
+      en: { featured: 'Featured', new: 'New', bestseller: 'Bestseller' },
+      fr: { featured: 'Vedette', new: 'Nouveau', bestseller: 'Populaire' }
+    };
+    
+    if (product.featured) badges.push(`<span class="product-badge badge-featured">${badgeLabels[currentLang].featured}</span>`);
+    if (product.new) badges.push(`<span class="product-badge badge-new">${badgeLabels[currentLang].new}</span>`);
+    if (product.bestseller) badges.push(`<span class="product-badge badge-bestseller">${badgeLabels[currentLang].bestseller}</span>`);
+    
+    // 按钮文本根据语言
+    const buttonText = currentLang === 'fr' ? 'Voir Détails' : 'View Details';
+    const modelText = currentLang === 'fr' ? 'Modèle' : 'Model';
     
     return `
       <div class="product-card" data-category="${product.category}">
         <div class="product-image-wrapper">
           <img src="${product.images?.main || '/images/placeholder-product.jpg'}" 
-               alt="${product.name.en}" class="product-image" loading="lazy">
+               alt="${product.name[currentLang]}" class="product-image" loading="lazy">
           ${badges.join('')}
         </div>
         <div class="product-info">
-          <h4 class="product-name">${product.name.en}</h4>
-          <div class="product-model">Model: ${product.model}</div>
+          <h4 class="product-name">${product.name[currentLang]}</h4>
+          <div class="product-model">${modelText}: ${product.model}</div>
           <ul class="product-highlights">
             ${(product.highlights?.en || []).slice(0, 3).map(highlight => `
               <li class="product-highlight">${highlight}</li>
             `).join('')}
           </ul>
           <div class="product-actions">
-            <a href="${product.href || `/products/detail/${product.id}.html`}" class="product-btn">View Details</a>
+            <a href="${product.href || `/products/detail/${product.id}.html`}" class="product-btn">${buttonText}</a>
           </div>
         </div>
       </div>

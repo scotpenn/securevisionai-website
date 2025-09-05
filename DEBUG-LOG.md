@@ -2,6 +2,31 @@
 
 ## 🐛 问题记录与解决方案
 
+### 问题 #002: GitHub下载链接验证问题
+**发现日期**: 2025-09-05  
+**严重程度**: 中等  
+**影响范围**: 产品详情页下载功能
+
+**问题描述**:
+- 产品数据中配置的GitHub下载链接可能存在路径问题
+- securevision-downloads仓库已建立但文件上传状态需要验证
+- SVC138产品的宣传册链接测试有效，但其他产品未完整验证
+
+**当前状态**: 
+- GitHub仓库: https://github.com/scotpenn/securevision-downloads 已创建
+- 产品目录结构: `/products/[product-id]/` 已建立
+- SVC138测试链接有效: `https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc138/svc138-brochure-en.pdf`
+
+**待后续解决**:
+1. 验证所有12个产品的PDF文件是否已正确上传到GitHub仓库
+2. 批量测试所有产品的下载链接有效性
+3. 修复无效链接并重新编译产品数据
+4. 更新产品页面生成
+
+**优先级**: 低（不影响核心部署功能）
+
+---
+
 ### 问题 #001: Logo尺寸显示异常
 **发现日期**: 2025-08-28  
 **严重程度**: 中等  

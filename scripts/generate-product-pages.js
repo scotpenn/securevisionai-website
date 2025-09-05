@@ -262,9 +262,11 @@ async function main() {
   console.log('='.repeat(60));
   
   try {
-    // 获取所有编译后的产品JSON文件
+    // 获取所有编译后的产品JSON文件 (排除index.json)
     const jsonFiles = glob.sync('*.json', { cwd: CONFIG.compiledDataDir });
-    const productIds = jsonFiles.map(file => path.basename(file, '.json'));
+    const productIds = jsonFiles
+      .map(file => path.basename(file, '.json'))
+      .filter(id => id !== 'index');
     
     console.log(`📦 Found ${productIds.length} products:`, productIds.join(', '));
     

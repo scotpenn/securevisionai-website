@@ -16,6 +16,18 @@ npm run dev
 python -m http.server 8000
 ```
 
+### Production Deployment
+```bash
+# Build for production (auto-run by Vercel)
+npm run build
+
+# Pre-deployment validation
+./scripts/deploy-check.sh
+
+# Deploy to Vercel (requires RESEND_API_KEY env var)
+vercel --prod
+```
+
 ### Build & Validation
 ```bash
 # Complete production build (compile products + generate pages)
@@ -44,6 +56,9 @@ node scripts/validate-navigation.js
 
 # Lint CSS files
 npm run lint
+
+# Update all product download links (batch operation)
+bash scripts/update-download-links.sh
 ```
 
 ## Current Architecture
@@ -136,6 +151,38 @@ All main pages have been successfully migrated to the new architecture (common.c
 - `scripts/build-products.js` - JSON5 → JSON compiler with validation
 - `scripts/validate-products.js` - Product data integrity checker
 
+### GitHub-Based Download System (NEW)
+The site uses a separate GitHub repository for managing product documentation downloads:
+
+**Repository Structure:**
+- **Downloads Repository**: `https://github.com/scotpenn/securevision-downloads`
+- **File Organization**: `/products/[product-id]/[filename]`
+- **Naming Convention**: `[product-id]-[type]-[language].pdf`
+- **Direct Access**: Uses `raw.githubusercontent.com` URLs for immediate file serving
+
+**Implementation Benefits:**
+- **Separation of Concerns**: PDFs managed separately from website code
+- **Version Control**: Full Git history for all documentation updates
+- **No API Dependencies**: Direct raw file URLs, no GitHub API calls
+- **Simple Maintenance**: Standard Git workflow for adding/updating files
+
+**URL Pattern:**
+```
+https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/[PRODUCT-ID]/[FILENAME]
+```
+
+**File Types Supported:**
+- `brochure` - Product marketing brochures
+- `manual` - User manuals and installation guides  
+- `spec` - Technical specifications
+- `quickstart` - Quick start guides
+
+**Current Status:**
+- **17 PDFs uploaded** across 11 products
+- **English documentation** available for most products
+- **French versions** pending (bilingual naming ready: `-en.pdf`, `-fr.pdf`)
+- **Missing products**: SVC286, SVC842, SVT100 documentation pending
+
 ### Image Optimization
 Images follow responsive naming convention:
 - Base: `image.jpg`
@@ -170,6 +217,7 @@ Images follow responsive naming convention:
 7. **Dynamic navigation**: Use `config/navigation.json` with `data-menu` attributes, avoid hard-coded nav items
 8. **Product data workflow**: Always run `npm run prod:check` before committing product changes
 9. **Build-first approach**: Frontend only loads compiled JSON, never raw JSON5
+10. **Vercel deployment**: Use `npm run build` for production, requires `RESEND_API_KEY` environment variable
 
 ## Common Development Tasks
 
@@ -193,6 +241,11 @@ Images follow responsive naming convention:
 4. **Add product images**: `/images/` with naming pattern: `[product-id]-[suffix].[ext]`
    - Update image paths in the JSON5 file
    - Supports: jpg, jpeg, png, webp formats
+
+5. **Add product documentation**: Upload PDFs to separate downloads repository
+   - Repository: `https://github.com/scotpenn/securevision-downloads`
+   - Naming: `[product-id]-[type]-[language].pdf` (e.g., `svc138-brochure-en.pdf`)
+   - Update product JSON5 with download URLs using raw.githubusercontent.com pattern
 
 ### Creating New Pages
 1. Copy structure from existing pages
@@ -284,9 +337,14 @@ Images follow responsive naming convention:
 │   ├── validate-products.js    # Product data validation
 │   ├── validate-i18n.js        # I18n validation script
 │   ├── validate-navigation.js  # Navigation validation script
+│   ├── generate-product-pages.js # Static HTML page generator
+│   ├── deploy-check.sh         # Pre-deployment validation
 │   └── pre-commit-hook.sh      # Pre-commit validation
-└── DEBUG/
-    └── DEBUG-LOG.md             # Problem tracking
+├── DEBUG/
+│   └── DEBUG-LOG.md            # Problem tracking
+├── DEPLOYMENT.md               # Detailed deployment guide
+├── READY-TO-DEPLOY.md          # Deployment status summary
+└── vercel.json                 # Vercel configuration
 ```
 
 ## Performance Targets
