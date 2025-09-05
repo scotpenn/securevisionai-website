@@ -35,3 +35,23 @@ build/
 # Temporary files
 *.tmp
 *.temp
+
+# Development and internal documentation
+.claude/
+project_configuration.md
+project_context.md
+*.backup
+*-backup-*
+
+# IDE and development files
+.vscode/
+.idea/
+*.code-workspace
+
+# Compiled product data (generated files)
+products/data/compiled/
+
+# Backup files
+*-backup.html
+*-backup.js
+*-backup.css

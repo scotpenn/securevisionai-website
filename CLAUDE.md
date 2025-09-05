@@ -340,10 +340,8 @@ Images follow responsive naming convention:
 │   ├── generate-product-pages.js # Static HTML page generator
 │   ├── deploy-check.sh         # Pre-deployment validation
 │   └── pre-commit-hook.sh      # Pre-commit validation
-├── DEBUG/
-│   └── DEBUG-LOG.md            # Problem tracking
-├── DEPLOYMENT.md               # Detailed deployment guide
-├── READY-TO-DEPLOY.md          # Deployment status summary
+├── DEPLOYMENT.md               # Detailed deployment guide  
+├── SEO-OPTIMIZATION.md         # SEO implementation guide
 └── vercel.json                 # Vercel configuration
 ```
 
@@ -473,5 +471,5 @@ node scripts/validate-navigation.js
 
 ## Debug and Recovery
 - Check `DEBUG-LOG.md` for problem history and solutions
-- Use `.claude/project_context.md` for detailed project state
 - Run validation scripts to identify issues before commit
+- Use browser dev tools for debugging CSS/JS issues
