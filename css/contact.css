@@ -145,6 +145,25 @@
   text-align: center;
 }
 
+/* ============ Checkbox Grid - Two Column Layout ============ */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3) var(--spacing-6);
+  margin-top: var(--spacing-3);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.checkbox-item:hover {
+  transform: translateX(2px);
+}
+
 /* ============ Map Section ============ */
 .map-section {
   margin-top: var(--spacing-8);
@@ -190,5 +209,11 @@
   .contact-card-icon {
     width: 40px;
     height: 40px;
+  }
+  
+  /* Single column for checkboxes on mobile */
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2);
   }
 }
