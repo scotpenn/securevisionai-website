@@ -4,16 +4,6 @@
       "runtime": "nodejs20.x"
     }
   },
-  "routes": [
-    {
-      "src": "/api/contact",
-      "dest": "/api/contact.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -27,8 +17,16 @@
           "value": "DENY"
         },
         {
-          "key": "X-XSS-Protection",
+          "key": "X-XSS-Protection", 
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
     },
@@ -45,7 +43,7 @@
       "source": "/js/(.*)",
       "headers": [
         {
-          "key": "Cache-Control",
+          "key": "Cache-Control", 
           "value": "public, max-age=31536000, immutable"
         }
       ]
@@ -58,6 +56,19 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml"
     }
   ]
 }
