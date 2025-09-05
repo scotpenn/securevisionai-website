@@ -1,17 +1,8 @@
 {
+  "outputDirectory": "public",
   "functions": {
     "api/contact.js": {
-      "runtime": "nodejs20.x"
+      "maxDuration": 10
     }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
-  ]
+  }
 }
