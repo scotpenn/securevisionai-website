@@ -904,9 +904,8 @@ GitHub Repository: securevision-downloads
 ### 🎯 立即部署步骤
 1. **GitHub Push**: 提交所有更改到main分支
 2. **Vercel连接**: 将仓库连接到Vercel控制台
-3. **环境变量**: 设置 `RESEND_API_KEY=re_UcAWGgeE_J4r3CUgBvq3i5APufNXDrBte`
+3. **环境变量**: 设置
 4. **部署**: 自动触发构建和部署流程
-
 **状态**: 🚀 **PRODUCTION READY** - 可立即部署到生产环境
 
 ### CSS优先级与覆盖规则
