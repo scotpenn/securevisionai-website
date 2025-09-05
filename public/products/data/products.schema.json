@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Detail",
+  "type": "object",
+  "required": ["product"],
+  "properties": {
+    "product": {
+      "type": "object",
+      "required": ["id", "model", "name", "description", "images"],
+      "properties": {
+        "id": { 
+          "type": "string", 
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Product unique identifier (lowercase, alphanumeric and hyphens only)"
+        },
+        "model": { 
+          "type": "string",
+          "description": "Product model number"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["indoor", "outdoor", "doorbell", "baby-pet-monitor", "sports", "secure-power"],
+          "description": "Product category"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "URL-friendly identifier"
+        },
+        "name": { 
+          "type": "object", 
+          "required": ["en"],
+          "properties": { 
+            "en": { "type": "string" }, 
+            "fr": { "type": "string" } 
+          }, 
+          "additionalProperties": false,
+          "description": "Product name in multiple languages"
+        },
+        "description": { 
+          "type": "object", 
+          "required": ["en"],
+          "properties": { 
+            "en": { "type": "string" }, 
+            "fr": { "type": "string" } 
+          }, 
+          "additionalProperties": false,
+          "description": "Product description in multiple languages"
+        },
+        "images": {
+          "type": "object",
+          "required": ["main"],
+          "properties": {
+            "main": { 
+              "type": "string",
+              "pattern": "^/images/",
+              "description": "Main product image path"
+            },
+            "gallery": { 
+              "type": "array", 
+              "items": { 
+                "type": "string",
+                "pattern": "^/images/"
+              },
+              "description": "Array of gallery image paths"
+            }
+          },
+          "additionalProperties": false
+        },
+        "highlights": { 
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "fr": {
+              "type": "array", 
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": false,
+          "description": "Key features/highlights in multiple languages"
+        },
+        "specifications": { 
+          "type": "object",
+          "patternProperties": {
+            "^[A-Za-z0-9\\s&_-]+$": {
+              "type": "object",
+              "properties": {
+                "group_name": {
+                  "type": "object",
+                  "required": ["en"],
+                  "properties": {
+                    "en": { "type": "string" },
+                    "fr": { "type": "string" }
+                  },
+                  "additionalProperties": false
+                },
+                "specs": {
+                  "type": "object",
+                  "required": ["en"],
+                  "properties": {
+                    "en": { "type": "object" },
+                    "fr": { "type": "object" }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "required": ["group_name", "specs"],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "description": "Technical specifications grouped by category"
+        },
+        "downloads": { 
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "type", "size", "url"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "type": { "type": "string" },
+                  "size": { "type": "string" },
+                  "url": { "oneOf": [{"type": "string", "format": "uri"}, {"type": "null"}] },
+                  "description": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            },
+            "fr": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "type", "size", "url"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "type": { "type": "string" },
+                  "size": { "type": "string" },
+                  "url": { "oneOf": [{"type": "string", "format": "uri"}, {"type": "null"}] },
+                  "description": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false,
+          "description": "Download files in multiple languages"
+        },
+        "package_contents": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "fr": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": false
+        },
+        "certifications": {
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "available": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "optional_configurations": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "object" },
+            "fr": { "type": "object" }
+          },
+          "additionalProperties": false
+        },
+        "availability": {
+          "type": "object",
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["in_stock", "out_of_stock", "pre_order"]
+            },
+            "message": {
+              "type": "object",
+              "properties": {
+                "en": { "type": "string" },
+                "fr": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "warranty": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string" },
+            "fr": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "created_date": { "type": "string", "format": "date" },
+            "last_updated": { "type": "string", "format": "date" },
+            "version": { "type": "string" },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

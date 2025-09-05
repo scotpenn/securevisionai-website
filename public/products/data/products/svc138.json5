@@ -1,0 +1,506 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC138 室内摄像头
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc138",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC138",                 // 产品型号，显示在页面上
+    category: "indoor",              // 产品分类，对应categories中的分类
+    slug: "svc138",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC138 Fixed WiFi Indoor Camera",           // 英语产品名称
+      fr: "SVC138 Caméra Intérieure WiFi Fixe"        // 法语产品名称
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced fixed WiFi indoor camera with Full HD 1080p live view and video recording. Features infrared night vision, motion detection with push notifications, two-way audio talk, and remote viewing by mobile app. Perfect for home monitoring with easy setup and reliable performance.",
+      fr: "Caméra intérieure WiFi fixe avancée avec vue en direct et enregistrement vidéo Full HD 1080p. Comprend la vision nocturne infrarouge, la détection de mouvement avec notifications push, la communication audio bidirectionnelle et la visualisation à distance par application mobile. Parfait pour la surveillance domestique avec configuration facile et performances fiables."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/SVC138-main.jpg",      // 主要展示图片，显示在产品卡片和详情页
+      gallery: [                            // 详情页图片画廊数组，当前可用的图片
+        "/images/SVC138-main.jpg",            // 第1张：主视图 ✅ 可用
+        "/images/SVC138-side.png"             // 第2张：侧视图 ✅ 可用 (PNG格式)
+        // 注：其他图片文件待添加后可继续扩展画廊
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Full HD 1080p Live View & Recording",         // 特性1：视频质量
+        "Infrared Night Vision (3-5m)",                // 特性2：夜视功能
+        "Motion & Sound Detection with Push Alerts",   // 特性3：运动和声音检测
+        "Two-Way Audio Communication",                 // 特性4：双向音频
+        "PIR Motion Sensor 120° Coverage",            // 特性5：PIR传感器
+        "Remote Viewing via Mobile App",              // 特性6：远程查看
+        "Micro SD Card & Cloud Storage Options"       // 特性7：存储选项
+      ],
+      fr: [
+        "Vue en Direct et Enregistrement Full HD 1080p",
+        "Vision Nocturne Infrarouge (3-5m)", 
+        "Détection de Mouvement et Son avec Alertes Push",
+        "Communication Audio Bidirectionnelle",
+        "Capteur de Mouvement PIR Couverture 120°",
+        "Visualisation à Distance via Application Mobile",
+        "Options de Stockage Carte Micro SD et Cloud"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：硬件规格
+      "Hardware": {
+        group_name: {
+          en: "Hardware Specifications",
+          fr: "Spécifications Matérielles"
+        },
+        specs: {
+          en: {
+            "CPU Chipset": "Ankya 1.5GHz (32KB I-Cache + 32KB D-Cache)",
+            "Main Frequency": "800MHz",
+            "CMOS Sensor": "1/3.0\", 2MP CMOS Sensor",
+            "Processor": "High-performance image processor"
+          },
+          fr: {
+            "Chipset CPU": "Ankya 1.5GHz (32KB I-Cache + 32KB D-Cache)",
+            "Fréquence Principale": "800MHz",
+            "Capteur CMOS": "1/3.0\", Capteur CMOS 2MP",
+            "Processeur": "Processeur d'image haute performance"
+          }
+        }
+      },
+      
+      // 规格组2：镜头规格
+      "Lens": {
+        group_name: {
+          en: "Lens Specifications",
+          fr: "Spécifications de l'Objectif"
+        },
+        specs: {
+          en: {
+            "Effective Focal Length": "2.3mm",
+            "Flange Focal Length": "5.31mm",
+            "F-Number": "F2.4",
+            "Field of View": "125°"
+          },
+          fr: {
+            "Distance Focale Effective": "2.3mm",
+            "Distance Focale de Bride": "5.31mm",
+            "Nombre F": "F2.4",
+            "Champ de Vision": "125°"
+          }
+        }
+      },
+      
+      // 规格组3：夜视和检测
+      "Night Vision & Detection": {
+        group_name: {
+          en: "Night Vision & Detection",
+          fr: "Vision Nocturne et Détection"
+        },
+        specs: {
+          en: {
+            "Night Vision Distance": "3m~5m",
+            "IR LEDs": "850nm, 6pcs",
+            "PIR Sensor Coverage": "120°",
+            "PIR Detection Distance": "6m",
+            "Motion Detection": "Advanced motion detection",
+            "Sound Detection": "High sensitivity -42dB"
+          },
+          fr: {
+            "Distance Vision Nocturne": "3m~5m",
+            "LEDs IR": "850nm, 6 pièces",
+            "Couverture Capteur PIR": "120°",
+            "Distance Détection PIR": "6m",
+            "Détection de Mouvement": "Détection de mouvement avancée",
+            "Détection Sonore": "Haute sensibilité -42dB"
+          }
+        }
+      },
+      
+      // 规格组4：网络模块
+      "Network": {
+        group_name: {
+          en: "Network Module",
+          fr: "Module Réseau"
+        },
+        specs: {
+          en: {
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Wi-Fi Standard": "IEEE 802.11b/g/n",
+            "Wi-Fi Frequency": "2.4G Wi-Fi",
+            "Connection Method": "QR code, Wi-Fi connection",
+            "Mobile App": "SecureVision; Android 5.0, iOS 8.0 and above"
+          },
+          fr: {
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Standard Wi-Fi": "IEEE 802.11b/g/n",
+            "Fréquence Wi-Fi": "Wi-Fi 2.4G",
+            "Méthode de Connexion": "Code QR, connexion Wi-Fi",
+            "Application Mobile": "SecureVision; Android 5.0, iOS 8.0 et plus"
+          }
+        }
+      },
+      
+      // 规格组5：音频系统
+      "Audio": {
+        group_name: {
+          en: "Audio System",
+          fr: "Système Audio"
+        },
+        specs: {
+          en: {
+            "Speaker": "Power Rate: 1.0W",
+            "Microphone": "High Sensitivity: -42dB",
+            "Audio Feature": "Two-way audio communication"
+          },
+          fr: {
+            "Haut-parleur": "Puissance: 1.0W",
+            "Microphone": "Haute Sensibilité: -42dB",
+            "Fonction Audio": "Communication audio bidirectionnelle"
+          }
+        }
+      },
+      
+      // 规格组6：存储和回放
+      "Storage": {
+        group_name: {
+          en: "Storage & Playback",
+          fr: "Stockage et Lecture"
+        },
+        specs: {
+          en: {
+            "Weather Proof": "IP20",
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage",
+            "Playback": "Events playback from local micro-SD card and cloud storage"
+          },
+          fr: {
+            "Étanchéité": "IP20",
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte micro-SD locale et stockage cloud"
+          }
+        }
+      },
+      
+      // 规格组7：接口和电源
+      "Interface & Power": {
+        group_name: {
+          en: "Interface & Power",
+          fr: "Interface et Alimentation"
+        },
+        specs: {
+          en: {
+            "Buttons": "Reset Button",
+            "Interface": "Micro SD (for local storage); Type-C (for charging)",
+            "Power Supply": "5V/1A Adapter",
+            "Battery Life": "Power supply adapter"
+          },
+          fr: {
+            "Boutons": "Bouton de Réinitialisation",
+            "Interface": "Micro SD (pour stockage local); Type-C (pour charge)",
+            "Alimentation": "Adaptateur 5V/1A",
+            "Autonomie": "Adaptateur d'alimentation"
+          }
+        }
+      },
+      
+      // 规格组8：视频分辨率
+      "Video": {
+        group_name: {
+          en: "Video Resolution",
+          fr: "Résolution Vidéo"
+        },
+        specs: {
+          en: {
+            "Compression Format": "H.264",
+            "Resolution": "Main: 1920x1080@15fps"
+          },
+          fr: {
+            "Format de Compression": "H.264",
+            "Résolution": "Principal: 1920x1080@15fps"
+          }
+        }
+      },
+      
+      // 规格组9：环境参数
+      "Environment": {
+        group_name: {
+          en: "Environmental Conditions",
+          fr: "Conditions Environnementales"
+        },
+        specs: {
+          en: {
+            "Working Temperature": "0°C to 45°C",
+            "Storage Temperature": "-20°C to 80°C",
+            "Operating Humidity": "10% ~ 95% RH (No condensation)"
+          },
+          fr: {
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Température de Stockage": "-20°C à 80°C",
+            "Humidité de Fonctionnement": "10% ~ 95% RH (Sans condensation)"
+          }
+        }
+      },
+      
+      // 规格组10：外观参数
+      "Appearance": {
+        group_name: {
+          en: "Physical Specifications",
+          fr: "Spécifications Physiques"
+        },
+        specs: {
+          en: {
+            "Material": "PC+ABS",
+            "Color Options": "White (Default)",
+            "Product Size": "62 × 62 × 43.5mm",
+            "Product Weight": "92g"
+          },
+          fr: {
+            "Matériau": "PC+ABS",
+            "Options de Couleur": "Blanc (Par défaut)",
+            "Taille du Produit": "62 × 62 × 43.5mm",
+            "Poids du Produit": "92g"
+          }
+        }
+      },
+      
+      // 规格组11：AI功能
+      "AI Features": {
+        group_name: {
+          en: "AI Features",
+          fr: "Fonctionnalités IA"
+        },
+        specs: {
+          en: {
+            "4MP Version": "Supports AI human detection",
+            "Smart Detection": "Intelligent motion and sound alerts",
+            "Activity Zones": "Customizable detection zones"
+          },
+          fr: {
+            "Version 4MP": "Supporte la détection humaine IA",
+            "Détection Intelligente": "Alertes intelligentes de mouvement et de son",
+            "Zones d'Activité": "Zones de détection personnalisables"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "WiFi Camera",
+        "Power Adapter",
+        "Cable",
+        "Reset Pin",
+        "Screws Bag",
+        "Magnetic Base",
+        "User Manual"
+      ],
+      fr: [
+        "Caméra WiFi",
+        "Adaptateur d'Alimentation",
+        "Câble",
+        "Épingle de Réinitialisation",
+        "Sac de Vis",
+        "Base Magnétique",
+        "Manuel d'Utilisation"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVC138 Product Brochure",
+          type: "PDF",
+          size: "2.4 MB",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc138/svc138-brochure-en.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "User Manual & Setup Guide", 
+          type: "PDF",
+          size: "5.8 MB",
+          url: null,
+          description: "Step-by-step installation and configuration guide"
+        },
+        {
+          name: "Technical Specifications",
+          type: "Excel", 
+          size: "145 KB",
+          url: null,
+          description: "Detailed technical specifications spreadsheet"
+        },
+        {
+          name: "Mobile App Guide",
+          type: "PDF",
+          size: "2.2 MB",
+          url: null,
+          description: "SecureVision app configuration guide"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC138",
+          type: "PDF",
+          size: "2.4 MB",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc138/svc138-brochure-en.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel Utilisateur et Guide d'Installation",
+          type: "PDF", 
+          size: "5.8 MB",
+          url: null,
+          description: "Guide d'installation et de configuration étape par étape"
+        },
+        {
+          name: "Guide de l'Application Mobile",
+          type: "PDF",
+          size: "2.2 MB",
+          url: null,
+          description: "Guide de configuration de l'application SecureVision"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: ["2014/53/EU", "EN IEC 62368-1:2020 + A11:2020", "EN IEC 62311:2020"],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 可选配置
+    // ------------------------------------------
+    optional_configurations: {
+      en: {
+        "Resolution": "3MP/4MP versions available",
+        "WiFi Connection": "2.4G / Dual band 2.4G+5G / Dual band + BLE",
+        "AI Features": "4MP version supports AI human detection"
+      },
+      fr: {
+        "Résolution": "Versions 3MP/4MP disponibles",
+        "Connexion WiFi": "2.4G / Double bande 2.4G+5G / Double bande + BLE",
+        "Fonctionnalités IA": "La version 4MP supporte la détection humaine IA"
+      }
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",                    // 可选值: in_stock, out_of_stock, pre_order
+      message: {
+        en: "Ready to Order",
+        fr: "Prêt à Commander"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC138 Fixed WiFi Indoor Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes 24/7 technical support and 30-day money-back guarantee.",
+      fr: "La Caméra Intérieure WiFi Fixe SVC138 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique 24/7 et une garantie de remboursement de 30 jours."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",             // 创建日期
+      last_updated: "2025-01-27",             // 最后更新日期
+      version: "1.1",                         // 数据版本
+      tags: ["indoor", "1080p", "wifi", "motion-detection", "pir", "night-vision", "two-way-audio"]
+    }
+  }
+  
+  // ==========================================
+  // JSON5文件修改指南
+  // ==========================================
+  /*
+  修改此文件时请注意：
+  
+  1. JSON5格式优势：
+     - 支持单行注释 // 和多行注释
+     - 属性名可以不用引号（如 name: 而不是 "name":）
+     - 支持尾随逗号
+     - 更易读和维护
+  
+  2. 基础信息修改：
+     - 更改 name、description 时保持英法语对应
+     - model 要与文件名保持一致
+  
+  3. 添加规格组：
+     - 在 specifications 中按现有格式添加新组
+     - 每个组必须包含 group_name 和 specs
+     - 保持英法语参数名称对应
+  
+  4. 更新下载文件：
+     - 先上传文件到GitHub Releases
+     - 复制下载链接更新 url 字段
+     - 更新文件大小和描述
+  
+  5. 图片路径：
+     - 使用绝对路径 "/images/..."
+     - 确保图片文件已上传到 images 目录
+  
+  6. 翻译参考：
+     - 查看 /fr/TRANSLATION-GLOSSARY.md 获取标准翻译
+     - 新术语可先用占位符 "[FR_需要翻译的内容]"
+  
+  7. JavaScript解析：
+     - 需要使用JSON5.parse()而不是JSON.parse()
+     - 或者使用自定义解析函数处理注释
+  
+  8. 验证工具：
+     - 使用JSON5 validator检查语法
+     - 确保所有必填字段都有值
+  
+  产品特性说明：
+  - Fixed WiFi Indoor Camera（固定式室内WiFi摄像头）
+  - Full HD 1080p分辨率
+  - 红外夜视3-5米
+  - PIR运动传感器120°覆盖
+  - 双向音频通信
+  - 支持Micro SD卡和云存储
+  - IP20防护等级（仅室内使用）
+  - 包含磁性底座便于安装
+  
+  数据来源：
+  - 原始Excel规格书：SVC138 Fixed WiFi Indoor Camera.xlsx
+  - 转换日期：2025-01-27
+  */
+}

@@ -1,0 +1,350 @@
+/* ================================================
+   SecureVision AI - Index/Homepage Styles
+   现代化主页样式：与about页面一致 + 完整解决方案 + 增强功能区
+   ================================================ */
+
+
+/* ============ Homepage Hero Section ============ */
+
+.hero-fullscreen {
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 var(--spacing-8);
+  position: relative;
+  z-index: 3;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-8);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* ============ Complete Solution Section ============ */
+.complete-solution-section {
+  padding: var(--spacing-20) 0 0 0;
+  background: var(--color-white);
+}
+
+.solution-text-content {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.section-description {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-4);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-image-fullwidth {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.fullwidth-image {
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+  display: block;
+}
+
+/* ============ Homepage Section Headers ============ */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+/* ============ Solutions Section ============ */
+.solutions-section {
+  padding: var(--spacing-20) 0;
+  background: var(--color-white);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.solution-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition-base);
+  border: 1px solid var(--color-neutral-200);
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-secure-blue);
+}
+
+.solution-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.solution-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-base);
+}
+
+.solution-card:hover .solution-image img {
+  transform: scale(1.05);
+}
+
+.solution-content {
+  padding: var(--spacing-6);
+}
+
+.solution-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-3);
+}
+
+.solution-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============ Features Section (Two Large Cards) ============ */
+.features-section {
+  padding: var(--spacing-20) 0;
+  background: var(--color-neutral-50);
+}
+
+.feature-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.feature-card-large {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-neutral-200);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.feature-card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-secure-blue);
+}
+
+.feature-watermark {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-6);
+  transform: translateY(-50%);
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.watermark-img {
+  width: 120px;
+  height: 120px;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-6);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-6);
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: var(--spacing-2);
+  color: var(--color-secure-blue);
+  font-weight: var(--font-bold);
+}
+
+/* ============ Advanced Technology Section ============ */
+.tech-section {
+  padding: var(--spacing-20) 0;
+  background: var(--color-white);
+}
+
+.tech-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.tech-text {
+  text-align: center;
+  max-width: 800px;
+}
+
+.tech-images {
+  display: flex;
+  gap: var(--spacing-6);
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.tech-image-item {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.tech-image-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tech-image-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ============ Responsive Design ============ */
+@media (max-width: 1024px) {
+  .tech-content {
+    gap: var(--spacing-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .feature-cards-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+  
+  .tech-images {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  .complete-solution-section {
+    padding: var(--spacing-16) 0 0 0;
+  }
+  
+  .solutions-section,
+  .features-section,
+  .tech-section {
+    padding: var(--spacing-16) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .feature-card-large {
+    padding: var(--spacing-6);
+  }
+  
+  .watermark-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .feature-cards-container,
+  .solutions-grid {
+    gap: var(--spacing-4);
+  }
+}
+
+/* ============ Animation Classes ============ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

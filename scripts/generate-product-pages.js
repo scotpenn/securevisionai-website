@@ -14,8 +14,8 @@ const CONFIG = {
   sourceTemplate: 'products/detail/template.html',
   frSourceTemplate: 'fr/products/detail/template-fr.html', 
   compiledDataDir: 'products/data/compiled/',
-  outputDir: 'products/detail/',
-  frOutputDir: 'fr/products/detail/'
+  outputDir: 'public/products/detail/',
+  frOutputDir: 'public/fr/products/detail/'
 };
 
 // 工具函数

@@ -4,7 +4,7 @@
   "description": "SecureVision AI static website with i18n support",
   "type": "module",
   "scripts": {
-    "build": "npm run build:products && npm run generate:pages",
+    "build": "npm run build:products && npm run generate:pages && node scripts/copy-static.js",
     "validate-i18n": "node scripts/validate-i18n.js",
     "build:products": "node scripts/build-products.js",
     "validate:products": "node scripts/validate-products.js",

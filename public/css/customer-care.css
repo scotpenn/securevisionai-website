@@ -1,0 +1,692 @@
+/* ================================================
+   SecureVision AI - Customer Care Page Styles
+   客户服务页面专属样式
+   ================================================ */
+
+/* ============ Customer Support Section ============ */
+.support-section {
+  background: var(--color-white);
+  padding: var(--spacing-20) 0;
+}
+
+.support-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-16);
+  align-items: start;
+}
+
+.support-card {
+  background: #fff;
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.support-card h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-4);
+}
+
+.support-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+.support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-6);
+  background: var(--color-secure-blue);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition-base);
+}
+
+.support-link:hover {
+  background: #404492;
+  transform: translateY(-2px);
+}
+
+/* ============ Customer Care Header ============ */
+.customer-care-header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+/* ============ Warranty Section ============ */
+.warranty-section {
+  background: var(--color-white);
+  padding: var(--spacing-16) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.warranty-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.warranty-content,
+.warranty-process,
+.return-policy {
+  margin-bottom: var(--spacing-10);
+  padding: 0 var(--spacing-6);
+}
+
+.warranty-subtitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-4);
+}
+
+.warranty-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-4);
+  font-size: 1.05rem;
+}
+
+.warranty-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.warranty-list li {
+  position: relative;
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-3);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.warranty-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-secure-blue);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* ============ User Manuals Section ============ */
+.manuals-faq-section {
+  background: #f8fafc;
+  padding: var(--spacing-16) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--spacing-12);
+  align-items: start;
+}
+
+.manuals-content {
+  padding: 0 var(--spacing-6);
+}
+
+.manuals-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-4);
+}
+
+.manuals-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-6);
+  font-size: 1.05rem;
+}
+
+.manuals-list {
+  padding-left: var(--spacing-6);
+  margin: 0;
+}
+
+.manuals-list li {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-3);
+  font-size: 1rem;
+}
+
+.manuals-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 var(--spacing-6);
+}
+
+.manual-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design for Warranty Section */
+@media (max-width: 768px) {
+  .manuals-faq-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .manuals-image {
+    order: -1;
+    justify-content: center;
+  }
+  
+  .manual-img {
+    max-width: 150px;
+  }
+}
+
+/* ============ Warranty Cards Section ============ */
+.warranty-cards-section {
+  background: var(--color-white);
+  padding: var(--spacing-20) 0;
+}
+
+.warranty-cards-grid {
+  column-count: 3;
+  column-gap: var(--spacing-6);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.warranty-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  height: fit-content;
+  break-inside: avoid;
+  margin-bottom: var(--spacing-6);
+  display: block;
+  width: 100%;
+}
+
+.warranty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-secure-blue);
+}
+
+.warranty-card-wide {
+  column-span: all;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-8);
+}
+
+.warranty-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.warranty-icon {
+  color: var(--color-secure-blue);
+  flex-shrink: 0;
+  background: var(--color-off-white);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+}
+
+.warranty-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.warranty-card-content {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.warranty-card-description {
+  margin-bottom: var(--spacing-4);
+  font-size: 1rem;
+}
+
+.warranty-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.warranty-card-list li {
+  position: relative;
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-3);
+  line-height: 1.5;
+}
+
+.warranty-card-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-secure-blue);
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.warranty-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* User Manuals Grid */
+.manuals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.manual-category {
+  background: #f8fafc;
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-orange);
+}
+
+.manual-category h4 {
+  font-size: 0.95rem;
+  font-weight: var(--font-semibold);
+  color: var(--color-deep-blue);
+  margin: 0 0 var(--spacing-2);
+}
+
+.manual-category p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design for Warranty Cards */
+@media (max-width: 1024px) {
+  .warranty-cards-grid {
+    column-count: 2;
+    column-gap: var(--spacing-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .warranty-cards-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+  
+  .warranty-card {
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .warranty-card-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-3);
+  }
+  
+  .warranty-icon {
+    align-self: center;
+  }
+  
+  .manuals-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+  
+  .manual-category {
+    padding: var(--spacing-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .warranty-cards-section {
+    padding: var(--spacing-16) 0;
+  }
+  
+  .warranty-card {
+    margin-bottom: var(--spacing-4);
+    border-radius: var(--radius-md);
+  }
+  
+  .warranty-card-title {
+    font-size: var(--text-lg);
+  }
+}
+
+/* ============ FAQ Section - Dynamic System ============ */
+.faq-section {
+  background: #f8fafc;
+  padding: var(--spacing-20) 0;
+}
+
+#faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+/* FAQ Groups */
+.faq-group {
+  margin-bottom: var(--spacing-16);
+}
+
+.faq-group-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-4);
+  text-align: center;
+}
+
+.faq-group-description {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  font-size: 1.125rem;
+}
+
+/* Category Filter */
+.faq-category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faq-category-btn {
+  padding: var(--spacing-2) var(--spacing-4);
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-category-btn:hover {
+  background: var(--color-off-white);
+  color: var(--color-deep-blue);
+  border-color: var(--color-deep-blue);
+}
+
+.faq-category-btn.active {
+  background: var(--color-secure-blue);
+  color: white;
+  border-color: var(--color-secure-blue);
+}
+
+/* FAQ Accordion Mode */
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-accordion .faq-item {
+  background: white;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.faq-accordion .faq-item.featured {
+  border-left: 4px solid var(--color-orange);
+}
+
+.faq-control {
+  width: 100%;
+  padding: var(--spacing-6);
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  text-align: left;
+  transition: var(--transition-base);
+}
+
+.faq-control:hover {
+  background: #f8fafc;
+}
+
+.faq-control[aria-expanded="true"] {
+  background: #f1f5f9;
+}
+
+.faq-category-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--color-off-white);
+  color: var(--color-deep-blue);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faq-question {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  line-height: 1.4;
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--color-secure-blue);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-control[aria-expanded="true"] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-panel.open {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.faq-answer {
+  padding: 0 var(--spacing-6) var(--spacing-6);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.faq-answer strong {
+  color: var(--color-deep-blue);
+  font-weight: 600;
+}
+
+.faq-answer a {
+  color: var(--color-secure-blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.faq-answer a:hover {
+  border-bottom-color: var(--color-secure-blue);
+}
+
+/* FAQ Cards Mode */
+.faq-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.faq-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.faq-card.featured {
+  border-top: 3px solid var(--color-orange);
+}
+
+.faq-card .faq-category-badge {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.faq-card-question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  margin-bottom: var(--spacing-3);
+  line-height: 1.3;
+}
+
+.faq-card-answer {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* FAQ Tags */
+.faq-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  background: #e2e8f0;
+  color: #64748b;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Search Bar */
+.faq-search-container {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+}
+
+#faq-search {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-6);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+#faq-search:focus {
+  outline: none;
+  border-color: var(--color-secure-blue);
+  box-shadow: 0 0 0 3px rgba(75, 112, 245, 0.1);
+}
+
+/* No Results Message */
+.faq-no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--spacing-12);
+  font-size: 1.125rem;
+}
+
+/* Error State */
+.faq-error {
+  text-align: center;
+  padding: var(--spacing-12);
+  background: #fee;
+  border-radius: var(--radius-md);
+  color: #dc2626;
+}
+
+/* Legacy Styles (kept for compatibility) */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ============ Customer Care Page Responsive Design ============ */
+@media (max-width: 768px) {
+  .support-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .support-section,
+  .faq-section {
+    padding: var(--spacing-16) 0;
+  }
+  
+  .faq-question {
+    font-size: 1rem;
+  }
+}
