@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "securevision-test",
   "functions": {
     "api/contact.js": {
       "runtime": "nodejs22.x"
