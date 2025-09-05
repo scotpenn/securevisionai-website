@@ -23,6 +23,9 @@
   ],
   "author": "SecureVision AI Team",
   "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "resend": "^2.1.0"
   },
