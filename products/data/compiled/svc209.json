@@ -13,15 +13,9 @@
       "fr": "Caméra extérieure WiFi à batterie avancée avec vidéo Full HD 1080p, batterie rechargeable 4400mAh et indice d'étanchéité IP65. Dispose de la vision nocturne en couleur, détection de mouvement PIR avec portée de 12m, audio bidirectionnel et connectivité BLE+WiFi pour une surveillance extérieure sans fil fiable."
     },
     "images": {
-      "main": "/images/svc209-main.jpg",
+      "main": "/images/svc209-main.png",
       "gallery": [
-        "/images/svc209-main.jpg",
-        "/images/svc209-side.jpg",
-        "/images/svc209-mounted.jpg",
-        "/images/svc209-night.jpg",
-        "/images/svc209-app.jpg",
-        "/images/svc209-battery.jpg",
-        "/images/svc209-package.jpg"
+        "/images/svc209-main.png"
       ]
     },
     "highlights": {

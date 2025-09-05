@@ -34,15 +34,14 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svc180-main.jpg",      // 主要展示图片
+      main: "/images/SVC180-main.jpg",      // 主要展示图片
       gallery: [                            // 详情页图片画廊数组
-        "/images/svc180-main.jpg",          // 第1张：主视图
-        "/images/svc180-display.jpg",       // 第2张：显示屏展示
-        "/images/svc180-rotation.jpg",      // 第3张：旋转功能
-        "/images/svc180-nightlight.jpg",    // 第4张：夜灯效果
-        "/images/svc180-app.jpg",           // 第5张：APP界面
-        "/images/svc180-nursery.jpg",       // 第6张：婴儿房使用场景
-        "/images/svc180-package.jpg"        // 第7张：包装视图
+        "/images/SVC180-main.jpg",          // 第1张：主视图
+        "/images/SVC180-white.jpg",         // 第2张：白色款式
+        "/images/SVC180-whitefront.jpg",    // 第3张：白色正面
+        "/images/SVC180-back.jpg",          // 第4张：背面视图
+        "/images/SVC180-side1.jpg",         // 第5张：侧面视图
+        "/images/SVC180-frotn.jpg"          // 第6张：正面视图(注意原文件名拼写)
       ]
     },
     

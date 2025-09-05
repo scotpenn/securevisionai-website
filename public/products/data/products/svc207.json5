@@ -34,15 +34,9 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svc207-main.jpg",      // 主要展示图片
+      main: "/images/SVC207-main.jpg",      // 主要展示图片
       gallery: [                            // 详情页图片画廊数组
-        "/images/svc207-main.jpg",          // 第1张：主视图
-        "/images/svc207-ptz.jpg",           // 第2张：云台旋转展示
-        "/images/svc207-side.jpg",          // 第3张：侧视图
-        "/images/svc207-night.jpg",         // 第4张：夜视效果
-        "/images/svc207-app.jpg",           // 第5张：APP控制界面
-        "/images/svc207-mounted.jpg",       // 第6张：安装效果
-        "/images/svc207-package.jpg"        // 第7张：包装视图
+        "/images/SVC207-main.jpg"           // 第1张：主视图（目前只有这张图片存在）
       ]
     },
     

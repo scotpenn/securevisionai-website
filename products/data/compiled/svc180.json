@@ -13,15 +13,14 @@
       "fr": "Caméra horloge WiFi intelligente multifonctionnelle avec vidéo HD 2MP, écran LCD affichant l'heure/température/statut, rotation horizontale à 355°, lampe de nuit intégrée, et lecteur de berceuses. Parfait pour la surveillance de bébé et la sécurité domestique avec audio bidirectionnel et détection de mouvement PIR."
     },
     "images": {
-      "main": "/images/svc180-main.jpg",
+      "main": "/images/SVC180-main.jpg",
       "gallery": [
-        "/images/svc180-main.jpg",
-        "/images/svc180-display.jpg",
-        "/images/svc180-rotation.jpg",
-        "/images/svc180-nightlight.jpg",
-        "/images/svc180-app.jpg",
-        "/images/svc180-nursery.jpg",
-        "/images/svc180-package.jpg"
+        "/images/SVC180-main.jpg",
+        "/images/SVC180-white.jpg",
+        "/images/SVC180-whitefront.jpg",
+        "/images/SVC180-back.jpg",
+        "/images/SVC180-side1.jpg",
+        "/images/SVC180-frotn.jpg"
       ]
     },
     "highlights": {

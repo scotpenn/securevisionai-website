@@ -13,15 +13,9 @@
       "fr": "Caméra de surveillance extérieure avancée avec rotation et inclinaison, vidéo Full HD 2MP, vision nocturne infrarouge et mode privé. Dispose du contrôle à distance de rotation/inclinaison via l'application SecureVision, détection de mouvement/son avec notifications push, et options de stockage flexibles pour une surveillance extérieure complète."
     },
     "images": {
-      "main": "/images/svc207-main.jpg",
+      "main": "/images/SVC207-main.jpg",
       "gallery": [
-        "/images/svc207-main.jpg",
-        "/images/svc207-ptz.jpg",
-        "/images/svc207-side.jpg",
-        "/images/svc207-night.jpg",
-        "/images/svc207-app.jpg",
-        "/images/svc207-mounted.jpg",
-        "/images/svc207-package.jpg"
+        "/images/SVC207-main.jpg"
       ]
     },
     "highlights": {

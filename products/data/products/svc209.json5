@@ -34,15 +34,9 @@
     // 产品图片路径 (使用绝对路径)
     // ------------------------------------------
     images: {
-      main: "/images/svc209-main.jpg",      // 主要展示图片
+      main: "/images/svc209-main.png",      // 主要展示图片 (注意：实际是PNG格式)
       gallery: [                            // 详情页图片画廊数组
-        "/images/svc209-main.jpg",          // 第1张：主视图
-        "/images/svc209-side.jpg",          // 第2张：侧视图
-        "/images/svc209-mounted.jpg",       // 第3张：安装效果
-        "/images/svc209-night.jpg",         // 第4张：夜视效果
-        "/images/svc209-app.jpg",           // 第5张：APP界面
-        "/images/svc209-battery.jpg",       // 第6张：电池展示
-        "/images/svc209-package.jpg"        // 第7张：包装视图
+        "/images/svc209-main.png"           // 第1张：主视图（目前只有这张PNG图片存在）
       ]
     },
     

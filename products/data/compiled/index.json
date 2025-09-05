@@ -1,5 +1,5 @@
 {
-  "generated": "2025-09-05T18:41:47.545Z",
+  "generated": "2025-09-05T18:53:15.402Z",
   "total": 12,
   "products": [
     {
@@ -41,7 +41,7 @@
       "name": "SVC180 Smart WiFi Clock Camera",
       "name_fr": "SVC180 Caméra Horloge Intelligente WiFi",
       "category": "baby-pet-monitor",
-      "main_image": "/images/svc180-main.jpg",
+      "main_image": "/images/SVC180-main.jpg",
       "href_en": "/products/detail/svc180.html",
       "href_fr": "/fr/products/detail/svc180.html",
       "availability": "in_stock"
@@ -63,7 +63,7 @@
       "name": "SVC207 Pan & Tilt Outdoor Monitor",
       "name_fr": "SVC207 Moniteur Extérieur à Rotation et Inclinaison",
       "category": "outdoor",
-      "main_image": "/images/svc207-main.jpg",
+      "main_image": "/images/SVC207-main.jpg",
       "href_en": "/products/detail/svc207.html",
       "href_fr": "/fr/products/detail/svc207.html",
       "availability": "in_stock"
@@ -74,7 +74,7 @@
       "name": "SVC209 Outdoor WiFi Battery Camera",
       "name_fr": "SVC209 Caméra Extérieure WiFi à Batterie",
       "category": "outdoor",
-      "main_image": "/images/svc209-main.jpg",
+      "main_image": "/images/svc209-main.png",
       "href_en": "/products/detail/svc209.html",
       "href_fr": "/fr/products/detail/svc209.html",
       "availability": "in_stock"
