@@ -39,7 +39,7 @@ build/
 # Development and internal documentation
 .claude/
 project_configuration.md
-project_context.md
+development-docs/project_context.md
 *.backup
 *-backup-*
 

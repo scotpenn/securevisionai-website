@@ -11,10 +11,16 @@ git clone https://github.com/scotpenn/securevisionai-website.git
 # Navigate to project
 cd securevisionai-website
 
+# Install dependencies
+npm install
+
+# Build project
+npm run build
+
 # Start local server
-python -m http.server 8000
+npm run dev
 # or
-npx http-server
+python -m http.server 8000
 
 # View website
 open http://localhost:8000
@@ -24,18 +30,38 @@ open http://localhost:8000
 
 ```
 /
+├── development-docs/       # 📚 All development documentation
+│   ├── INDEX.md           # Documentation overview
+│   ├── CLAUDE.md          # AI assistant instructions
+│   ├── DEPLOYMENT.md      # Deployment guide
+│   ├── DEBUG-LOG.md       # Issue tracking
+│   └── ...                # More docs
 ├── index.html              # Homepage
 ├── about.html              # About page
 ├── contact.html            # Contact page  
-├── products/all.html       # Product catalog
+├── products/               # Product system
+│   ├── all.html           # Product catalog
+│   └── data/              # Product data (JSON5)
 ├── fr/                     # French translations
 ├── css/                    # Stylesheets
 ├── js/                     # JavaScript files
 ├── images/                 # Image assets
 ├── api/contact.js          # Contact form API
+├── scripts/                # Build scripts
 ├── sitemap.xml             # SEO sitemap
 └── robots.txt              # Search engine rules
 ```
+
+## 📚 Documentation
+
+All development documentation has been organized in the `development-docs/` folder:
+
+- **[Documentation Index](./development-docs/INDEX.md)** - Complete documentation overview
+- **[Development Guide](./development-docs/CLAUDE.md)** - Project architecture and guidelines
+- **[Deployment Guide](./development-docs/DEPLOYMENT.md)** - Production deployment instructions
+- **[Debug Log](./development-docs/DEBUG-LOG.md)** - Common issues and solutions
+- **[SEO Guide](./development-docs/SEO-OPTIMIZATION.md)** - Search optimization strategies
+- **[Translation Glossary](./development-docs/TRANSLATION-GLOSSARY.md)** - EN/FR translations
 
 ## 🔧 Development
 
