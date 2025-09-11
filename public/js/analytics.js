@@ -2,6 +2,11 @@
 // Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 measurement ID
 
 (function() {
+  // Development-only logging
+  const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+  const devLog = (...args) => { if (isDev) devLog(...args); };
+  const devWarn = (...args) => { if (isDev) console.warn(...args); };
+  const devError = (...args) => { if (isDev) console.error(...args); };
   // Check if Google Analytics should be loaded
   const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual GA4 ID
   
@@ -93,6 +98,6 @@
       }
     });
     
-    console.log('SecureVision AI Analytics initialized');
+    devLog('SecureVision AI Analytics initialized');
   }
 })();

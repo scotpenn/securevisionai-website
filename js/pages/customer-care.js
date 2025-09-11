@@ -3,6 +3,12 @@
  * Dynamic FAQ loading with category support and multiple display modes
  */
 
+// Development-only logging
+const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+const devLog = (...args) => { if (isDev) console.log(...args); };
+const devWarn = (...args) => { if (isDev) devWarn(...args); };
+const devError = (...args) => { if (isDev) devError(...args); };
+
 class FAQSystem {
   constructor() {
     this.faqData = null;
@@ -29,7 +35,7 @@ class FAQSystem {
       }
       
     } catch (error) {
-      console.error('Failed to initialize FAQ system:', error);
+      devError('Failed to initialize FAQ system:', error);
       this.showFallbackContent();
     }
   }
@@ -40,7 +46,7 @@ class FAQSystem {
       if (!response.ok) throw new Error('Failed to load FAQ data');
       this.faqData = await response.json();
     } catch (error) {
-      console.error('Error loading FAQ data:', error);
+      devError('Error loading FAQ data:', error);
       throw error;
     }
   }
@@ -48,7 +54,7 @@ class FAQSystem {
   renderFAQGroups() {
     const faqContainer = document.getElementById('faq-container');
     if (!faqContainer) {
-      console.warn('FAQ container not found');
+      devWarn('FAQ container not found');
       return;
     }
 

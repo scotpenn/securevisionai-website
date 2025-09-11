@@ -6,6 +6,12 @@
 (function() {
   'use strict';
 
+  // Development-only logging
+  const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+  const devLog = (...args) => { if (isDev) devLog(...args); };
+  const devWarn = (...args) => { if (isDev) console.warn(...args); };
+  const devError = (...args) => { if (isDev) devError(...args); };
+
   // ============ State Management ============
   let productsData = null;
   let currentCategory = 'all';
@@ -26,16 +32,16 @@
   async function loadProductsData() {
     try {
       showLoadingState();
-      console.log('Loading products data...');
+      devLog('Loading products data...');
       
       // 使用JSON5Parser加载编译后的产品索引
       const productsIndex = await JSON5Parser.loadProductsIndex();
-      console.log('Products index loaded:', productsIndex);
+      devLog('Products index loaded:', productsIndex);
       
       // 转换为内部数据结构
       productsData = convertIndexToInternalFormat(productsIndex);
-      console.log('Converted products data:', productsData);
-      console.log('Categories with products:', Object.keys(productsData.categories).map(key => ({
+      devLog('Converted products data:', productsData);
+      devLog('Categories with products:', Object.keys(productsData.categories).map(key => ({
         category: key,
         productCount: productsData.categories[key].products.length
       })));
@@ -45,7 +51,7 @@
       handleInitialHash();
       
     } catch (error) {
-      console.error('Error loading products data:', error);
+      devError('Error loading products data:', error);
       showErrorState();
     }
   }
@@ -170,12 +176,12 @@
 
   // ============ Rendering Functions ============
   function renderAllProducts() {
-    console.log('renderAllProducts called');
-    console.log('productsData:', productsData);
-    console.log('contentContainer:', contentContainer);
+    devLog('renderAllProducts called');
+    devLog('productsData:', productsData);
+    devLog('contentContainer:', contentContainer);
     
     if (!productsData || !contentContainer) {
-      console.error('Missing productsData or contentContainer');
+      devError('Missing productsData or contentContainer');
       return;
     }
 
@@ -186,15 +192,15 @@
       .filter(category => category.visible)
       .sort((a, b) => a.display_order - b.display_order);
     
-    console.log('Sorted categories:', sortedCategories.map(c => ({ id: c.id, productCount: c.products.length })));
+    devLog('Sorted categories:', sortedCategories.map(c => ({ id: c.id, productCount: c.products.length })));
     
     sortedCategories.forEach(category => {
       const categoryHtml = renderCategorySection(category);
-      console.log(`Category ${category.id} HTML length:`, categoryHtml.length);
+      devLog(`Category ${category.id} HTML length:`, categoryHtml.length);
       html += categoryHtml;
     });
 
-    console.log('Final HTML length:', html.length);
+    devLog('Final HTML length:', html.length);
     contentContainer.innerHTML = html;
     hideLoadingState();
   }
@@ -512,11 +518,11 @@
 
   // ============ Initialization ============
   function init() {
-    console.log('Initializing products page...');
+    devLog('Initializing products page...');
     
     // Check if JSON5Parser is available
     if (typeof JSON5Parser === 'undefined') {
-      console.error('JSON5Parser not found! Make sure json5-parser.js is loaded before products.js');
+      devError('JSON5Parser not found! Make sure json5-parser.js is loaded before products.js');
       showErrorState();
       return;
     }

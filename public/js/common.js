@@ -6,13 +6,58 @@
 (function() {
   'use strict';
 
+  // Development-only logging
+  const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+  const devLog = (...args) => { if (isDev) console.log(...args); };
+  const devWarn = (...args) => { if (isDev) console.warn(...args); };
+  const devError = (...args) => { if (isDev) console.error(...args); };
+
+  // Global error handler
+  function createErrorBoundary(context = 'Unknown') {
+    return (error, fallbackValue = null) => {
+      devError(`[${context}] Error caught:`, error);
+      
+      // Send error to analytics in production (if available)
+      if (!isDev && typeof gtag === 'function') {
+        gtag('event', 'exception', {
+          description: `${context}: ${error.message || error}`,
+          fatal: false
+        });
+      }
+      
+      return fallbackValue;
+    };
+  }
+
+  // Safe DOM operations
+  function safeQuerySelector(selector, context = document) {
+    try {
+      return context.querySelector(selector);
+    } catch (error) {
+      devError(`Invalid selector: ${selector}`, error);
+      return null;
+    }
+  }
+
+  function safeQuerySelectorAll(selector, context = document) {
+    try {
+      return context.querySelectorAll(selector);
+    } catch (error) {
+      devError(`Invalid selector: ${selector}`, error);
+      return [];
+    }
+  }
+
   // ============ Navigation State Management ============
   (function initNavigationState() {
-    const nav = document.getElementById('navbar');
-    if (!nav) return;
+    const errorBoundary = createErrorBoundary('NavigationState');
+    
+    try {
+      const nav = safeQuerySelector('#navbar');
+      if (!nav) return;
 
-    const scroller = document.getElementById('scroll-container') || window;
-    const hero = document.getElementById('hero-section') || document.querySelector('.hero-fullscreen');
+      const scroller = safeQuerySelector('#scroll-container') || window;
+      const hero = safeQuerySelector('#hero-section') || safeQuerySelector('.hero-fullscreen');
 
     // Navigation state setter
     const setNavState = (isTop) => {
@@ -43,6 +88,9 @@
       const onScroll = () => setNavState(getScrollY() <= 24);
       (scroller === window ? window : scroller).addEventListener('scroll', onScroll, { passive: true });
       onScroll(); // Set initial state
+    }
+    } catch (error) {
+      errorBoundary(error);
     }
   })();
   
@@ -249,13 +297,13 @@
             return this.translations[targetLang];
           }
         } catch (e) {
-          console.warn(`Failed to load ${url}:`, e);
+          devWarn(`Failed to load ${url}:`, e);
         }
       }
       
       // Fallback to English if target language fails
       if (targetLang !== 'en') {
-        console.warn(`Failed to load ${targetLang}, falling back to English`);
+        devWarn(`Failed to load ${targetLang}, falling back to English`);
         return this.loadTranslations('en');
       }
       
@@ -332,7 +380,7 @@
     try { 
       config = await loadNavConfig(); 
     } catch (e) { 
-      console.warn('Use static nav fallback:', e); 
+      devWarn('Use static nav fallback:', e); 
       return; 
     }
 
@@ -361,7 +409,7 @@
       }
     });
 
-    console.log(`Hydrated Products dropdown with ${productsCfg.items.length} items for ${langCode}`);
+    devLog(`Hydrated Products dropdown with ${productsCfg.items.length} items for ${langCode}`);
   }
 
   // 3) 触屏/键盘行为（与 :hover 并存）
@@ -408,7 +456,7 @@
       // Step 1: Initialize i18n
       I18n.currentLang = I18n.detectLanguage();
       await I18n.loadTranslations();
-      console.log(`Initialized i18n for language: ${I18n.currentLang}`);
+      devLog(`Initialized i18n for language: ${I18n.currentLang}`);
       
       // Step 2: Apply translations to static content
       I18n.applyTranslations();
@@ -443,7 +491,7 @@
       hideLoadingAnimation();
       
     } catch (error) {
-      console.error('Initialization error:', error);
+      devError('Initialization error:', error);
       // Continue with basic functionality even if i18n fails
       await hydrateNavigation();
       enhanceNavInteractions();
@@ -451,6 +499,19 @@
       hideLoadingAnimation();
     }
   }
+
+  // ============ Global Error Handling ============
+  // Catch unhandled errors
+  window.addEventListener('error', (event) => {
+    const errorBoundary = createErrorBoundary('GlobalError');
+    errorBoundary(event.error);
+  });
+
+  window.addEventListener('unhandledrejection', (event) => {
+    const errorBoundary = createErrorBoundary('UnhandledPromise');
+    errorBoundary(event.reason);
+    event.preventDefault(); // Prevent console spam
+  });
 
   // ============ DOM Ready ============
   if (document.readyState === 'loading') {

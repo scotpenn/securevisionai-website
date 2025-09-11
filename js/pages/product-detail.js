@@ -6,6 +6,29 @@
 (function() {
   'use strict';
 
+  // Development-only logging
+  const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+  const devLog = (...args) => { if (isDev) console.log(...args); };
+  const devWarn = (...args) => { if (isDev) console.warn(...args); };
+  const devError = (...args) => { if (isDev) console.error(...args); };
+
+  // Error boundary for this module
+  function createErrorBoundary(context = 'ProductDetail') {
+    return (error, fallbackValue = null) => {
+      devError(`[${context}] Error caught:`, error);
+      
+      // Send error to analytics in production (if available)
+      if (!isDev && typeof gtag === 'function') {
+        gtag('event', 'exception', {
+          description: `${context}: ${error.message || error}`,
+          fatal: false
+        });
+      }
+      
+      return fallbackValue;
+    };
+  }
+
   // ============ Utility Functions ============
   function detectLang() { 
     return location.pathname.startsWith('/fr/') ? 'fr' : 'en'; 
@@ -98,13 +121,16 @@
 
   // ============ Data Loading ============
   async function loadProduct() {
+    const errorBoundary = createErrorBoundary('LoadProduct');
+    
+    try {
     const id = getProductId();
     if (!id) {
       throw new Error('Product ID not found in URL path');
     }
     
     const url = `/products/data/compiled/${id}.json`;
-    console.log(`Loading product data: ${url}`);
+    devLog(`Loading product data: ${url}`);
     
     try {
       const response = await fetch(url, { 
@@ -127,12 +153,15 @@
         throw new Error('Invalid product data structure - missing "product" object');
       }
       
-      console.log('✅ Product data loaded successfully:', data.product.model);
+      devLog('✅ Product data loaded successfully:', data.product.model);
       return data.product;
       
     } catch (error) {
-      console.error('❌ Failed to load product:', error);
+      devError('❌ Failed to load product:', error);
       throw error;
+    }
+    } catch (error) {
+      return errorBoundary(error, null);
     }
   }
 
@@ -360,17 +389,17 @@
       initializeTabs();
       initializeDownloadBrochureButton();
       
-      console.log('✅ Product rendering completed');
+      devLog('✅ Product rendering completed');
       
     } catch (error) {
-      console.error('❌ Error during product rendering:', error);
+      devError('❌ Error during product rendering:', error);
       friendlyError('Failed to display product information', error.message);
     }
   }
 
   // ============ Page Initialization ============
   document.addEventListener('DOMContentLoaded', async () => {
-    console.log('🚀 Product detail page initializing...');
+    devLog('🚀 Product detail page initializing...');
     
     try {
       const product = await loadProduct();

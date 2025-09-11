@@ -338,28 +338,28 @@
           name: "SVC180 Product Brochure",
           type: "PDF",
           size: "2.6 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-brochure.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-brochure-en.pdf",
           description: "Complete product overview and specifications"
         },
         {
           name: "Installation & User Manual",
           type: "PDF",
           size: "4.8 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-manual.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-manual-en.pdf",
           description: "Detailed setup and operation guide"
         },
         {
           name: "Baby Monitor Guide",
           type: "PDF",
           size: "2.2 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-baby-guide.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-baby-guide-en.pdf",
           description: "Special guide for baby monitoring features"
         },
         {
           name: "Technical Specifications",
           type: "Excel",
           size: "142 KB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-specs.xlsx",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-specs.xlsx",
           description: "Detailed technical specifications spreadsheet"
         }
       ],
@@ -368,21 +368,21 @@
           name: "Brochure Produit SVC180",
           type: "PDF",
           size: "2.6 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-brochure-fr.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-brochure-fr.pdf",
           description: "Aperçu complet du produit et spécifications"
         },
         {
           name: "Manuel d'Installation et d'Utilisation",
           type: "PDF",
           size: "4.8 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-manual-fr.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-manual-fr.pdf",
           description: "Guide détaillé de configuration et d'utilisation"
         },
         {
           name: "Guide Moniteur Bébé",
           type: "PDF",
           size: "2.2 MB",
-          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc180-baby-guide-fr.pdf",
+          url: "https://raw.githubusercontent.com/scotpenn/securevision-downloads/main/products/svc180/svc180-baby-guide-fr.pdf",
           description: "Guide spécial pour les fonctions de surveillance de bébé"
         }
       ]

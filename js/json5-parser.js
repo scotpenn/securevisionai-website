@@ -3,6 +3,12 @@
  * 简单的JSON5解析工具，用于处理带注释的产品数据文件
  */
 
+// Development-only logging
+const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
+const devLog = (...args) => { if (isDev) devLog(...args); };
+const devWarn = (...args) => { if (isDev) console.warn(...args); };
+const devError = (...args) => { if (isDev) devError(...args); };
+
 class JSON5Parser {
   /**
    * 解析JSON5字符串为JavaScript对象
@@ -18,7 +24,7 @@ class JSON5Parser {
       // 这里为了简化，直接使用eval，实际项目中建议使用JSON5库
       return eval('(' + cleanedString + ')');
     } catch (error) {
-      console.error('JSON5 parsing error:', error);
+      devError('JSON5 parsing error:', error);
       throw new Error('Failed to parse JSON5: ' + error.message);
     }
   }
@@ -56,7 +62,7 @@ class JSON5Parser {
       const json5String = await response.text();
       return this.parse(json5String);
     } catch (error) {
-      console.error(`Failed to load JSON5 file from ${url}:`, error);
+      devError(`Failed to load JSON5 file from ${url}:`, error);
       throw error;
     }
   }
@@ -81,7 +87,7 @@ class JSON5Parser {
       }
       return await response.json();
     } catch (error) {
-      console.error('Failed to load products index:', error);
+      devError('Failed to load products index:', error);
       throw error;
     }
   }
@@ -103,12 +109,12 @@ window.JSON5Parser = JSON5Parser;
 /*
 // 加载产品主配置
 JSON5Parser.loadProductsMaster().then(config => {
-  console.log('Products config loaded:', config);
+  devLog('Products config loaded:', config);
 });
 
 // 加载单个产品
 JSON5Parser.loadProduct('svc138').then(product => {
-  console.log('Product loaded:', product);
+  devLog('Product loaded:', product);
 });
 
 // 直接解析JSON5字符串
