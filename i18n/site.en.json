@@ -8,11 +8,11 @@
   },
   "productCategories": {
     "indoor": "Indoor Products",
-    "outdoor": "Outdoor Products", 
+    "outdoor": "Outdoor Products",
     "doorbell": "Doorbell Products",
     "babyPet": "Baby & Pet Monitor Products",
     "sports": "Sports Products",
-    "securePower": "Secure Power Products",
+    "lightingTower": "Lighting Tower",
     "mobileApp": "Mobile App"
   },
   "homepage": {

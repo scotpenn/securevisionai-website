@@ -12,6 +12,8 @@
   const devWarn = (...args) => { if (isDev) console.warn(...args); };
   const devError = (...args) => { if (isDev) console.error(...args); };
 
+  let navbar = document.getElementById('navbar');
+
   // Global error handler
   function createErrorBoundary(context = 'Unknown') {
     return (error, fallbackValue = null) => {
@@ -51,10 +53,10 @@
   // ============ Navigation State Management ============
   (function initNavigationState() {
     const errorBoundary = createErrorBoundary('NavigationState');
-    
+
     try {
-      const nav = safeQuerySelector('#navbar');
-      if (!nav) return;
+      navbar = safeQuerySelector('#navbar');
+      if (!navbar) return;
 
       const scroller = safeQuerySelector('#scroll-container') || window;
       const hero = safeQuerySelector('#hero-section') || safeQuerySelector('.hero-fullscreen');
@@ -62,11 +64,11 @@
     // Navigation state setter
     const setNavState = (isTop) => {
       if (isTop) {
-        nav.classList.add('transparent');
-        nav.classList.remove('scrolled');
+        navbar.classList.add('transparent');
+        navbar.classList.remove('scrolled');
       } else {
-        nav.classList.add('scrolled');
-        nav.classList.remove('transparent');
+        navbar.classList.add('scrolled');
+        navbar.classList.remove('transparent');
       }
     };
 

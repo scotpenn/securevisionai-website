@@ -383,14 +383,15 @@ img {
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--spacing-12);
-  margin-bottom: var(--spacing-12);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
 }
 
 .footer-brand {
-  max-width: 300px;
+  max-width: 420px;
 }
 
 .footer-logo {
@@ -403,62 +404,51 @@ img {
   color: rgba(255, 255, 255, .8);
   margin-bottom: var(--spacing-6);
 }
-
-.footer-social {
+.footer-nav {
   display: flex;
-  gap: var(--spacing-4);
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.social-link {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, .12);
-  border-radius: 8px;
-  color: #fff;
-  text-decoration: none;
-  transition: all var(--transition-base);
-}
-
-.social-link:hover {
-  background: var(--color-secure-blue);
-  transform: translateY(-2px);
-}
-
-.footer-section h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-6);
-}
-
-.footer-links {
+.footer-nav-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }
 
-.footer-links li {
-  margin-bottom: .75rem;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, .8);
+.footer-nav-list a {
+  color: rgba(255, 255, 255, .85);
   text-decoration: none;
-  transition: all var(--transition-base);
+  font-weight: 500;
+  transition: color var(--transition-base);
 }
 
-.footer-links a:hover {
+.footer-nav-list a:hover {
   color: #fff;
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, .12);
-  padding-top: var(--spacing-8);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-4);
-  flex-wrap: wrap;
+  padding-top: var(--spacing-6);
+  font-size: .875rem;
+  color: rgba(255, 255, 255, .75);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-4);
+  }
 }
 
 /* ============ Common Components ============ */

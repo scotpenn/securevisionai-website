@@ -1,5 +1,5 @@
 {
-  "generated": "2025-09-11T21:14:12.872Z",
+  "generated": "2025-10-01T19:04:26.389Z",
   "total": 12,
   "products": [
     {
@@ -128,7 +128,7 @@
       "model": "SVT100",
       "name": "SVT100 Solar Hybrid Lighting Tower - Mine Spec",
       "name_fr": "SVT100 Tour d'Éclairage Hybride Solaire - Spécification Minière",
-      "category": "secure-power",
+      "category": "lighting-tower",
       "main_image": "/images/svt100-main.jpeg",
       "href_en": "/products/detail/svt100.html",
       "href_fr": "/fr/products/detail/svt100.html",

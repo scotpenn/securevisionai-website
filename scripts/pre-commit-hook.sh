@@ -28,8 +28,8 @@ fi
 # 1. Validate navigation configuration
 echo "🔍 Validating navigation configuration..."
 if command_exists node; then
-    if [ -f "scripts/validate-navigation.js" ]; then
-        node scripts/validate-navigation.js
+    if [ -f "scripts/validate-navigation.cjs" ]; then
+        node scripts/validate-navigation.cjs
         if [ $? -eq 0 ]; then
             echo -e "${GREEN}✅ Navigation configuration valid${NC}"
         else

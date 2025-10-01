@@ -19,7 +19,7 @@
         },
         "category": {
           "type": "string",
-          "enum": ["indoor", "outdoor", "doorbell", "baby-pet-monitor", "sports", "secure-power"],
+          "enum": ["indoor", "outdoor", "doorbell", "baby-pet-monitor", "sports", "lighting-tower"],
           "description": "Product category"
         },
         "slug": {

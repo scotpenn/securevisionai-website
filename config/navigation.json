@@ -40,9 +40,9 @@
               "category": "sports"
             },
             {
-              "label": "Secure Power",
-              "href": "/products/all.html#secure-power",
-              "category": "secure-power"
+              "label": "Lighting Tower",
+              "href": "/products/all.html#lighting-tower",
+              "category": "lighting-tower"
             }
           ]
         },
@@ -104,9 +104,9 @@
               "category": "sports"
             },
             {
-              "label": "Alimentation Sécurisée",
-              "href": "/fr/products/all-fr.html#secure-power",
-              "category": "secure-power"
+              "label": "Tour d'Éclairage",
+              "href": "/fr/products/all-fr.html#lighting-tower",
+              "category": "lighting-tower"
             }
           ]
         },

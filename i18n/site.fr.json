@@ -8,11 +8,11 @@
   },
   "productCategories": {
     "indoor": "Produits d'Intérieur",
-    "outdoor": "Produits Extérieurs", 
+    "outdoor": "Produits Extérieurs",
     "doorbell": "Produits de Sonnette",
     "babyPet": "Produits de Surveillance Pour Bébés et Animaux de Compagnie",
     "sports": "Produits de Sport",
-    "securePower": "Produits d'Alimentation Sécurisée",
+    "lightingTower": "Tour d'Éclairage",
     "mobileApp": "Application Mobile"
   },
   "homepage": {

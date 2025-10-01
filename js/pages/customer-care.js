@@ -6,8 +6,8 @@
 // Development-only logging
 const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname.includes('dev');
 const devLog = (...args) => { if (isDev) console.log(...args); };
-const devWarn = (...args) => { if (isDev) devWarn(...args); };
-const devError = (...args) => { if (isDev) devError(...args); };
+const devWarn = (...args) => { if (isDev) console.warn(...args); };
+const devError = (...args) => { if (isDev) console.error(...args); };
 
 class FAQSystem {
   constructor() {
