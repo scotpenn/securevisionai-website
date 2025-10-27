@@ -1,0 +1,81 @@
+{
+  "site": {
+    "name": "SecureVision AI",
+    "name_fr": "SecureVision AI",
+    "tagline": "Home, Business and Recreational Security Crime and Power Protection",
+    "tagline_fr": "Sécurité Résidentielle, Commerciale et Récréative Protection Contre le Crime et Panne de Courant",
+    "description": "We Offer a Wide Product Range including Indoor, Outdoor, Doorbell, Baby & Pet Monitoring, and Wearable Sports Security Camera Devices, all with 24/7 access on your Mobile Device with our SecureVision AI App, and Cloud based storage. Our \"SecurePower\" portable backup power system provides reliable backup power anytime, anywhere. Our telescopic \"SecureTower\" provides solar and battery powered lighting and surveillance for large areas.",
+    "description_fr": "Nous offrons une large gamme de produits incluant des dispositifs de caméras de sécurité pour intérieur, extérieur, sonnettes, surveillance bébé et animaux, et sports portables, tous avec accès 24/7 sur votre appareil mobile avec notre app SecureVision AI, et stockage basé sur le cloud. Notre système d'alimentation de secours portable \"SecurePower\" fournit une alimentation de secours fiable partout, à tout moment. Notre \"SecureTower\" télescopique fournit un éclairage et une surveillance alimentés par énergie solaire et batterie pour de grandes zones."
+  },
+  "navigation": {
+    "home": "HOME",
+    "home_fr": "ACCUEIL",
+    "about": "ABOUT", 
+    "about_fr": "À PROPOS",
+    "product": "PRODUCT",
+    "product_fr": "PRODUITS",
+    "contact": "CONTACT",
+    "contact_fr": "CONTACT",
+    "customer": "CUSTOMER",
+    "customer_fr": "CLIENT"
+  },
+  "features": [
+    {
+      "title": "Most Affordable",
+      "title_fr": "Le Plus Abordable"
+    },
+    {
+      "title": "Superior Features", 
+      "title_fr": "Fonctionnalités Supérieures"
+    },
+    {
+      "title": "Easy to Install",
+      "title_fr": "Facile à Installer"
+    },
+    {
+      "title": "Reliable & Dependable",
+      "title_fr": "Fiable et Sûr"
+    },
+    {
+      "title": "1 Year Warranty Replacement",
+      "title_fr": "Remplacement Garantie 1 An"
+    },
+    {
+      "title": "24X7 No-Fee Mobile App Monitoring",
+      "title_fr": "Surveillance App Mobile 24h/24 Sans Frais"
+    },
+    {
+      "title": "Backup Power Anytime, Anywhere",
+      "title_fr": "Alimentation de Secours Partout, Toujours"
+    },
+    {
+      "title": "Great Night Vision",
+      "title_fr": "Excellente Vision Nocturne"
+    },
+    {
+      "title": "Simple to Use",
+      "title_fr": "Simple à Utiliser"
+    },
+    {
+      "title": "Guaranteed Delivery Times",
+      "title_fr": "Délais de Livraison Garantis"
+    },
+    {
+      "title": "Minimal Maintenance",
+      "title_fr": "Maintenance Minimale"
+    },
+    {
+      "title": "Cloud Based Storage",
+      "title_fr": "Stockage Basé sur le Cloud"
+    },
+    {
+      "title": "Portable Power Anytime, Anywhere",
+      "title_fr": "Alimentation Portable Partout, Toujours"
+    }
+  ],
+  "footer": {
+    "copyright": "Copyright ©",
+    "copyright_fr": "Droits d'auteur ©",
+    "company": "SecureVision AI"
+  }
+}

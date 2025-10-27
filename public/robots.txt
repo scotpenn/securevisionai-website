@@ -1,0 +1,43 @@
+# Robots.txt for SecureVision AI
+# https://securevision.ai
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow temporary and backup files
+Disallow: /*-backup*.html
+Disallow: /fr/*-backup*.html
+Disallow: /products/detail/template.html
+Disallow: /fr/products/detail/template-fr.html
+Disallow: /fr/home-new.html
+Disallow: /*.backup
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://securevision.ai/sitemap.xml
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bingbot specific  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

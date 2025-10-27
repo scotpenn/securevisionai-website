@@ -1,0 +1,536 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC263 婴儿和宠物监控器
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc263",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC263",                 // 产品型号，显示在页面上
+    category: "baby-pet-monitor",    // 产品分类：婴儿/宠物监控器
+    slug: "svc263",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC263 Baby & Pet Monitor with Temperature Sensor",
+      fr: "SVC263 Moniteur Bébé et Animaux avec Capteur de Température"
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced baby and pet monitor with Full HD 1080p video, temperature detection, and preset lullabies. Features hidden infrared night vision for undisturbed sleep monitoring, two-way audio communication, and remote control of night light. Includes adorable rabbit silicone case and flexible stand for versatile placement.",
+      fr: "Moniteur avancé pour bébé et animaux avec vidéo Full HD 1080p, détection de température et berceuses préréglées. Comprend une vision nocturne infrarouge cachée pour une surveillance du sommeil sans perturbation, une communication audio bidirectionnelle et un contrôle à distance de la veilleuse. Inclut un adorable étui en silicone lapin et un support flexible pour un placement polyvalent."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/SVC263-main.jpg",      // 主要展示图片
+      gallery: [                            // 详情页图片画廊数组
+        "/images/SVC263-main.jpg",          // 第1张：主视图
+        "/images/SVC263-white.jpg",         // 第2张：白色版本
+        "/images/SVC263-pink.jpg",          // 第3张：粉色版本  
+        "/images/SVC263-blue.jpg"           // 第4张：蓝色版本
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Full HD 1080p Live View & Recording",                 // 特性1：1080p高清
+        "Temperature Detection with High/Low Alerts",          // 特性2：温度监测
+        "Remote Control Preset Lullabies",                    // 特性3：远程摇篮曲
+        "Night Light with Remote Control",                    // 特性4：远程夜灯控制
+        "Hidden Infrared Night Vision (No Red Eyes)",         // 特性5：隐形夜视
+        "Two-Way Audio Communication",                        // 特性6：双向音频
+        "Motion & Sound Detection with Push Alerts",          // 特性7：运动和声音检测
+        "Adorable Rabbit Silicone Case Included"             // 特性8：兔子硅胶套
+      ],
+      fr: [
+        "Vue en Direct et Enregistrement Full HD 1080p",
+        "Détection de Température avec Alertes Haute/Basse",
+        "Berceuses Préréglées Contrôlées à Distance",
+        "Veilleuse avec Contrôle à Distance",
+        "Vision Nocturne Infrarouge Cachée (Sans Yeux Rouges)",
+        "Communication Audio Bidirectionnelle",
+        "Détection de Mouvement et Son avec Alertes Push",
+        "Adorable Étui en Silicone Lapin Inclus"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：硬件规格
+      "Hardware": {
+        group_name: {
+          en: "Hardware Specifications",
+          fr: "Spécifications Matérielles"
+        },
+        specs: {
+          en: {
+            "CPU Chipset": "Ankya",
+            "Main Frequency": "800MHz (32KB I-Cache + 32KB D-Cache)",
+            "Processing": "High-performance processor",
+            "System": "Embedded Linux system"
+          },
+          fr: {
+            "Chipset CPU": "Ankya",
+            "Fréquence Principale": "800MHz (32KB I-Cache + 32KB D-Cache)",
+            "Traitement": "Processeur haute performance",
+            "Système": "Système Linux embarqué"
+          }
+        }
+      },
+      
+      // 规格组2：摄像头和传感器
+      "Camera & Sensor": {
+        group_name: {
+          en: "Camera & Sensor",
+          fr: "Caméra et Capteur"
+        },
+        specs: {
+          en: {
+            "CMOS Sensor": "1/3.0 Inch, 2MP CMOS Sensor",
+            "Resolution": "1920×1080 (Full HD)",
+            "Image Quality": "Full HD 1080p",
+            "Sensor Type": "High sensitivity CMOS"
+          },
+          fr: {
+            "Capteur CMOS": "1/3.0 Pouce, Capteur CMOS 2MP",
+            "Résolution": "1920×1080 (Full HD)",
+            "Qualité d'Image": "Full HD 1080p",
+            "Type de Capteur": "CMOS haute sensibilité"
+          }
+        }
+      },
+      
+      // 规格组3：镜头规格
+      "Lens": {
+        group_name: {
+          en: "Lens Specifications",
+          fr: "Spécifications de l'Objectif"
+        },
+        specs: {
+          en: {
+            "Effective Focal Length": "4.08mm",
+            "Flange Focal Length": "6.05mm",
+            "F-Number": "F2.0",
+            "Field of View": "100°",
+            "Lens Type": "Wide-angle lens"
+          },
+          fr: {
+            "Distance Focale Effective": "4.08mm",
+            "Distance Focale de Bride": "6.05mm",
+            "Nombre F": "F2.0",
+            "Champ de Vision": "100°",
+            "Type d'Objectif": "Objectif grand angle"
+          }
+        }
+      },
+      
+      // 规格组4：夜视功能
+      "Night Vision": {
+        group_name: {
+          en: "Night Vision",
+          fr: "Vision Nocturne"
+        },
+        specs: {
+          en: {
+            "Night Vision Distance": "3-5 meters",
+            "IR LEDs": "940nm, 3pcs (No red eyes)",
+            "Night Vision Type": "Hidden infrared",
+            "Visibility": "Invisible to babies and pets",
+            "Coverage": "Clear night monitoring"
+          },
+          fr: {
+            "Distance Vision Nocturne": "3-5 mètres",
+            "LEDs IR": "940nm, 3 pièces (Sans yeux rouges)",
+            "Type Vision Nocturne": "Infrarouge caché",
+            "Visibilité": "Invisible pour bébés et animaux",
+            "Couverture": "Surveillance nocturne claire"
+          }
+        }
+      },
+      
+      // 规格组5：特殊功能
+      "Special Features": {
+        group_name: {
+          en: "Special Features",
+          fr: "Fonctionnalités Spéciales"
+        },
+        specs: {
+          en: {
+            "Temperature Sensor": "Built-in temperature detection",
+            "Temperature Alerts": "High and low temperature notifications",
+            "Lullabies": "Remote control preset lullabies",
+            "Night Light": "Remote control night light switch and brightness",
+            "Rabbit Case": "Silicone rabbit case (multiple colors)",
+            "Flexible Stand": "Optional flexible stand"
+          },
+          fr: {
+            "Capteur de Température": "Détection de température intégrée",
+            "Alertes de Température": "Notifications de température haute et basse",
+            "Berceuses": "Berceuses préréglées contrôlées à distance",
+            "Veilleuse": "Interrupteur et luminosité de veilleuse contrôlés à distance",
+            "Étui Lapin": "Étui lapin en silicone (plusieurs couleurs)",
+            "Support Flexible": "Support flexible optionnel"
+          }
+        }
+      },
+      
+      // 规格组6：网络和连接
+      "Network & Connectivity": {
+        group_name: {
+          en: "Network & Connectivity",
+          fr: "Réseau et Connectivité"
+        },
+        specs: {
+          en: {
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Wi-Fi Standard": "IEEE 802.11b/g/n",
+            "Wi-Fi Frequency": "2.4GHz",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)"
+          },
+          fr: {
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Standard Wi-Fi": "IEEE 802.11b/g/n",
+            "Fréquence Wi-Fi": "2.4GHz",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)"
+          }
+        }
+      },
+      
+      // 规格组7：音频系统
+      "Audio System": {
+        group_name: {
+          en: "Audio System",
+          fr: "Système Audio"
+        },
+        specs: {
+          en: {
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -42dB",
+            "Audio Feature": "Two-way audio talk",
+            "Sound Detection": "Crying detection capability"
+          },
+          fr: {
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -42dB",
+            "Fonction Audio": "Communication audio bidirectionnelle",
+            "Détection Sonore": "Capacité de détection des pleurs"
+          }
+        }
+      },
+      
+      // 规格组8：存储和回放
+      "Storage & Playback": {
+        group_name: {
+          en: "Storage & Playback",
+          fr: "Stockage et Lecture"
+        },
+        specs: {
+          en: {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage",
+            "Playback": "Events playback from SD card and cloud",
+            "Recording": "Continuous and event-triggered recording"
+          },
+          fr: {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Enregistrement": "Enregistrement continu et déclenché par événement"
+          }
+        }
+      },
+      
+      // 规格组9：视频规格
+      "Video": {
+        group_name: {
+          en: "Video Specifications",
+          fr: "Spécifications Vidéo"
+        },
+        specs: {
+          en: {
+            "Compression Format": "H.264/H.265",
+            "Main Stream": "1920×1080@15fps",
+            "Sub Stream": "640×360@15fps",
+            "Video Quality": "Full HD 1080p"
+          },
+          fr: {
+            "Format de Compression": "H.264/H.265",
+            "Flux Principal": "1920×1080@15fps",
+            "Flux Secondaire": "640×360@15fps",
+            "Qualité Vidéo": "Full HD 1080p"
+          }
+        }
+      },
+      
+      // 规格组10：电源和接口
+      "Power & Interface": {
+        group_name: {
+          en: "Power & Interface",
+          fr: "Alimentation et Interface"
+        },
+        specs: {
+          en: {
+            "Power Supply": "5V/1A Adapter",
+            "Power Interface": "Type-C charging port",
+            "Buttons": "Reset button",
+            "Storage Interface": "Micro SD slot",
+            "Temperature Sensor Port": "Type-C cable with temperature sensor"
+          },
+          fr: {
+            "Alimentation": "Adaptateur 5V/1A",
+            "Interface d'Alimentation": "Port de charge Type-C",
+            "Boutons": "Bouton de réinitialisation",
+            "Interface de Stockage": "Fente Micro SD",
+            "Port Capteur de Température": "Câble Type-C avec capteur de température"
+          }
+        }
+      },
+      
+      // 规格组11：环境和物理参数
+      "Environmental & Physical": {
+        group_name: {
+          en: "Environmental & Physical",
+          fr: "Environnement et Physique"
+        },
+        specs: {
+          en: {
+            "Weatherproof Rating": "IP20 (Indoor use)",
+            "Operating Temperature": "0°C to 45°C",
+            "Storage Temperature": "-20°C to 60°C",
+            "Operating Humidity": "10% ~ 95% RH (Non-condensing)",
+            "Material": "PC+ABS plastic",
+            "Color": "White (Default)",
+            "Dimensions": "70 × 70 × 64mm",
+            "Weight": "380g with color box"
+          },
+          fr: {
+            "Indice d'Étanchéité": "IP20 (Usage intérieur)",
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Température de Stockage": "-20°C à 60°C",
+            "Humidité de Fonctionnement": "10% ~ 95% RH (Sans condensation)",
+            "Matériau": "Plastique PC+ABS",
+            "Couleur": "Blanc (Par défaut)",
+            "Dimensions": "70 × 70 × 64mm",
+            "Poids": "380g avec boîte couleur"
+          }
+        }
+      },
+      
+      // 规格组12：AI功能
+      "AI Features": {
+        group_name: {
+          en: "AI Features",
+          fr: "Fonctionnalités IA"
+        },
+        specs: {
+          en: {
+            "Human Detection": "AI human detection (3MP/4MP version)",
+            "Crying Detection": "AI crying detection (3MP/4MP version)",
+            "Motion Detection": "Intelligent motion detection",
+            "Sound Detection": "Advanced sound detection",
+            "Smart Alerts": "Intelligent push notifications"
+          },
+          fr: {
+            "Détection Humaine": "Détection humaine IA (version 3MP/4MP)",
+            "Détection des Pleurs": "Détection des pleurs IA (version 3MP/4MP)",
+            "Détection de Mouvement": "Détection de mouvement intelligente",
+            "Détection Sonore": "Détection sonore avancée",
+            "Alertes Intelligentes": "Notifications push intelligentes"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "Baby Monitor Camera",
+        "5V/1A Power Adapter",
+        "Type-C Cable with Temperature Sensor",
+        "Rabbit Silicone Case",
+        "Reset Pin",
+        "User Manual",
+        "Flexible Stand (Optional)"
+      ],
+      fr: [
+        "Caméra Moniteur Bébé",
+        "Adaptateur d'Alimentation 5V/1A",
+        "Câble Type-C avec Capteur de Température",
+        "Étui en Silicone Lapin",
+        "Épingle de Réinitialisation",
+        "Manuel d'Utilisation",
+        "Support Flexible (Optionnel)"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: ["ETSI EN 300 328", "ETSI EN 301 489", "EN IEC 62311", "EN IEC 62368"],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 可选配置
+    // ------------------------------------------
+    optional_configurations: {
+      en: {
+        "Resolution": "3MP/4MP versions available",
+        "AI Features": "3MP/4MP versions support AI human and crying detection",
+        "Accessories": "Flexible stand available",
+        "Case Colors": "Multiple rabbit case colors available"
+      },
+      fr: {
+        "Résolution": "Versions 3MP/4MP disponibles",
+        "Fonctionnalités IA": "Les versions 3MP/4MP supportent la détection humaine et des pleurs IA",
+        "Accessoires": "Support flexible disponible",
+        "Couleurs d'Étui": "Plusieurs couleurs d'étui lapin disponibles"
+      }
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVC263 Product Brochure",
+          type: "PDF",
+          size: "2.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-brochure.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "Baby Monitor Setup Guide",
+          type: "PDF",
+          size: "4.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-setup-guide.pdf",
+          description: "Step-by-step setup and installation guide"
+        },
+        {
+          name: "Mobile App Guide",
+          type: "PDF",
+          size: "2.5 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-app-guide.pdf",
+          description: "SecureVision app configuration for baby monitoring"
+        },
+        {
+          name: "Safety Guidelines",
+          type: "PDF",
+          size: "1.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-safety.pdf",
+          description: "Important safety information for baby monitors"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC263",
+          type: "PDF",
+          size: "2.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Guide d'Installation Moniteur Bébé",
+          type: "PDF",
+          size: "4.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc263-setup-guide-fr.pdf",
+          description: "Guide d'installation et de configuration étape par étape"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",
+      message: {
+        en: "Ready to Order",
+        fr: "Prêt à Commander"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC263 Baby & Pet Monitor comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Temperature sensor warranty included. Features 24/7 customer support for peace of mind. Extended warranty and replacement plans available.",
+      fr: "Le Moniteur Bébé et Animaux SVC263 est livré avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Garantie du capteur de température incluse. Comprend un support client 24/7 pour votre tranquillité d'esprit. Plans de garantie prolongée et de remplacement disponibles."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",
+      last_updated: "2025-01-27",
+      version: "1.0",
+      tags: ["baby-monitor", "pet-monitor", "temperature-sensor", "night-vision", "lullabies", "two-way-audio", "1080p", "rabbit-case"]
+    }
+  }
+  
+  // ==========================================
+  // 文件使用说明
+  // ==========================================
+  /*
+  SVC263 婴儿和宠物监控器产品规格文件
+  
+  主要特点：
+  - Full HD 1080p视频监控
+  - 温度传感器与高低温报警
+  - 远程控制预设摇篮曲
+  - 远程控制夜灯开关和亮度
+  - 940nm隐形红外夜视（无红眼）
+  - 双向音频通信
+  - 可爱兔子硅胶保护套
+  - 灵活支架（可选）
+  
+  特殊功能：
+  - 专为婴儿房设计的隐形夜视
+  - 温度监测确保舒适环境
+  - 预设摇篮曲远程播放
+  - 夜灯远程控制
+  - AI哭声检测（3MP/4MP版本）
+  
+  认证：
+  - ETSI EN 300 328
+  - ETSI EN 301 489
+  - EN IEC 62311
+  - EN IEC 62368
+  
+  更新注意事项：
+  1. 图片文件需要上传到 /images/ 目录
+  2. 下载文件需要先上传到GitHub Releases
+  3. 法语翻译可能需要专业校对
+  4. 这是专门的婴儿/宠物监控产品，不同于普通安防摄像头
+  
+  数据来源：
+  - 原始文档：SVC263.docx
+  - 产品类型：Baby & Pet Monitor
+  - 转换日期：2025-01-27
+  */
+}

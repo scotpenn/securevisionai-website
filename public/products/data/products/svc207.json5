@@ -1,0 +1,485 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC207 云台式室外监控摄像头
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc207",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC207",                 // 产品型号，显示在页面上
+    category: "outdoor",             // 产品分类：室外摄像头（注意：规格显示IP20，需确认）
+    slug: "svc207",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC207 Pan & Tilt Outdoor Monitor",
+      fr: "SVC207 Moniteur Extérieur à Rotation et Inclinaison"  // Pan & Tilt monitor → Surveillance avec contrôle de rotation et d'inclinaison
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced pan & tilt outdoor monitoring camera with 2MP Full HD video, infrared night vision, and privacy mode. Features remote pan/tilt control through SecureVision app, motion/sound detection with push notifications, and flexible storage options for comprehensive outdoor surveillance.",
+      fr: "Caméra de surveillance extérieure avancée avec rotation et inclinaison, vidéo Full HD 2MP, vision nocturne infrarouge et mode privé. Dispose du contrôle à distance de rotation/inclinaison via l'application SecureVision, détection de mouvement/son avec notifications push, et options de stockage flexibles pour une surveillance extérieure complète."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/SVC207-main.jpg",      // 主要展示图片
+      gallery: [                            // 详情页图片画廊数组
+        "/images/SVC207-main.jpg"           // 第1张：主视图（目前只有这张图片存在）
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Pan & Tilt Remote Control",                  // 特性1：云台控制
+        "2MP Full HD 1080p Video",                    // 特性2：2MP高清视频
+        "Privacy Mode One-Click",                     // 特性3：一键隐私模式
+        "Motion & Sound Detection",                   // 特性4：运动和声音检测
+        "Infrared Night Vision (3-5m)",              // 特性5：红外夜视
+        "Push Notifications",                         // 特性6：推送通知
+        "SecureVision Platform Integration",          // 特性7：平台集成
+        "Cloud & Local Storage"                       // 特性8：存储选项
+      ],
+      fr: [
+        "Contrôle à Distance Rotation et Inclinaison",  // Pan & Tilt monitor and motion tracking → Surveillance avec contrôle de rotation et d'inclinaison
+        "Vidéo Full HD 2MP 1080p",
+        "Mode Privé en Un Clic",
+        "Détection de Mouvement et de Son",             // Motion & Sound detection → Détection de mouvement et de son
+        "Vision Nocturne Infrarouge (3-5m)",           // InfraRed night vision → Vision nocturne infrarouge
+        "Notifications Push",
+        "Intégration Plateforme SecureVision",
+        "Stockage Cloud et Local"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：摄像头和视频
+      "Camera & Video": {
+        group_name: {
+          en: "Camera & Video",
+          fr: "Caméra et Vidéo"
+        },
+        specs: {
+          en: {
+            "Sensor": "2MP CMOS Sensor",
+            "Lens": "5.4mm EFL, F2.0",
+            "Focal Length": "4.9mm ± 0.2",
+            "Field of View": "100° diagonal",
+            "Video Resolution": "1920×1080@15fps / 640×360@15fps",
+            "Video Compression": "H.264",
+            "Pan/Tilt Range": "Pan: 355° / Tilt: 90° (estimated)"
+          },
+          fr: {
+            "Capteur": "Capteur CMOS 2MP",
+            "Objectif": "5.4mm EFL, F2.0",
+            "Distance Focale": "4.9mm ± 0.2",
+            "Champ de Vision": "100° diagonal",
+            "Résolution Vidéo": "1920×1080@15fps / 640×360@15fps",
+            "Compression Vidéo": "H.264",
+            "Plage Rotation/Inclinaison": "Rotation: 355° / Inclinaison: 90° (estimé)"
+          }
+        }
+      },
+      
+      // 规格组2：夜视功能
+      "Night Vision": {
+        group_name: {
+          en: "Night Vision",
+          fr: "Vision Nocturne"
+        },
+        specs: {
+          en: {
+            "Night Vision Distance": "3-5 meters",
+            "IR LEDs": "850nm infrared LEDs (6 pieces)",
+            "Night Mode": "Automatic IR switching",
+            "Night Vision Type": "Infrared (Black & White)"
+          },
+          fr: {
+            "Distance Vision Nocturne": "3-5 mètres",
+            "LEDs IR": "LEDs infrarouges 850nm (6 pièces)",
+            "Mode Nuit": "Commutation IR automatique",
+            "Type Vision Nocturne": "Infrarouge (Noir et Blanc)"
+          }
+        }
+      },
+      
+      // 规格组3：处理器和性能
+      "Processor & Performance": {
+        group_name: {
+          en: "Processor & Performance",
+          fr: "Processeur et Performance"
+        },
+        specs: {
+          en: {
+            "Chipset": "Ankya",
+            "CPU Frequency": "800MHz - 1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Processing": "Real-time video encoding with PTZ control"
+          },
+          fr: {
+            "Chipset": "Ankya",
+            "Fréquence CPU": "800MHz - 1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Traitement": "Encodage vidéo en temps réel avec contrôle PTZ"
+          }
+        }
+      },
+      
+      // 规格组4：音频系统
+      "Audio System": {
+        group_name: {
+          en: "Audio System",
+          fr: "Système Audio"
+        },
+        specs: {
+          en: {
+            "Speaker": "1.0W high-quality speaker",
+            "Microphone": "High sensitivity -42dB",
+            "Audio Features": "Two-way audio communication",
+            "Noise Reduction": "Built-in noise cancellation"
+          },
+          fr: {
+            "Haut-parleur": "Haut-parleur haute qualité 1.0W",
+            "Microphone": "Haute sensibilité -42dB",
+            "Fonctions Audio": "Communication audio bidirectionnelle",  // Two-way audio → Audio bidirectionnel
+            "Réduction du Bruit": "Annulation du bruit intégrée"
+          }
+        }
+      },
+      
+      // 规格组5：网络和连接
+      "Network & Connectivity": {
+        group_name: {
+          en: "Network & Connectivity",
+          fr: "Réseau et Connectivité"
+        },
+        specs: {
+          en: {
+            "WiFi Standard": "IEEE 802.11b/g/n",
+            "WiFi Frequency": "2.4GHz",
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optional": "Dual band 2.4G+5G, BLE support (optional models)"
+          },
+          fr: {
+            "Standard WiFi": "IEEE 802.11b/g/n",
+            "Fréquence WiFi": "2.4GHz",
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)",
+            "Optionnel": "Double bande 2.4G+5G, support BLE (modèles optionnels)"
+          }
+        }
+      },
+      
+      // 规格组6：智能功能
+      "Smart Features": {
+        group_name: {
+          en: "Smart Features",
+          fr: "Fonctions Intelligentes"
+        },
+        specs: {
+          en: {
+            "Motion Detection": "Smart motion detection with tracking",
+            "Sound Detection": "Sound detection with alerts",
+            "Privacy Mode": "One-click privacy mode",
+            "Push Notifications": "Real-time alerts to mobile app",
+            "Auto Tracking": "Motion tracking (optional)",
+            "Detection Zones": "Customizable activity zones"
+          },
+          fr: {
+            "Détection de Mouvement": "Détection de mouvement intelligente avec suivi",
+            "Détection de Son": "Détection de son avec alertes",
+            "Mode Privé": "Mode privé en un clic",
+            "Notifications Push": "Alertes en temps réel vers l'application mobile",
+            "Suivi Automatique": "Suivi de mouvement (optionnel)",  // Auto motion tracking → Suivi automatique des mouvements
+            "Zones de Détection": "Zones d'activité personnalisables"
+          }
+        }
+      },
+      
+      // 规格组7：存储选项
+      "Storage Options": {
+        group_name: {
+          en: "Storage Options",
+          fr: "Options de Stockage"
+        },
+        specs: {
+          en: {
+            "Local Storage": "Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage service",
+            "Playback": "Events playback from SD card and cloud",
+            "Recording Mode": "Continuous, motion-triggered, scheduled"
+          },
+          fr: {
+            "Stockage Local": "Carte Micro SD 4GB-128GB",
+            "Stockage Cloud": "Service de stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Mode d'Enregistrement": "Continu, déclenché par mouvement, programmé"
+          }
+        }
+      },
+      
+      // 规格组8：电源和接口
+      "Power & Interface": {
+        group_name: {
+          en: "Power & Interface",
+          fr: "Alimentation et Interface"
+        },
+        specs: {
+          en: {
+            "Power Supply": "5V/1A adapter included",
+            "Charging Port": "Type-C charging port",
+            "Power Consumption": "Max 5W",
+            "Interfaces": "Micro SD slot, Type-C port",
+            "Controls": "Reset button",
+            "LED Indicators": "Power/Network status LED"
+          },
+          fr: {
+            "Alimentation": "Adaptateur 5V/1A inclus",
+            "Port de Charge": "Port de charge Type-C",
+            "Consommation": "Max 5W",
+            "Interfaces": "Fente Micro SD, Port Type-C",
+            "Contrôles": "Bouton de réinitialisation",  // Reset button → Bouton de réinitialisation
+            "Indicateurs LED": "LED d'état alimentation/réseau"
+          }
+        }
+      },
+      
+      // 规格组9：物理和环境参数
+      "Physical & Environmental": {
+        group_name: {
+          en: "Physical & Environmental",
+          fr: "Physique et Environnement"
+        },
+        specs: {
+          en: {
+            "Dimensions": "132.9 × 75.95 × 67.93mm",
+            "Weight": "300g",
+            "Material": "PC + ABS plastic",
+            "Color": "White (default), other colors optional",
+            "Weatherproof Rating": "IP20 (Note: Spec shows IP20, needs confirmation for outdoor use)",
+            "Operating Temperature": "0°C to 45°C",
+            "Storage Temperature": "-20°C to 80°C",
+            "Operating Humidity": "10% to 95% RH (non-condensing)"
+          },
+          fr: {
+            "Dimensions": "132.9 × 75.95 × 67.93mm",
+            "Poids": "300g",
+            "Matériau": "Plastique PC + ABS",
+            "Couleur": "Blanc (par défaut), autres couleurs optionnelles",
+            "Indice de Protection": "IP20 (Note: Spec indique IP20, à confirmer pour usage extérieur)",
+            "Température de Fonctionnement": "0°C à 45°C",
+            "Température de Stockage": "-20°C à 80°C",
+            "Humidité de Fonctionnement": "10% à 95% RH (sans condensation)"
+          }
+        }
+      },
+      
+      // 规格组10：AI功能和可选配置
+      "AI Features & Options": {
+        group_name: {
+          en: "AI Features & Options",
+          fr: "Fonctionnalités IA et Options"
+        },
+        specs: {
+          en: {
+            "AI Detection": "Human detection (4MP version)",
+            "Smart Tracking": "Auto-tracking of moving objects",
+            "Optional Resolutions": "3MP or 4MP versions available",
+            "Optional WiFi": "Dual band 2.4G+5G with BLE",
+            "Advanced Features": "Preset positions, patrol mode"
+          },
+          fr: {
+            "Détection IA": "Détection humaine (version 4MP)",
+            "Suivi Intelligent": "Suivi automatique des objets en mouvement",
+            "Résolutions Optionnelles": "Versions 3MP ou 4MP disponibles",
+            "WiFi Optionnel": "Double bande 2.4G+5G avec BLE",
+            "Fonctions Avancées": "Positions prédéfinies, mode patrouille"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "Pan & Tilt Camera",
+        "5V/1A Power Adapter",
+        "Reset Pin",
+        "User Manual",
+        "Position Card",
+        "Mounting Screws"
+      ],
+      fr: [
+        "Caméra à Rotation et Inclinaison",
+        "Adaptateur Secteur 5V/1A",
+        "Épingle de Réinitialisation",  // Reset Pin → Épingle de réinitialisation
+        "Manuel d'Utilisation",
+        "Carte de Position",
+        "Vis de Montage"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVC207 Product Brochure",
+          type: "PDF",
+          size: "2.9 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-brochure.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "Installation & User Manual",
+          type: "PDF",
+          size: "5.4 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-manual.pdf",
+          description: "Detailed installation and PTZ control guide"
+        },
+        {
+          name: "PTZ Control Guide",
+          type: "PDF",
+          size: "1.8 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-ptz-guide.pdf",
+          description: "Advanced pan/tilt control features guide"
+        },
+        {
+          name: "Technical Specifications",
+          type: "Excel",
+          size: "148 KB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-specs.xlsx",
+          description: "Detailed technical specifications spreadsheet"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC207",
+          type: "PDF",
+          size: "2.9 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel d'Installation et d'Utilisation",
+          type: "PDF",
+          size: "5.4 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc207-manual-fr.pdf",
+          description: "Guide détaillé d'installation et de contrôle PTZ"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: [
+        "Directive 2014/53/EU",
+        "EN IEC 62368",
+        "EN IEC 62311"
+      ],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",
+      message: {
+        en: "Ready to Order",
+        fr: "Prêt à Commander"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC207 Pan & Tilt Outdoor Monitor comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Includes technical support and 30-day money-back guarantee. Perfect for comprehensive outdoor surveillance with remote PTZ control.",
+      fr: "Le Moniteur Extérieur à Rotation et Inclinaison SVC207 est livré avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Inclut le support technique et une garantie de remboursement de 30 jours. Parfait pour une surveillance extérieure complète avec contrôle PTZ à distance."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",
+      last_updated: "2025-01-27",
+      version: "1.0",
+      tags: ["outdoor", "pan-tilt", "ptz", "wifi", "2mp", "night-vision", "privacy-mode", "motion-tracking"]
+    }
+  }
+  
+  // ==========================================
+  // 文件使用说明
+  // ==========================================
+  /*
+  SVC207 云台式室外监控摄像头产品规格文件
+  
+  主要特点：
+  - 云台控制（Pan & Tilt）功能
+  - 2MP全高清1080p视频
+  - 一键隐私模式
+  - 运动和声音检测
+  - 3-5米红外夜视
+  - 推送通知功能
+  - SecureVision平台集成
+  - 本地和云存储选项
+  
+  特殊功能：
+  - 355度水平旋转
+  - 90度垂直倾斜（估计值）
+  - 自动运动跟踪（可选）
+  - 预设位置和巡航模式
+  
+  注意事项：
+  ⚠️ 防护等级矛盾：
+  - 产品名称显示为"Outdoor"（室外）
+  - 但规格显示IP20（室内使用等级）
+  - 需要与制造商确认实际防护等级
+  - 原Excel中显示"ENKI"APP，已更改为"SecureVision"
+  
+  可选配置：
+  - 3MP/4MP版本可选
+  - 双频WiFi (2.4G+5G) 可选
+  - BLE蓝牙支持可选
+  - AI人体检测（4MP版本）
+  
+  更新注意事项：
+  1. 产品类别暂设为 "outdoor"，但需确认防护等级
+  2. 图片文件需要上传到 /images/ 目录
+  3. 下载文件需要先上传到GitHub Releases
+  4. 法语翻译已根据提供的词汇表进行校对
+  
+  数据来源：
+  - 原始Excel规格书：SVC207 Outdoor WiFi Camera.xlsx
+  - 法语词汇表：TRANSLATION-GLOSSARY.md
+  - 转换日期：2025-01-27
+  */
+}

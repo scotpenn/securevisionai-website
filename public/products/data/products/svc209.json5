@@ -1,0 +1,509 @@
+{
+  // ==========================================
+  // 产品数据结构说明 - SVC209 室外WiFi电池摄像头
+  // ==========================================
+  // 此文件包含产品的所有信息，包括英语和法语版本
+  // 修改时请保持英法语内容对应一致
+  
+  product: {
+    // ------------------------------------------
+    // 基础产品信息 (必填字段)
+    // ------------------------------------------
+    id: "svc209",                    // 产品唯一标识，用于URL和文件命名
+    model: "SVC209",                 // 产品型号，显示在页面上
+    category: "outdoor",             // 产品分类：室外摄像头
+    slug: "svc209",                  // URL友好的产品标识，通常与id相同
+    
+    // ------------------------------------------
+    // 多语言产品名称
+    // ------------------------------------------
+    name: {
+      en: "SVC209 Outdoor WiFi Battery Camera",
+      fr: "SVC209 Caméra Extérieure WiFi à Batterie"  // Outdoor Smart Waterproof Wifi Battery Camera → Caméra extérieure intelligente étanche à batterie Wi-Fi
+    },
+    
+    // ------------------------------------------
+    // 多语言产品描述 (显示在产品详情页顶部)
+    // ------------------------------------------
+    description: {
+      en: "Advanced outdoor WiFi battery camera with Full HD 1080p video, 4400mAh rechargeable battery, and IP65 waterproof rating. Features color night vision, PIR motion detection with 12m range, two-way audio, and BLE+WiFi connectivity for reliable wireless outdoor surveillance.",
+      fr: "Caméra extérieure WiFi à batterie avancée avec vidéo Full HD 1080p, batterie rechargeable 4400mAh et indice d'étanchéité IP65. Dispose de la vision nocturne en couleur, détection de mouvement PIR avec portée de 12m, audio bidirectionnel et connectivité BLE+WiFi pour une surveillance extérieure sans fil fiable."
+    },
+    
+    // ------------------------------------------
+    // 产品图片路径 (使用绝对路径)
+    // ------------------------------------------
+    images: {
+      main: "/images/svc209-main.png",      // 主要展示图片 (注意：实际是PNG格式)
+      gallery: [                            // 详情页图片画廊数组
+        "/images/svc209-main.png"           // 第1张：主视图（目前只有这张PNG图片存在）
+      ]
+    },
+    
+    // ------------------------------------------
+    // 产品亮点特性 (显示在产品卡片和详情页)
+    // ------------------------------------------
+    highlights: {
+      en: [
+        "Full HD 1080p Video Recording",              // 特性1：1080p高清
+        "4400mAh Rechargeable Battery",               // 特性2：大容量电池
+        "IP65 Waterproof Rating",                     // 特性3：IP65防水
+        "Color Night Vision",                         // 特性4：彩色夜视
+        "PIR Motion Detection (105°/12m)",            // 特性5：PIR检测
+        "WiFi + BLE Dual Connection",                 // 特性6：双连接模式
+        "Two-Way Audio Communication",                // 特性7：双向音频
+        "Cloud & Local Storage"                       // 特性8：存储选项
+      ],
+      fr: [
+        "Enregistrement Vidéo Full HD 1080p",
+        "Batterie Rechargeable 4400mAh",              // Rechargeable lithium battery → Batterie rechargeable lithium
+        "Indice d'Étanchéité IP65",                   // IP65 weatherproof → Étanche IP65
+        "Vision Nocturne en Couleur",                 // InfraRed / Colour night vision → Vision nocturne infrarouge / en couleur
+        "Détection de Mouvement PIR (105°/12m)",      // PIR motion detection → Détection de mouvement PIR
+        "Double Connexion WiFi + BLE",                // Bluetooth Low Energy (BLE) +2.4G WiFi connection → Connexion Bluetooth Low Energy (BLE) + WiFi 2.4G
+        "Communication Audio Bidirectionnelle",       // Two-way audio → Audio bidirectionnel
+        "Stockage Cloud et Local"                     // Cloud & Local Storage → Stockage Cloud et Local
+      ]
+    },
+    
+    // ------------------------------------------
+    // 技术规格 - 多分组结构
+    // ------------------------------------------
+    specifications: {
+      
+      // 规格组1：摄像头和视频
+      "Camera & Video": {
+        group_name: {
+          en: "Camera & Video",
+          fr: "Caméra et Vidéo"
+        },
+        specs: {
+          en: {
+            "Sensor": "1/3.0\" 2MP CMOS Sensor",
+            "Lens": "4.0mm EFL, F2.0",
+            "Focal Length": "5.4mm FFL",
+            "Field of View": "100° diagonal",
+            "Main Stream": "1920×1080 @ 15fps",
+            "Sub Stream": "640×360 @ 15fps",
+            "Video Compression": "H.264",
+            "Image Quality": "Full HD 1080p"
+          },
+          fr: {
+            "Capteur": "Capteur CMOS 1/3.0\" 2MP",
+            "Objectif": "4.0mm EFL, F2.0",
+            "Distance Focale": "5.4mm FFL",
+            "Champ de Vision": "100° diagonal",
+            "Flux Principal": "1920×1080 @ 15fps",
+            "Flux Secondaire": "640×360 @ 15fps",
+            "Compression Vidéo": "H.264",
+            "Qualité d'Image": "Full HD 1080p"
+          }
+        }
+      },
+      
+      // 规格组2：夜视功能
+      "Night Vision": {
+        group_name: {
+          en: "Night Vision",
+          fr: "Vision Nocturne"
+        },
+        specs: {
+          en: {
+            "Night Vision Type": "Color night vision",
+            "IR Distance": "Up to 10 meters",
+            "IR Support": "Yes",
+            "Light Sensor": "CDS sensor",
+            "Night Mode": "Automatic switching",
+            "Vision Quality": "Full color in low light"
+          },
+          fr: {
+            "Type Vision Nocturne": "Vision nocturne en couleur",
+            "Distance IR": "Jusqu'à 10 mètres",
+            "Support IR": "Oui",
+            "Capteur de Lumière": "Capteur CDS",
+            "Mode Nuit": "Commutation automatique",
+            "Qualité Vision": "Couleur complète en faible lumière"
+          }
+        }
+      },
+      
+      // 规格组3：PIR运动检测
+      "PIR Motion Detection": {
+        group_name: {
+          en: "PIR Motion Detection",
+          fr: "Détection de Mouvement PIR"
+        },
+        specs: {
+          en: {
+            "PIR Angle": "105° detection angle",
+            "PIR Distance": "Up to 12 meters",
+            "Detection Sensitivity": "Adjustable via app",
+            "Alert Type": "Push notifications",
+            "Detection Zones": "Customizable activity zones",
+            "False Alarm Reduction": "Smart filtering"
+          },
+          fr: {
+            "Angle PIR": "Angle de détection 105°",
+            "Distance PIR": "Jusqu'à 12 mètres",
+            "Sensibilité de Détection": "Réglable via l'application",
+            "Type d'Alerte": "Notifications push",
+            "Zones de Détection": "Zones d'activité personnalisables",
+            "Réduction Fausses Alarmes": "Filtrage intelligent"
+          }
+        }
+      },
+      
+      // 规格组4：处理器和内存
+      "Processor & Memory": {
+        group_name: {
+          en: "Processor & Memory",
+          fr: "Processeur et Mémoire"
+        },
+        specs: {
+          en: {
+            "CPU": "1.5GHz processor",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "DDR2 Memory": "64MB",
+            "SPI Flash": "16MB",
+            "Processing": "Real-time video encoding"
+          },
+          fr: {
+            "CPU": "Processeur 1.5GHz",
+            "Cache": "32KB I-Cache + 32KB D-Cache",
+            "Mémoire DDR2": "64MB",
+            "Flash SPI": "16MB",
+            "Traitement": "Encodage vidéo en temps réel"
+          }
+        }
+      },
+      
+      // 规格组5：电池和电源
+      "Battery & Power": {
+        group_name: {
+          en: "Battery & Power",
+          fr: "Batterie et Alimentation"
+        },
+        specs: {
+          en: {
+            "Battery Type": "Built-in rechargeable lithium battery",
+            "Battery Capacity": "4400mAh",
+            "Battery Life": "3-6 months (typical usage)",
+            "Charging Method": "USB charging",
+            "Charging Time": "4-6 hours",
+            "Low Battery Alert": "App notification"
+          },
+          fr: {
+            "Type de Batterie": "Batterie lithium rechargeable intégrée",
+            "Capacité de Batterie": "4400mAh",
+            "Autonomie": "3-6 mois (utilisation typique)",          // up to 3 months between charges → jusqu'à 3 mois d'autonomie entre les recharges
+            "Méthode de Charge": "Charge USB",
+            "Temps de Charge": "4-6 heures",
+            "Alerte Batterie Faible": "Notification app"
+          }
+        }
+      },
+      
+      // 规格组6：网络和连接
+      "Network & Connectivity": {
+        group_name: {
+          en: "Network & Connectivity",
+          fr: "Réseau et Connectivité"
+        },
+        specs: {
+          en: {
+            "WiFi Standard": "IEEE 802.11b/g/n",
+            "WiFi Frequency": "2.4GHz",
+            "Bluetooth": "BLE (Bluetooth Low Energy)",
+            "Connection Type": "WiFi + BLE dual mode",
+            "Network Protocol": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Connection Method": "QR code WiFi connection",
+            "Mobile App": "SecureVision (Android 5.0+, iOS 8.0+)"
+          },
+          fr: {
+            "Standard WiFi": "IEEE 802.11b/g/n",
+            "Fréquence WiFi": "2.4GHz",
+            "Bluetooth": "BLE (Bluetooth Basse Énergie)",
+            "Type de Connexion": "Mode double WiFi + BLE",
+            "Protocole Réseau": "TCP/IP, HTTP, TCP, UDP, SMTP, DHCP, DNS, P2P",
+            "Méthode de Connexion": "Connexion WiFi par code QR",
+            "Application Mobile": "SecureVision (Android 5.0+, iOS 8.0+)"
+          }
+        }
+      },
+      
+      // 规格组7：音频系统
+      "Audio System": {
+        group_name: {
+          en: "Audio System",
+          fr: "Système Audio"
+        },
+        specs: {
+          en: {
+            "Speaker": "8Ω speaker",
+            "Microphone": "High sensitivity -42dB",
+            "Audio Features": "Two-way audio communication",
+            "Noise Reduction": "Built-in noise cancellation"
+          },
+          fr: {
+            "Haut-parleur": "Haut-parleur 8Ω",
+            "Microphone": "Haute sensibilité -42dB",
+            "Fonctions Audio": "Communication audio bidirectionnelle",
+            "Réduction du Bruit": "Annulation du bruit intégrée"
+          }
+        }
+      },
+      
+      // 规格组8：存储选项
+      "Storage Options": {
+        group_name: {
+          en: "Storage Options",
+          fr: "Options de Stockage"
+        },
+        specs: {
+          en: {
+            "Local Storage": "TF/Micro SD card 4GB-128GB",
+            "Cloud Storage": "Optional cloud storage service",
+            "Playback": "Events playback from SD card and cloud",
+            "Recording Mode": "Motion-triggered recording",
+            "Pre-recording": "3 seconds pre-recording"
+          },
+          fr: {
+            "Stockage Local": "Carte TF/Micro SD 4GB-128GB",
+            "Stockage Cloud": "Service de stockage cloud optionnel",
+            "Lecture": "Lecture des événements depuis carte SD et cloud",
+            "Mode d'Enregistrement": "Enregistrement déclenché par mouvement",
+            "Pré-enregistrement": "3 secondes de pré-enregistrement"
+          }
+        }
+      },
+      
+      // 规格组9：物理和环境参数
+      "Physical & Environmental": {
+        group_name: {
+          en: "Physical & Environmental",
+          fr: "Physique et Environnement"
+        },
+        specs: {
+          en: {
+            "Dimensions": "82×61×49mm (camera only)",
+            "With Bracket": "82×110×49mm",
+            "Weight": "Approx. 200g",
+            "Material": "PC + ABS plastic",
+            "Weatherproof Rating": "IP65 (dust-tight, water jet protection)",
+            "Operating Temperature": "-20°C to 50°C",
+            "Operating Humidity": "10% to 95% RH (non-condensing)",
+            "Installation": "Wall mount or magnetic mount"
+          },
+          fr: {
+            "Dimensions": "82×61×49mm (caméra seule)",
+            "Avec Support": "82×110×49mm",
+            "Poids": "Environ 200g",
+            "Matériau": "Plastique PC + ABS",
+            "Indice d'Étanchéité": "IP65 (étanche à la poussière, protection jets d'eau)",
+            "Température de Fonctionnement": "-20°C à 50°C",
+            "Humidité de Fonctionnement": "10% à 95% RH (sans condensation)",
+            "Installation": "Montage mural ou magnétique"
+          }
+        }
+      },
+      
+      // 规格组10：AI功能和可选配置
+      "AI Features & Options": {
+        group_name: {
+          en: "AI Features & Options",
+          fr: "Fonctionnalités IA et Options"
+        },
+        specs: {
+          en: {
+            "AI Detection": "AI human detection",
+            "Smart Alerts": "Intelligent filtering of false alarms",
+            "Activity Analysis": "Motion pattern analysis",
+            "Optional Resolution": "3MP version available",
+            "Advanced Features": "Person/vehicle/animal detection (optional)"
+          },
+          fr: {
+            "Détection IA": "Détection humaine par IA",
+            "Alertes Intelligentes": "Filtrage intelligent des fausses alarmes",
+            "Analyse d'Activité": "Analyse des modèles de mouvement",
+            "Résolution Optionnelle": "Version 3MP disponible",
+            "Fonctions Avancées": "Détection personne/véhicule/animal (optionnel)"
+          }
+        }
+      }
+    },
+    
+    // ------------------------------------------
+    // 包装清单
+    // ------------------------------------------
+    package_contents: {
+      en: [
+        "Battery Camera",
+        "Mounting Bracket",
+        "USB Charging Cable",
+        "Reset Pin",
+        "Screw Set",
+        "User Manual",
+        "Quick Start Guide"
+      ],
+      fr: [
+        "Caméra à Batterie",
+        "Support de Montage",
+        "Câble de Charge USB",
+        "Épingle de Réinitialisation",
+        "Ensemble de Vis",
+        "Manuel d'Utilisation",
+        "Guide de Démarrage Rapide"
+      ]
+    },
+    
+    // ------------------------------------------
+    // 下载文件 - GitHub Releases链接
+    // ------------------------------------------
+    downloads: {
+      en: [
+        {
+          name: "SVC209 Product Brochure",
+          type: "PDF",
+          size: "3.1 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-brochure.pdf",
+          description: "Complete product overview and specifications"
+        },
+        {
+          name: "Installation & User Manual",
+          type: "PDF",
+          size: "5.6 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-manual.pdf",
+          description: "Detailed installation and setup guide"
+        },
+        {
+          name: "Battery Optimization Guide",
+          type: "PDF",
+          size: "1.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-battery-guide.pdf",
+          description: "Tips for maximizing battery life"
+        },
+        {
+          name: "Technical Specifications",
+          type: "Excel",
+          size: "152 KB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-specs.xlsx",
+          description: "Detailed technical specifications spreadsheet"
+        }
+      ],
+      fr: [
+        {
+          name: "Brochure Produit SVC209",
+          type: "PDF",
+          size: "3.1 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-brochure-fr.pdf",
+          description: "Aperçu complet du produit et spécifications"
+        },
+        {
+          name: "Manuel d'Installation et d'Utilisation",
+          type: "PDF",
+          size: "5.6 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-manual-fr.pdf",
+          description: "Guide détaillé d'installation et de configuration"
+        },
+        {
+          name: "Guide d'Optimisation de la Batterie",
+          type: "PDF",
+          size: "1.2 MB",
+          url: "https://github.com/your-username/securevision-ai-downloads/releases/download/v1.0/svc209-battery-guide-fr.pdf",
+          description: "Conseils pour maximiser l'autonomie de la batterie"
+        }
+      ]
+    },
+    
+    // ------------------------------------------
+    // 认证信息
+    // ------------------------------------------
+    certifications: {
+      current: [
+        "EN IEC 62368-1:2020+A11:2020",
+        "ETSI EN 300 328 V2.2.2",
+        "ETSI EN 301 489-1 V2.2.3 (2019-11)",
+        "EN IEC 62311:2020",
+        "FCC 15C"
+      ],
+      available: "Can be certified to customer requirements"
+    },
+    
+    // ------------------------------------------
+    // 库存状态
+    // ------------------------------------------
+    availability: {
+      status: "in_stock",
+      message: {
+        en: "Ready to Order",
+        fr: "Prêt à Commander"
+      }
+    },
+    
+    // ------------------------------------------
+    // 保修信息
+    // ------------------------------------------
+    warranty: {
+      en: "The SVC209 Outdoor WiFi Battery Camera comes with a comprehensive 2-year manufacturer warranty covering defects in materials and workmanship. Battery warranty is 1 year. Includes technical support and 30-day money-back guarantee. Perfect for wireless outdoor surveillance with no wiring required.",
+      fr: "La Caméra Extérieure WiFi à Batterie SVC209 est livrée avec une garantie fabricant complète de 2 ans couvrant les défauts de matériaux et de fabrication. Garantie de batterie de 1 an. Inclut le support technique et une garantie de remboursement de 30 jours. Parfait pour la surveillance extérieure sans fil sans câblage requis."
+    },
+    
+    // ------------------------------------------
+    // 元数据 (用于SEO和管理)
+    // ------------------------------------------
+    meta: {
+      created_date: "2025-01-27",
+      last_updated: "2025-01-27",
+      version: "1.0",
+      tags: ["outdoor", "battery", "wireless", "wifi", "2mp", "ip65", "pir", "color-night-vision", "ble", "rechargeable"]
+    }
+  }
+  
+  // ==========================================
+  // 文件使用说明
+  // ==========================================
+  /*
+  SVC209 室外WiFi电池摄像头产品规格文件
+  
+  主要特点：
+  - 2MP全高清1080p视频
+  - 4400mAh可充电电池（3-6个月续航）
+  - IP65防水等级
+  - 彩色夜视功能
+  - PIR运动检测（105度角度，12米距离）
+  - WiFi + BLE双连接模式
+  - 双向音频通信
+  - 本地和云存储选项
+  
+  技术亮点：
+  - 1.5GHz处理器
+  - 64MB DDR2内存
+  - 16MB SPI闪存
+  - CDS光感传感器
+  - 10米夜视距离
+  
+  适用场景：
+  - 户外庭院监控
+  - 车道监控
+  - 仓库外围监控
+  - 建筑工地监控
+  - 农场监控
+  
+  认证标准：
+  - 欧盟CE认证（多项EN标准）
+  - FCC 15C认证
+  - 可根据客户要求认证
+  
+  更新注意事项：
+  1. APP名称从"Tuya"更改为"SecureVision"
+  2. 产品具有真正的IP65防水等级（与SVC207不同）
+  3. 图片文件需要上传到 /images/ 目录
+  4. 下载文件需要先上传到GitHub Releases
+  5. 法语翻译已根据提供的词汇表进行校对
+  
+  数据来源：
+  - 原始Excel规格书：SVC209 Outdoor Wifi Battery Camera.xlsx
+  - 法语词汇表：TRANSLATION-GLOSSARY.md
+  - 转换日期：2025-01-27
+  */
+}
