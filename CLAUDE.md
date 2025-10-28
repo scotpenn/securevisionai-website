@@ -4,7 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SecureVision AI is a static showcase website for security cameras and portable power products. **This is a display-only website with no e-commerce functionality** - products are shown for demonstration purposes and are not sold directly through the website.
+SecureVision AI is a static showcase website for security cameras. **This is a display-only website with no e-commerce functionality** - products are shown for demonstration purposes and are not sold directly through the website.
+
+**Product Categories:**
+
+- Indoor Security Cameras
+- Outdoor Security Cameras
+- Smart Doorbell Cameras
+- Baby & Pet Monitors
+- Sports/Wearable Security Cameras
+
+**Note:** As of 2025, Secure Power and Secure Tower products have been discontinued and removed from the product lineup.
 
 ## Development Commands
 
